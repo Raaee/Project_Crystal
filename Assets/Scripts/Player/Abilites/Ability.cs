@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
 
-abstract class Ability : ScriptableObject
+abstract class Ability : MonoBehaviour
 {
     public const int MAX_ABILITY_DAMAGE = 0;
     public const int MAX_BASIC_DAMAGE = 0;
