@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee_Ab : MonoBehaviour
+public class Basic_Dash : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
