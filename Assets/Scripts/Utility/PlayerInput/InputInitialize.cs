@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputInitialize : MonoBehaviour
-{
+public class InputInitialize : MonoBehaviour    {
 
     [Header("Player Inputs")]
     public PlayerInputs playerInputs;
@@ -16,89 +15,27 @@ public class InputInitialize : MonoBehaviour
     public InputAction ability2;
 
 
-    private void Awake()
-    {
+    private void Awake()    {
         playerInputs = new PlayerInputs();
     }
-
-    private void onEnable()
-    {
+    private void OnEnable() {
         movement = playerInputs.Player.Movement;
-        EnableMovement();
+        movement.Enable();
 
         dash = playerInputs.Player.Dash;
-        EnableDash();
+        dash.Enable();
 
         interact = playerInputs.Player.Interact;
-        EnableInteract();
+        interact.Enable();
 
         basicAttack = playerInputs.Player.BasicAttack;
-        EnableBasicAttack();
+        basicAttack.Enable();
 
         ability1 = playerInputs.Player.Ability1;
-        EnableAbility1();
+        ability1.Enable();
 
         ability2 = playerInputs.Player.Ability2;
-        EnableAbility2();
-    }
-
-    private void onDisable()
-    {
-        DisableMovement();
-        DisableDash();
-        DisableInteract();
-        DisableBasicAttack();
-        DisableAbility1();
-        DisableAbility2();
-    }
-
-
-    public void EnableMovement()
-    {
-        movement.Enable();
-    }
-    public void DisableMovement()
-    {
-        movement.Disable();
-    }
-    public void EnableDash()
-    {
-        dash.Enable();
-    }
-    public void DisableDash()
-    {
-        dash.Disable();
-    }
-    public void EnableInteract()
-    {
-        interact.Enable();
-    }
-    public void DisableInteract()
-    {
-        interact.Disable();
-    }
-    public void EnableBasicAttack()
-    {
-        basicAttack.Enable();
-    }
-    public void DisableBasicAttack()
-    {
-        basicAttack.Disable();
-    }
-    public void EnableAbility1()
-    {
-        ability1.Enable();
-    }
-    public void DisableAbility1()
-    {
-        ability1.Disable();
-    }
-    public void EnableAbility2()
-    {
         ability2.Enable();
     }
-    public void DisableAbility2()
-    {
-        ability2.Disable();
-    }
+    
 }
