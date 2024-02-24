@@ -3,22 +3,14 @@ using UnityEngine.InputSystem;
 
 public class characterMovement : MonoBehaviour
 {
-
     [SerializeField] private float _speed;
-
-
     private Rigidbody2D _rigidbody;
-
-
     private Vector2 _movementInput;
-
-
     private InputInitialize _playerInput;
 
 
     private void Awake()
     {
-
         _rigidbody ??= GetComponent<Rigidbody2D>();
         _playerInput = GetComponent<InputInitialize>();
        
@@ -27,22 +19,14 @@ public class characterMovement : MonoBehaviour
         {
             _playerInput = gameObject.AddComponent<InputInitialize>();
         }
-
-        // Log a message to the console for debugging purposes
-        
-
-        // Subscribe the OnMove method to the "Move" action
-        //_playerInput.actions["Move"].performed += OnMove;
-
     }
     private void FixedUpdate()
     {
-        // Set the velocity of the Rigidbody2D, effectively moving the character
+        // Get the current movement input from the player
         _movementInput = _playerInput.movement.ReadValue<Vector2>();
-        _rigidbody.velocity = _movementInput * _speed;
 
-        // Log the current movement input to the console for debugging purposes
-        
+        // Apply the movement input to the rigidbody's velocity, scaled by the speed
+        _rigidbody.velocity = _movementInput * _speed;
     }
 
     
