@@ -37,6 +37,7 @@ public class Spawner : MonoBehaviour
     /// </remarks>
     public void GenerateSpawns()
     {
+        if (waves == null) return;
         foreach (Wave wave in waves)
         {
             wave.GenerateSpawns(radius, duration, spawnObjects);
