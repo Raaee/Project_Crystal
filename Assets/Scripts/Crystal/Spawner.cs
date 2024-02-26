@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
     /// <summary>
     /// The list of objects that can be spawned.
     /// </summary>
-    public List<ProbableSpawn> spawnObjects;
+    public List<ProbableObject> spawnObjects;
 
     /// <summary>
     /// The list of waves to be generated.

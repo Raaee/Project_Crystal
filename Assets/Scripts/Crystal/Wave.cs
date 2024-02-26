@@ -24,8 +24,8 @@ public class Wave
     /// </summary>
     /// <param name="radius">The radius within which the spawns will be generated.</param>
     /// <param name="duration">The duration of the wave.</param>
-    /// <param name="probableSpawns">The list of probable spawns.</param>
-    public void GenerateSpawns(float radius, float duration, List<ProbableSpawn> probableSpawns)
+    /// <param name="probableSpawns">The list of probable objects to spawn.</param>
+    public void GenerateSpawns(float radius, float duration, List<ProbableObject> probableSpawns)
     {
         // Clear previous spawns
         Spawns.Clear();
@@ -41,8 +41,8 @@ public class Wave
 
             Vector2 position = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
             Spawns[i].position = position;
-            var random = ProbableSpawn.GetRandomProbableSpawn(probableSpawns, capacity - currentCapacity);
-            Spawns[i].spawnObject = random.spawnObject;
+            var random = ProbableObject.GetRandomProbableObject(probableSpawns, capacity - currentCapacity);
+            Spawns[i].spawnObject = random.gameObject;
 
             // Set time if time distributed by capacity
             if (timeDistribution == TimeDistribution.ByCapacity)
