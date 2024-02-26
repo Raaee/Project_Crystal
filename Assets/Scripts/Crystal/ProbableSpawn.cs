@@ -16,7 +16,7 @@ public class ProbableSpawn
     public GameObject spawnObject;
 
     /// <summary>
-    /// The maximum capacity of the spawn.
+    /// The maximum capacity of the spawn. More difficult enemies can have a higher capacity to prevent them from being spawned too frequently.
     /// </summary>
     public int capacity;
 
