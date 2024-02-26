@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Represents a spawn point for a game object.
+/// </summary>
 [System.Serializable]
 public class Spawn
 {

@@ -1,18 +1,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Returns a random probable spawn from the list of probableSpawns, based on the probability and capacity of each probableSpawn.
+/// </summary>
+/// <param name="probableSpawns">The list of probableSpawns to choose from.</param>
+/// <param name="remainingCapacity">The remaining capacity to consider when selecting a probable spawn. Defaults to int.MaxValue.</param>
+/// <returns>The randomly selected probable spawn.</returns>
 [System.Serializable]
 public class ProbableSpawn
 {
+    /// <summary>
+    /// The object to be spawned.
+    /// </summary>
     public GameObject spawnObject;
+
+    /// <summary>
+    /// The maximum capacity of the spawn.
+    /// </summary>
     public int capacity;
+
+    /// <summary>
+    /// The probability of this spawn being selected.
+    /// </summary>
     public float probability;
 
-    // Returns a random probable spawn from the list of probableSpawns, based on the probability and capacity of each probableSpawn
-    // Starts by filtering out the probableSpawns that have capacity less than or equal to remainingCapacity
-    // Then, it generates a random value between 0 and the total probability of the remaining probableSpawns
-    // It iterates through the remaining probableSpawns, adding up their probabilities until the random value is less than the current probability
-    // Finally, it returns the probableSpawn at the current index
+    /// <summary>
+    /// Gets a random ProbableSpawn object from the given list, based on their probabilities and remaining capacity.
+    /// </summary>
+    /// <param name="probableSpawns">The list of ProbableSpawn objects to choose from.</param>
+    /// <param name="remainingCapacity">The remaining capacity for spawning.</param>
+    /// <returns>A random ProbableSpawn object, or null if no suitable spawn is found.</returns>
     public static ProbableSpawn GetRandomProbableSpawn(List<ProbableSpawn> probableSpawns, int remainingCapacity = int.MaxValue)
     {
         // filter

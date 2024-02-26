@@ -4,10 +4,27 @@ using System.Collections.Generic;
 [System.Serializable]
 public class Wave
 {
+    /// <summary>
+    /// The maximum capacity of the wave.
+    /// </summary>
     public int capacity;
+
+    /// <summary>
+    /// The time distribution mode for spawning the wave.
+    /// </summary>
     public TimeDistribution timeDistribution;
+
+    /// <summary>
+    /// The list of spawns in the wave.
+    /// </summary>
     public List<Spawn> Spawns;
 
+    /// <summary>
+    /// Generates the spawns for the wave.
+    /// </summary>
+    /// <param name="radius">The radius within which the spawns will be generated.</param>
+    /// <param name="duration">The duration of the wave.</param>
+    /// <param name="probableSpawns">The list of probable spawns.</param>
     public void GenerateSpawns(float radius, float duration, List<ProbableSpawn> probableSpawns)
     {
         // Clear previous spawns
@@ -58,6 +75,9 @@ public class Wave
         }
     }
 
+    /// <summary>
+    /// The time distribution modes for spawning the wave.
+    /// </summary>
     [System.Serializable]
     public enum TimeDistribution
     {

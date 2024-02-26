@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// Custom editor for the Spawner component.
+/// </summary>
 [CustomEditor(typeof(Spawner))]
 public class SpawnerEditor : Editor
 {
