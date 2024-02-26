@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputInitialize : MonoBehaviour    {
+public class InputControls : MonoBehaviour    {
 
     [Header("Player Inputs")]
     public PlayerInputs playerInputs;
