@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fdc88e315a041fa8f38aa459a9b0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: -10}
   smoothTime: 0.3
   camera: {fileID: 625026863}
 --- !u!114 &519420034
@@ -619,7 +620,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1206d52936b46c99fbb379d7763d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  speed: 0
+  dashLength: 0.5
+  dashCoolDown: 1
 --- !u!50 &625026867
 Rigidbody2D:
   serializedVersion: 4
