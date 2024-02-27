@@ -34,10 +34,20 @@ public class Spawner : MonoBehaviour
     /// </summary>
     public List<Wave> waves;
 
+    /// <summary>
+    /// The list of spawned objects. Used to keep track of the spawned objects for the current wave.
+    /// </summary>
     public List<Transform> spawnedObjects;
 
+    /// <summary>
+    /// The current state of the spawner.
+    /// </summary>
     public State state;
 
+    /// <summary>
+    /// The current time of the spawner.
+    /// Used to track wave and cooldown times.
+    /// </summary>
     public float time;
 
     /// <summary>
@@ -56,6 +66,12 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Spawns an object at the specified position.
+    /// Then does any necessary setup for the spawned object.
+    /// </summary>
+    /// <param name="spawn">The spawn to be used for the object.</param>
+    /// <returns>The transform of the spawned object.</returns>
     public Transform Spawn(Spawn spawn)
     {
         var obj = Instantiate(spawn.spawnObject, spawn.position, Quaternion.identity, spawnParent);
