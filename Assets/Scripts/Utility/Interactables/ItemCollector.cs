@@ -25,7 +25,7 @@ public class ItemCollector : MonoBehaviour  {
 
     public void Interact(InteractableType type, GameObject go) {
         objectCollected = go;
-        DropData potentialDrop = GetComponent <DropData>();
+        DropData potentialDrop = GetComponent<DropData>();
         if (potentialDrop != null) {
             potentialDrop.OnDropInteract();
         }
