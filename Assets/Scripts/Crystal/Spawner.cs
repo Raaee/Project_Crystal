@@ -85,7 +85,7 @@ public class Spawner : MonoBehaviour
     /// <returns>The transform of the spawned object.</returns>
     public Transform Spawn(Spawn spawn)
     {
-        var obj = Instantiate(spawn.spawnObject, spawn.position, Quaternion.identity, spawnParent);
+        var obj = Instantiate(spawn.spawnObject, spawn.position + (Vector2)transform.position, Quaternion.identity, spawnParent);
 
         // TODO: Possibly modify enemy script later to add spawnedBy reference
 
