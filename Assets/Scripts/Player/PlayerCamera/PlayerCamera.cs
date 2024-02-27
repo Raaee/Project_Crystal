@@ -13,7 +13,9 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 cameraPosition = camera.position + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, cameraPosition, ref velocity, smoothTime);
+        Vector3 delta = camera.position - Camera.main.ViewportToWorldPoint(offset);
+        Vector3 destination = transform.position + delta;
+        transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, smoothTime);
     }
 }
+
