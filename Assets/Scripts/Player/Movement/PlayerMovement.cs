@@ -8,20 +8,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rigidbody;
     private Vector2 movementInput;
-    private InputInitialize playerInput;
+    private InputControls playerInput;
     private Vector2 smoothedMovementInput;
     private Vector2 movementInputSmoothVelocity; 
     
     private void Awake()
     {
         rigidbody ??= GetComponent<Rigidbody2D>();
-        playerInput = GetComponent<InputInitialize>();
+        playerInput = GetComponent<InputControls>();
         
         gameObject.GetComponent<TrailRenderer>().enabled = false;
         // If there's no PlayerInput component attached, add one
         if (playerInput == null)
         {
-            playerInput = gameObject.AddComponent<InputInitialize>();
+            playerInput = gameObject.AddComponent<InputControls>();
         }
     }
     private void FixedUpdate()
