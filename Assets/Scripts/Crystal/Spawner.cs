@@ -149,18 +149,22 @@ public class Spawner : MonoBehaviour
     /// <summary>
     /// Possible states for the spawner.
     /// <list type="bullet">
-    /// <item>
-    /// <term>Idle</term> <description>The spawner has not yet activated.</description>
-    /// </item>
-    /// <item>
-    /// <term>Spawning</term> <description>The spawner is currently spawning a wave of objects, or the currently spawned wave is not yet cleared.</description>
-    /// </item>
-    /// <item>
-    /// <term>Cooldown</term> <description>The spawner is currently in cooldown between waves. Only occurs if there are waves remaining and the spawned list is empty.</description>
-    /// </item>
-    /// <item>
-    /// <term>Complete</term> <description>The spawner has completed all waves and is no longer active.</description>
-    /// </item>
+    ///     <item>
+    ///         <term>Idle</term>
+    ///         <description>The spawner has not yet activated.</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>Spawning</term>
+    ///         <description>The spawner is currently spawning a wave of objects, or the currently spawned wave is not yet cleared.</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>Cooldown</term>
+    ///         <description>The spawner is currently in cooldown between waves. Only occurs if there are waves remaining and the spawned list is empty.</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>Complete</term>
+    ///         <description>The spawner has completed all waves and is no longer active.</description>
+    ///     </item>
     /// </list>
     /// </summary>
     [System.Serializable]
