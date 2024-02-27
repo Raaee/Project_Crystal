@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,19 +11,17 @@ public class characterMovement : MonoBehaviour
     private InputInitialize playerInput;
     private Vector2 smoothedMovementInput;
     private Vector2 movementInputSmoothVelocity;
-    private float activeMoveSpeed;
-    private float dashSpeed;
-    public float dashLength = 0.5f, dashCoolDown = 1f;
-    private float dashCounter;
-    private float dashCoolCounter;
-    public event Action<float> OnDash;
-    private bool isDashing;
+    
 
     private void Awake()
     {
         rigidbody ??= GetComponent<Rigidbody2D>();
         playerInput = GetComponent<InputInitialize>();
+        actions = GetComponent<Actions>();
         activeMoveSpeed = speed;
+        actions.OnDash.AddListener(Dashing);
+       
+        
         
 
         // If there's no PlayerInput component attached, add one
@@ -30,6 +29,7 @@ public class characterMovement : MonoBehaviour
         {
             playerInput = gameObject.AddComponent<InputInitialize>();
         }
+
     }
 
     private void FixedUpdate()
@@ -40,13 +40,17 @@ public class characterMovement : MonoBehaviour
 
         // Apply the movement input to the rigidbody's velocity, scaled by the speed
         rigidbody.velocity = smoothedMovementInput * activeMoveSpeed;
-        isDashing = playerInput.dash.ReadValue<float>() > 0.5f;
+
 
         if (isDashing)
         {
+            StartCoroutine(IsDashing());
+        }
+        /*if (isDashing)
+        {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
-                activeMoveSpeed = dashSpeed * speed;
+                activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
             }
         }
@@ -58,6 +62,46 @@ public class characterMovement : MonoBehaviour
             {
                 activeMoveSpeed = speed;
                 dashCoolCounter = dashCoolDown;
+                isDashing = false;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }*/
+    }
+    [Header("Dash Settings")]
+
+    private float activeMoveSpeed;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] public float dashLength = 0.5f, dashCoolDown = 1f;
+    private float dashCounter;
+    private float dashCoolCounter;
+    private Actions actions;
+    private bool isDashing;
+   
+    public void Dashing()
+    {
+        isDashing = true;
+        
+    }
+
+    private IEnumerator IsDashing()
+    {
+       
+        rigidbody.velocity = new Vector2(movementInput.x * dashSpeed, movementInput.y * dashSpeed);
+        yield return new WaitForSeconds(dashLength);
+        isDashing = false;
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = speed;
+                dashCoolCounter = dashCoolDown;
+                isDashing = false;
             }
         }
 
@@ -65,6 +109,9 @@ public class characterMovement : MonoBehaviour
         {
             dashCoolCounter -= Time.deltaTime;
         }
+        
+
+
     }
 }
 
