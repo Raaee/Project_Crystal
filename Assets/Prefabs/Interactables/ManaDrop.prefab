@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2739348198302368185}
   - component: {fileID: 7931128384814886927}
   - component: {fileID: 420027406793591385}
+  - component: {fileID: 6949517052174242399}
   m_Layer: 0
   m_Name: ManaDrop
   m_TagString: Untagged
@@ -99,3 +100,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
   interactableType: 1
+--- !u!114 &6949517052174242399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2728916520030732642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb78e149fae00439495d86a4dc2edae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaAmount: 17
