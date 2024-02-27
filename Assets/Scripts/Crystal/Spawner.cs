@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
     /// <summary>
     /// The list of waves to be generated.
     /// </summary>
-    [Tooltip("The list of waves to be generated.")]
+    [Tooltip("The list of waves to be generated. Can be populated using the Regenerate Spawns button below, given a capacity.")]
     public List<Wave> waves;
 
     /// <summary>
