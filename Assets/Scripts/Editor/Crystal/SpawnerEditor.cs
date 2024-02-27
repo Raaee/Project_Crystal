@@ -12,7 +12,7 @@ public class SpawnerEditor : Editor
         DrawDefaultInspector();
 
         Spawner spawner = (Spawner)target;
-        if (GUILayout.Button("Generate Spawns"))
+        if (GUILayout.Button("Regenerate Spawns"))
         {
             spawner.GenerateSpawns();
         }

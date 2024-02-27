@@ -6,48 +6,59 @@ public class Spawner : MonoBehaviour
     /// <summary>
     /// The duration of each wave in seconds.
     /// </summary>
+    [Tooltip("The duration of each wave in seconds.")]
     public float duration;
 
     /// <summary>
     /// The radius within which objects can be spawned.
     /// </summary>
+    [Tooltip("The radius within which objects can be spawned.")]
     public float radius;
 
     /// <summary>
     /// The cooldown time between waves in seconds.
     /// </summary>
+    [Tooltip("The cooldown time between waves in seconds.")]
     public float cooldownTime;
 
     /// <summary>
     /// The parent transform for the spawned objects.
     /// </summary>
     /// <remarks>
+    /// This is used to keep the hierarchy clean and organized.
+    /// </remarks>
+    [Tooltip("The parent transform for the spawned objects.")]
     public Transform spawnParent;
 
     /// <summary>
     /// The list of objects that can be spawned.
     /// </summary>
+    [Tooltip("The list of objects that can be spawned.")]
     public List<ProbableObject> spawnObjects;
 
     /// <summary>
     /// The list of waves to be generated.
     /// </summary>
+    [Tooltip("The list of waves to be generated.")]
     public List<Wave> waves;
 
     /// <summary>
     /// The list of spawned objects. Used to keep track of the spawned objects for the current wave.
     /// </summary>
+    [Tooltip("The list of spawned objects. Used to keep track of the spawned objects for the current wave.")]
     public List<Transform> spawnedObjects;
 
     /// <summary>
     /// The current state of the spawner.
     /// </summary>
+    [Tooltip("The current state of the spawner.")]
     public State state;
 
     /// <summary>
     /// The current time of the spawner.
     /// Used to track wave and cooldown times.
     /// </summary>
+    [Tooltip("The current time of the spawner. Used to track wave and cooldown times.")]
     public float time;
 
     /// <summary>
