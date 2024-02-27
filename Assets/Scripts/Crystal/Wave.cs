@@ -46,7 +46,5 @@ public class Wave
             currentCapacity += random.capacity;
             i++;
         }
-
-
     }
 }
