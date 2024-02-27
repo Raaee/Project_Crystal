@@ -6,7 +6,7 @@ public class InputControls : MonoBehaviour    {
     [Header("Player Inputs")]
     public PlayerInputs playerInputs;
     public InputAction movement;
-    public InputAction dash;
+    public InputAction teleport;
     public InputAction interact;
 
     [Header("Attack Inputs")]
@@ -22,8 +22,8 @@ public class InputControls : MonoBehaviour    {
         movement = playerInputs.Player.Movement;
         movement.Enable();
 
-        dash = playerInputs.Player.Dash;
-        dash.Enable();
+        teleport = playerInputs.Player.Teleport;
+        teleport.Enable();
 
         interact = playerInputs.Player.Interact;
         interact.Enable();

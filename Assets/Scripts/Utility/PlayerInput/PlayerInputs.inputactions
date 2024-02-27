@@ -42,7 +42,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Dash",
+                    "name": "Teleport",
                     "type": "Button",
                     "id": "e8b8f874-f04a-4245-b318-45a6c7a2dced",
                     "expectedControlType": "Button",
@@ -156,7 +156,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "Teleport",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

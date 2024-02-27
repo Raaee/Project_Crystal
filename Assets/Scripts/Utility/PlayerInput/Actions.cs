@@ -7,7 +7,7 @@ public class Actions : MonoBehaviour    {
     private InputControls input;
 
     [HideInInspector] public UnityEvent OnMovement;
-    [HideInInspector] public UnityEvent OnDash;
+    [HideInInspector] public UnityEvent OnTeleport;
     [HideInInspector] public UnityEvent OnInteract;
     [HideInInspector] public UnityEvent OnBasicAttack;
     [HideInInspector] public UnityEvent OnAbility1;
@@ -21,13 +21,13 @@ public class Actions : MonoBehaviour    {
         input.interact.performed += Interact;
 
         // Abilities
-        input.dash.performed += Dash;
+        input.teleport.performed += Teleport;
         input.ability1.performed += Ability1;
         input.ability2.performed += Ability2;
     }
-    public void Dash(InputAction.CallbackContext context) {
-        Debug.Log("Dashed");
-        OnDash.Invoke();
+    public void Teleport(InputAction.CallbackContext context) {
+        Debug.Log("Teleported");
+        OnTeleport.Invoke();
     }
     public void Interact(InputAction.CallbackContext context) {
         Debug.Log("Interact");
