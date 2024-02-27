@@ -8,6 +8,11 @@ using System.Collections.Generic;
 public class Wave
 {
     /// <summary>
+    /// The duration of the wave.
+    /// </summary>
+    public float duration;
+
+    /// <summary>
     /// The maximum capacity of the wave.
     /// </summary>
     public int capacity;
@@ -21,9 +26,8 @@ public class Wave
     /// Generates the spawns for the wave.
     /// </summary>
     /// <param name="radius">The radius within which the spawns will be generated.</param>
-    /// <param name="duration">The duration of the wave.</param>
     /// <param name="probableSpawns">The list of probable objects to spawn.</param>
-    public void GenerateSpawns(float radius, float duration, List<ProbableObject> probableSpawns)
+    public void GenerateSpawns(float radius, List<ProbableObject> probableSpawns)
     {
         // Clear previous spawns
         Spawns.Clear();

@@ -152,9 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58dbac585a892945862164d2742e35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
   radius: 3
-  cooldownTime: 15
+  cooldownTime: 3
   spawnParent: {fileID: 740423426}
   spawnObjects:
   - gameObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
@@ -167,33 +166,59 @@ MonoBehaviour:
     capacity: 1
     weight: 1
   waves:
-  - capacity: 5
+  - duration: 5
+    capacity: 5
     Spawns:
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -0.19049025, y: -2.993946}
+    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+      position: {x: 2.4144435, y: -1.7805794}
       timeDelay: 0
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -2.984896, y: 0.30065972}
-      timeDelay: 2
-  - capacity: 10
-    Spawns:
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -1.987387, y: -2.2472858}
-      timeDelay: 0
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -1.9678884, y: -2.26438}
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: 2.0948262, y: -2.1474876}
       timeDelay: 1
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 0.7015479, y: -2.9168186}
+    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+      position: {x: 2.9821234, y: -0.32701844}
       timeDelay: 2
     - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -0.1953853, y: -2.9936306}
+      position: {x: -1.6482875, y: 2.506621}
       timeDelay: 3
     - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -0.86202, y: -2.873486}
+      position: {x: 0.73646, y: 2.9082}
       timeDelay: 4
+  - duration: 1
+    capacity: 10
+    Spawns:
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: 2.2883837, y: -1.9399227}
+      timeDelay: 0
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: 2.916457, y: 0.70305}
+      timeDelay: 0.1
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: 2.9978797, y: -0.112767294}
+      timeDelay: 0.2
+    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+      position: {x: -2.9945946, y: 0.18000868}
+      timeDelay: 0.3
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: 1.7791185, y: -2.4155202}
+      timeDelay: 0.4
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: 2.1187644, y: -2.1238732}
+      timeDelay: 0.5
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: 1.70829, y: 2.4661195}
+      timeDelay: 0.6
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: -2.9294844, y: -0.64662325}
+      timeDelay: 0.7
+    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+      position: {x: 0.73371786, y: -2.9088929}
+      timeDelay: 0.8
+    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+      position: {x: 0.7595592, y: 2.9022527}
+      timeDelay: 0.9
   spawnedObjects: []
-  state: 0
+  state: 2
   time: 0
 --- !u!4 &449721472
 Transform:
@@ -252,6 +277,7 @@ GameObject:
   - component: {fileID: 1217699242}
   - component: {fileID: 1217699241}
   - component: {fileID: 1217699240}
+  - component: {fileID: 1217699243}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -303,7 +329,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -333,6 +359,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1217699243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217699239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -4,12 +4,6 @@ using System.Collections.Generic;
 public class Spawner : MonoBehaviour
 {
     /// <summary>
-    /// The duration of each wave in seconds.
-    /// </summary>
-    [Tooltip("The duration of each wave in seconds.")]
-    public float duration;
-
-    /// <summary>
     /// The radius within which objects can be spawned.
     /// </summary>
     [Tooltip("The radius within which objects can be spawned.")]
@@ -73,7 +67,7 @@ public class Spawner : MonoBehaviour
         if (waves == null) return;
         foreach (Wave wave in waves)
         {
-            wave.GenerateSpawns(radius, duration, spawnObjects);
+            wave.GenerateSpawns(radius, spawnObjects);
         }
     }
 
@@ -130,6 +124,7 @@ public class Spawner : MonoBehaviour
                         if (waves.Count == 0)
                         {
                             state = State.Complete;
+                            time = 0;
                             break;
                         }
                         state = State.Cooldown;
@@ -149,6 +144,11 @@ public class Spawner : MonoBehaviour
             case State.Complete:
                 break;
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 
     /// <summary>
