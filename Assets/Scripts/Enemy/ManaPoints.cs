@@ -6,8 +6,8 @@ using UnityEngine;
 public class ManaPoints : MonoBehaviour
 {
     // Max mana is set at 50
-    private const int MAX_MP = 50;
-    private int currentMP;
+    [SerializeField] private int MAX_MP = 50;
+    [SerializeField] private int currentMP;
 
     // Character starts with maximum mana value
     private void Start()

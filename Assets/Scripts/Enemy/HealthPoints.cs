@@ -6,8 +6,8 @@ using UnityEngine;
 public class HealthPoints : MonoBehaviour
 {
     // Max health is set at 100
-    private const int MAX_HP = 100;
-    private int currentHP;
+    [SerializeField] private int MAX_HP = 100;
+    [SerializeField] private int currentHP;
 
     // Character starts with maximum health value
     private void Start()
