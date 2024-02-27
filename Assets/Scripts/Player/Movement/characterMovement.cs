@@ -75,7 +75,7 @@ public class characterMovement : MonoBehaviour
 
     private float activeMoveSpeed;
     [SerializeField] private float dashSpeed;
-    [SerializeField] public float dashLength = 0.5f, dashCoolDown = 1f;
+    [SerializeField] public float dashLength, dashCoolDown;
     private float dashCounter;
     private float dashCoolCounter;
     private Actions actions;
