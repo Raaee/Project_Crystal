@@ -40,6 +40,11 @@ public class Wave
             Vector2 position = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
             Spawns[i].position = position;
             var random = ProbableObject.GetRandomProbableObject(probableSpawns, capacity - currentCapacity);
+            if (random == null) // If no suitable object is found, break the loop
+            {
+                Spawns.RemoveAt(i);
+                break;
+            }
             Spawns[i].spawnObject = random.gameObject;
             Spawns[i].timeDelay = duration / capacity * currentCapacity;
 
