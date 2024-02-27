@@ -159,31 +159,38 @@ MonoBehaviour:
   spawnObjects:
   - gameObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
     capacity: 1
-    probability: 1
+    weight: 1
   - gameObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
     capacity: 1
-    probability: 1
+    weight: 1
   - gameObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
     capacity: 1
-    probability: 1
+    weight: 1
   waves:
   - capacity: 5
-    timeDistribution: 1
     Spawns:
-    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
-      position: {x: 1.1618395, y: -2.7658865}
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: -0.19049025, y: -2.993946}
       timeDelay: 0
     - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 0.9505589, y: -2.845424}
+      position: {x: -2.984896, y: 0.30065972}
+      timeDelay: 2
+  - capacity: 10
+    Spawns:
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: -1.987387, y: -2.2472858}
+      timeDelay: 0
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: -1.9678884, y: -2.26438}
       timeDelay: 1
     - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 2.3115282, y: 1.912286}
+      position: {x: 0.7015479, y: -2.9168186}
       timeDelay: 2
-    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
-      position: {x: 2.3104897, y: -1.9135406}
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: -0.1953853, y: -2.9936306}
       timeDelay: 3
-    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: 1.5610843, y: -2.5618384}
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: -0.86202, y: -2.873486}
       timeDelay: 4
   spawnedObjects: []
   state: 0
@@ -197,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 449721470}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.07, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

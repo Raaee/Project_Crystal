@@ -127,6 +127,11 @@ public class Spawner : MonoBehaviour
                     {
                         waves.RemoveAt(0);
                         spawnedObjects.Clear(); // Clear destroyed objects from the list
+                        if (waves.Count == 0)
+                        {
+                            state = State.Complete;
+                            break;
+                        }
                         state = State.Cooldown;
                         time = 0;
                         break;
