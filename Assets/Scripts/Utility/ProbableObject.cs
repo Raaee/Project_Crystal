@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 /// <summary>
-/// Represents an object that can be objected with a certain probability and capacity.
+/// Represents an object that can be spawned with a certain probability weight and capacity.
 /// </summary>
 public class ProbableObject
 {
@@ -14,10 +14,14 @@ public class ProbableObject
     /// The capacity of the probable object. This can be used to represent the difficulty or cost of the object.
     /// </summary>
     public int capacity;
-    public float probability;
 
     /// <summary>
-    /// Gets a random probable object from the given list of probable object, based on their capacity and probability.
+    /// The weight of the probable object. This can be used to represent the probability of the object being chosen. A higher weight is more likely to be chosen.
+    /// </summary>
+    public float weight;
+
+    /// <summary>
+    /// Gets a random probable object from the given list of probable object, based on their capacity and weights.
     /// </summary>
     /// <param name="probableObjects">The list of probable objects to choose from.</param>
     /// <param name="remainingCapacity">The remaining capacity.</param>
@@ -29,7 +33,7 @@ public class ProbableObject
         float totalProbability = 0;
         foreach (ProbableObject probableObject in probableObjects)
         {
-            totalProbability += probableObject.probability;
+            totalProbability += probableObject.weight;
         }
 
         float randomValue = Random.Range(0, totalProbability);
@@ -37,7 +41,7 @@ public class ProbableObject
 
         foreach (ProbableObject probableObject in probableObjects)
         {
-            currentProbability += probableObject.probability;
+            currentProbability += probableObject.weight;
             if (randomValue < currentProbability && probableObject.capacity <= remainingCapacity)
             {
                 return probableObject;
