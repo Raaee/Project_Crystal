@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float moveSpeed = 10;
     private Rigidbody2D rigidbody;
     private Vector2 movementInput;
     private InputControls playerInput;
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         movementInput = playerInput.movement.ReadValue<Vector2>();
 
         // Apply the movement input to the rigidbody's velocity, scaled by the speed
-        rigidbody.velocity = smoothedMovementInput * speed;
+        rigidbody.velocity = smoothedMovementInput * moveSpeed;
     }
     public Vector2 GetMovementInput()
     {
