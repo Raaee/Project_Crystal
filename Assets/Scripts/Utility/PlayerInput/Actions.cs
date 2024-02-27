@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Actions : MonoBehaviour    {
     
-    private InputInitialize input;
+    private InputControls input;
 
     [HideInInspector] public UnityEvent OnMovement;
     [HideInInspector] public UnityEvent OnTeleport;
@@ -14,7 +14,7 @@ public class Actions : MonoBehaviour    {
     [HideInInspector] public UnityEvent OnAbility2;
 
     private void Awake() {
-        input = GetComponent<InputInitialize>();
+        input = GetComponent<InputControls>();
     }
     private void Update() {
 
