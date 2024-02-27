@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4942112, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -609,7 +609,7 @@ MonoBehaviour:
   speed: 10
   dashSpeed: 30
   dashLength: 0.5
-  dashCoolDown: 2
+  dashCoolDown: 10
 --- !u!50 &625026867
 Rigidbody2D:
   serializedVersion: 4
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_YDamping: 3
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.54
+  m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
@@ -1031,7 +1031,7 @@ Transform:
   m_GameObject: {fileID: 1839449803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4942112, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
