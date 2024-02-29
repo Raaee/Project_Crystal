@@ -30,7 +30,7 @@ public class TeleportAbility1 : Ability
         StartCoroutine(TeleportCooldown());
         
     }
-    public IEnumerator TeleportCooldown()
+    public IEnumerator TeleportCooldown() //Make this in abstract ability class minus transformed.position
     {
         isOnCoolDown = true;
         transform.position += (Vector3)movementInput * teleportDistance;
