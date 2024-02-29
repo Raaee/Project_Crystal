@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7931128384814886927}
   - component: {fileID: 420027406793591385}
   - component: {fileID: 6949517052174242399}
+  - component: {fileID: -1758645694342437166}
   m_Layer: 0
   m_Name: ManaDrop
   m_TagString: Untagged
@@ -113,3 +114,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaAmount: 17
+--- !u!58 &-1758645694342437166
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2728916520030732642}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.07

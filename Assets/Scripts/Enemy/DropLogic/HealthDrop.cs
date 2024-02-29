@@ -7,11 +7,20 @@ public class HealthDrop : DropData  {
     [SerializeField] private int healthAmount;
 
     private void Start()    {
-        OnDropInteract();
+   
     }
     public override void OnDropInteract()    {
         Debug.Log("Giving the player healthAmount" + healthAmount);
+        //getting player game object
+        GameObject playerGameObject = getPlayerGameObject();
 
+        //attempting to access the healthpoints scripts from the playerGameObject
+        HealthPoints potentialHealthPoints = playerGameObject.GetComponent<HealthPoints>();
+        //if healthpoints isnt null, adds health 
+        if (potentialHealthPoints != null) {
+        potentialHealthPoints.AddHealth(healthAmount);
+
+        }
     }
 
 }

@@ -7,7 +7,7 @@ public class ManaDrop : DropData
     public int manaAmount;
      private void Start()
     {
-    OnDropInteract();
+
     }
       public override void OnDropInteract()
    {

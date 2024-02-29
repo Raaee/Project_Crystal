@@ -10,7 +10,7 @@ public class BezerkerCubeDrop : DropData
 
      private void Start()
     {
-    OnDropInteract();
+
     }
   public override void OnDropInteract()
    {
