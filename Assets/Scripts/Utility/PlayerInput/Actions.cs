@@ -21,6 +21,7 @@ public class Actions : MonoBehaviour    {
         input.interact.performed += Interact;
 
         // Abilities
+        input.basicAttack.performed += BasicAttack;
         input.teleport.performed += Teleport;
         input.ability1.performed += Ability1;
         input.ability2.performed += Ability2;
@@ -32,6 +33,11 @@ public class Actions : MonoBehaviour    {
     public void Interact(InputAction.CallbackContext context) {
         Debug.Log("Interact");
         OnInteract.Invoke();
+    }
+    public void BasicAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("Basic Attack");
+        OnBasicAttack.Invoke();
     }
     public void Ability1(InputAction.CallbackContext context) {
         Debug.Log("Ability 1");
