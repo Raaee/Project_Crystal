@@ -5,58 +5,32 @@ using UnityEngine.InputSystem;
 
 public class RangedBasicAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject rangedAttack;
-    [SerializeField] private GameObject rangedAttackShot;
-    [SerializeField] private Transform attackShotSpawnPoint;
+    [SerializeField] private GameObject projectilePrefab;
     private Actions actions;
-    private GameObject rangedAttackShotInst;
-    private Vector2 worldPos;
-    private Vector2 direction;
-    private Vector3 localScale;
-    private float angle;
-
-    void Start()
+    void Awake()
     {
+
         actions = GetComponent<Actions>();
-        actions.OnBasicAttack.AddListener(HandleRangeShooting);
-    }
-    void FixedUpdate()
-    {
-        
-        HandlePlayerRotation();
+        actions.OnBasicAttack.AddListener(StartAttack);
         
 
     }
 
-    private void HandlePlayerRotation()
+    public void SpawnProjectile(Vector2 moveDirection)
     {
-        worldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        //Vector3 mousePos = Mouse.current.position.ReadValue();
-        //mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        //direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        direction = (worldPos- (Vector2)rangedAttack.transform.position).normalized;
-        rangedAttack.transform.right = direction;
-
-        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        localScale = Vector3.one;
-        if (angle > 90 || angle < -90 )
-        {
-            localScale.y = -1f;
-        }
-        else
-        {
-            localScale.y = 1f;
-        }
-        rangedAttack.transform.localScale = localScale;
+        GameObject go = Instantiate(projectilePrefab, this.transform.position, Quaternion.identity);
+        go.transform.position = this.transform.position;
+        go.transform.rotation = Quaternion.identity;
+        Projectile projectile = go.GetComponent<Projectile>();
+        projectile.SetMoveDirection(moveDirection);
 
     }
 
-    private void HandleRangeShooting()
+    public void StartAttack()
     {
-            rangedAttackShotInst = Instantiate(rangedAttackShot, attackShotSpawnPoint.position, rangedAttack.transform.rotation);
-            //rangedAttack.GetComponent<rangedAttack>().SetDirection(direction);
-        
+        Vector2 mousePosition = Mouse.current.position.ReadValue();
+        Vector2 objectPosition = Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 direction = (mousePosition - objectPosition).normalized;
+        SpawnProjectile(direction);
     }
-
 }
