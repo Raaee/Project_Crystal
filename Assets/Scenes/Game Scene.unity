@@ -674,11 +674,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625026860}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IndicatorRotationPoint: {fileID: 711939280}
+  abilityIndicator: {fileID: 0}
   cooldown: 2
   manaCost: 0
   teleportDistance: 5
@@ -845,6 +847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644b005dab146b242937196215c66549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IndicatorRotationPoint: {fileID: 711939280}
+  abilityIndicator: {fileID: 0}
   cooldown: 0
   manaCost: 0
 --- !u!1 &711939280
@@ -856,14 +860,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711939281}
-  - component: {fileID: 711939282}
   m_Layer: 0
-  m_Name: GameRolationPoint
-  m_TagString: Untagged
+  m_Name: Indicator Rotation Point
+  m_TagString: AvilityIndicator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &711939281
 Transform:
   m_ObjectHideFlags: 0
@@ -880,18 +883,6 @@ Transform:
   - {fileID: 2126280565}
   m_Father: {fileID: 625026863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &711939282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711939280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb93c707f04d4509b93af55b619a028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1013431890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1200,7 @@ GameObject:
   - component: {fileID: 2126280565}
   - component: {fileID: 2126280566}
   m_Layer: 0
-  m_Name: AvilityIndicator
+  m_Name: Range Avility 1 Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1224,8 +1215,8 @@ Transform:
   m_GameObject: {fileID: 2126280564}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.29, y: -0.05, z: 0}
+  m_LocalScale: {x: 5.1743, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 711939281}
@@ -1271,8 +1262,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Color: {r: 0.004494493, g: 0.09494772, b: 0.9528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

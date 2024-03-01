@@ -27,11 +27,11 @@ public abstract class AbilityIndicator : MonoBehaviour
 
         mousePos = mainCamera.ScreenToWorldPoint(mousePosition);
 
-        Vector3 rotation = mousePos - abilityIndicator.transform.position;
+        Vector3 rotation = mousePos - IndicatorRotationPoint.transform.position;
 
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
-        abilityIndicator.transform.rotation = Quaternion.Euler(0,0, rotz);
+        IndicatorRotationPoint.transform.rotation = Quaternion.Euler(0,0, rotz);
     }
 
     public void EnableAbilityIndicator() {
