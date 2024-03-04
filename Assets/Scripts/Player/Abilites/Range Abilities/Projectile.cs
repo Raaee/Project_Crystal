@@ -37,4 +37,10 @@ public class Projectile : MonoBehaviour
     {
         moveDirection = movDir;
     }
+
+    // Projectile gets destroyed when it comes in collision with anything
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(this.gameObject);
+    }
 }
