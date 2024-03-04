@@ -10,20 +10,21 @@ public class DropCollector : MonoBehaviour
         Debug.Log("Starting drop collector system");
     }
 
-  void OnTriggerEnter2D(Collider2D col)
+  void OnTriggerEnter2D(Collider2D potentialDropCollider)
     {
         
-        DropData potentialDrop = col.gameObject.GetComponent<DropData>();
+        DropData potentialDrop = potentialDropCollider.gameObject.GetComponent<DropData>();
         if (potentialDrop != null) {
-        Debug.Log(col.gameObject);
-        GameObject playerGameObject = col.gameObject.transform.gameObject;
-        Debug.Break();
+
+    
+        GameObject playerGameObject = gameObject.transform.parent.gameObject;
+        
         potentialDrop.setPlayerGameObject(playerGameObject);
         potentialDrop.OnDropInteract();
         }
         else
         {
-            Debug.Log(col.name + " doesn't have a potential drop.");
+            Debug.Log(potentialDropCollider.name + " doesn't have a potential drop.");
         }
     }
 

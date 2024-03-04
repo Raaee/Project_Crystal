@@ -16,8 +16,11 @@ public class HealthDrop : DropData  {
 
         //attempting to access the healthpoints scripts from the playerGameObject
         HealthPoints potentialHealthPoints = playerGameObject.GetComponent<HealthPoints>();
+        Debug.Log("This is the player GO", playerGameObject);
+        
         //if healthpoints isnt null, adds health 
         if (potentialHealthPoints != null) {
+            Debug.Log("Inside potential health points");
         potentialHealthPoints.AddHealth(healthAmount);
 
         }
