@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public abstract class AbilityIndicator : MonoBehaviour
 {
     protected Actions actions;
-    [SerializeField] protected GameObject IndicatorRotationPoint;
+    [SerializeField] protected GameObject AbilityIndicatorControl;
     [SerializeField] protected GameObject abilityIndicator;
     private Camera mainCamera;
     private Vector3 mousePos;
@@ -15,7 +15,7 @@ public abstract class AbilityIndicator : MonoBehaviour
 
     void Awake()
     {
-        IndicatorRotationPoint.SetActive(false);
+        AbilityIndicatorControl.SetActive(false);
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         actions = GetComponent <Actions>();
     }
@@ -23,21 +23,17 @@ public abstract class AbilityIndicator : MonoBehaviour
     private void Update()
     {
         mousePosition = Mouse.current.position.ReadValue();
-
         mousePos = mainCamera.ScreenToWorldPoint(mousePosition);
-
-        Vector3 rotation = mousePos - IndicatorRotationPoint.transform.position;
-
+        Vector3 rotation = mousePos - AbilityIndicatorControl.transform.position;
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-
-        IndicatorRotationPoint.transform.rotation = Quaternion.Euler(0,0, rotz);
+        AbilityIndicatorControl.transform.rotation = Quaternion.Euler(0,0, rotz);
     }
 
     public void EnableAbilityIndicator() {
-        IndicatorRotationPoint.SetActive(true);
+        AbilityIndicatorControl.SetActive(true);
     }
 
     public void DisableAbilityIndicator() {
-        IndicatorRotationPoint.SetActive(false);
+        AbilityIndicatorControl.SetActive(false);
     }
 }
