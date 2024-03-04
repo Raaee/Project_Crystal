@@ -18,7 +18,6 @@ public abstract class AbilityIndicator : MonoBehaviour
         IndicatorRotationPoint.SetActive(false);
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         actions = GetComponent <Actions>();
-   
     }
 
     private void Update()
@@ -36,6 +35,9 @@ public abstract class AbilityIndicator : MonoBehaviour
 
     public void EnableAbilityIndicator() {
         IndicatorRotationPoint.SetActive(true);
-        //abilityIndicator.enabled = true;
+    }
+
+    public void DisableAbilityIndicator() {
+        IndicatorRotationPoint.SetActive(false);
     }
 }
