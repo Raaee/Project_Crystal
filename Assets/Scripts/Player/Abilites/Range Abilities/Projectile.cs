@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        
     }
 
     private void FixedUpdate()
@@ -31,6 +32,9 @@ public class Projectile : MonoBehaviour
     public void MoveProjectile()
     {
         rigidbody.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
+        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, Mathf.LerpAngle(transform.rotation.eulerAngles.z, angle, projectileSpeed * Time.deltaTime));
+        
     }
 
     public void SetMoveDirection(Vector2 movDir)

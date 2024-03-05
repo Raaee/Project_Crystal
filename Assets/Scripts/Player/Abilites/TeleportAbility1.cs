@@ -26,6 +26,7 @@ public class TeleportAbility1 : Ability
     {
         if (isOnCoolDown)
             return;
+
         
         StartCoroutine(UseAbility());
 
