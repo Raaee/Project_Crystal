@@ -7,7 +7,6 @@ public class RangedAbility1 : RangeAbilityIndicator1UI
 {
     [SerializeField] private GameObject rangedAbility1Prefab;
     [SerializeField] private ObjectPooler projPooler;
-    private Actions actions;
     void Awake()
     {
 
