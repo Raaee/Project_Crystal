@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public abstract class EnemyAI : Movement
 {
     [SerializeField] private float baseSpeed;
     [SerializeField] private float maxSpeed;
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
 
     void SetInitialTarget()
     {
-        if(spawnedBy != null)
+        if (spawnedBy != null)
         {
             currTarget = spawnedBy;
         }
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
 
     public void Update()
     {
-        if(currTarget != null)
+        if (currTarget != null)
         {
             MoveTowardsTarget(currTarget);
         }
