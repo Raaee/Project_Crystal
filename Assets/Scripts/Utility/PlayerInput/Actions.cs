@@ -22,14 +22,8 @@ public class Actions : MonoBehaviour    {
 
         // Abilities
         input.teleport.performed += Teleport;
-        input.basicAttack.performed += BasicAttack;
         input.ability1.performed += Ability1;
         input.ability2.performed += Ability2;
-    }
-    public void BasicAttack(InputAction.CallbackContext context)
-    {
-        Debug.Log("BasicAttack");
-        OnBasicAttack.Invoke();
     }
     public void Teleport(InputAction.CallbackContext context) {
         Debug.Log("Teleported");
