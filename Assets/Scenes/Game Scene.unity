@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 625026869}
   - component: {fileID: 625026875}
   - component: {fileID: 625026876}
+  - component: {fileID: 625026877}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -933,17 +934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 971724485026557118, guid: 74dd1c5c95c6afa45b8cf7ba48b69ea9, type: 3}
-  projPooler: {fileID: 1104142483}
-  m_Script: {fileID: 11500000, guid: 644b005dab146b242937196215c66549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityIndicatorControl: {fileID: 711939280}
-  abilityIndicator: {fileID: 2126280564}
-  cooldown: 0
-  manaCost: 0
-  IsActive: 0
-  AbilityIndicator: {fileID: 0}
+  angedBasicAttackPrefab: {fileID: 0}
+  projPooler: {fileID: 0}
 --- !u!114 &625026876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,6 +953,26 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
+  rangedAbility1Prefab: {fileID: 0}
+  projPooler: {fileID: 0}
+--- !u!114 &625026877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625026860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23bf48632cdb24b28b284f0fc126282a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityIndicatorControl: {fileID: 711939280}
+  abilityIndicator: {fileID: 2126280564}
+  cooldown: 0
+  manaCost: 0
+  IsActive: 0
+  AbilityIndicator: {fileID: 0}
 --- !u!1 &711939280
 GameObject:
   m_ObjectHideFlags: 0

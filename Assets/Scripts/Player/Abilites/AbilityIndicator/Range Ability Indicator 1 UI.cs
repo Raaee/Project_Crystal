@@ -30,4 +30,9 @@ public class RangeAbilityIndicator1UI : Ability
             actions.OnBasicAttack.AddListener(DisableAbilityIndicator);
         }
     }
+
+    public override void AbilityUsage()
+    {
+        throw new System.NotImplementedException();
+    }
 }
