@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class Ability : MonoBehaviour
+public abstract class Ability : AbilityIndicator
 {
     [SerializeField] protected int cooldown;
     [SerializeField] protected int manaCost;
@@ -21,4 +21,6 @@ public abstract class Ability : MonoBehaviour
         
     }
     public abstract void AbilityUsage();
+    //protected Actions actions;
+    [SerializeField] protected bool IsActive;
 }
