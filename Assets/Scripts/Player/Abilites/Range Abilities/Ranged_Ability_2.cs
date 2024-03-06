@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ranged_Ability_2 : MonoBehaviour
+public class Ranged_Ability_2 : Ability
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        actions.OnAbility2.AddListener(EnableAbilityIndicator);
+        actions.OnBasicAttack.AddListener(DisableAbilityIndicator);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

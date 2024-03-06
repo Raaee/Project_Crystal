@@ -212,12 +212,12 @@ GameObject:
   - component: {fileID: 225037543}
   - component: {fileID: 225037544}
   m_Layer: 0
-  m_Name: Melee Ability 1 Indicator
+  m_Name: Range Ability 2 Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &225037543
 Transform:
   m_ObjectHideFlags: 0
@@ -603,6 +603,7 @@ GameObject:
   - component: {fileID: 625026870}
   - component: {fileID: 625026869}
   - component: {fileID: 625026875}
+  - component: {fileID: 625026876}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -767,6 +768,7 @@ MonoBehaviour:
   abilityIndicator: {fileID: 0}
   cooldown: 2
   manaCost: 0
+  IsActive: 0
   teleportDistance: 5
 --- !u!114 &625026870
 MonoBehaviour:
@@ -932,9 +934,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityIndicatorControl: {fileID: 711939280}
-  abilityIndicator: {fileID: 0}
+  abilityIndicator: {fileID: 2126280564}
   cooldown: 0
   manaCost: 0
+  IsActive: 0
+  AbilityIndicator: {fileID: 0}
+--- !u!114 &625026876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625026860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ce4dc2012641549b26ff27e597bb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityIndicatorControl: {fileID: 711939280}
+  abilityIndicator: {fileID: 225037542}
+  cooldown: 0
+  manaCost: 0
+  IsActive: 0
 --- !u!1 &711939280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,7 +1311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2126280565
 Transform:
   m_ObjectHideFlags: 0

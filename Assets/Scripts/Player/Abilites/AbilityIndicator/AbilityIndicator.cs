@@ -31,9 +31,11 @@ public abstract class AbilityIndicator : MonoBehaviour
 
     public void EnableAbilityIndicator() {
         AbilityIndicatorControl.SetActive(true);
+        abilityIndicator.SetActive(true);
     }
 
     public void DisableAbilityIndicator() {
         AbilityIndicatorControl.SetActive(false);
+        abilityIndicator.SetActive(false);
     }
 }
