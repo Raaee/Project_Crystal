@@ -19,7 +19,7 @@ public class RangedAbility1 : Ability
     {
         GameObject go = projPooler.GetPooledObject();
         go.transform.position = this.transform.position;
-        go.transform.rotation = Quaternion.identity;
+       // go.transform.rotation = Quaternion.identity;
         /*go.transform.eulerAngles += new Vector3(0, 0, 180);*/
         Projectile projectile = go.GetComponent<Projectile>();
         projectile.SetMoveDirection(moveDirection);
