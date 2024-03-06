@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RangedAbility1 : RangeAbilityIndicator1UI
+public class RangedAbility1 : Ability
 {
     [SerializeField] private GameObject rangedAbility1Prefab;
     [SerializeField] private ObjectPooler projPooler;
+
+    [SerializeField] float delayBetweenPresses = 0.25f;
+    bool pressedFirstTime = false;
+    float lastPressedTime;
+    private InputControl playerInput;
+    private bool KeyPress = true;
+
     void Awake()
     {
-
         actions = GetComponent<Actions>();
-        actions.OnAbility1.AddListener(Shoot);
-
+        actions.OnAbility1.AddListener(ConfirmDoublePress);
+        actions.OnAbility1.AddListener(EnableAbilityIndicator);
+        //actions.OnAbility1.AddListener(ShootIfActive);
     }
     public void SpawnProjectile(Vector2 moveDirection)
     {
@@ -25,13 +32,12 @@ public class RangedAbility1 : RangeAbilityIndicator1UI
         go.SetActive(true);
 
     }
-    public void Shoot()
+    public void ShootIfActive()
     {
-        if (isOnCoolDown)
-            return;
-       
-
-        StartCoroutine(UseAbility());
+        if (indicatorIsActive)
+        {
+            UseAbility();
+        }   
 
     }
     public override void AbilityUsage()
@@ -41,5 +47,45 @@ public class RangedAbility1 : RangeAbilityIndicator1UI
         Vector2 direction = (mousePosition - objectPosition).normalized;
         SpawnProjectile(direction);
 
+    }
+
+    public void ConfirmDoublePress() {
+        
+
+        if (KeyPress)
+        { 
+            if (pressedFirstTime) // we've already pressed the button a first time, we check if the 2nd time is fast enough to be considered a double-press
+            {
+                
+                bool isDoublePress = Time.time - lastPressedTime <= delayBetweenPresses;
+
+                if (isDoublePress)
+                {
+                    Debug.Log("DoublePress");
+
+                    if (isOnCoolDown)
+                        return;
+
+                    StartCoroutine(UseAbility());
+                    pressedFirstTime = false;
+                }
+            }
+            else // we've not already pressed the button a first time
+            {
+                pressedFirstTime = true; // we tell this is the first time
+            }
+
+            lastPressedTime = Time.time;
+        }
+        if (pressedFirstTime && Time.time - lastPressedTime > delayBetweenPresses) // we're waiting for a 2nd key press but we've reached the delay, we can't consider it a double press anymore
+        {
+            // note that by checking first for pressedFirstTime in the condition above, we make the program skip the next part of the condition if it's not true,
+            // thus we're avoiding the "heavy computation" (the substraction and comparison) most of the time.
+            // we're also making sure we've pressed the key a first time before doing the computation, which avoids doing the computation while lastPressedTime is still uninitialized
+
+            
+
+            pressedFirstTime = false;
+        }
     }
 }

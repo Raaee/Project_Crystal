@@ -7,8 +7,8 @@ public abstract class Ability : AbilityIndicator
 {
     [SerializeField] protected int cooldown;
     [SerializeField] protected int manaCost;
+    [SerializeField] protected bool IsActive;
     protected bool isOnCoolDown = false;
-    protected Actions actions;
 
 
 
@@ -22,5 +22,5 @@ public abstract class Ability : AbilityIndicator
     }
     public abstract void AbilityUsage();
     //protected Actions actions;
-    [SerializeField] protected bool IsActive;
+    
 }

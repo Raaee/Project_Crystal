@@ -604,7 +604,6 @@ GameObject:
   - component: {fileID: 625026869}
   - component: {fileID: 625026875}
   - component: {fileID: 625026876}
-  - component: {fileID: 625026877}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -765,8 +764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityIndicatorControl: {fileID: 0}
-  abilityIndicator: {fileID: 0}
+  indicatorCenterPoint: {fileID: 0}
+  indicator: {fileID: 0}
   cooldown: 2
   manaCost: 0
   IsActive: 0
@@ -948,32 +947,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ce4dc2012641549b26ff27e597bb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityIndicatorControl: {fileID: 0}
-  abilityIndicator: {fileID: 0}
+  indicatorCenterPoint: {fileID: 711939280}
+  indicator: {fileID: 2126280564}
   cooldown: 0
   manaCost: 0
-  IsActive: 0
-  AbilityIndicator: {fileID: 0}
+  IsActive: 1
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   projPooler: {fileID: 2113784142}
---- !u!114 &625026877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625026860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23bf48632cdb24b28b284f0fc126282a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityIndicatorControl: {fileID: 711939280}
-  abilityIndicator: {fileID: 2126280564}
-  cooldown: 0
-  manaCost: 0
-  IsActive: 0
-  AbilityIndicator: {fileID: 0}
+  delayBetweenPresses: 100
 --- !u!1 &711939280
 GameObject:
   m_ObjectHideFlags: 0
