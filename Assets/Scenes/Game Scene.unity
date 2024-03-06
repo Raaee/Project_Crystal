@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityIndicatorControl: {fileID: 711939280}
+  AbilityIndicatorControl: {fileID: 0}
   abilityIndicator: {fileID: 0}
   cooldown: 2
   manaCost: 0
@@ -934,8 +934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angedBasicAttackPrefab: {fileID: 0}
-  projPooler: {fileID: 0}
+  angedBasicAttackPrefab: {fileID: 971724485026557118, guid: 74dd1c5c95c6afa45b8cf7ba48b69ea9, type: 3}
+  projPooler: {fileID: 1104142483}
 --- !u!114 &625026876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,13 +948,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ce4dc2012641549b26ff27e597bb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityIndicatorControl: {fileID: 711939280}
-  abilityIndicator: {fileID: 225037542}
+  AbilityIndicatorControl: {fileID: 0}
+  abilityIndicator: {fileID: 0}
   cooldown: 0
   manaCost: 0
   IsActive: 0
-  rangedAbility1Prefab: {fileID: 0}
-  projPooler: {fileID: 0}
+  AbilityIndicator: {fileID: 0}
+  rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
+  projPooler: {fileID: 2113784142}
 --- !u!114 &625026877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1361,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2113784141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113784143}
+  - component: {fileID: 2113784142}
+  m_Layer: 0
+  m_Name: Ranged Ability 1 OP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2113784142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113784141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountToPool: 10
+  objectToPool: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
+  player: {fileID: 625026860}
+  pooledObjects: []
+--- !u!4 &2113784143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113784141}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9968065, y: 0.12226113, z: 0.036611706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2126280564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,3 +1506,4 @@ SceneRoots:
   - {fileID: 1156976234}
   - {fileID: 1104142484}
   - {fileID: 121122567}
+  - {fileID: 2113784143}
