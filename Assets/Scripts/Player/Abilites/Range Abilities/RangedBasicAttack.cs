@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class RangedBasicAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private GameObject angedBasicAttackPrefab;
+    [SerializeField] private ObjectPooler projPooler;
     private Actions actions;
     void Awake()
     {
 
-        actions = GetComponent<Actions>();
+        actions = GetComponentInParent<Actions>();
         actions.OnBasicAttack.AddListener(StartAttack);
         
 
@@ -18,11 +19,12 @@ public class RangedBasicAttack : MonoBehaviour
 
     public void SpawnProjectile(Vector2 moveDirection)
     {
-        GameObject go = Instantiate(projectilePrefab, this.transform.position, Quaternion.identity);
+        GameObject go = projPooler.GetPooledObject();
         go.transform.position = this.transform.position;
         go.transform.rotation = Quaternion.identity;
         Projectile projectile = go.GetComponent<Projectile>();
         projectile.SetMoveDirection(moveDirection);
+        go.SetActive(true);
 
     }
 
@@ -33,4 +35,5 @@ public class RangedBasicAttack : MonoBehaviour
         Vector2 direction = (mousePosition - objectPosition).normalized;
         SpawnProjectile(direction);
     }
+
 }

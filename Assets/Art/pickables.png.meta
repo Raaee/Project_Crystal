@@ -123,55 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pickables_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 18
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9eabce5cc3ba04347b81a4993a8ba9ab
-      internalID: 136765785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pickables_1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 20
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ea4b20efd044e64b9ace808c09eeedc
-      internalID: 852679307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pickables_2
+      name: carrot
       rect:
         serializedVersion: 2
         x: 2
-        y: 0
-        width: 16
-        height: 17
+        y: 27
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,18 +137,102 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 441094e93d418f14da34e2d833ab619a
-      internalID: 1974960749
+      spriteID: df874ca9df7d8234a9d2d4598fb6e534
+      internalID: 1314584718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pickables_3
+      name: berserkCoin
       rect:
         serializedVersion: 2
         x: 20
-        y: 4
+        y: 26
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614a953b48e0acd4095c66acad8c404b
+      internalID: -1270348416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mana
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 25
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b93e8451bd9dce4fa68f49a875c5a69
+      internalID: 1404933598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 25
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c266fe1a26a7c145b838385d296890a
+      internalID: -1484221797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chestClosed
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 9
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a425b219ba5e8349b996cda6ce88b97
+      internalID: 1271680694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chestOpen
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 9
         width: 14
         height: 12
       alignment: 0
@@ -200,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2186ca4abf6dad54b8fb093d39a928f8
-      internalID: -465652403
+      spriteID: 51b8d493b45494a4f8fb58a48cf9ceb5
+      internalID: 1233132977
       vertices: []
       indices: 
       edges: []
@@ -217,10 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pickables_0: 136765785
-      pickables_1: 852679307
-      pickables_2: 1974960749
-      pickables_3: -465652403
+      berserkCoin: -1270348416
+      carrot: 1314584718
+      chestClosed: 1271680694
+      chestOpen: 1233132977
+      health: -1484221797
+      mana: 1404933598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

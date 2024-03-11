@@ -6,14 +6,15 @@ using UnityEngine;
 public class TeleportAbility1 : Ability
 {
     [SerializeField] private float teleportDistance;
+    private Actions actions;
     private PlayerMovement playerMovement;
     private Vector2 movementInput;
-    private bool isOnCoolDown = false;
+   
 
     private void Start()
     {
-        actions = GetComponent<Actions>();
-        playerMovement = GetComponent<PlayerMovement>();
+        actions = GetComponentInParent<Actions>();
+        playerMovement = GetComponentInParent<PlayerMovement>();
         actions.OnTeleport.AddListener(Teleport);
     }
 
@@ -27,15 +28,15 @@ public class TeleportAbility1 : Ability
         if (isOnCoolDown)
             return;
         
-        StartCoroutine(TeleportCooldown());
+
+        
+        StartCoroutine(UseAbility());
+
+    }
+    public override void AbilityUsage()
+    {
+        Debug.Log("Teleport Used!" + movementInput); 
+        playerMovement.gameObject.transform.position += (Vector3)movementInput * teleportDistance;
         
     }
-    public IEnumerator TeleportCooldown() //Make this in abstract ability class minus transformed.position
-    {
-        isOnCoolDown = true;
-        transform.position += (Vector3)movementInput * teleportDistance;
-        yield return new WaitForSeconds(cooldown);
-        isOnCoolDown = false;
-    }
-    
 }
