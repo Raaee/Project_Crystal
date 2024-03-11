@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-public abstract class AbilityIndicator : MonoBehaviour
+public class AbilityIndicator : MonoBehaviour
 {
     protected Actions actions;
     [SerializeField] protected GameObject indicatorCenterPoint;
@@ -17,7 +17,7 @@ public abstract class AbilityIndicator : MonoBehaviour
     {
         indicatorCenterPoint.SetActive(false);
         indicator.SetActive(false);
-        actions = GetComponent<Actions>();
+        actions = GetComponentInParent<Actions>();
     }
 
     private void Update()

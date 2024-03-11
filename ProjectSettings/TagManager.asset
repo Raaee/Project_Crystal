@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Carrot
   - AvilityIndicator
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Mana : MonoBehaviour
 {
-    private int current_Mana = 0;
+    //private int current_Mana = 0;
 }

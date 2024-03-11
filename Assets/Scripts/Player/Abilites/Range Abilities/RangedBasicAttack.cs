@@ -11,7 +11,7 @@ public class RangedBasicAttack : MonoBehaviour
     void Awake()
     {
 
-        actions = GetComponent<Actions>();
+        actions = GetComponentInParent<Actions>();
         actions.OnBasicAttack.AddListener(StartAttack);
         
 

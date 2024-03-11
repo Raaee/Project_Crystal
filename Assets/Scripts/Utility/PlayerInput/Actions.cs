@@ -29,27 +29,27 @@ public class Actions : MonoBehaviour {
         input.basicAttack.performed += CornfirmAbility;
     }
     public void Teleport(InputAction.CallbackContext context) {
-        Debug.Log("Teleported");
+        Debug.Log("Input Teleported");
         OnTeleport.Invoke();
     }
     public void Interact(InputAction.CallbackContext context) {
-        Debug.Log("Interact");
+        Debug.Log("Input Interact");
         OnInteract.Invoke();
     }
     public void BasicAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("Basic Attack");
+        //Debug.Log("Input Basic Attack");
         OnBasicAttack.Invoke();
     }
     public void CornfirmAbility(InputAction.CallbackContext context) {
         OnAbilityConfirm.Invoke();
     }
     public void Ability1(InputAction.CallbackContext context) {
-        Debug.Log("Ability 1");
+        //Debug.Log("Input Ability 1");
         OnAbility1.Invoke();
     }
     public void Ability2(InputAction.CallbackContext context) {
-        Debug.Log("Ability 2");
+        Debug.Log("Input Ability 2");
         OnAbility2.Invoke();
     }
 }
