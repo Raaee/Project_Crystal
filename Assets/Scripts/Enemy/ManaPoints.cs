@@ -31,15 +31,16 @@ public class ManaPoints : MonoBehaviour
     // Remove a certain amount of mana while character's current mana is above 0
     public void RemoveMana(int loseAmount)
     {
-        if (currentMP > 0)
+        currentMP -= loseAmount;
+        if(currentMP <= 0)
         {
-            if (currentMP < loseAmount)
-            {
-                // Probably a message for UI that says you cant use the ability
-            } else
-            {
-                currentMP -= loseAmount;
-            }
+            currentMP = 0;
+            
         }
+    }
+
+    public int GetCurrentMP()
+    {
+        return currentMP;
     }
 }
