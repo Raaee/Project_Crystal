@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Movement : MonoBehaviour
 {
-    [SerializeField] private float baseSpeed;
-    [SerializeField] private float maxSpeed;
-    private float curSpeed;
+    [SerializeField] protected float baseSpeed;
+    [SerializeField] protected float maxSpeed;
+    protected float curSpeed;
    
     private void Start()
     {
@@ -30,6 +30,11 @@ public abstract class Movement : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         transform.Translate(-direction * curSpeed * Time.deltaTime);
+    }
+    public void MoveAwayFromTarget(Transform target)
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        transform.Translate(direction * curSpeed * Time.deltaTime);
     }
     //[com.cyborgAssets.inspectorButtonPro.ProButton]
     private void OnCollisionEnter2D(Collision2D collision)
