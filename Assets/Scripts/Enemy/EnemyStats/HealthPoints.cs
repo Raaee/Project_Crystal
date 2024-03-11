@@ -13,7 +13,7 @@ public class HealthPoints : MonoBehaviour
     // Character starts with maximum health value
     private void Start()
     {
-        currentHP = MAX_HP;
+        currentHP = 30;
     }
 
     // Add a certain amount of health while character's current health is between 0 and max
@@ -55,5 +55,14 @@ public class HealthPoints : MonoBehaviour
     private void Die()
     {
         Debug.Log("Dead");
+    }
+
+    // Enemy gets destroyed by projectile
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
