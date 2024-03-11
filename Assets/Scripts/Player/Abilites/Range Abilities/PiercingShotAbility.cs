@@ -20,7 +20,7 @@ public class PiercingShotAbility : Ability
     {
         actions = GetComponentInParent<Actions>();
         //actions.OnAbility1.AddListener(ConfirmDoublePress);
-        actions.OnAbility1.AddListener(OnEnableAbilityIndicator);
+        //actions.OnAbility1.AddListener(OnEnableAbilityIndicator);
         //actions.OnAbility1.AddListener(ShootIfActive);
         if (actions == null)
         {
@@ -100,8 +100,8 @@ public class PiercingShotAbility : Ability
         }
     }
 
-    public void OnEnableAbilityIndicator()
-    {
-        abilityIndicator.EnableAbilityIndicator();
-    }
+    //public void OnEnableAbilityIndicator()
+    //{
+    //    abilityIndicator.EnableAbilityIndicator();
+    //}
 }
