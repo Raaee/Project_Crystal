@@ -135,6 +135,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3783074155750932481, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783074155750932481, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228550394760189210, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
+      propertyPath: m_Name
+      value: Capsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652171041953096921, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
+      propertyPath: indicator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652171041953096921, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
+      propertyPath: indicatorCenterPoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7238265307839878932, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -175,8 +195,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 8156202257822150933, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
+      propertyPath: abilityIndicator
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6652171041953096921, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 5228550394760189210, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae1012a5e9110249b843e4ce6603325, type: 3}
@@ -248,6 +274,7 @@ GameObject:
   - component: {fileID: 730958072}
   - component: {fileID: 730958071}
   - component: {fileID: 730958070}
+  - component: {fileID: 730958074}
   - component: {fileID: 730958073}
   m_Layer: 0
   m_Name: Main Camera
@@ -299,7 +326,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 8.091955
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -331,6 +358,40 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &730958073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730958069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &730958074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,7 +493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: Enemy (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -514,7 +575,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 730958072}
-  - {fileID: 2105365285}
   - {fileID: 123389737}
+  - {fileID: 2105365285}
   - {fileID: 1157929234}
   - {fileID: 251836480}
