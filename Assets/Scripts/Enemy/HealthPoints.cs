@@ -8,6 +8,7 @@ public class HealthPoints : MonoBehaviour
     // Max health is set at 100
     [SerializeField] private int MAX_HP = 100;
     [SerializeField] private int currentHP;
+    private bool isDead = false;
 
     // Character starts with maximum health value
     private void Start()
@@ -31,19 +32,28 @@ public class HealthPoints : MonoBehaviour
     // Remove a certain amount of health while character's current health is above 0
     public void RemoveHealth(int damageAmount)
     {
-        if (currentHP > 0)
+        currentHP -= damageAmount;
+        if (currentHP <= 0)
         {
-            if (currentHP < damageAmount)
+            currentHP = 0;
+            if (IsDead() == false)
             {
-                damageAmount = currentHP;
+                isDead = true;
+                Die();
             }
-            currentHP -= damageAmount;
         }
+
+
     }
 
     // Returns true if character's health is 0
     public bool IsDead()
     {
-        return (currentHP == 0);
+        return isDead;
+    }
+
+    private void Die()
+    {
+        Debug.Log("Dead");
     }
 }

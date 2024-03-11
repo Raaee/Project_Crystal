@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5545609920077485044}
   - component: {fileID: 6719044664449030986}
   - component: {fileID: 1171141351158396926}
-  - component: {fileID: 3686819546742765351}
   m_Layer: 0
   m_Name: HealthDrop
   m_TagString: Untagged
@@ -76,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -465652403, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
+  m_Sprite: {fileID: -1484221797, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.14, y: 0.12}
+  m_Size: {x: 0.1, y: 0.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -113,39 +112,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242ddbfb18f8945898ac720772dc01ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmount: 40
---- !u!58 &3686819546742765351
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583352322101942660}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.07
+  healthAmount: 20
