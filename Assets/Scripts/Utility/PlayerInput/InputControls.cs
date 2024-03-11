@@ -18,7 +18,7 @@ public class InputControls : MonoBehaviour    {
     private void Awake()    {
         playerInputs = new PlayerInputs();
     }
-    private void OnEnable() {
+    public void OnEnable() {
         movement = playerInputs.Player.Movement;
         movement.Enable();
 
@@ -36,6 +36,25 @@ public class InputControls : MonoBehaviour    {
 
         ability2 = playerInputs.Player.Ability2;
         ability2.Enable();
+    }
+    public void OnDisable()
+    {
+       
+        movement.Disable();
+
+       
+        teleport.Disable();
+
+        interact.Disable();
+
+        
+        basicAttack.Disable();
+
+        
+        ability1.Disable();
+
+        
+        ability2.Disable();
     }
     
 }
