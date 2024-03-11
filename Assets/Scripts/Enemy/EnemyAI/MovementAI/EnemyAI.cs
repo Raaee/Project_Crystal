@@ -4,9 +4,6 @@ using UnityEngine;
 
 public abstract class EnemyAI : Movement
 {
-    [SerializeField] private float baseSpeed;
-    [SerializeField] private float maxSpeed;
-    private float curSpeed;
     private GameObject player;
     private Transform spawnedBy;
     private bool isAggroed;
@@ -14,13 +11,12 @@ public abstract class EnemyAI : Movement
     private float aggroTimer = 0f;
     private Transform currTarget;
 
-    public void Start()
+    private void Start()
     {
         SetInitialTarget();
-        curSpeed = baseSpeed;
     }
 
-    void SetInitialTarget()
+    public void SetInitialTarget()
     {
         if (spawnedBy != null)
         {
@@ -28,7 +24,7 @@ public abstract class EnemyAI : Movement
         }
     }
 
-    public void Update()
+    private void Update()
     {
         if (currTarget != null)
         {
@@ -47,26 +43,14 @@ public abstract class EnemyAI : Movement
         }
     }
 
-
-    public void SetSpeed(float amount)
-    {
-        this.curSpeed = amount;
-        //After duration of speed amp/nerf is over, Ienumerators
-        this.curSpeed = baseSpeed;
-    }
-
-    void MoveTowardsTarget(Transform target)
-    {
-        Vector3 direction = (target.position - transform.position).normalized;
-        transform.Translate(-direction * curSpeed * Time.deltaTime);
-    }
-    [com.cyborgAssets.inspectorButtonPro.ProButton]
+    //[com.cyborgAssets.inspectorButtonPro.ProButton]
     public void Aggro()
     {
         isAggroed = true;
         currTarget = player.transform;
         aggroTimer = aggroTime;
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Aggro(); //Set up when collision between attack/ability hits enemy
