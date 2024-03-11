@@ -56,4 +56,13 @@ public class HealthPoints : MonoBehaviour
     {
         Debug.Log("Dead");
     }
+
+    // Enemy gets destroyed by projectile
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
