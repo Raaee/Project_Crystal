@@ -6,11 +6,11 @@ public abstract class EnemyAI : Movement
 {
     [SerializeField] protected Transform player;
     [SerializeField] protected float aggroTime = 5f;
-    protected PriorityTarget priorityTarget;
+    [SerializeField] protected PriorityTarget priorityTarget;
+    [SerializeField] protected bool inDanger;
     protected Transform crystalObject;
     protected bool isAggroed;
     protected Transform currTarget;
-    //private bool inDanger;
 
     private void Start()
     {
@@ -36,21 +36,28 @@ public abstract class EnemyAI : Movement
             case PriorityTarget.IDLE:
                 SetSpeed(0);
                 break;
+
             case PriorityTarget.CRYSTAL:
                 SetSpeed(baseSpeed);
                 currTarget = crystalObject;
+                MoveTowardsTarget(currTarget);
                 break;
+
             case PriorityTarget.PLAYER:
                 SetSpeed(baseSpeed);
                 currTarget = player;
+                MoveTowardsTarget(currTarget);
                 AggroToPlayer();
                 break;
+
             case PriorityTarget.NONE:
                 //Avoidant
                 SetSpeed(baseSpeed);
                 MoveAwayFromTarget(player);
                 break;
         }
+
+     
     }
 
     //[com.cyborgAssets.inspectorButtonPro.ProButton]
@@ -75,7 +82,7 @@ public abstract class EnemyAI : Movement
     void OnCollisionEnter2D(Collision2D collision)
     {
         priorityTarget = PriorityTarget.PLAYER; //Set up when collision between attack/ability hits enemy
-        //IF IN RANGE AND TAG IS ENEMY, SET INDANGER TO TRUE
+        //IF IN RANGE AND TAG IS ENEMY, CALL INDANGER. ON TRIGGER
 
         //Also here can set up when to stop moving (if hits body of crystal or player)
         // SetSpeed(0) until out of range
@@ -88,5 +95,12 @@ public enum PriorityTarget{
     IDLE,
     CRYSTAL,
     PLAYER,
+    NONE
+}
+
+public enum EnemyAIType
+{
+    AVOIDANT,
+    HIVEMIND,
     NONE
 }
