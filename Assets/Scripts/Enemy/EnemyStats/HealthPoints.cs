@@ -13,7 +13,7 @@ public class HealthPoints : MonoBehaviour
     // Character starts with maximum health value
     private void Start()
     {
-        currentHP = MAX_HP;
+        currentHP = 30;
     }
 
     // Add a certain amount of health while character's current health is between 0 and max
