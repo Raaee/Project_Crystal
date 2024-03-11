@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float projectileSpeed = 1000f; 
     [SerializeField] private float maxLifeTime = 2f;
     private const String ENEMY_TAG = "Enemy";
+    private const String PLAYER_TAG = "Player";
     [SerializeField] private int projectileDamage = 10; 
     private float timer = 0f;
     private Rigidbody2D rb2D;
@@ -60,6 +61,21 @@ public class Projectile : MonoBehaviour
             potentialEnemyHealth.RemoveHealth(projectileDamage);
             DisableProjectile();
         }
+        else if (collider.gameObject.CompareTag(PLAYER_TAG))
+        {
+            HealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<HealthPoints>();
+            if (!potentialPlayerHealth)
+            {
+                return;
+            }
+            potentialPlayerHealth.RemoveHealth(projectileDamage);
+            DisableProjectile();
+        }
+        else
+        {
+            DisableProjectile();
+        }
+
     }
 
     private void DisableProjectile()
