@@ -22,6 +22,10 @@ public class Drop : MonoBehaviour, IInteractable    {
 
     public void Interact() {
         Debug.Log("Interacted.");
+        if (ItemCollector.instance == null)
+        {
+            Debug.Log("Item Collector is Null.");
+        }
         ItemCollector.instance.Interact(interactableType, this.gameObject);
         NormalSprite();
        // Destroy(this.gameObject);

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour  {
 
+    [SerializeField] private ListOfDropData dropDatas;
+
     public static ItemCollector instance { get; private set; }
     private GameObject objectCollected;
 
@@ -58,10 +60,34 @@ public class ItemCollector : MonoBehaviour  {
         Debug.Log("Berserk pickup");
     }
     public void ChestInteraction() {
+
         Debug.Log("Chest pickup");
         objectCollected.GetComponent<SpriteRenderer>().sprite = chestOpenSprite;
+
+        int RandNum = Random.Range(0,3);
+        switch (RandNum)
+            {
+            case 0:
+            dropDatas.healthDrop.OnDropInteract();
+            break;
+
+            case 1:
+            dropDatas.manaDrop.OnDropInteract();
+            break;
+
+            case 2:
+            dropDatas.bezerkerCubeDrop.OnDropInteract();
+            break;
+
+            }
+            
+        //Debug.Log(RandNum);
+
+        //chestDrops[RandNum].OnDropInteract();
+
+        
     }
-    public void CarrotInteraction() {
+    public void CarrotInteraction() { 
         // DO NOT TOUCH !! NO TOUCHY TOUCHY
         Debug.Log("Carrot pickup");
         GameObject go = GameObject.FindWithTag("Carrot");
