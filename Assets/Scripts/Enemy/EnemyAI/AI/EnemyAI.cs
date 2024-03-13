@@ -2,110 +2,111 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyAI : Movement
+public class EnemyAI : Movement
 {
-    [SerializeField] protected Transform player;
-    [SerializeField] protected float aggroTime = 5f;
-    [SerializeField] protected PriorityTarget priorityTarget;
-    [SerializeField] protected EnemyAIType enemyAIType;
-    [SerializeField] protected EnemyAttackType enemyAttackType;
-    [SerializeField] protected EnemyState enemyCurrentState;
-    [SerializeField] protected bool inDanger;
-    [SerializeField] protected float attackRange;
-    protected Transform crystalObject;
-    protected bool isAggroed;
-    protected Transform currTarget;
+    [SerializeField] private Transform player;
+    [SerializeField] private float aggroTime = 2f;
+    [SerializeField] private float avoidTime = 1f;
+    [SerializeField] private EnemyAIType enemyAIType;
+    [SerializeField] private EnemyAttackType enemyAttackType;
+    [SerializeField] private EnemyState enemyCurrentState;
+    [SerializeField] private bool inDanger;
+    [SerializeField] private float attackRange;
+    [SerializeField] private Transform crystalObject;
+    private Transform currTarget;
+    private float currentAggroTimer;
+    private bool isAggroTimerActive = false;
+    private float currentAvoidTimer;
+    private bool isAvoidTimerActive = false;
 
     private void Start()
     {
-        priorityTarget = PriorityTarget.NONE;
-        SetInitialTarget();
-        enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
 
+        SetInitialTarget();
     }
 
     public void SetInitialTarget()
     {
         if (!crystalObject)
         {
-            priorityTarget = PriorityTarget.NONE;
+            enemyCurrentState = EnemyState.MOVETOWARDSPLAYER;
             return;
         }
         currTarget = crystalObject;
-        priorityTarget = PriorityTarget.CRYSTAL;
+
+        enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
     }
 
     private void Update()
-    {
-
+    { 
+        if (isAvoidTimerActive)
+        {
+            currentAvoidTimer -= Time.deltaTime;
+            if (currentAvoidTimer <= 0)
+            {
+                enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
+                isAvoidTimerActive = false;
+            }
+        }
+        if (isAggroTimerActive)
+        {
+            currentAggroTimer -= Time.deltaTime;
+            if (currentAggroTimer <= 0)
+            {
+                enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
+                isAggroTimerActive = false;
+            }
+        }
         switch (enemyCurrentState)
         {
             case EnemyState.MOVETOWARDSCRYSTAL:
-                InRange();
                 currTarget = crystalObject;
                 MoveTowardsTarget(currTarget);
-
                 break;
 
             case EnemyState.MOVETOWARDSPLAYER:
-                InRange();
                 currTarget = player;
                 MoveTowardsTarget(currTarget);
-                AggroToPlayer();
+                currentAggroTimer = aggroTime;
+                isAggroTimerActive = true;
                 break;
 
             case EnemyState.ATTACKINGCRYSTAL:
-                InRange();
                 break;
 
             case EnemyState.ATTACKINGPLAYER:
-                InRange();
                 break;
 
             case EnemyState.MOVEAWAY:
                 //timer set up to temporarily use MoveAwayFromTarget
+                MoveAwayFromTarget(player);
+                currentAvoidTimer = avoidTime;
+                isAvoidTimerActive = true;
                 break;
 
             case EnemyState.IDLE:
-                priorityTarget = PriorityTarget.NONE;
                 SetSpeed(0);
                 break;
         }
     }
 
     //[com.cyborgAssets.inspectorButtonPro.ProButton]
-    public void AggroToPlayer()
-    {
-        isAggroed = true;
-        AggroTimer(aggroTime);
-    }
-    public void AggroTimer(float aggroTimer)
-    {
-        aggroTimer -= Time.deltaTime;
-        if (aggroTimer <= 0)
-        {
-            // Switch back to the assigned crystal target after timer ends.
-            isAggroed = false;
-            priorityTarget = PriorityTarget.CRYSTAL;
-            enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
-        }
-    }
 
     // INDANGER METHOD, similar to aggro. will be used for hivemind/avoidant AI.
     public void InDanger()
     {
         inDanger = true;
         if (enemyAIType == EnemyAIType.AVOIDANT) {
-            priorityTarget = PriorityTarget.NONE;
+
         }
         else if (enemyAIType == EnemyAIType.HIVEMIND)
         {
-            priorityTarget = PriorityTarget.PLAYER;
+
         }
     }
 
     // INRANGE METHOD
-    public void InRange()
+    /*public void InRange()
     {
         if (attackRange >= Vector3.Distance(transform.position, currTarget.transform.position))
         {
@@ -129,12 +130,10 @@ public abstract class EnemyAI : Movement
                 enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
             }
         }
-    }
+    }*/
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        priorityTarget = PriorityTarget.PLAYER; //Set up when collision between attack/ability hits enemy
-        //IF IN RANGE AND TAG IS ENEMY, CALL INDANGER. ON TRIGGER
 
         //if enemy curr state is MOVETOWARDSCRYSTAL
         //  enemy curr state = MOVETOWARDSPLAYER
@@ -146,12 +145,6 @@ public abstract class EnemyAI : Movement
         
     }
 
-}
-
-public enum PriorityTarget{
-    NONE,
-    CRYSTAL,
-    PLAYER
 }
 
 public enum EnemyAIType

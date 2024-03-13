@@ -6,7 +6,7 @@ public abstract class Movement : MonoBehaviour
 {
     [SerializeField] protected float baseSpeed;
     [SerializeField] protected float maxSpeed;
-    protected float curSpeed;
+    [SerializeField] protected float curSpeed;
    
     private void Start()
     {
@@ -29,14 +29,14 @@ public abstract class Movement : MonoBehaviour
     public void MoveTowardsTarget(Transform target)
     {
         Vector3 direction = (target.position - transform.position).normalized;
-        transform.Translate(-direction * curSpeed * Time.deltaTime);
+        transform.Translate(direction * curSpeed * Time.deltaTime);
     }
     public void MoveAwayFromTarget(Transform target)
     {
         Vector3 direction = (target.position - transform.position).normalized;
-        transform.Translate(direction * curSpeed * Time.deltaTime);
+        transform.Translate(-direction * curSpeed * Time.deltaTime);
     }
-    //[com.cyborgAssets.inspectorButtonPro.ProButton]
+    [com.cyborgAssets.inspectorButtonPro.ProButton]
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Speed is set to 0
