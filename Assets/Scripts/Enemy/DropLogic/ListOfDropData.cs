@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ListOfDropData : MonoBehaviour
 {
-   public HealthDrop healthDrop;
+    public HealthDrop healthDrop;
 
-   public ManaDrop manaDrop;
+    public ManaDrop manaDrop;
 
-   public BezerkerCubeDrop bezerkerCubeDrop;
-    // 
+    public BezerkerCubeDrop bezerkerCubeDrop;
+   
 }
