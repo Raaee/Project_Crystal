@@ -15,7 +15,7 @@ public class BezerkerCubeDrop : DropData
   public override void OnDropInteract()
    {
      Debug.Log("Increasing damage by " + berserkerDamageIncrease + " for " + berserkerDamageTime + " seconds.");
-        this.gameObject.SetActive(false);
+
    }    
 
 }
