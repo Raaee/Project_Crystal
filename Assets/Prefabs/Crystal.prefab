@@ -101,42 +101,42 @@ MonoBehaviour:
   cooldownTime: 3
   spawnParent: {fileID: 4679441356184929666}
   spawnObjects:
-  - gameObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+  - gameObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
     capacity: 1
     weight: 1
-  - gameObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+  - gameObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
     capacity: 1
     weight: 1
-  - gameObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+  - gameObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
     capacity: 1
     weight: 1
   waves:
   - duration: 3
     capacity: 3
     Spawns:
-    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
-      position: {x: 3.6080298, y: -9.326421}
+    - spawnObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
+      position: {x: -5.4985723, y: 8.352587}
       timeDelay: 0
-    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
-      position: {x: 7.64101, y: 6.4509673}
+    - spawnObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
+      position: {x: -8.612288, y: -5.082173}
       timeDelay: 1
-    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: -4.702585, y: 8.825287}
+    - spawnObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
+      position: {x: 9.824452, y: -1.8655117}
       timeDelay: 2
   - duration: 3
     capacity: 2
     Spawns:
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -9.708382, y: 2.3973582}
+    - spawnObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
+      position: {x: -8.643006, y: -5.0297565}
       timeDelay: 0
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -9.058906, y: -4.235118}
+    - spawnObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
+      position: {x: 9.802887, y: 1.9757054}
       timeDelay: 1.5
   - duration: 3
     capacity: 1
     Spawns:
-    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: -9.903388, y: -1.3866879}
+    - spawnObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
+      position: {x: -9.364096, y: -3.5090895}
       timeDelay: 0
   spawnedObjects: []
   state: 2

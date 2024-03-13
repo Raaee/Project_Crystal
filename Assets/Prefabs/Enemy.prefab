@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 3954745128208868602}
   - component: {fileID: 4917669121937368097}
   - component: {fileID: 5305941405953699618}
-  - component: {fileID: 34786072669041533}
-  - component: {fileID: 7639607221271786775}
   - component: {fileID: 5468315703567455346}
+  - component: {fileID: 8506391581786044554}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -94,7 +93,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -206,34 +205,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &34786072669041533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0392d8460482a04b9152d28016dd004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  aggroTime: 5
---- !u!114 &7639607221271786775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 650086223184d0c48b93a86094c7e1c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MAX_HP: 100
-  currentHP: 0
 --- !u!114 &5468315703567455346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +219,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_MP: 50
   currentMP: 0
+--- !u!114 &8506391581786044554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281210970760375665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_HP: 100
+  currentHP: 0
 --- !u!1 &6453280248707733763
 GameObject:
   m_ObjectHideFlags: 0
