@@ -167,7 +167,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.06753898}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -178,7 +178,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2.7109857, y: 3.3057523}
   m_EdgeRadius: 0
 --- !u!50 &2958854895892277169
 Rigidbody2D:
@@ -387,8 +387,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788f96de98267d04d9587e7a4eba9d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropDatas: {fileID: 8838409424961928463}
-  chestOpenSprite: {fileID: 0}
+  allDropsParentGO: {fileID: 0}
+  chestDrops:
+  - {fileID: 583352322101942660, guid: 12b2876ab4f699442bc9b2ba6b0c8f67, type: 3}
+  - {fileID: 2728916520030732642, guid: ec06cc99cd3081543bb7b7605bb019ff, type: 3}
+  - {fileID: 1103908666556385156, guid: c5b2123234eb24a448019446b8b5b7c5, type: 3}
+  chestOpenSprite: {fileID: 1233132977, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
+  chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
+  respawnTime: 3
+  disappearTime: 1
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
