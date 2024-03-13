@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemCollector : MonoBehaviour  {
-
     public static ItemCollector instance { get; private set; }
     private GameObject objectCollected;
+    [SerializeField] private GameObject allDropsParentGO;
 
-    [Header("Temp")]
+    [Header("Chest Stuff")]
+    [Tooltip("Possible drops from chest")]
+    [SerializeField] private List<GameObject> chestDrops;
     [SerializeField] private Sprite chestOpenSprite;
+    [SerializeField] private Sprite chestClosedSprite;
+    [SerializeField] private float respawnTime = 3f;
+    [SerializeField] private float disappearTime = 1f;
 
     private void Awake() {
         Init();
-
     }
     private void Init() {
         if (instance != null && instance != this) {
@@ -22,7 +26,6 @@ public class ItemCollector : MonoBehaviour  {
             instance = this;
         }
     }
-
     public void Interact(InteractableType type, GameObject go) {
         objectCollected = go;
         DropData potentialDrop = GetComponent<DropData>();
@@ -31,15 +34,6 @@ public class ItemCollector : MonoBehaviour  {
         }
         
         switch (type) {
-            case InteractableType.HEALTH:
-                HealthDropInteraction();
-                break;
-            case InteractableType.MANA:
-                ManaDropInteraction();
-                break;
-            case InteractableType.BERSERK:
-                BerserkDropInteraction();
-                break;
             case InteractableType.CHEST:
                 ChestInteraction();
                 break;
@@ -48,24 +42,43 @@ public class ItemCollector : MonoBehaviour  {
                 break;
         }
     }
-    public void HealthDropInteraction() {
-        Debug.Log("Health pickup");
-    }
-    public void ManaDropInteraction() {
-        Debug.Log("Mana pickup");
-    }
-    public void BerserkDropInteraction() {
-        Debug.Log("Berserk pickup");
-    }
     public void ChestInteraction() {
-        Debug.Log("Chest pickup");
-        objectCollected.GetComponent<SpriteRenderer>().sprite = chestOpenSprite;
+        bool somethingDropped = false;
+        float draw = Random.Range(0f, 100f);
+        Debug.Log(draw);
+
+        foreach (GameObject drop in chestDrops) {
+            if (draw <= drop.GetComponent<Drop>().GetDropChance()) {
+                GameObject go = Instantiate(drop, this.transform.position, Quaternion.identity);
+                go.transform.parent = allDropsParentGO.transform;
+                Debug.Log(go);
+                somethingDropped = true;
+            }           
+        }
+        // This is for the mimic behavior:
+        if (!somethingDropped) {
+            Debug.Log("************ Enemy spawned");
+        }
+        StartCoroutine(ChestOpenVisual(objectCollected));
     }
-    public void CarrotInteraction() {
+    public IEnumerator ChestOpenVisual(GameObject obj) {
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+        sr.sprite = chestOpenSprite;
+        yield return new WaitForSeconds(disappearTime);
+        obj.SetActive(false);
+        StartCoroutine(RespawnChest(sr, obj));
+    }
+    public IEnumerator RespawnChest(SpriteRenderer sr, GameObject obj) {
+        yield return new WaitForSeconds(respawnTime);
+        sr.sprite = chestClosedSprite;
+        obj.SetActive(true);
+    }
+    public void CarrotInteraction() { 
         // DO NOT TOUCH !! NO TOUCHY TOUCHY
         Debug.Log("Carrot pickup");
         GameObject go = GameObject.FindWithTag("Carrot");
         go.transform.parent = GameObject.FindWithTag("Player").transform;
-        go.transform.position = go.transform.parent.GetChild(0).transform.position;        
+        go.transform.SetSiblingIndex(1);
+        go.transform.position = go.transform.parent.GetChild(0).transform.position;
     }
 }

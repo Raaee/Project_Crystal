@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Drop : MonoBehaviour, IInteractable    {
 
+    [SerializeField] private float dropChance;
+    [SerializeField] private InteractableType interactableType;
+
+    [Header("Sprite Renderer Stuff")]
     [SerializeField] private Material outlineMat;
     private Material normalMat;
     private SpriteRenderer sr;
     private BoxCollider2D bc2d;
-    [SerializeField] private InteractableType interactableType;
+    
     private void Start() {
         sr = GetComponent<SpriteRenderer>();
         normalMat = sr.material;
@@ -21,7 +25,11 @@ public class Drop : MonoBehaviour, IInteractable    {
     }
 
     public void Interact() {
-        Debug.Log("Interacted.");
+       // Debug.Log("Interacted.");
+        if (ItemCollector.instance == null)
+        {
+            Debug.Log("Item Collector is Null.");
+        }
         ItemCollector.instance.Interact(interactableType, this.gameObject);
         NormalSprite();
        // Destroy(this.gameObject);
@@ -36,6 +44,9 @@ public class Drop : MonoBehaviour, IInteractable    {
     }
     public InteractableType GetInteractableType() {
         return interactableType;
+    }
+    public float GetDropChance() {
+        return dropChance;
     }
 }
 public enum InteractableType {

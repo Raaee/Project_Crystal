@@ -26,7 +26,9 @@ public class ManaDrop : DropData
         potentialManaPoints.AddMana(manaAmount);
 
         }
+        this.gameObject.SetActive(false);
+
     }
 
-   }
+}
 

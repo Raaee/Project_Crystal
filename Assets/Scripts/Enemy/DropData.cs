@@ -8,6 +8,11 @@ public abstract class DropData : MonoBehaviour  {
     //int manaAmount int healthAmount float berserkerDamageIncrease float berserkerDamageTime
     private GameObject playerGameObject;
 
+    private void Awake()
+    {
+        playerGameObject = FindObjectOfType<PlayerMovement>().gameObject;
+    }
+
     public GameObject getPlayerGameObject() 
     {
     return playerGameObject;
