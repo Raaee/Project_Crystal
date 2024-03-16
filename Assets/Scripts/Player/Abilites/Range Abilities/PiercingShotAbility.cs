@@ -3,105 +3,107 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// This class represents the Piercing Shot ability for a player character.
 public class PiercingShotAbility : Ability
 {
+    // Serialized fields for Unity inspector
     [SerializeField] private GameObject rangedAbility1Prefab;
     [SerializeField] private ObjectPooler projPooler;
     [SerializeField] private AbilityIndicator abilityIndicator;
     [SerializeField] float delayBetweenPresses = 0.25f;
+
+    // Private fields
     private Actions actions;
     private InputControl playerInput;
     private bool KeyPress = true;
     private bool pressedFirstTime = false;
     private float lastPressedTime;
-   
-    //hello
+
     void Awake()
     {
+        // Get the Actions component from the parent object
         actions = GetComponentInParent<Actions>();
-        //actions.OnAbility1.AddListener(ConfirmDoublePress);
-        //actions.OnAbility1.AddListener(OnEnableAbilityIndicator);
-        //actions.OnAbility1.AddListener(ShootIfActive);
+
+        // If Actions component is not found, log an error and break
         if (actions == null)
         {
             Debug.LogError("Actions not found");
             Debug.Break();
         }
-        actions.OnAbility1.AddListener(ShootIfActive);
 
+        // Add ShootIfActive method as a listener to OnAbility1 event
+        actions.OnAbility1.AddListener(ShootIfActive);
     }
+
+    // Method to spawn a projectile in a given direction
     public void SpawnProjectile(Vector2 moveDirection)
     {
+        // Get a pooled object and set its position and direction
         GameObject go = projPooler.GetPooledObject();
         go.transform.position = this.transform.position;
-       // go.transform.rotation = Quaternion.identity;
-        /*go.transform.eulerAngles += new Vector3(0, 0, 180);*/
         PiercingProjectile projectile = go.GetComponent<PiercingProjectile>();
         projectile.SetMoveDirection(moveDirection);
         go.SetActive(true);
-
     }
+
+    // Method to shoot if the ability is active
     public void ShootIfActive()
     {
-        /*if (indicatorIsActive)
-        {
-            UseAbility();
-        }   */
-        if(GetCurrentMana() >= manaCost)
+        // If the current mana is greater than or equal to the mana cost, use the ability
+        if (GetCurrentMana() >= manaCost)
             StartCoroutine(UseAbility());
     }
+
+    // Overridden method for ability usage
     public override void AbilityUsage()
     {
-        
+        // Calculate the direction from the object to the mouse position and spawn a projectile in that direction
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Vector2 objectPosition = Camera.main.WorldToScreenPoint(transform.position);
         Vector2 direction = (mousePosition - objectPosition).normalized;
         SpawnProjectile(direction);
-
     }
 
-    public void ConfirmDoublePress() {
-        
-
+    // Method to confirm a double press
+    public void ConfirmDoublePress()
+    {
+        // If the key is pressed
         if (KeyPress)
-        { 
-            if (pressedFirstTime) // we've already pressed the button a first time, we check if the 2nd time is fast enough to be considered a double-press
+        {
+            // If the key was already pressed once
+            if (pressedFirstTime)
             {
-                
+                // Check if the second press is fast enough to be considered a double press
                 bool isDoublePress = Time.time - lastPressedTime <= delayBetweenPresses;
 
+                // If it is a double press
                 if (isDoublePress)
                 {
                     Debug.Log("DoublePress");
 
+                    // If the ability is on cooldown, return
                     if (isOnCoolDown)
                         return;
 
+                    // Use the ability and reset the first press flag
                     StartCoroutine(UseAbility());
                     pressedFirstTime = false;
                 }
             }
-            else // we've not already pressed the button a first time
+            else // If the key was not already pressed once
             {
-                pressedFirstTime = true; // we tell this is the first time
+                // Set the first press flag
+                pressedFirstTime = true;
             }
 
+            // Update the last pressed time
             lastPressedTime = Time.time;
         }
-        if (pressedFirstTime && Time.time - lastPressedTime > delayBetweenPresses) // we're waiting for a 2nd key press but we've reached the delay, we can't consider it a double press anymore
+
+        // If we're waiting for a second key press but we've reached the delay, reset the first press flag
+        if (pressedFirstTime && Time.time - lastPressedTime > delayBetweenPresses)
         {
-            // note that by checking first for pressedFirstTime in the condition above, we make the program skip the next part of the condition if it's not true,
-            // thus we're avoiding the "heavy computation" (the substraction and comparison) most of the time.
-            // we're also making sure we've pressed the key a first time before doing the computation, which avoids doing the computation while lastPressedTime is still uninitialized
-
-            
-
             pressedFirstTime = false;
         }
     }
-
-    //public void OnEnableAbilityIndicator()
-    //{
-    //    abilityIndicator.EnableAbilityIndicator();
-    //}
 }
