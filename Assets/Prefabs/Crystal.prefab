@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97506262352889314}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58dbac585a892945862164d2742e35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
+  radius: 17
   cooldownTime: 3
   spawnParent: {fileID: 4723723021117559597}
   spawnObjects:
@@ -64,53 +64,53 @@ MonoBehaviour:
   - duration: 5
     capacity: 5
     Spawns:
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 19.983328, y: -0.81643903}
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: -10.228948, y: -13.578241}
       timeDelay: 0
     - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 19.997812, y: -0.2957678}
+      position: {x: -1.6732981, y: -16.91745}
       timeDelay: 1
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 16.120386, y: 11.837786}
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: 12.467232, y: 11.557169}
       timeDelay: 2
     - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
-      position: {x: -16.422295, y: 11.415262}
+      position: {x: 16.123785, y: -5.387351}
       timeDelay: 3
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -14.732852, y: -13.525646}
+    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+      position: {x: -16.533339, y: 3.9558482}
       timeDelay: 4
   - duration: 1
     capacity: 10
     Spawns:
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 4.82503, y: -19.409252}
-      timeDelay: 0
     - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: 15.0588665, y: 13.161707}
+      position: {x: 7.3697596, y: -15.319486}
+      timeDelay: 0
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: 3.7479732, y: -16.581697}
       timeDelay: 0.1
-    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: -17.77848, y: 9.161092}
+    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
+      position: {x: 8.139458, y: 14.924786}
       timeDelay: 0.2
     - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 6.8754745, y: -18.78105}
+      position: {x: 8.88891, y: 14.490938}
       timeDelay: 0.3
     - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: -18.174213, y: 8.348532}
+      position: {x: -5.8967395, y: 15.944543}
       timeDelay: 0.4
-    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: -11.004019, y: -16.700645}
-      timeDelay: 0.5
-    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: 18.640139, y: -7.2488117}
-      timeDelay: 0.6
-    - spawnObject: {fileID: 6707762061343638022, guid: e452ddc4798445d459388693943aea95, type: 3}
-      position: {x: -7.0701923, y: 18.708618}
-      timeDelay: 0.7
     - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
-      position: {x: 10.951113, y: 16.735386}
-      timeDelay: 0.8
+      position: {x: -15.138552, y: -7.7346125}
+      timeDelay: 0.5
     - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
-      position: {x: -7.307458, y: 18.617226}
+      position: {x: -16.819939, y: -2.467722}
+      timeDelay: 0.6
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: 9.695581, y: -13.964087}
+      timeDelay: 0.7
+    - spawnObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}
+      position: {x: -2.276826, y: 16.84684}
+      timeDelay: 0.8
+    - spawnObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+      position: {x: 2.3597083, y: -16.835432}
       timeDelay: 0.9
   spawnedObjects: []
   state: 2
@@ -259,7 +259,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_LocalScale: {x: 34, y: 34, z: 34}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6023694030430040562}
@@ -298,8 +298,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.0078125, z: 0}
-    m_Extent: {x: 0.421875, y: 0.4296875, z: 0}
+    m_Center: {x: 0, y: -0.010416657, z: 0}
+    m_Extent: {x: 0.5625, y: 0.5729166, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
