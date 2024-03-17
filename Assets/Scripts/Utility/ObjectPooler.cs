@@ -10,6 +10,7 @@ public class ObjectPooler : MonoBehaviour
     public static ObjectPooler SharedInstance;
     public List<GameObject> pooledObjects;
     private bool willGrow = true;
+    private GameObject pooledObjParent;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class ObjectPooler : MonoBehaviour
     }
     private void Init()
     {
+        pooledObjParent = new GameObject(objectToPool.name + " Parent");
         for(int i = 0; i < amountToPool; i++)
         {
             CreatePooledObjects();
@@ -35,6 +37,7 @@ public class ObjectPooler : MonoBehaviour
         go.SetActive(false);
         go.transform.position = player.transform.position;
         pooledObjects.Add(go);
+        go.transform.parent = pooledObjParent.transform;
         return go;
     }
 
