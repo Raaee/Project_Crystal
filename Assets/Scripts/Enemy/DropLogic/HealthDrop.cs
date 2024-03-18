@@ -7,7 +7,7 @@ public class HealthDrop : DropData  {
     [SerializeField] private int healthAmount;
 
     private void Start()    {
-   
+
     }
     public override void OnDropInteract()    {
         Debug.Log("Giving the player healthAmount" + healthAmount);

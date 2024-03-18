@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 
-public class HealthPoints : MonoBehaviour
+public abstract class HealthPoints : MonoBehaviour
 {
     // Max health is set at 100
     [SerializeField] private int MAX_HP = 100;
@@ -57,12 +57,7 @@ public class HealthPoints : MonoBehaviour
         return isDead;
     }
 
-    private void Die()
-    {
-        Debug.Log("Dead");
-        input.OnDisable();
-
-    }
+    public abstract void Die();
 
     // Enemy gets destroyed by projectile
     public void OnCollisionEnter2D(Collision2D collision)
