@@ -8,6 +8,7 @@ public class EnemyHealthPoint : HealthPoints
     {
         Debug.Log("Die");
         Destroy(this.gameObject);
+        OnDeath.Invoke();
     }
 
 }

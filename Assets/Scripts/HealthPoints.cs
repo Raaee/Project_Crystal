@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class HealthPoints : MonoBehaviour
 {
     // Max health is set at 100
     [SerializeField] private int MAX_HP = 100;
     [SerializeField] private int currentHP;
+
+    public UnityEvent OnDeath;
+
     InputControls input;
     private bool isDead = false;
 
