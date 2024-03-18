@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 4049991449170856146}
   - component: {fileID: 6698978688436824222}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Tank
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,6 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4753752826396503389}
   - component: {fileID: 6262924791448149945}
+  - component: {fileID: 3521332388731034868}
   m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
@@ -685,7 +686,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -706,7 +707,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8673541601162821310, guid: 679c875dbf3b00942a2ef7a91c69f33f, type: 3}
+  m_Sprite: {fileID: -3833361264280039681, guid: 679c875dbf3b00942a2ef7a91c69f33f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -717,6 +718,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3521332388731034868
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360943041567263304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb3b6a5c10f270a4fb50259bdeb3b3b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8271713260674164174
 GameObject:
   m_ObjectHideFlags: 0
