@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+public class EnemyDropper : MonoBehaviour {
 
 public List<GameObject> enemyDrop;
 [SerializeField] private GameObject allDropsParentGO;
