@@ -2,6 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+  <summary> 
+  - Explain what the script is doing
+
+    1. Start():
+    2. SetInitialTarget():
+    3. Update():
+    4. InDanger():
+    5. InRange():
+    6. OnCollisionEnter2D():
+    7. enum EnemyAIType:
+    8. enum EnemyAttackType:
+    9. enum EnemyState:
+
+  - Purpose for the script
+
+        This script sets up the complex AI for Enemy movement, whether the Enemy is targeting the Crystal or Player
+    and how it moves in relation to those targets in specific situations:
+    - 
+
+  - Code change suggestions
+
+    - 
+  </summary>
+*/
+
 public class EnemyAI : Movement
 {
     [SerializeField] private Transform player;

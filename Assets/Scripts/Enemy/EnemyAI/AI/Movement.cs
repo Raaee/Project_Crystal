@@ -18,7 +18,7 @@ using UnityEngine;
 
   - Purpose for the script
 
-        This script sets up the basic movement elements of the Enemy GameObject, keeping track of a certain Enemy's
+        This script sets up the basic movement elements for the Enemy GameObject, keeping track of a certain Enemy's
     base speed and what speed it has at any current moment during gameplay:
     - SetSpeed() augments current speed in situations where the enemy is slowed down or gains a boost.
     - MoveTowardsTarget() and MoveAwayFromTarget() move the Enemy to or from another GameObject's position.
