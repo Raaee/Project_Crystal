@@ -32,7 +32,7 @@ public class RangedBasicAttack : MonoBehaviour
         go.transform.rotation = Quaternion.identity;
         // Get the Projectile component and set its move direction
         Projectile projectile = go.GetComponent<Projectile>();
-        projectile.SetMoveDirection(moveDirection);
+        projectile.SetMoveDirection(moveDirection, true);
         // Activate the projectile
         go.SetActive(true);
     }

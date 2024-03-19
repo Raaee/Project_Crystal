@@ -8,7 +8,7 @@ public abstract class Movement : MonoBehaviour
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float curSpeed;
    
-    private void Start()
+    protected void Start()
     {
         curSpeed = baseSpeed;
     }

@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
+    private bool isPlayerShooting = true;
  
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class Projectile : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
 
         // Set the initial direction of the projectile to upwards.
-        SetMoveDirection(new Vector2(0, 1));
+        SetMoveDirection(new Vector2(0, 1), true);
     }
 
     // FixedUpdate is called every fixed framerate frame.
@@ -59,8 +60,9 @@ public class Projectile : MonoBehaviour
     }
 
     // Sets the direction in which the projectile should move.
-    public void SetMoveDirection(Vector2 movDir)
+    public void SetMoveDirection(Vector2 movDir, bool isPlayerShooting)
     {
+        this.isPlayerShooting = isPlayerShooting;
         moveDirection = movDir;
     }
 
@@ -85,6 +87,10 @@ public class Projectile : MonoBehaviour
         // Check if the projectile has collided with the player
         else if (collider.gameObject.CompareTag(PLAYER_TAG))
         {
+            if (isPlayerShooting)
+            {
+                return;
+            }
             // Get the HealthPoints component of the player
             HealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<HealthPoints>();
             // If the player does not have a HealthPoints component, exit the function

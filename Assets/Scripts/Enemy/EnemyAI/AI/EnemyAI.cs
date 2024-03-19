@@ -4,41 +4,56 @@ using UnityEngine;
 
 public class EnemyAI : Movement
 {
-    [SerializeField] private Transform player;
+    [Header("Config")]
     [SerializeField] private float aggroTime = 2f;
     [SerializeField] private float avoidTime = 1f;
-    [SerializeField] private EnemyAIType enemyAIType;
     [SerializeField] private EnemyAttackType enemyAttackType;
-    [SerializeField] private EnemyState enemyCurrentState;
-    [SerializeField] private bool inDanger;
     [SerializeField] private float attackRange;
+
+    [Header("Debug")]
+    [SerializeField] private Transform player;
     [SerializeField] private Transform crystalObject;
     private Transform currTarget;
+    [SerializeField] private EnemyAIType enemyAIType;
+    [SerializeField] private EnemyState enemyCurrentState;
+    [SerializeField] private bool inDanger;
     private float currentAggroTimer;
     private bool isAggroTimerActive = false;
     private float currentAvoidTimer;
     private bool isAvoidTimerActive = false;
+    private const string PLAYER_TAG = "Player";
 
     private void Start()
     {
-
+        base.Start();
         SetInitialTarget();
     }
 
-    public void SetInitialTarget()
+    private void SetInitialTarget()
     {
-        if (!crystalObject)
+        if (!player)
         {
             enemyCurrentState = EnemyState.MOVETOWARDSPLAYER;
-            return;
+            FindPlayer();
+        } else
+        {
+            currTarget = crystalObject;
+            enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
         }
-        currTarget = crystalObject;
+    }
 
-        enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
+    private void FindPlayer()
+    {
+        player = GameObject.FindWithTag(PLAYER_TAG).transform;
+        if (!player)
+        {
+            Debug.LogError("No player in scene");
+        }
     }
 
     private void Update()
-    { 
+    {
+        /*
         if (isAvoidTimerActive)
         {
             currentAvoidTimer -= Time.deltaTime;
@@ -57,6 +72,8 @@ public class EnemyAI : Movement
                 isAggroTimerActive = false;
             }
         }
+        */
+        InRange();
         switch (enemyCurrentState)
         {
             case EnemyState.MOVETOWARDSCRYSTAL:
@@ -106,7 +123,7 @@ public class EnemyAI : Movement
     }
 
     // INRANGE METHOD
-    /*public void InRange()
+    public void InRange()
     {
         if (attackRange >= Vector3.Distance(transform.position, currTarget.transform.position))
         {
@@ -130,7 +147,7 @@ public class EnemyAI : Movement
                 enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
             }
         }
-    }*/
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {

@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class HealthPoints : MonoBehaviour
+public class HealthPoints : MonoBehaviour
 {
     // Max health is set at 100
     [SerializeField] private int MAX_HP = 100;
     [SerializeField] private int currentHP;
     InputControls input;
     private bool isDead = false;
+    public UnityEvent OnDead;
 
     // Character starts with maximum health value
     private void Start()
@@ -47,8 +49,6 @@ public abstract class HealthPoints : MonoBehaviour
                
             }
         }
-
-
     }
 
     // Returns true if character's health is 0
@@ -57,7 +57,10 @@ public abstract class HealthPoints : MonoBehaviour
         return isDead;
     }
 
-    public abstract void Die();
+    public virtual void Die()
+    {
+        
+    }
  
 
     // Enemy gets destroyed by projectile

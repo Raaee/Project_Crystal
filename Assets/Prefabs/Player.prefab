@@ -17,8 +17,9 @@ GameObject:
   - component: {fileID: 5845282077483441882}
   - component: {fileID: 8873837518193116210}
   - component: {fileID: 3439780717632776245}
-  - component: {fileID: 4049991449170856146}
   - component: {fileID: 6698978688436824222}
+  - component: {fileID: 5220982741878226084}
+  - component: {fileID: 6609804452130538947}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -306,20 +307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
---- !u!114 &4049991449170856146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3221412779736232927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85f2948a971441d408e977c51a497f68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MAX_MP: 100
-  currentMP: 0
 --- !u!114 &6698978688436824222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +327,35 @@ MonoBehaviour:
   chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
   respawnTime: 3
   disappearTime: 1
+--- !u!114 &5220982741878226084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f67c6971fa73f74a833a709cfaf90b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_HP: 100
+  currentHP: 0
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6609804452130538947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7e042e7b3593e4bb8ee7d8e20665b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +644,7 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 10
   IsActive: 0
-  playerMana: {fileID: 4049991449170856146}
+  playerMana: {fileID: 0}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   projPooler: {fileID: 3416345396890490197}
   abilityIndicator: {fileID: 0}
