@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Spawner : MonoBehaviour
 {
@@ -141,7 +142,7 @@ public class Spawner : MonoBehaviour
                 break;
             case State.Cooldown:
                 time += Time.deltaTime;
-                cooldownLabel.text = cooldownTime - time > 0 ? ((int)(cooldownTime - time)).ToString("D") : "";
+                cooldownLabel.text = cooldownTime - time > 0 ? Mathf.CeilToInt(cooldownTime - time).ToString("D") : "";
                 if (time >= cooldownTime)
                 {
                     state = State.Spawning;
