@@ -10,16 +10,19 @@ public class RangedBasicAttack : MonoBehaviour
     [SerializeField] private GameObject angedBasicAttackPrefab;
     // Object pooler for projectiles
     [SerializeField] private ObjectPooler projPooler;
+
+    [SerializeField] private bool isPlayerShooting;
+
     // Actions component
     private Actions actions;
-
    
     void Awake()
     {
         // Get the Actions component from the parent object
         actions = GetComponentInParent<Actions>();
         // Add StartAttack as a listener to the OnBasicAttack event
-        actions.OnBasicAttack.AddListener(StartAttack);
+       
+        actions?.OnBasicAttack.AddListener(StartAttack);
     }
 
     // Method to spawn a projectile
@@ -32,7 +35,7 @@ public class RangedBasicAttack : MonoBehaviour
         go.transform.rotation = Quaternion.identity;
         // Get the Projectile component and set its move direction
         Projectile projectile = go.GetComponent<Projectile>();
-        projectile.SetMoveDirection(moveDirection, true);
+        projectile.SetMoveDirection(moveDirection, isPlayerShooting);
         // Activate the projectile
         go.SetActive(true);
     }
@@ -47,5 +50,9 @@ public class RangedBasicAttack : MonoBehaviour
         Vector2 direction = (mousePosition - objectPosition).normalized;
         // Spawn the projectile
         SpawnProjectile(direction);
+    }
+    public void AttackTarget(Transform currentTarget) {
+        Vector2 directionToTarget = (currentTarget.position - this.transform.parent.transform.position).normalized;
+        SpawnProjectile(directionToTarget);
     }
 }

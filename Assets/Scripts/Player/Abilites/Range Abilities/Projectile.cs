@@ -52,7 +52,6 @@ public class Projectile : MonoBehaviour
     {
         // Set the velocity of the projectile by multiplying the direction, speed, and time since the last frame.
         rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
-
         // Calculate the angle of the projectile's direction in degrees.
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         // Set the rotation of the projectile to face the direction it's moving, smoothly transitioning over time.
@@ -72,17 +71,18 @@ public class Projectile : MonoBehaviour
         // Check if the projectile has collided with an enemy
         if (collider.gameObject.CompareTag(ENEMY_TAG))
         {
-            // Get the HealthPoints component of the enemy
-            HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
-            // If the enemy does not have a HealthPoints component, exit the function
-            if (!potentialEnemyHealth)
-            {
-                return;
+            if (isPlayerShooting) {
+                // Get the HealthPoints component of the enemy
+                HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
+                // If the enemy does not have a HealthPoints component, exit the function
+                if (!potentialEnemyHealth) {
+                    return;
+                }
+                // Reduce the health of the enemy by the damage of the projectile
+                potentialEnemyHealth.RemoveHealth(projectileDamage);
+                // Disable the projectile after it has hit an enemy
+                DisableProjectile();
             }
-            // Reduce the health of the enemy by the damage of the projectile
-            potentialEnemyHealth.RemoveHealth(projectileDamage);
-            // Disable the projectile after it has hit an enemy
-            DisableProjectile();
         }
         // Check if the projectile has collided with the player
         else if (collider.gameObject.CompareTag(PLAYER_TAG))
@@ -104,10 +104,6 @@ public class Projectile : MonoBehaviour
             DisableProjectile();
         }
         // If the projectile has collided with something other than an enemy or the player, disable the projectile
-        else
-        {
-            DisableProjectile();
-        }
     }
 
     // Disables the projectile.

@@ -13,12 +13,6 @@ public abstract class Movement : MonoBehaviour
         curSpeed = baseSpeed;
     }
 
-    private void Update()
-    {
-        
-    }
-
-
     public void SetSpeed(float amount)
     {
         this.curSpeed = amount;
@@ -35,15 +29,5 @@ public abstract class Movement : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         transform.Translate(-direction * curSpeed * Time.deltaTime);
-    }
-    [com.cyborgAssets.inspectorButtonPro.ProButton]
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Speed is set to 0
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        // Speed returns
     }
 }
