@@ -31,13 +31,13 @@ public class EnemyAI : Movement
         enemyHP = GetComponent<EnemyHealthPoints>();
         enemyRangedBasicAttack = GetComponentInChildren<RangedBasicAttack>();
     }
+
     private void Start()
     {
         base.Start();
         SetInitialTarget();
         enemyHP.OnHurt.AddListener(TargetPlayer);
         currentAggroTimer = playerAggroTime;
-
     }
 
     private void SetInitialTarget()

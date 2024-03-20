@@ -7,6 +7,7 @@ public class PlayerHealthPoints : HealthPoints
     InputControls input;
     private void Start() {
         input = GetComponentInParent<InputControls>();
+        
     }
     public override void Die()
     {
