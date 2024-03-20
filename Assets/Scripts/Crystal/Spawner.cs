@@ -81,7 +81,12 @@ public class Spawner : MonoBehaviour
     {
         var obj = Instantiate(spawn.spawnObject, spawn.position + (Vector2)transform.position, Quaternion.identity, spawnParent);
 
-
+        // Get the EnemyAI component of the spawned object if it exists
+        var enemyAI = obj.GetComponent<EnemyAI>();
+        if (enemyAI != null)
+        {
+            enemyAI.crystalObject = transform;
+        }
         return obj.transform;
     }
 
