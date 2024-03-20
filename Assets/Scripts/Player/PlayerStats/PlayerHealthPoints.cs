@@ -6,6 +6,7 @@ public class PlayerHealthPoints : HealthPoints
 {
     InputControls input;
     private void Start() {
+        Respawn();
         input = GetComponentInParent<InputControls>();
         
     }
