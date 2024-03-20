@@ -25,6 +25,12 @@ public class Spawner : MonoBehaviour
     public Transform spawnParent;
 
     /// <summary>
+    /// The text label for the cooldown timer.
+    /// </summary>
+    [Tooltip("The text label for the cooldown timer.")]
+    public TMPro.TextMeshProUGUI cooldownLabel;
+
+    /// <summary>
     /// The list of objects that can be spawned.
     /// </summary>
     [Tooltip("The list of objects that can be spawned.")]
@@ -135,6 +141,7 @@ public class Spawner : MonoBehaviour
                 break;
             case State.Cooldown:
                 time += Time.deltaTime;
+                cooldownLabel.text = cooldownTime - time > 0 ? ((int)(cooldownTime - time)).ToString("D") : "";
                 if (time >= cooldownTime)
                 {
                     state = State.Spawning;
