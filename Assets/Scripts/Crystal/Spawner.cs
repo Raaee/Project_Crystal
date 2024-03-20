@@ -81,9 +81,13 @@ public class Spawner : MonoBehaviour
     {
         var obj = Instantiate(spawn.spawnObject, spawn.position + (Vector2)transform.position, Quaternion.identity, spawnParent);
 
-        // TODO: Possibly modify enemy script later to add spawnedBy reference
 
         return obj.transform;
+    }
+
+    public void Start()
+    {
+        GenerateSpawns();
     }
 
     /// <summary>
