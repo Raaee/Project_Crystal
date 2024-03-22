@@ -15,7 +15,7 @@ public class EnemyAI : Movement
 
     [Header("Debug")]
     [SerializeField] private Transform player;
-    [SerializeField] private Transform crystalObject;
+    public Transform crystalObject;
     [SerializeField] private EnemyAIType enemyAIType;
     [SerializeField] private EnemyState enemyCurrentState;
     [SerializeField] private bool inDanger;
