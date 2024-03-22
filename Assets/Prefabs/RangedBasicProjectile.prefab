@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
   maxLifeTime: 2
-  projectileDamage: 15
+  projectileDamage: 1
 --- !u!50 &5150111593692239222
 Rigidbody2D:
   serializedVersion: 4
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2626922561676193723, guid: f93c446d9e9f9f14487d49142e33dcc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

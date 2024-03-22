@@ -5,82 +5,110 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// The Projectile class handles the behavior of projectiles in the game.
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float projectileSpeed = 1000f; 
-    [SerializeField] private float maxLifeTime = 2f;
-    private const String ENEMY_TAG = "Enemy";
-    private const String PLAYER_TAG = "Player";
-    [SerializeField] private int projectileDamage = 10; 
-    private float timer = 0f;
-    private Rigidbody2D rb2D;
-    private Vector2 moveDirection;
-    
+    [SerializeField] private float projectileSpeed = 1000f; // The speed of the projectile.
+    [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
+    private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
+    private const String PLAYER_TAG = "Player"; // Tag used to identify the player.
+    [SerializeField] private int projectileDamage = 10; // The damage dealt by the projectile.
+    private float timer = 0f; // Timer used to track the lifetime of the projectile.
+    private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
+    private Vector2 moveDirection; // The direction in which the projectile is moving.
+    private bool isPlayerShooting = true;
+ 
     private void Awake()
     {
+        // Get the Rigidbody2D component attached to the game object this script is attached to.
         rb2D = GetComponent<Rigidbody2D>();
-        SetMoveDirection(new Vector2(0,1));
+
+        // Set the initial direction of the projectile to upwards.
+        SetMoveDirection(new Vector2(0, 1), true);
     }
 
+    // FixedUpdate is called every fixed framerate frame.
     private void FixedUpdate()
     {
-       
+        // Move the projectile
         MoveProjectile();
+
+        // Increment the timer by the time passed since the last frame
         timer += Time.deltaTime;
+
+        // If the projectile has existed for longer than its maximum lifetime
         if (timer >= maxLifeTime)
         {
+            // Disable the projectile
             DisableProjectile();
+
+            // Reset the timer
             timer = 0;
         }
-        
-    }
-    public void MoveProjectile()
-    {
-        
-        rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
-        
-        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, Mathf.LerpAngle(transform.rotation.eulerAngles.z, angle, projectileSpeed * Time.deltaTime));
-        
     }
 
-    public void SetMoveDirection(Vector2 movDir)
+    // Moves the projectile in its current direction.
+    public void MoveProjectile()
     {
+        // Set the velocity of the projectile by multiplying the direction, speed, and time since the last frame.
+        rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
+        // Calculate the angle of the projectile's direction in degrees.
+        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        // Set the rotation of the projectile to face the direction it's moving, smoothly transitioning over time.
+        transform.rotation = Quaternion.Euler(0f, 0f, Mathf.LerpAngle(transform.rotation.eulerAngles.z, angle, projectileSpeed * Time.deltaTime));
+    }
+
+    // Sets the direction in which the projectile should move.
+    public void SetMoveDirection(Vector2 movDir, bool isPlayerShooting)
+    {
+        this.isPlayerShooting = isPlayerShooting;
         moveDirection = movDir;
     }
 
+    // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only).
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        // Check if the projectile has collided with an enemy
         if (collider.gameObject.CompareTag(ENEMY_TAG))
         {
-            HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
-            if (!potentialEnemyHealth)
-            {
-                return;
-            } 
-            potentialEnemyHealth.RemoveHealth(projectileDamage);
-            DisableProjectile();
+            if (isPlayerShooting) {
+                // Get the HealthPoints component of the enemy
+                HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
+                // If the enemy does not have a HealthPoints component, exit the function
+                if (!potentialEnemyHealth) {
+                    return;
+                }
+                // Reduce the health of the enemy by the damage of the projectile
+                potentialEnemyHealth.RemoveHealth(projectileDamage);
+                // Disable the projectile after it has hit an enemy
+                DisableProjectile();
+            }
         }
+        // Check if the projectile has collided with the player
         else if (collider.gameObject.CompareTag(PLAYER_TAG))
         {
+            if (isPlayerShooting)
+            {
+                return;
+            }
+            // Get the HealthPoints component of the player
             HealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<HealthPoints>();
+            // If the player does not have a HealthPoints component, exit the function
             if (!potentialPlayerHealth)
             {
                 return;
             }
+            // Reduce the health of the player by the damage of the projectile
             potentialPlayerHealth.RemoveHealth(projectileDamage);
+            // Disable the projectile after it has hit the player
             DisableProjectile();
         }
-        else
-        {
-            DisableProjectile();
-        }
-
+        // If the projectile has collided with something other than an enemy or the player, disable the projectile
     }
 
+    // Disables the projectile.
     private void DisableProjectile()
     {
-        //Destroy(this.gameObject);
         this.gameObject.SetActive(false);
     }
 }
