@@ -8,11 +8,11 @@ public class EnemyDropper : MonoBehaviour {
 public List<GameObject> enemyDrop;
 [SerializeField] private GameObject allDropsParentGO;
 
-private EnemyHealthPoint enemyHealthPoint;
+private EnemyHealthPoints enemyHealthPoints;
 
 void Start(){
-    enemyHealthPoint = GetComponent<EnemyHealthPoint>();
-    enemyHealthPoint.OnDeath.AddListener(ItemDrop);
+    enemyHealthPoints = GetComponent<EnemyHealthPoints>();
+    enemyHealthPoints.OnDead.AddListener(ItemDrop);
 }
     public void ItemDrop() {
         bool somethingDropped = false;

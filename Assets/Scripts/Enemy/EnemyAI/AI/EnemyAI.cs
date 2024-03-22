@@ -35,17 +35,10 @@ public class EnemyAI : Movement {
     private RangedBasicAttack enemyRangedBasicAttack;
 
     [Header("Debug")]
-    [SerializeField] private Transform player;
-    [SerializeField] private Transform crystalObject;
-    [SerializeField] private EnemyAIType enemyAIType;
     [SerializeField] private EnemyState enemyCurrentState;
     
     // Serialized Misc Variables
     private bool inDanger;
-
-    private Transform currTarget;
-    private float currentAggroTimer;
-    private bool isAggroTimerActive = false;
 
     private float currentAggroTimer;
     private bool isPlayerAggroActive = false;
@@ -60,8 +53,7 @@ public class EnemyAI : Movement {
         enemyHP = GetComponent<EnemyHealthPoints>();
         enemyRangedBasicAttack = GetComponentInChildren<RangedBasicAttack>();
     }
-    private void Start()
-    {
+    private void Start()    {
         base.Start();
         SetInitialTarget();
         enemyHP.OnHurt.AddListener(TargetPlayer);
@@ -71,9 +63,7 @@ public class EnemyAI : Movement {
 
     // SetInitialTarget(), if crystalObject is not null, sets currTarget to crystalObject and enemyCurrentState to MOVETOWARDSCRYSTAL
     // If crystalObject is null, enemyCurrentState is set to MOVETOWARDSPLAYER
-    public void SetInitialTarget()
-    private void SetInitialTarget()
-    {
+    public void SetInitialTarget()  {
         player = GameObject.FindWithTag(PLAYER_TAG).transform;
 
         if (!crystalObject) {          
@@ -98,8 +88,7 @@ public class EnemyAI : Movement {
     // The if statements check if isAvoidTimerActive/isAggroTimerActive are true and start a timer
     // enemyCurrentState is set to MOVETOWARDSCRYSTAL when timer reaches 0
     // The switch-case statement is repeatedly called to change enemyCurrentState to any of the states within the EnemyState enum it is set to
-    private void Update()
-    { 
+    private void Update()   { 
         if (isAvoidTimerActive)
         {
             currentAvoidTimer -= Time.deltaTime;
@@ -109,9 +98,7 @@ public class EnemyAI : Movement {
                 isAvoidTimerActive = false;
             }
         }
-        if (isAggroTimerActive)
-        {
-    private void Update()   {
+        
         if (isPlayerAggroActive) {
             currentAggroTimer -= Time.deltaTime;
             if (currentAggroTimer <= 0) {
@@ -119,8 +106,7 @@ public class EnemyAI : Movement {
                 enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
             }
         }
-        switch (enemyCurrentState)
-        {
+        switch (enemyCurrentState)  {
             case EnemyState.MOVETOWARDSCRYSTAL:
                 currTarget = crystalObject;
                 MoveTowardsTarget(currTarget);
@@ -194,7 +180,11 @@ public class EnemyAI : Movement {
             enemyCurrentState = EnemyState.ATTACKINGCRYSTAL;
         }
     }
+    public void SetCrystalObject(Transform transform) {
+        crystalObject = transform;
+    }
 }
+
 
 // EnemyAIType can be set to AVOIDANT, HIVEMIND, or IDLE
 // AVOIDANTs will contain behavior where they run from the Player
