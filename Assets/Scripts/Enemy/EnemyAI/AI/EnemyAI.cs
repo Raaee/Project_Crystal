@@ -2,12 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : Movement
-{
+/* 
+  <summary> 
+  - Explain what the script is doing
+
+        EnemyAI derives from the abstract class Movement and begins by calling the SetInitialTarget() method. Depending on the enemyCurrentState,
+    the Enemy will change from various states within the enum EnemyState which affects its movement.
+
+  - Purpose for the script
+
+        This script sets up the complex AI for Enemy movement, whether the Enemy is targeting the Crystal or Player
+    and how it moves in relation to those targets in specific situations.
+
+  - Code change suggestions
+
+    - 
+  </summary>
+*/
+
+public class EnemyAI : Movement {
+
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform crystalObject;
+    [SerializeField] private EnemyAIType enemyAIType;
+
     [Header("Config")]
     [SerializeField] private float playerAggroTime = 2f;
     [SerializeField] private float avoidTime = 1f;
-    [SerializeField] private EnemyAttackType enemyAttackType;
     [SerializeField] private float attackRange;
     private EnemyHealthPoints enemyHP;
     private Transform currTarget;
@@ -15,18 +36,26 @@ public class EnemyAI : Movement
 
     [Header("Debug")]
     [SerializeField] private Transform player;
-    public Transform crystalObject;
+    [SerializeField] private Transform crystalObject;
     [SerializeField] private EnemyAIType enemyAIType;
     [SerializeField] private EnemyState enemyCurrentState;
-    [SerializeField] private bool inDanger;
+    
+    // Serialized Misc Variables
+    private bool inDanger;
 
-    public float currentAggroTimer;
-    public bool isPlayerAggroActive = false;
+    private Transform currTarget;
+    private float currentAggroTimer;
+    private bool isAggroTimerActive = false;
+
+    private float currentAggroTimer;
+    private bool isPlayerAggroActive = false;
 
     private float currentAvoidTimer;
     private bool isAvoidTimerActive = false;
+
     private const string PLAYER_TAG = "Player";
 
+    // Start() calls SetInitialTarget()
     private void Awake() {
         enemyHP = GetComponent<EnemyHealthPoints>();
         enemyRangedBasicAttack = GetComponentInChildren<RangedBasicAttack>();
@@ -40,6 +69,9 @@ public class EnemyAI : Movement
 
     }
 
+    // SetInitialTarget(), if crystalObject is not null, sets currTarget to crystalObject and enemyCurrentState to MOVETOWARDSCRYSTAL
+    // If crystalObject is null, enemyCurrentState is set to MOVETOWARDSPLAYER
+    public void SetInitialTarget()
     private void SetInitialTarget()
     {
         player = GameObject.FindWithTag(PLAYER_TAG).transform;
@@ -62,6 +94,23 @@ public class EnemyAI : Movement
         enemyCurrentState = EnemyState.MOVETOWARDSPLAYER;
     }
 
+    // Update() calls two if statements and a single switch-case statement
+    // The if statements check if isAvoidTimerActive/isAggroTimerActive are true and start a timer
+    // enemyCurrentState is set to MOVETOWARDSCRYSTAL when timer reaches 0
+    // The switch-case statement is repeatedly called to change enemyCurrentState to any of the states within the EnemyState enum it is set to
+    private void Update()
+    { 
+        if (isAvoidTimerActive)
+        {
+            currentAvoidTimer -= Time.deltaTime;
+            if (currentAvoidTimer <= 0)
+            {
+                enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
+                isAvoidTimerActive = false;
+            }
+        }
+        if (isAggroTimerActive)
+        {
     private void Update()   {
         if (isPlayerAggroActive) {
             currentAggroTimer -= Time.deltaTime;
@@ -112,6 +161,10 @@ public class EnemyAI : Movement
         currentAggroTimer = playerAggroTime;
         enemyCurrentState = EnemyState.MOVETOWARDSPLAYER;
     }
+
+    // InDanger() sets inDanger to true and checks if enemyAIType is AVOIDANT or HIVEMIND
+    // Currently a useless method, but it is supposed to cause AVOIDANT enemies to flee when attacked by the Player
+    // HIVEMIND enemies would not only aggro, but call nearby Enemies to fight alongside them against the Player
     //[com.cyborgAssets.inspectorButtonPro.ProButton]
 
     // INDANGER METHOD, similar to aggro. will be used for hivemind/avoidant AI.
@@ -143,6 +196,10 @@ public class EnemyAI : Movement
     }
 }
 
+// EnemyAIType can be set to AVOIDANT, HIVEMIND, or IDLE
+// AVOIDANTs will contain behavior where they run from the Player
+// HIVEMINDs will contain behavior wherein they call the for the aid of nearby Enemies
+// IDLEs behave normally
 public enum EnemyAIType
 {
     AVOIDANT,
@@ -150,12 +207,11 @@ public enum EnemyAIType
     NONE
 }
 
-public enum EnemyAttackType
-{
-    MELEE,
-    RANGED
-}
-
+// EnemyState can be set to MOVETOWARDSPLAYER, ATTACKINGPLAYER, MOVETOWARDSCRYSTAL, ATTACKINGCRYSTAL, MOVEAWAY, or IDLE
+// MOVETOWARDSPLAYER and MOVETOWARDSCRYSTAL will move the Enemy to the Player or Crystal respectively
+// ATTACKINGPLAYER and ATTACKINGCRYSTAL will stop the Enemy and activate some sort of attack method against the Player or Crystal respectively
+// MOVEAWAY will be called to move the Enemy away from the Player
+// IDLE will make the Enemy stationary
 public enum EnemyState
 {
     MOVETOWARDSPLAYER,
