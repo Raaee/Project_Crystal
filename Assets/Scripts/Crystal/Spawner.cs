@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Spawner : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class Spawner : MonoBehaviour
     /// </remarks>
     [Tooltip("The parent transform for the spawned objects.")]
     public Transform spawnParent;
+
+    /// <summary>
+    /// The text label for the cooldown timer.
+    /// </summary>
+    [Tooltip("The text label for the cooldown timer.")]
+    public TMPro.TextMeshProUGUI cooldownLabel;
 
     /// <summary>
     /// The list of objects that can be spawned.
@@ -144,6 +151,7 @@ public class Spawner : MonoBehaviour
                 break;
             case State.Cooldown:
                 time += Time.deltaTime;
+                cooldownLabel.text = cooldownTime - time > 0 ? Mathf.CeilToInt(cooldownTime - time).ToString("D") : "";
                 if (time >= cooldownTime)
                 {
                     state = State.Spawning;
