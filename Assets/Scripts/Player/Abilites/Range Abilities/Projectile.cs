@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
+    private bool isPlayerShooting = true;
  
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class Projectile : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
 
         // Set the initial direction of the projectile to upwards.
-        SetMoveDirection(new Vector2(0, 1));
+        SetMoveDirection(new Vector2(0, 1), true);
     }
 
     // FixedUpdate is called every fixed framerate frame.
@@ -51,7 +52,6 @@ public class Projectile : MonoBehaviour
     {
         // Set the velocity of the projectile by multiplying the direction, speed, and time since the last frame.
         rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
-
         // Calculate the angle of the projectile's direction in degrees.
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         // Set the rotation of the projectile to face the direction it's moving, smoothly transitioning over time.
@@ -59,8 +59,9 @@ public class Projectile : MonoBehaviour
     }
 
     // Sets the direction in which the projectile should move.
-    public void SetMoveDirection(Vector2 movDir)
+    public void SetMoveDirection(Vector2 movDir, bool isPlayerShooting)
     {
+        this.isPlayerShooting = isPlayerShooting;
         moveDirection = movDir;
     }
 
@@ -70,21 +71,26 @@ public class Projectile : MonoBehaviour
         // Check if the projectile has collided with an enemy
         if (collider.gameObject.CompareTag(ENEMY_TAG))
         {
-            // Get the HealthPoints component of the enemy
-            HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
-            // If the enemy does not have a HealthPoints component, exit the function
-            if (!potentialEnemyHealth)
-            {
-                return;
+            if (isPlayerShooting) {
+                // Get the HealthPoints component of the enemy
+                HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
+                // If the enemy does not have a HealthPoints component, exit the function
+                if (!potentialEnemyHealth) {
+                    return;
+                }
+                // Reduce the health of the enemy by the damage of the projectile
+                potentialEnemyHealth.RemoveHealth(projectileDamage);
+                // Disable the projectile after it has hit an enemy
+                DisableProjectile();
             }
-            // Reduce the health of the enemy by the damage of the projectile
-            potentialEnemyHealth.RemoveHealth(projectileDamage);
-            // Disable the projectile after it has hit an enemy
-            DisableProjectile();
         }
         // Check if the projectile has collided with the player
         else if (collider.gameObject.CompareTag(PLAYER_TAG))
         {
+            if (isPlayerShooting)
+            {
+                return;
+            }
             // Get the HealthPoints component of the player
             HealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<HealthPoints>();
             // If the player does not have a HealthPoints component, exit the function
@@ -98,10 +104,6 @@ public class Projectile : MonoBehaviour
             DisableProjectile();
         }
         // If the projectile has collided with something other than an enemy or the player, disable the projectile
-        else
-        {
-            DisableProjectile();
-        }
     }
 
     // Disables the projectile.
