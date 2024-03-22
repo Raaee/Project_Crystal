@@ -6,10 +6,11 @@ public class ObjectPooler : MonoBehaviour
 {
     [SerializeField] private int amountToPool;
     [SerializeField] private GameObject objectToPool;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject parent;
     public static ObjectPooler SharedInstance;
     public List<GameObject> pooledObjects;
     private bool willGrow = true;
+    private GameObject pooledObjParent;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class ObjectPooler : MonoBehaviour
     }
     private void Init()
     {
+        pooledObjParent = new GameObject(objectToPool.name + " Parent");
         for(int i = 0; i < amountToPool; i++)
         {
             CreatePooledObjects();
@@ -33,8 +35,9 @@ public class ObjectPooler : MonoBehaviour
     {
         GameObject go = Instantiate(objectToPool);
         go.SetActive(false);
-        go.transform.position = player.transform.position;
+        go.transform.position = parent.transform.position;
         pooledObjects.Add(go);
+        go.transform.parent = pooledObjParent.transform;
         return go;
     }
 

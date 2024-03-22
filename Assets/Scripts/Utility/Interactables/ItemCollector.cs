@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemCollector : MonoBehaviour  {
     public static ItemCollector instance { get; private set; }
     private GameObject objectCollected;
-    [SerializeField] private GameObject allDropsParentGO;
+    private GameObject allDropsParentGO;
 
     [Header("Chest Stuff")]
     [Tooltip("Possible drops from chest")]
@@ -19,6 +19,8 @@ public class ItemCollector : MonoBehaviour  {
         Init();
     }
     private void Init() {
+        allDropsParentGO = new GameObject("All drops Parent");
+
         if (instance != null && instance != this) {
             Destroy(this);
         }
