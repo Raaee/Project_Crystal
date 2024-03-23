@@ -543,7 +543,7 @@ Transform:
   m_GameObject: {fileID: 4972317167735333905}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: -1.54, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,7 +590,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2626922561676193723, guid: f35b506409920ec4da5c9307cbdfc433, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -598,7 +598,7 @@ SpriteRenderer:
   m_Size: {x: 1.1875, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &2990088303787591223
@@ -649,7 +649,7 @@ Transform:
   m_GameObject: {fileID: 6974065086525303940}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.63, y: -0.53, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -696,7 +696,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -889026939052894642, guid: 520a4183b6233fe4892dfb40d0f874c5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -704,7 +704,7 @@ SpriteRenderer:
   m_Size: {x: 2.4375, y: 0.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &4058855250944604108
@@ -778,7 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToPool: 3
   objectToPool: {fileID: 971724485026557118, guid: 74dd1c5c95c6afa45b8cf7ba48b69ea9, type: 3}
-  player: {fileID: 3221412779736232927}
+  parent: {fileID: 0}
   pooledObjects: []
 --- !u!114 &3416345396890490197
 MonoBehaviour:
@@ -794,7 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToPool: 3
   objectToPool: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
-  player: {fileID: 3221412779736232927}
+  parent: {fileID: 0}
   pooledObjects: []
 --- !u!114 &1927185540186520050
 MonoBehaviour:
@@ -827,6 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angedBasicAttackPrefab: {fileID: 971724485026557118, guid: 74dd1c5c95c6afa45b8cf7ba48b69ea9, type: 3}
   projPooler: {fileID: 4156343975335828177}
+  isPlayerShooting: 0
 --- !u!114 &8156202257822150933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,7 +846,6 @@ MonoBehaviour:
   playerMana: {fileID: 4049991449170856146}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   projPooler: {fileID: 3416345396890490197}
-  abilityIndicator: {fileID: 0}
   delayBetweenPresses: 0.25
 --- !u!1 &7360943041567263304
 GameObject:
@@ -874,7 +874,7 @@ Transform:
   m_GameObject: {fileID: 7360943041567263304}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.82, y: -0.89, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
