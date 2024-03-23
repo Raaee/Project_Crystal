@@ -43,4 +43,16 @@ public abstract class Ability : MonoBehaviour
 
     // Method to get the current mana points of the player
     public int GetCurrentMana() => playerMana.GetCurrentMP();
+
+    // Method to get cooldownTime
+    public int getCooldownTime() 
+    {
+        return cooldown;
+    }
+
+    // Method to get cooldown state
+    public bool getCooldown()
+    {
+        return isOnCoolDown;
+    }
 }

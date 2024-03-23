@@ -71,4 +71,5 @@ public class RangedBasicAttack : MonoBehaviour
 
         lastEnemyAttackTime = Time.time;
     }
+
 }
