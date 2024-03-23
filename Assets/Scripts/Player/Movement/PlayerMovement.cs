@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // Reference to the player's Rigidbody2D component
     private Rigidbody2D rb2D;
 
+    private Animator animator;
+
     // The current movement input from the player
     private Vector2 movementInput;
 
@@ -30,12 +32,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get the Rigidbody2D component from the player
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         // Get the InputControls component from the player
         playerInput = GetComponent<InputControls>();
     }
 
-    // FixedUpdate is called every fixed framerate frame
+    // FixedUpdate is called every fixed frame rate 
     private void FixedUpdate()
     {
         // Get the current movement input from the player
