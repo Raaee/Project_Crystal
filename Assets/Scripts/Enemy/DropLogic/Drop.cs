@@ -16,12 +16,10 @@ public class Drop : MonoBehaviour, IInteractable    {
     private void Start() {
         sr = GetComponent<SpriteRenderer>();
         normalMat = sr.material;
-
-        if (!this.gameObject.GetComponent<BoxCollider2D>()) {
-            this.gameObject.AddComponent<BoxCollider2D>();
-            bc2d = GetComponent<BoxCollider2D>();
-        }
+        bc2d = GetComponent<BoxCollider2D>();
         bc2d.isTrigger = true;
+        if (!bc2d)
+            Debug.Log("bc null");
     }
 
     public void Interact() {

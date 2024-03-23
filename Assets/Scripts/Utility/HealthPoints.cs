@@ -17,8 +17,8 @@ public class HealthPoints : MonoBehaviour
     public UnityEvent OnHurt;
 
     // Character starts with maximum health value
-    private void Start()    {
-        Respawn();       
+    public virtual void Start()    {
+        ResetHealth();       
     }
 
     // Add a certain amount of health while character's current health is between 0 and max
@@ -55,7 +55,7 @@ public class HealthPoints : MonoBehaviour
         
     } 
     [ProButton]
-    public virtual void Respawn()   {
+    public virtual void ResetHealth()   {
         currentHP = MAX_HP;
         isDead = false;
     }

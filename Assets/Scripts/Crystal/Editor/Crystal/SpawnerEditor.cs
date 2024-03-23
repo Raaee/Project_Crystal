@@ -43,13 +43,5 @@ public class SpawnerEditor : Editor
 
         // Apply changes to all serializedProperties - including custom drawn ones
         serializedObject.ApplyModifiedProperties();
-
-        // Add a button to regenerate spawns
-        if (GUILayout.Button("Regenerate Spawns"))
-        {
-            Spawner spawner = (Spawner)target;
-            // Call a method on the Spawner script to regenerate spawns
-            spawner.GenerateSpawns();
-        }
     }
 }
