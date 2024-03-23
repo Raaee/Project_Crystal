@@ -19,6 +19,9 @@ public class RangedBasicAttack : MonoBehaviour
     private float lastPlayerAttackTime = 0f;
     private float lastEnemyAttackTime = 0f;
 
+    // OnCooldown
+    private bool canPlayerShoot = true; 
+
     // Actions component
     private Actions actions;
    
@@ -49,6 +52,7 @@ public class RangedBasicAttack : MonoBehaviour
     // Method to start the attack
     public void StartAttack()
     {
+        if (!canPlayerShoot) return; // Check if the player can shoot
         if (Time.time < lastPlayerAttackTime + playerFireRate) return;
 
         // Get the mouse position and the object position
@@ -60,6 +64,8 @@ public class RangedBasicAttack : MonoBehaviour
         SpawnProjectile(direction);
 
         lastPlayerAttackTime = Time.time;
+        canPlayerShoot = false; // Set canPlayerShoot to false
+        StartCoroutine(ResetPlayerShoot()); // Start the coroutine to reset canPlayerShoot
     }
 
     public void AttackTarget(Transform currentTarget) {
@@ -70,6 +76,23 @@ public class RangedBasicAttack : MonoBehaviour
         SpawnProjectile(directionToTarget);
 
         lastEnemyAttackTime = Time.time;
+    }
+
+      // Coroutine to reset canPlayerShoot after the playerFireRate time
+    private IEnumerator ResetPlayerShoot()
+    {
+        yield return new WaitForSeconds(playerFireRate);
+        canPlayerShoot = true;
+    }
+
+    public float getCooldownTime()
+    {
+        return lastPlayerAttackTime + playerFireRate;
+    }
+
+    public bool getCooldown()
+    {
+        return canPlayerShoot;
     }
 
 }

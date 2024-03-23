@@ -56,9 +56,9 @@ public class UIManager : MonoBehaviour
         pierceAttackShadow = pierceAttackObject.transform.GetChild(2).GetComponent<Image>();
         pierceAttackCooldown = abilities.GetComponent<PiercingShotAbility>().getCooldownTime();
         // Access To Basic Attack Currently Not Working
-        // basicAttackObject = transform.Find("BasicAttackBars").gameObject;
-        // basicAttackShadow = basicAttackObject.transform.GetChild(2).GetComponent<Image>();
-        // basicAttackCooldown = abilities.GetComponent<RangedBasicAttack>().getPlayerFireRate();
+        basicAttackObject = transform.Find("BasicAttackBars").gameObject;
+        basicAttackShadow = basicAttackObject.transform.GetChild(2).GetComponent<Image>();
+        basicAttackCooldown = abilities.GetComponent<RangedBasicAttack>().getCooldownTime();
     }
 
     void Update()
@@ -86,7 +86,7 @@ public class UIManager : MonoBehaviour
             UpdateAbilityCooldown(abilities.GetComponent<PiercingShotAbility>(), pierceAttackCooldown, ref pierceAttackTimer, pierceAttackShadow);
 
             // RangedBasicAttack Box Currently Not Working
-            // UpdateAbilityCooldown(abilities.GetComponent<RangedBasicAttack>(), basicAttackCooldown, ref basicAttackTimer, basicAttackShadow);
+            UpdateBasicAttackCooldown(abilities.GetComponent<RangedBasicAttack>(), basicAttackCooldown, ref basicAttackTimer, basicAttackShadow);
         }
     }
 
@@ -94,6 +94,20 @@ public class UIManager : MonoBehaviour
     void UpdateAbilityCooldown(Ability ability, float cooldown, ref float timer, Image shadow)
         {
             if (ability.getCooldown())
+                {
+                    timer += Time.deltaTime;
+                    shadow.fillAmount = Mathf.Clamp01(1 - (timer / cooldown));
+                }
+            else
+                {
+                    timer = 0f;
+                    shadow.fillAmount = 0.0f;
+                }
+        }
+    
+      void UpdateBasicAttackCooldown(RangedBasicAttack ability, float cooldown, ref float timer, Image shadow)
+        {
+            if (!ability.getCooldown())
                 {
                     timer += Time.deltaTime;
                     shadow.fillAmount = Mathf.Clamp01(1 - (timer / cooldown));
