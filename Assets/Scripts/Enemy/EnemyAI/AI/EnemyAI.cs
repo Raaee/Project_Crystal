@@ -58,7 +58,6 @@ public class EnemyAI : Movement {
         SetInitialTarget();
         enemyHP.OnHurt.AddListener(TargetPlayer);
         currentAggroTimer = playerAggroTime;
-
     }
 
     // SetInitialTarget(), if crystalObject is not null, sets currTarget to crystalObject and enemyCurrentState to MOVETOWARDSCRYSTAL

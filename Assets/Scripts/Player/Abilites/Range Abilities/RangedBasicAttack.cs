@@ -13,6 +13,12 @@ public class RangedBasicAttack : MonoBehaviour
 
     [SerializeField] private bool isPlayerShooting;
 
+    [SerializeField] private float enemyFireRate = 5.0f;
+    [SerializeField] private float playerFireRate = 0.1f;
+
+    private float lastPlayerAttackTime = 0f;
+    private float lastEnemyAttackTime = 0f;
+
     // Actions component
     private Actions actions;
    
@@ -43,6 +49,8 @@ public class RangedBasicAttack : MonoBehaviour
     // Method to start the attack
     public void StartAttack()
     {
+        if (Time.time < lastPlayerAttackTime + playerFireRate) return;
+
         // Get the mouse position and the object position
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Vector2 objectPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -50,9 +58,17 @@ public class RangedBasicAttack : MonoBehaviour
         Vector2 direction = (mousePosition - objectPosition).normalized;
         // Spawn the projectile
         SpawnProjectile(direction);
+
+        lastPlayerAttackTime = Time.time;
     }
+
     public void AttackTarget(Transform currentTarget) {
+
+        if(Time.time < lastEnemyAttackTime + enemyFireRate) return;
+
         Vector2 directionToTarget = (currentTarget.position - this.transform.parent.transform.position).normalized;
         SpawnProjectile(directionToTarget);
+
+        lastEnemyAttackTime = Time.time;
     }
 }
