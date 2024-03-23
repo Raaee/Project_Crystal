@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManaPoints : MonoBehaviour
+public class PlayerManaPoints : ManaPoints
 {
     
 }

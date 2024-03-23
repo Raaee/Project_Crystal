@@ -13,16 +13,9 @@ public abstract class Ability : MonoBehaviour
     // Flag to check if the ability is active
     [SerializeField] protected bool IsActive;
     // Reference to the player's mana points
-    [SerializeField] protected ManaPoints playerMana;
+    [SerializeField] protected PlayerManaPoints playerMana;
     // Flag to check if the ability is on cooldown
     protected bool isOnCoolDown = false;
-
-    // Awake is called when the script instance is being loaded
-    private void Awake()
-    {
-        // Get the ManaPoints component from the parent object
-        playerMana = GetComponentInParent<ManaPoints>();
-    }
 
     // Coroutine to use the ability and put it on cooldown
     public IEnumerator UseAbility()

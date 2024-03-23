@@ -51,9 +51,9 @@ MonoBehaviour:
   radius: 17
   cooldownTime: 3
   spawnParent: {fileID: 4723723021117559597}
-  cooldownLabel: {fileID: 0}
+  cooldownLabel: {fileID: 2232118318715674439}
   spawnObjects:
-  - gameObject: {fileID: 7616674975053692598, guid: 2ea50996b406a5443b04c8f21e874ef0, type: 3}
+  - gameObject: {fileID: 5281210970760375665, guid: afdb8e8862098194c97226d608464df2, type: 3}
     capacity: 1
     weight: 1
   - gameObject: {fileID: 359720065083726858, guid: ccbeb0c41b35dcc449baba56743c1f55, type: 3}

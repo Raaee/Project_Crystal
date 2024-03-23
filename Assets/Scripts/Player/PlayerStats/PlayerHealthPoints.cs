@@ -5,18 +5,17 @@ using UnityEngine;
 public class PlayerHealthPoints : HealthPoints
 {
     InputControls input;
-    private void Start() {
-        Respawn();
-        input = GetComponentInParent<InputControls>();
-        
+    public override void Start() {
+        base.Start();
+        input = GetComponent<InputControls>();
     }
     public override void Die()
     {
         Debug.Log("Player dead");
         OnDead?.Invoke();
     }
-    public override void Respawn() {
-        base.Respawn();
-        input.OnEnable();
+    public override void ResetHealth() {
+        base.ResetHealth();
+        //input.OnEnable();
     }
 }
