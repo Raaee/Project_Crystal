@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9185c03ade39de94abb009a537d39f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 1000
-  maxLifeTime: 2
-  projectileDamage: 10
+  projectileSpeed: 900
+  maxLifeTime: 1.5
+  projectileDamage: 8
 --- !u!50 &5150111593692239222
 Rigidbody2D:
   serializedVersion: 4
@@ -109,9 +109,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
+  m_Offset: {x: -0.5499467, y: 0.012385823}
+  m_Size: {x: 1.0518931, y: 0.40204555}
+  m_Direction: 1
 --- !u!1 &7160412702477206174
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,8 +185,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2626922561676193723, guid: f93c446d9e9f9f14487d49142e33dcc1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1392225362927415623, guid: f93c446d9e9f9f14487d49142e33dcc1, type: 3}
+  m_Color: {r: 0.94404167, g: 0.7688679, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
