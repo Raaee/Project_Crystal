@@ -59,4 +59,10 @@ public class HealthPoints : MonoBehaviour
         currentHP = MAX_HP;
         isDead = false;
     }
+
+    // Method To Get Current HP
+    public int GetCurrentHP()
+    {
+        return currentHP;
+    }
 }
