@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     // Cooldown time for the ability
-    [SerializeField] protected int cooldown;
+    [SerializeField] protected float cooldown;
     // Mana cost of the ability
     [SerializeField] protected int manaCost;
     // Flag to check if the ability is active
@@ -45,13 +45,13 @@ public abstract class Ability : MonoBehaviour
     public int GetCurrentMana() => playerMana.GetCurrentMP();
 
     // Method to get cooldownTime
-    public int getCooldownTime() 
+    public float GetCooldownTime() 
     {
         return cooldown;
     }
 
     // Method to get cooldown state
-    public bool getCooldown()
+    public bool GetIsOnCooldown()
     {
         return isOnCoolDown;
     }

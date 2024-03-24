@@ -24,7 +24,6 @@ public class PiercingProjectile : MonoBehaviour
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>(); // Get the Rigidbody component
-        SetMoveDirection(new Vector2(0, 1)); // Set the initial move direction
     }
 
     
@@ -46,15 +45,14 @@ public class PiercingProjectile : MonoBehaviour
     }
 
     // Method to move the projectile
-    public void MoveProjectile()
-    {
-        // Set the velocity of the Rigidbody
-        rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
-
+    public void MoveProjectile()    {
         // Calculate the angle of the move direction
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         // Rotate the projectile to face the move direction
         transform.rotation = Quaternion.Euler(0f, 0f, Mathf.LerpAngle(transform.rotation.eulerAngles.z, angle, projectileSpeed * Time.deltaTime));
+        // Set the velocity of the Rigidbody
+        rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
+
     }
 
     // Method to set the move direction of the projectile

@@ -4,39 +4,31 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // This class handles the ranged basic attack for a game character
-public class RangedBasicAttack : MonoBehaviour
-{
-    // Prefab for the basic attack
-    [SerializeField] private GameObject angedBasicAttackPrefab;
+public class RangedBasicAttack : Ability  {
+
+    private Actions actions;
+
     // Object pooler for projectiles
     [SerializeField] private ObjectPooler projPooler;
-
     [SerializeField] private bool isPlayerShooting;
-
     [SerializeField] private float enemyFireRate = 5.0f;
     [SerializeField] private float playerFireRate = 0.1f;
 
     private float lastPlayerAttackTime = 0f;
     private float lastEnemyAttackTime = 0f;
-
-    // OnCooldown
-    private bool canPlayerShoot = true; 
-
-    // Actions component
-    private Actions actions;
-   
-    void Awake()
-    {
-        // Get the Actions component from the parent object
-        actions = GetComponentInParent<Actions>();
-        // Add StartAttack as a listener to the OnBasicAttack event
+    private bool isOnCooldown = true; 
        
-        actions?.OnBasicAttack.AddListener(StartAttack);
+    void Awake() { 
+        
+        actions = GetComponentInParent<Actions>();
+        // Add listener for basic attack event when basic attack button is pressed
+        actions?.OnBasicAttack.AddListener(AbilityUsage);
+
+        cooldown = playerFireRate;
     }
 
     // Method to spawn a projectile
-    public void SpawnProjectile(Vector2 moveDirection)
-    {
+    public void SpawnProjectile(Vector2 moveDirection)  {
         // Get a pooled object
         GameObject go = projPooler.GetPooledObject();
         // Set the position and rotation of the projectile
@@ -50,9 +42,9 @@ public class RangedBasicAttack : MonoBehaviour
     }
 
     // Method to start the attack
-    public void StartAttack()
-    {
-        if (!canPlayerShoot) return; // Check if the player can shoot
+    public override void AbilityUsage() {
+
+        if (!isOnCooldown) return; // Check if the player can shoot
         if (Time.time < lastPlayerAttackTime + playerFireRate) return;
 
         // Get the mouse position and the object position
@@ -64,7 +56,7 @@ public class RangedBasicAttack : MonoBehaviour
         SpawnProjectile(direction);
 
         lastPlayerAttackTime = Time.time;
-        canPlayerShoot = false; // Set canPlayerShoot to false
+        isOnCooldown = false; // Set canPlayerShoot to false
         StartCoroutine(ResetPlayerShoot()); // Start the coroutine to reset canPlayerShoot
     }
 
@@ -78,21 +70,9 @@ public class RangedBasicAttack : MonoBehaviour
         lastEnemyAttackTime = Time.time;
     }
 
-      // Coroutine to reset canPlayerShoot after the playerFireRate time
-    private IEnumerator ResetPlayerShoot()
-    {
+    // Coroutine to reset canPlayerShoot after the playerFireRate time
+    private IEnumerator ResetPlayerShoot()  {
         yield return new WaitForSeconds(playerFireRate);
-        canPlayerShoot = true;
+        isOnCooldown = true;
     }
-
-    public float getCooldownTime()
-    {
-        return lastPlayerAttackTime + playerFireRate;
-    }
-
-    public bool getCooldown()
-    {
-        return canPlayerShoot;
-    }
-
 }

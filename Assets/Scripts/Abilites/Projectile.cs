@@ -24,7 +24,6 @@ public class Projectile : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
 
         // Set the initial direction of the projectile to upwards.
-        SetMoveDirection(new Vector2(0, 1), true);
     }
 
     // FixedUpdate is called every fixed framerate frame.
@@ -48,14 +47,13 @@ public class Projectile : MonoBehaviour
     }
 
     // Moves the projectile in its current direction.
-    public void MoveProjectile()
-    {
-        // Set the velocity of the projectile by multiplying the direction, speed, and time since the last frame.
-        rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
+    public void MoveProjectile()    {
         // Calculate the angle of the projectile's direction in degrees.
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         // Set the rotation of the projectile to face the direction it's moving, smoothly transitioning over time.
         transform.rotation = Quaternion.Euler(0f, 0f, Mathf.LerpAngle(transform.rotation.eulerAngles.z, angle, projectileSpeed * Time.deltaTime));
+        // Set the velocity of the projectile by multiplying the direction, speed, and time since the last frame.
+        rb2D.velocity = moveDirection * projectileSpeed * Time.fixedDeltaTime;
     }
 
     // Sets the direction in which the projectile should move.
