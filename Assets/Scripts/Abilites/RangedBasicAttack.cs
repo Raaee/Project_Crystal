@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // This class handles the ranged basic attack for a game character
-public class RangedBasicAttack : Ability  {
+public class RangedBasicAttack : Ability {
 
     private Actions actions;
 

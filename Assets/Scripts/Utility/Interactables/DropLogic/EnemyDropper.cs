@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EnemyDropper : MonoBehaviour {
+public class EnemyDropper : MonoBehaviour{
 
     public List<GameObject> enemyDrop;
     private GameObject allDropsParentGO;

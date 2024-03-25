@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This class represents a projectile that can pierce through enemies
-public class PiercingProjectile : MonoBehaviour
-{
+public class PiercingProjectile : MonoBehaviour {
    
     [SerializeField] private float projectileSpeed = 1000f; // Speed of the projectile
     [SerializeField] private float maxLifeTime = 2f; // Maximum lifetime of the projectile

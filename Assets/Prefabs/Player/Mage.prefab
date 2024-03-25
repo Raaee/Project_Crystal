@@ -618,7 +618,7 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 0
   IsActive: 0
-  playerMana: {fileID: 6609804452130538947}
+  userMana: {fileID: 6609804452130538947}
   teleportDistance: 5
 --- !u!114 &5606925210253363792
 MonoBehaviour:
@@ -635,7 +635,7 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 0
   IsActive: 0
-  playerMana: {fileID: 6609804452130538947}
+  userMana: {fileID: 6609804452130538947}
   projPooler: {fileID: 4156343975335828177}
   isPlayerShooting: 1
   enemyFireRate: 5
@@ -655,7 +655,7 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 10
   IsActive: 1
-  playerMana: {fileID: 6609804452130538947}
+  userMana: {fileID: 6609804452130538947}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   projPooler: {fileID: 3416345396890490197}
   delayBetweenPresses: 0.25

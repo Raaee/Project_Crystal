@@ -13,7 +13,7 @@ public abstract class Ability : MonoBehaviour
     // Flag to check if the ability is active
     [SerializeField] protected bool IsActive;
     // Reference to the player's mana points
-    [SerializeField] protected PlayerManaPoints playerMana;
+    [SerializeField] protected ManaPoints userMana;
     // Flag to check if the ability is on cooldown
     protected bool isOnCoolDown = false;
 
@@ -36,13 +36,13 @@ public abstract class Ability : MonoBehaviour
     public void UseManaPoints()
     {
         // Remove the mana cost of the ability from the player's mana points
-        playerMana.RemoveMana(manaCost);
+        userMana.RemoveMana(manaCost);
     }
     // Abstract method for ability usage to be implemented by child classes
     public abstract void AbilityUsage();
 
     // Method to get the current mana points of the player
-    public int GetCurrentMana() => playerMana.GetCurrentMP();
+    public int GetCurrentMana() => userMana.GetCurrentMP();
 
     // Method to get cooldownTime
     public float GetCooldownTime() 

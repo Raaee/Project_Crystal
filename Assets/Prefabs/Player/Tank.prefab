@@ -597,7 +597,7 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 0
   IsActive: 0
-  playerMana: {fileID: 7025886424327816447}
+  userMana: {fileID: 7025886424327816447}
   teleportDistance: 5
 --- !u!114 &5606925210253363792
 MonoBehaviour:
@@ -611,11 +611,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angedBasicAttackPrefab: {fileID: 971724485026557118, guid: 50e9f81328c3753468da15116462022f, type: 3}
+  cooldown: 0
+  manaCost: 0
+  IsActive: 0
+  userMana: {fileID: 7025886424327816447}
   projPooler: {fileID: 4156343975335828177}
   isPlayerShooting: 0
   enemyFireRate: 5
-  playerFireRate: 0.1
+  playerFireRate: 0.5
 --- !u!114 &8156202257822150933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +634,7 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 10
   IsActive: 0
-  playerMana: {fileID: 7025886424327816447}
+  userMana: {fileID: 7025886424327816447}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
   projPooler: {fileID: 3416345396890490197}
   delayBetweenPresses: 0.25

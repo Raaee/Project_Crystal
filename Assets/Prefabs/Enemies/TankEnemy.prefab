@@ -174,7 +174,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eba9267bcbcac454f964c2a7e04e5a5a, type: 3}
   m_Name: 
@@ -328,7 +328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angedBasicAttackPrefab: {fileID: 971724485026557118, guid: da5bc063b3c4f446a9c0c2a06a8eea54, type: 3}
+  cooldown: 0
+  manaCost: 0
+  IsActive: 0
+  userMana: {fileID: 0}
   projPooler: {fileID: 3338611496508601949}
   isPlayerShooting: 0
   enemyFireRate: 0.8
