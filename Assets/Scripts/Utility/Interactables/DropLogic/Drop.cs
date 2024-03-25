@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drop : MonoBehaviour, IInteractable    {
+public class Drop : MonoBehaviour, IInteractable
+{
 
     [SerializeField] private float dropChance;
     [SerializeField] private InteractableType interactableType;

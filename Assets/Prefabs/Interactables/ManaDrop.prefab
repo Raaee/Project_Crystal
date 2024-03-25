@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 80
+  dropChance: 0
   interactableType: 1
-  outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
+  outlineMat: {fileID: 0}
 --- !u!114 &6949517052174242399
 MonoBehaviour:
   m_ObjectHideFlags: 0

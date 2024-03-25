@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // The Projectile class handles the behavior of projectiles in the game.
-public class Projectile : MonoBehaviour{
+public class Projectile : MonoBehaviour 
+{ 
     [SerializeField] private float projectileSpeed = 1000f; // The speed of the projectile.
     [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
     private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
