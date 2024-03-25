@@ -359,6 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7e042e7b3593e4bb8ee7d8e20665b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_MP: 100
+  currentMP: 0
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +501,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 13
+  m_CameraDistance: 14.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -616,7 +618,7 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 0
   IsActive: 0
-  playerMana: {fileID: 0}
+  userMana: {fileID: 6609804452130538947}
   teleportDistance: 5
 --- !u!114 &5606925210253363792
 MonoBehaviour:
@@ -630,9 +632,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angedBasicAttackPrefab: {fileID: 971724485026557118, guid: 74dd1c5c95c6afa45b8cf7ba48b69ea9, type: 3}
+  cooldown: 1
+  manaCost: 0
+  IsActive: 0
+  userMana: {fileID: 6609804452130538947}
   projPooler: {fileID: 4156343975335828177}
   isPlayerShooting: 1
+  enemyFireRate: 5
+  playerFireRate: 0.5
 --- !u!114 &8156202257822150933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +655,7 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 10
   IsActive: 1
-  playerMana: {fileID: 0}
+  userMana: {fileID: 6609804452130538947}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   projPooler: {fileID: 3416345396890490197}
   delayBetweenPresses: 0.25
@@ -663,6 +670,7 @@ GameObject:
   - component: {fileID: 4753752826396503389}
   - component: {fileID: 6262924791448149945}
   - component: {fileID: 3521332388731034868}
+  - component: {fileID: 2472472596460452453}
   m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
@@ -758,6 +766,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2472472596460452453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360943041567263304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d5ba05e165cfb4b95277675b8ad72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8271713260674164174
 GameObject:
   m_ObjectHideFlags: 0

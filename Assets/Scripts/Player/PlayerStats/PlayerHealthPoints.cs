@@ -13,6 +13,8 @@ public class PlayerHealthPoints : HealthPoints
     {
         Debug.Log("Player dead");
         OnDead?.Invoke();
+        input.OnDisable();
+        Destroy(this.gameObject);
     }
     public override void ResetHealth() {
         base.ResetHealth();
