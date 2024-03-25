@@ -13,8 +13,8 @@ public class HealthPoints : MonoBehaviour
     [SerializeField] private int currentHP;
     
     private bool isDead = false;
-    public UnityEvent OnDead;
-    public UnityEvent OnHurt;
+    [HideInInspector] public UnityEvent OnDead;
+    [HideInInspector] public UnityEvent OnHurt;
 
     // Character starts with maximum health value
     public virtual void Start()    {
@@ -58,5 +58,11 @@ public class HealthPoints : MonoBehaviour
     public virtual void ResetHealth()   {
         currentHP = MAX_HP;
         isDead = false;
+    }
+
+    // Method To Get Current HP
+    public int GetCurrentHP()
+    {
+        return currentHP;
     }
 }
