@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
   maxLifeTime: 2
-  projectileDamage: 10
+  projectileDamage: 25
   maxPiercingAmount: 2
 --- !u!70 &3780263079944073123
 CapsuleCollider2D:

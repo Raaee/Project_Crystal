@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9185c03ade39de94abb009a537d39f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 1000
-  maxLifeTime: 2
+  projectileSpeed: 750
+  maxLifeTime: 1.5
   projectileDamage: 10
 --- !u!50 &5150111593692239222
 Rigidbody2D:
