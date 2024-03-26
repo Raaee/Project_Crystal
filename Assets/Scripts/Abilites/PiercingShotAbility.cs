@@ -48,6 +48,9 @@ public class PiercingShotAbility : Ability
     // Method to shoot if the ability is active
     public void ShootIfActive()
     {
+        if (isOnCoolDown)
+            return;
+
         // If the current mana is greater than or equal to the mana cost, use the ability
         if (GetCurrentMana() >= manaCost)
             StartCoroutine(UseAbility());
