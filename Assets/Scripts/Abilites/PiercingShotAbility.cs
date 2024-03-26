@@ -13,10 +13,7 @@ public class PiercingShotAbility : Ability
 
     // Private fields
     private Actions actions;
-    private InputControl playerInput;
-    private bool KeyPress = true;
-    private bool pressedFirstTime = false;
-    private float lastPressedTime;
+    
 
     void Awake()
     {
@@ -63,46 +60,6 @@ public class PiercingShotAbility : Ability
         SpawnProjectile(direction);
     }
 
-    // Method to confirm a double press
-    public void ConfirmDoublePress()
-    {
-        // If the key is pressed
-        if (KeyPress)
-        {
-            // If the key was already pressed once
-            if (pressedFirstTime)
-            {
-                // Check if the second press is fast enough to be considered a double press
-                bool isDoublePress = Time.time - lastPressedTime <= delayBetweenPresses;
-
-                // If it is a double press
-                if (isDoublePress)
-                {
-                    Debug.Log("DoublePress");
-
-                    // If the ability is on cooldown, return
-                    if (isOnCoolDown)
-                        return;
-
-                    // Use the ability and reset the first press flag
-                    StartCoroutine(UseAbility());
-                    pressedFirstTime = false;
-                }
-            }
-            else // If the key was not already pressed once
-            {
-                // Set the first press flag
-                pressedFirstTime = true;
-            }
-
-            // Update the last pressed time
-            lastPressedTime = Time.time;
-        }
-
-        // If we're waiting for a second key press but we've reached the delay, reset the first press flag
-        if (pressedFirstTime && Time.time - lastPressedTime > delayBetweenPresses)
-        {
-            pressedFirstTime = false;
-        }
-    }
+    
+   
 }
