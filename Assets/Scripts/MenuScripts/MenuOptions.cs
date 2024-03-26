@@ -11,8 +11,19 @@ public class MenuOptions : MonoBehaviour
     public string sceneStart;
     public void StartGame()
     {
-        // SceneManager.LoadScene(sceneStart);
-        characterSelectScreen.SetActive(true);
+        if (menuScreen != null && characterSelectScreen != null)
+        {
+            // SceneManager.LoadScene(sceneStart);
+            characterSelectScreen.SetActive(true);
+            menuScreen.SetActive(false);
+            Debug.Log("Open Character Select Screen");
+        }
+        else
+        {
+            Debug.Log("There is no instance of menu and setting screen in the editor");
+        }
+        
+        
     }
 
     public void OpenCredits()
