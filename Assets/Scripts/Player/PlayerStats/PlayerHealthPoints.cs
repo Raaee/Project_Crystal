@@ -24,11 +24,12 @@ public class PlayerHealthPoints : HealthPoints
 
     public void OnTriggerEnter2D(Collider2D x)
     {
-        
+        Debug.Log("Enter Water");
         if (x.gameObject.tag == "Water")
         {
             countdown -= Time.deltaTime;
             if (countdown <= 0)
+                Debug.Log("Take 1 point of damage");
                 RemoveHealth(1);
         }
     }
