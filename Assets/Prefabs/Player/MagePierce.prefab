@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14d337cc401eaa4491c63e59bb710b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 1500
+  projectileSpeed: 1000
   maxLifeTime: 2
   projectileDamage: 25
   maxPiercingAmount: 2

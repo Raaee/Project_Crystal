@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2343447669287320918}
   - component: {fileID: 3954745128208868602}
   - component: {fileID: 4917669121937368097}
-  - component: {fileID: 8506391581786044554}
   - component: {fileID: 7223677986230081562}
+  - component: {fileID: 8506391581786044554}
   - component: {fileID: 8825795100716990109}
   - component: {fileID: 6853966967484349388}
   m_Layer: 0
@@ -111,26 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1127995, y: 2.0880384}
   m_EdgeRadius: 0
---- !u!114 &8506391581786044554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MAX_HP: 100
-  currentHP: 0
-  OnDead:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHurt:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &7223677986230081562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +133,26 @@ MonoBehaviour:
   avoidTime: 1
   attackRange: 4
   enemyCurrentState: 5
+--- !u!114 &8506391581786044554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281210970760375665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_HP: 150
+  currentHP: 0
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8825795100716990109
 MonoBehaviour:
   m_ObjectHideFlags: 0
