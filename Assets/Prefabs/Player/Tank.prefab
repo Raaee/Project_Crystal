@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8873837518193116210}
   - component: {fileID: 3439780717632776245}
   - component: {fileID: 6698978688436824222}
+  - component: {fileID: 279863175518761902}
   - component: {fileID: 7025886424327816447}
   m_Layer: 0
   m_Name: Tank
@@ -326,6 +327,26 @@ MonoBehaviour:
   chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
   respawnTime: 3
   disappearTime: 1
+--- !u!114 &279863175518761902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f67c6971fa73f74a833a709cfaf90b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_HP: 150
+  currentHP: 0
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7025886424327816447
 MonoBehaviour:
   m_ObjectHideFlags: 0
