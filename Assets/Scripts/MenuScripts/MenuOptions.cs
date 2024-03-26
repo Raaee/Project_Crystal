@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class MenuOptions : MonoBehaviour
 {
-    public GameObject menuScreen;
-    public GameObject settingsScreen;
+    [SerializeField] private GameObject menuScreen;
+    [SerializeField] private GameObject settingsScreen;
+    [SerializeField] private GameObject characterSelectScreen;
     public string sceneStart;
     public void StartGame()
     {
-        SceneManager.LoadScene(sceneStart);
+        // SceneManager.LoadScene(sceneStart);
+        characterSelectScreen.SetActive(true);
     }
 
     public void OpenCredits()
