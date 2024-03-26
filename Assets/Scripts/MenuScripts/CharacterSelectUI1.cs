@@ -35,6 +35,9 @@ public class CharacterSelectUI1 : MonoBehaviour
     
 
     currentCharacterIndex++;
+    if (currentCharacterIndex >= characters.Count) {
+        currentCharacterIndex = 0; // Wrap around to the beginning
+    }
     setCharacterDisplay(currentCharacterIndex);
 
    }
@@ -42,6 +45,9 @@ public class CharacterSelectUI1 : MonoBehaviour
    public void decreaseIndex(){
     
     currentCharacterIndex--;
+    if (currentCharacterIndex < 0) {
+        currentCharacterIndex = 1; // Stop at zero
+    }
     setCharacterDisplay(currentCharacterIndex);
 
    }
