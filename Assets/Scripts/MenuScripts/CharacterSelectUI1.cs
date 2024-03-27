@@ -7,6 +7,7 @@ using TMPro;
 public class CharacterSelectUI1 : MonoBehaviour
 {
    [SerializeField] private Image characterHolder;
+   [SerializeField] private Image descriptionHolder;
    [SerializeField] private TextMeshProUGUI titleText;
    [SerializeField] private TextMeshProUGUI descriptionText;
    private int currentCharacterIndex = 0;
@@ -16,6 +17,7 @@ public class CharacterSelectUI1 : MonoBehaviour
    private void setCharacterDisplay(int characterIndex)
    {
     characterHolder.sprite = characters[characterIndex].characterSprite;
+    // descriptionHolder.sprite = characters[characterIndex].characterSprite;
     titleText.text = characters[characterIndex].characterName;
     descriptionText.text = characters[characterIndex].characterDescription;
    }
