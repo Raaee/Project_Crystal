@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 750
   maxLifeTime: 1.5
-  projectileDamage: 10
+  projectileDamage: 5
 --- !u!50 &5150111593692239222
 Rigidbody2D:
   serializedVersion: 4

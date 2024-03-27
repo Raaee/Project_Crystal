@@ -11,6 +11,7 @@ public class HealthPoints : MonoBehaviour
     // Max health is set at 100
     [SerializeField] private int MAX_HP = 100;
     [SerializeField] private int currentHP;
+    [SerializeField] private bool godMode;
     
     private bool isDead = false;
     [HideInInspector] public UnityEvent OnDead;
@@ -31,6 +32,11 @@ public class HealthPoints : MonoBehaviour
 
     // Remove a certain amount of health while character's current health is above 0
     public void RemoveHealth(int damageAmount)  {
+        if (godMode)
+        {
+            return;
+        }
+
         currentHP -= damageAmount;
         
         // Dying is here:
