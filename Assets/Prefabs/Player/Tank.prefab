@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3439780717632776245}
   - component: {fileID: 6698978688436824222}
   - component: {fileID: 279863175518761902}
-  - component: {fileID: 7025886424327816447}
+  - component: {fileID: 6631863941949067309}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -347,7 +347,7 @@ MonoBehaviour:
   OnHurt:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7025886424327816447
+--- !u!114 &6631863941949067309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3221412779736232927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb7e042e7b3593e4bb8ee7d8e20665b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 85f2948a971441d408e977c51a497f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_MP: 100
@@ -618,7 +618,6 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 7025886424327816447}
   teleportDistance: 5
 --- !u!114 &5606925210253363792
 MonoBehaviour:
@@ -635,7 +634,6 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 7025886424327816447}
   projPooler: {fileID: 4156343975335828177}
   isPlayerShooting: 0
   enemyFireRate: 5
@@ -655,7 +653,6 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 10
   IsActive: 0
-  userMana: {fileID: 7025886424327816447}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
   projPooler: {fileID: 3416345396890490197}
   delayBetweenPresses: 0.25

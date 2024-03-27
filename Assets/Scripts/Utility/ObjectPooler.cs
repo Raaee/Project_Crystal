@@ -56,5 +56,7 @@ public class ObjectPooler : MonoBehaviour
         }
         return null;
     }
-
+    public GameObject GetObjectToPool() {
+        return objectToPool;
+    }
 }

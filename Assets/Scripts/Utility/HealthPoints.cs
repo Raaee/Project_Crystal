@@ -65,4 +65,10 @@ public class HealthPoints : MonoBehaviour
     {
         return currentHP;
     }
+    public void SetMaxHealth(int amt) {
+        MAX_HP = amt;
+    }
+    public int GetMaxHealth() {
+        return MAX_HP;
+    }
 }

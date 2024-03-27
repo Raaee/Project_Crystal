@@ -76,4 +76,16 @@ public class RangedBasicAttack : Ability
         yield return new WaitForSeconds(playerFireRate);
         isOnCooldown = true;
     }
+    public float GetPlayerFireRate() {
+        return playerFireRate;
+    }
+    public void SetPlayerFireRate(float rate) {
+        playerFireRate = rate;
+    }
+    public int GetMaxDamage() {
+        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetProjectileDamage();
+    }
+    public void SetMaxDamage(int amt) {
+        projPooler.GetObjectToPool().GetComponent<Projectile>().SetMaxProjectileDamage(amt);
+    }
 }

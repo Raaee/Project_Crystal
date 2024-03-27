@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour  {
 
     // var player stats
     [SerializeField] private PlayerHealthPoints playerHP;
-    [SerializeField] private PlayerManaPoints playerMP;
+    [SerializeField] private ManaPoints playerMP;
 
     // Var HP
     [Header("Player Health")]
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour  {
 
     // Var Teleport
     [Header("Teleport Ability")]
-    [SerializeField] private TeleportAbility1 teleportAbility;
+    [SerializeField] private TeleportAbility teleportAbility;
     [SerializeField] private Image teleportShadow;
     private float teleportTimer;
     private float teleportCooldown;

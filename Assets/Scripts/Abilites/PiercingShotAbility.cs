@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PiercingShotAbility : Ability
 {
     // Serialized fields for Unity inspector
-    [SerializeField] private GameObject rangedAbility1Prefab;
     [SerializeField] private ObjectPooler projPooler;
     [SerializeField] float delayBetweenPresses = 0.25f;
 
@@ -62,7 +61,12 @@ public class PiercingShotAbility : Ability
         Vector2 direction = (mousePosition - objectPosition).normalized;
         SpawnProjectile(direction);
     }
+    public int GetMaxDamage() {
+        return projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().GetProjectileDamage();
+    }
+    public void SetMaxDamage(int amt) {
+        projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
+    }
 
-    
-   
+
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4917669121937368097}
   - component: {fileID: 7223677986230081562}
   - component: {fileID: 8506391581786044554}
-  - component: {fileID: 8825795100716990109}
+  - component: {fileID: 9199803996842551784}
   - component: {fileID: 1167119103067770847}
   m_Layer: 0
   m_Name: RangedEnemy
@@ -153,7 +153,7 @@ MonoBehaviour:
   OnHurt:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8825795100716990109
+--- !u!114 &9199803996842551784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,10 +162,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5281210970760375665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a335f6ca2b447ce4395a703b57e4874d, type: 3}
+  m_Script: {fileID: 11500000, guid: 85f2948a971441d408e977c51a497f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_MP: 1000
+  MAX_MP: 100
   currentMP: 0
 --- !u!114 &1167119103067770847
 MonoBehaviour:
@@ -331,7 +331,6 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 8825795100716990109}
   projPooler: {fileID: 3338611496508601949}
   isPlayerShooting: 0
   enemyFireRate: 0.7

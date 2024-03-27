@@ -109,4 +109,10 @@ public class Projectile : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+    public int GetProjectileDamage() {
+        return projectileDamage;
+    }
+    public void SetMaxProjectileDamage(int amt) {
+        projectileDamage = amt;
+    }
 }
