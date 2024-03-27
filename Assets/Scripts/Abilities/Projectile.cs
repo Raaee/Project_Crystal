@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
     private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
     private const String PLAYER_TAG = "Player"; // Tag used to identify the player.
+    private const String CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
     [SerializeField] private int projectileDamage = 10; // The damage dealt by the projectile.
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
@@ -98,6 +99,25 @@ public class Projectile : MonoBehaviour
             }
             // Reduce the health of the player by the damage of the projectile
             potentialPlayerHealth.RemoveHealth(projectileDamage);
+            // Disable the projectile after it has hit the player
+            DisableProjectile();
+        }
+        // Check if the projectile has collided with the crystal
+        else if (collider.gameObject.CompareTag(CRYSTAL_TAG))
+        {
+            if (isPlayerShooting)
+            {
+                return;
+            }
+            // Get the HealthPoints component of the crystal
+            HealthPoints potentialCrystalHealth = collider.gameObject.GetComponent<HealthPoints>();
+            // If the crystal does not have a HealthPoints component, exit the function
+            if (!potentialCrystalHealth)
+            {
+                return;
+            }
+            // Reduce the health of the crystal by the damage of the projectile
+            potentialCrystalHealth.RemoveHealth(projectileDamage);
             // Disable the projectile after it has hit the player
             DisableProjectile();
         }
