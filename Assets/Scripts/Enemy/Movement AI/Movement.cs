@@ -28,7 +28,7 @@ public abstract class Movement : MonoBehaviour
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float curSpeed;
    
-    protected void Start()
+    public virtual void Start()
     {
         curSpeed = baseSpeed;
     }

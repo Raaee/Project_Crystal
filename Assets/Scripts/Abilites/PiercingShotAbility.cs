@@ -8,7 +8,7 @@ public class PiercingShotAbility : Ability
 {
     // Serialized fields for Unity inspector
     [SerializeField] private ObjectPooler projPooler;
-    [SerializeField] float delayBetweenPresses = 0.25f;
+  //  [SerializeField] float delayBetweenPresses = 0.25f;
 
     // Private fields
     private Actions actions;
