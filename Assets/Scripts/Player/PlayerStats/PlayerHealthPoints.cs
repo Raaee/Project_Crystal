@@ -20,4 +20,10 @@ public class PlayerHealthPoints : HealthPoints
         base.ResetHealth();
         //input.OnEnable();
     }
+
+    public void OnTriggerEnter2D(Collider2D x) {
+        if (x.gameObject.tag == "Water") { 
+            Debug.Log("Remove Health");
+        }
+     }
 }
