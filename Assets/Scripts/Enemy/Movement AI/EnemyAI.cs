@@ -38,7 +38,7 @@ public class EnemyAI : Movement {
     [SerializeField] private EnemyState enemyCurrentState;
     
     // Serialized Misc Variables
-    private bool inDanger;
+  //  private bool inDanger;
 
     private float currentAggroTimer;
     private bool isPlayerAggroActive = false;
@@ -53,7 +53,7 @@ public class EnemyAI : Movement {
         enemyHP = GetComponent<EnemyHealthPoints>();
         enemyRangedBasicAttack = GetComponentInChildren<RangedBasicAttack>();
     }
-    private void Start()    {
+    public override void Start()    {
         base.Start();
         SetInitialTarget();
         enemyHP.OnHurt.AddListener(TargetPlayer);
@@ -155,7 +155,7 @@ public class EnemyAI : Movement {
     // INDANGER METHOD, similar to aggro. will be used for hivemind/avoidant AI.
     public void InDanger()
     {
-        inDanger = true;
+       // inDanger = true;
         if (enemyAIType == EnemyAIType.AVOIDANT) {
 
         }
