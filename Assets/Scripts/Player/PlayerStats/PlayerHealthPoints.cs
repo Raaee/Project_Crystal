@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealthPoints : HealthPoints
 {
     InputControls input;
+    private float countdown = 100;
     public override void Start() {
         base.Start();
         input = GetComponent<InputControls>();
@@ -21,9 +22,15 @@ public class PlayerHealthPoints : HealthPoints
         //input.OnEnable();
     }
 
-    public void OnTriggerEnter2D(Collider2D x) {
-        if (x.gameObject.tag == "Water") { 
-            Debug.Log("Remove Health");
+    public void OnTriggerEnter2D(Collider2D x)
+    {
+        Debug.Log("Enter Water");
+        if (x.gameObject.tag == "Water")
+        {
+            countdown -= Time.deltaTime;
+            if (countdown <= 0)
+                Debug.Log("Take 1 point of damage");
+                RemoveHealth(1);
         }
-     }
+    }
 }
