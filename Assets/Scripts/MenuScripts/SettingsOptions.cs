@@ -27,7 +27,7 @@ public class SettingsOptions : MonoBehaviour
    {
     if(menuScreen != null && selectCharacterScreen != null)
     {
-        menuScreen.setActive(true);
+        menuScreen.SetActive(true);
         selectCharacterScreen.SetActive(false);
         Debug.Log("Exiting Select Character Screen");
     }else
