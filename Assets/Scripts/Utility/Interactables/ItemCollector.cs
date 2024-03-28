@@ -29,8 +29,9 @@ public class ItemCollector : MonoBehaviour  {
         }
     }
     public void Interact(InteractableType type, GameObject go) {
+      
         objectCollected = go;
-        DropData potentialDrop = GetComponent<DropData>();
+        DropData potentialDrop = go.GetComponent<DropData>();
         if (potentialDrop != null) {
             potentialDrop.OnDropInteract();
         }
@@ -47,7 +48,7 @@ public class ItemCollector : MonoBehaviour  {
     public void ChestInteraction() {
         bool somethingDropped = false;
         float draw = Random.Range(0f, 100f);
-        Debug.Log(draw);
+      
 
         foreach (GameObject drop in chestDrops) {
             if (draw <= drop.GetComponent<Drop>().GetDropChance()) {

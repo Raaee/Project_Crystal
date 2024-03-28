@@ -5,7 +5,7 @@ using UnityEngine;
 public class Drop : MonoBehaviour, IInteractable
 {
 
-    [SerializeField] private float dropChance;
+    [SerializeField] private float dropChance = 0.1f;
     [SerializeField] private InteractableType interactableType;
 
     [Header("Sprite Renderer Stuff")]

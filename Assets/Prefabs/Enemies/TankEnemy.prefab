@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8506391581786044554}
   - component: {fileID: 8825795100716990109}
   - component: {fileID: 6853966967484349388}
+  - component: {fileID: 333826428042613783}
   m_Layer: 0
   m_Name: TankEnemy
   m_TagString: Enemy
@@ -174,15 +175,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eba9267bcbcac454f964c2a7e04e5a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDrop:
-  - {fileID: 1103908666556385156, guid: c5b2123234eb24a448019446b8b5b7c5, type: 3}
-  - {fileID: 583352322101942660, guid: 12b2876ab4f699442bc9b2ba6b0c8f67, type: 3}
-  - {fileID: 2728916520030732642, guid: ec06cc99cd3081543bb7b7605bb019ff, type: 3}
+  lootDropChance: 0.424
+--- !u!114 &333826428042613783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281210970760375665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40ddc5b34e9b374c9d7ed7a4b5f18e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathColorTint: {r: 0.8679245, g: 0.1432894, b: 0.1432894, a: 0.62352943}
 --- !u!1 &6453280248707733763
 GameObject:
   m_ObjectHideFlags: 0

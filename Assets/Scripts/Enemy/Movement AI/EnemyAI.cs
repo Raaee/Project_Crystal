@@ -182,6 +182,11 @@ public class EnemyAI : Movement {
     public void SetCrystalObject(Transform transform) {
         crystalObject = transform;
     }
+
+    public void SetEnemyToIdle()
+    {
+        enemyCurrentState = EnemyState.IDLE;
+    }
 }
 
 

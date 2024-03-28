@@ -6,9 +6,9 @@ public class EnemyHealthPoints : HealthPoints
 {
     public override void Die()
     {
-        Debug.Log("Enemy dead");
+       
         OnDead?.Invoke();
-        Destroy(this.gameObject);
+       
     }
 
 }
