@@ -5,12 +5,25 @@ using UnityEngine;
 
 public class MenuOptions : MonoBehaviour
 {
-    public GameObject menuScreen;
-    public GameObject settingsScreen;
+    [SerializeField] private GameObject menuScreen;
+    [SerializeField] private GameObject settingsScreen;
+    [SerializeField] private GameObject characterSelectScreen;
     public string sceneStart;
     public void StartGame()
     {
-        SceneManager.LoadScene(sceneStart);
+        if (menuScreen != null && characterSelectScreen != null)
+        {
+            // SceneManager.LoadScene(sceneStart);
+            characterSelectScreen.SetActive(true);
+            menuScreen.SetActive(false);
+            Debug.Log("Open Character Select Screen");
+        }
+        else
+        {
+            Debug.Log("There is no instance of menu and setting screen in the editor");
+        }
+        
+        
     }
 
     public void OpenCredits()
