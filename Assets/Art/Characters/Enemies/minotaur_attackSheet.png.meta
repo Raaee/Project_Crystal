@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e09064f8e30b234facae133e994a3bf
+guid: 0da9a3661a1fedd418f119348a279d14
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minotaur
+      name: minotaur_attackSheet_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 14
+        x: 4
+        y: 9
         width: 54
-        height: 48
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 250f1dcf74041ca4889431d555b0979d
-      internalID: -182353320
+      spriteID: 46cbce94f880aa14aba364b9246bb2d6
+      internalID: -55046557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snake
+      name: minotaur_attackSheet_1
       rect:
         serializedVersion: 2
-        x: 72
-        y: 16
-        width: 35
-        height: 38
+        x: 66
+        y: 9
+        width: 54
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f7b6563e92426d458e5945de2541a17
-      internalID: 713026076
+      spriteID: 621e0d6b0c99ef34aab67796a41a9f85
+      internalID: 273347974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaur_attackSheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 9
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca421f4afc998a94dbc850135303674f
+      internalID: -589953065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaur_attackSheet_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 9
+        width: 54
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a392982894bd2d046bd604a4e435bd43
+      internalID: -445352069
       vertices: []
       indices: 
       edges: []
@@ -175,8 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      minotaur: -182353320
-      snake: 713026076
+      minotaur_attackSheet_0: -55046557
+      minotaur_attackSheet_1: 273347974
+      minotaur_attackSheet_2: -589953065
+      minotaur_attackSheet_3: -445352069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

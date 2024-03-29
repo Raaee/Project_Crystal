@@ -9242,6 +9242,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corrupted Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 3802484225616351336, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[22].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802484225616351336, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[25].m_Data
+      value: 
+      objectReference: {fileID: 30956050, guid: 6abb108f8351d2a46a6435ecc608c6e8, type: 3}
+    - target: {fileID: 3802484225616351336, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[22].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802484225616351336, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[25].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802484225616351336, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_Tiles.Array.data[18705].second.m_TileSpriteIndex
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4770889264971238368, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
       value: 65
