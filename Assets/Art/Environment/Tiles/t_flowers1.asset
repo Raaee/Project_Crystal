@@ -10,20 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: trees1
+  m_Name: t_flowers1
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: -1275270343, guid: 69b4c31eda2dee34dbc17acba86b2cc7, type: 3}
+  m_DefaultSprite: {fileID: -266875542, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -1275270343, guid: 69b4c31eda2dee34dbc17acba86b2cc7, type: 3}
-    - {fileID: 192203079, guid: 69b4c31eda2dee34dbc17acba86b2cc7, type: 3}
+    - {fileID: -266875542, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: 639536523, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: -1099844566, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: -374367173, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: 193168557, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: -1122544309, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: -668512428, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: -2097349394, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
+    - {fileID: -374367173, guid: 39eed0822d3136d498aa24c6da136336, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
-    m_PerlinScale: 0.5
+    m_PerlinScale: 0.9
     m_Output: 1
     m_ColliderType: 1
     m_RandomTransform: 0

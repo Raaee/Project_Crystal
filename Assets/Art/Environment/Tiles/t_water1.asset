@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: water2
+  m_Name: t_water1
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 53203442, guid: 482ee42510291be4fa04b025437b18d3, type: 3}
+  m_DefaultSprite: {fileID: -1702993215, guid: e67d886dd0720f44b885eee22426076e, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: 53203442, guid: 482ee42510291be4fa04b025437b18d3, type: 3}
-    - {fileID: 1286754501, guid: 482ee42510291be4fa04b025437b18d3, type: 3}
+    - {fileID: -1702993215, guid: e67d886dd0720f44b885eee22426076e, type: 3}
+    - {fileID: 1729207409, guid: e67d886dd0720f44b885eee22426076e, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1

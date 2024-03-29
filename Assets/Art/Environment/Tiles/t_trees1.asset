@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: shards1
+  m_Name: t_trees1
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 488932667, guid: 9d63ae758eee9324cb89da836c81d7d3, type: 3}
+  m_DefaultSprite: {fileID: -1275270343, guid: 69b4c31eda2dee34dbc17acba86b2cc7, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -480195257, guid: 9d63ae758eee9324cb89da836c81d7d3, type: 3}
-    - {fileID: 488932667, guid: 9d63ae758eee9324cb89da836c81d7d3, type: 3}
-    - {fileID: -1798686413, guid: 9d63ae758eee9324cb89da836c81d7d3, type: 3}
-    - {fileID: -1004025244, guid: 9d63ae758eee9324cb89da836c81d7d3, type: 3}
-    - {fileID: 1786255521, guid: 9d63ae758eee9324cb89da836c81d7d3, type: 3}
-    - {fileID: 193715514, guid: 9d63ae758eee9324cb89da836c81d7d3, type: 3}
+    - {fileID: -1275270343, guid: 69b4c31eda2dee34dbc17acba86b2cc7, type: 3}
+    - {fileID: 192203079, guid: 69b4c31eda2dee34dbc17acba86b2cc7, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
