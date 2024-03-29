@@ -40,6 +40,7 @@ public abstract class Movement : MonoBehaviour
     public void FreezeEnemy()
     {
         rb2D.velocity = Vector2.zero;
+        currentMovementState = MovementState.STOPPED;
     }
 
     // SetSpeed() takes a float argument, 'amount', which curSpeed is set to and then sets curSpeed back to baseSpeeda after a duration.
@@ -56,6 +57,8 @@ public abstract class Movement : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         rb2D.velocity = direction * curSpeed;
+        currentMovementState = rb2D.velocity.x < 0 ? MovementState.LEFT : MovementState.RIGHT;
+
        // transform.Translate(direction * curSpeed * Time.deltaTime);
     }
 
@@ -71,14 +74,7 @@ public abstract class Movement : MonoBehaviour
     
     public MovementState GetMovementState()
     {
-        if (Mathf.Abs(rb2D.velocity.x) < Mathf.Epsilon) // Consider near-zero values as stopped
-        {
-            return MovementState.STOPPED;
-        }
-        else
-        {
-            return rb2D.velocity.x < 0 ? MovementState.LEFT : MovementState.RIGHT;
-        }
+        return currentMovementState;
     }
 }
 
