@@ -12,6 +12,8 @@ public class DropManager : MonoBehaviour
 
 
 
+
+
     private void Awake()
     {
         if(Instance != null)
