@@ -1015,11 +1015,11 @@ MonoBehaviour:
   playerManaBar: {fileID: 927422953}
   manaFilling: {fileID: 1318946602}
   manaText: {fileID: 1511091385}
-  teleportAbility: {fileID: 0}
+  teleportAbility: {fileID: 1420631917}
   teleportShadow: {fileID: 522197009}
-  basicAttack: {fileID: 0}
+  basicAttack: {fileID: 1420631916}
   basicAttackShadow: {fileID: 212044215}
-  pierceAttack: {fileID: 0}
+  pierceAttack: {fileID: 1420631915}
   pierceAttackShadow: {fileID: 1433093678}
 --- !u!4 &426708224 stripped
 Transform:
@@ -3404,6 +3404,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1420631915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8156202257822150933, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
+  m_PrefabInstance: {fileID: 1063367954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ce4dc2012641549b26ff27e597bb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1420631916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5606925210253363792, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
+  m_PrefabInstance: {fileID: 1063367954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1420631917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1927185540186520050, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
+  m_PrefabInstance: {fileID: 1063367954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1424036706
 PrefabInstance:
   m_ObjectHideFlags: 0
