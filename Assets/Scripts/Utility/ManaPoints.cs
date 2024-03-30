@@ -18,13 +18,9 @@ public class ManaPoints : MonoBehaviour
     // Add a certain amount of mana while character's current mana is between 0 and max
     public void AddMana(int regenerateAmount)
     {
-        if (currentMP < MAX_MP && currentMP > 0)
-        {
-            if ((currentMP + regenerateAmount) > MAX_MP)
-            {
-                regenerateAmount = MAX_MP - currentMP;
-            }
-            currentMP += regenerateAmount;
+        currentMP += regenerateAmount;
+        if (currentMP >= MAX_MP) {
+            currentMP = MAX_MP;
         }
     }
 
@@ -38,7 +34,9 @@ public class ManaPoints : MonoBehaviour
             
         }
     }
-
+    public void ResetMana() {
+        currentMP = MAX_MP;
+    }
     public int GetCurrentMP()
     {
         return currentMP;

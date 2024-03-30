@@ -9,6 +9,7 @@ TagManager:
   - DropsParent
   - Water
   - Crystal
+  - Particles
   layers:
   - Default
   - TransparentFX
