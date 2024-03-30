@@ -14,10 +14,10 @@ AnimatorStateMachine:
     m_Position: {x: 421.41174, y: 70.8706, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6446731974868126403}
-    m_Position: {x: 459.05878, y: 150.8706, z: 0}
+    m_Position: {x: 420, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7693973659745552472}
-    m_Position: {x: 489.1764, y: 265.69415, z: 0}
+    m_Position: {x: 420, y: 190, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -35,7 +35,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tank Down Walk
+  m_Name: Down Walk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -83,7 +83,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tank Death Animation
+  m_Name: Death
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -109,7 +109,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tank Respawn Animation
+  m_Name: Respawn
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

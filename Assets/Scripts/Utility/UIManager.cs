@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour  {
 
     // var player stats
     [SerializeField] private PlayerHealthPoints playerHP;
-    [SerializeField] private PlayerManaPoints playerMP;
+    [SerializeField] private ManaPoints playerMP;
 
     // Var HP
     [Header("Player Health")]
