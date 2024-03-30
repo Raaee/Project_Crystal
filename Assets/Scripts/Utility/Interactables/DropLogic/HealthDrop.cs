@@ -22,7 +22,7 @@ public class HealthDrop : DropData  {
         {
             potentialHealthPoints.AddHealth(healthAmount);
         }
-        this.gameObject.SetActive(false);
+        WaitThenDie();
 
     }
 

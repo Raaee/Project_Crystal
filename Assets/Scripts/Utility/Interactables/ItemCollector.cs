@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour  {
     public static ItemCollector instance { get; private set; }
-    private GameObject objectCollected;
-    private GameObject allDropsParentGO;
-
+   
     [Header("Chest Stuff")]
     [Tooltip("Possible drops from chest")]
     [SerializeField] private List<GameObject> chestDrops;
-    [SerializeField] private Sprite chestOpenSprite;
-    [SerializeField] private Sprite chestClosedSprite;
-    [SerializeField] private float respawnTime = 3f;
-    [SerializeField] private float disappearTime = 1f;
+   
 
     private void Awake() {
         Init();
     }
     private void Init() {
-        allDropsParentGO = new GameObject("All drops Parent");
+      
 
         if (instance != null && instance != this) {
             Destroy(this);
@@ -30,7 +25,6 @@ public class ItemCollector : MonoBehaviour  {
     }
     public void Interact(InteractableType type, GameObject go) {
       
-        objectCollected = go;
         DropData potentialDrop = go.GetComponent<DropData>();
         if (potentialDrop != null) {
             potentialDrop.OnDropInteract();
@@ -38,23 +32,39 @@ public class ItemCollector : MonoBehaviour  {
         
         switch (type) {
             case InteractableType.CHEST:
-                ChestInteraction();
+                ChestInteraction(go);
                 break;
             case InteractableType.CARROT:
                 CarrotInteraction();
                 break;
         }
     }
-    public void ChestInteraction() {
+    public void ChestInteraction(GameObject chestGO) {
         bool somethingDropped = false;
         float draw = Random.Range(0f, 100f);
       
 
-        foreach (GameObject drop in chestDrops) {
-            if (draw <= drop.GetComponent<Drop>().GetDropChance()) {
-                GameObject go = Instantiate(drop, this.transform.position, Quaternion.identity);
-                go.transform.parent = allDropsParentGO.transform;
-                Debug.Log(go);
+        foreach (GameObject dropPrefab in chestDrops) {
+            Drop drop = dropPrefab.GetComponent<Drop>();
+            Debug.Log("draw: " + draw);
+            Debug.Log("drop chance: " + drop.GetDropChance());
+
+            if (draw <= drop.GetDropChance()) {
+                //GameObject go = Instantiate(drop, this.transform.position, Quaternion.identity);
+                // go.transform.parent = allDropsParentGO.transform;
+                //Debug.Log(go);
+
+                float randomOffset = Random.Range(1f,1f); //adding a random offset its not spawned right on chest
+                Vector3 spawnLocation = new Vector3(transform.position.x + randomOffset, transform.position.y + randomOffset, 0);
+                switch(drop.GetInteractableType())
+                {
+                    case InteractableType.HEALTH:
+                        DropManager.Instance?.GetHealthDrop(spawnLocation);
+                        break;
+                    case InteractableType.MANA:
+                        DropManager.Instance?.GetManaDrop(spawnLocation);
+                        break;
+                }
                 somethingDropped = true;
             }           
         }
@@ -62,20 +72,12 @@ public class ItemCollector : MonoBehaviour  {
         if (!somethingDropped) {
             Debug.Log("************ Enemy spawned");
         }
-        StartCoroutine(ChestOpenVisual(objectCollected));
+     
+        ChestVisual chestVisual = chestGO.GetComponent<ChestVisual>();
+        if (chestVisual)
+            StartCoroutine(chestVisual.ChestOpenVisual());
     }
-    public IEnumerator ChestOpenVisual(GameObject obj) {
-        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-        sr.sprite = chestOpenSprite;
-        yield return new WaitForSeconds(disappearTime);
-        obj.SetActive(false);
-        StartCoroutine(RespawnChest(sr, obj));
-    }
-    public IEnumerator RespawnChest(SpriteRenderer sr, GameObject obj) {
-        yield return new WaitForSeconds(respawnTime);
-        sr.sprite = chestClosedSprite;
-        obj.SetActive(true);
-    }
+   
     public void CarrotInteraction() { 
         // DO NOT TOUCH !! NO TOUCHY TOUCHY
         Debug.Log("Carrot pickup");

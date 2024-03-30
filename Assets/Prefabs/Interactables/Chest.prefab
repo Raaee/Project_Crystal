@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4591366720018861386}
   - component: {fileID: 4568890113209193678}
   - component: {fileID: 4014824749094927552}
+  - component: {fileID: 819739123633626254}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -244,3 +245,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &819739123633626254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891175567560889161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7812b662a95f6478e3534b2909586e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestOpenSprite: {fileID: 1233132977, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
+  chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
+  respawnTime: 5
