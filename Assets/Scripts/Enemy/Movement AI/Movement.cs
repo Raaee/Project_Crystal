@@ -27,10 +27,20 @@ public abstract class Movement : MonoBehaviour
     [SerializeField] protected float baseSpeed;
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float curSpeed;
-   
+    [Header("Movement Debug")]
+    [SerializeField] private MovementState currentMovementState = MovementState.NONE;
+    private Rigidbody2D rb2D;
     public virtual void Start()
     {
         curSpeed = baseSpeed;
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+
+    
+    public void FreezeEnemy()
+    {
+        rb2D.velocity = Vector2.zero;
+        currentMovementState = MovementState.STOPPED;
     }
 
     // SetSpeed() takes a float argument, 'amount', which curSpeed is set to and then sets curSpeed back to baseSpeeda after a duration.
@@ -46,13 +56,32 @@ public abstract class Movement : MonoBehaviour
     public void MoveTowardsTarget(Transform target)
     {
         Vector3 direction = (target.position - transform.position).normalized;
-        transform.Translate(direction * curSpeed * Time.deltaTime);
+        rb2D.velocity = direction * curSpeed;
+        currentMovementState = rb2D.velocity.x < 0 ? MovementState.LEFT : MovementState.RIGHT;
+
+       // transform.Translate(direction * curSpeed * Time.deltaTime);
     }
 
     // MoveAwayFromTarget() works the same as MoveTowardsTarget(), just with a negative direction Vector3.
     public void MoveAwayFromTarget(Transform target)
     {
-        Vector3 direction = (target.position - transform.position).normalized;
-        transform.Translate(-direction * curSpeed * Time.deltaTime);
+        Vector3 negativeTarget = -target.position;
+        Vector3 direction = (negativeTarget - transform.position).normalized;
+        rb2D.velocity = direction * curSpeed;
+        // transform.Translate(-direction * curSpeed * Time.deltaTime);
     }
+
+    
+    public MovementState GetMovementState()
+    {
+        return currentMovementState;
+    }
+}
+
+public enum MovementState
+{
+    NONE,
+    STOPPED,
+    LEFT,
+    RIGHT
 }

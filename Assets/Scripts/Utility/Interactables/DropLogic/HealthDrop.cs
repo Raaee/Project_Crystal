@@ -9,22 +9,20 @@ public class HealthDrop : DropData  {
     private void Start()    {
 
     }
-    public override void OnDropInteract()    {
-        Debug.Log("Giving the player healthAmount" + healthAmount);
+    public override void OnDropInteract()    
+    {
         //getting player game object
         GameObject playerGameObject = getPlayerGameObject();
 
         //attempting to access the healthpoints scripts from the playerGameObject
         HealthPoints potentialHealthPoints = playerGameObject.GetComponent<HealthPoints>();
-        Debug.Log("This is the player GO", playerGameObject);
         
         //if healthpoints isnt null, adds health 
-        if (potentialHealthPoints != null) {
-            Debug.Log("Inside potential health points");
-        potentialHealthPoints.AddHealth(healthAmount);
-
+        if (potentialHealthPoints != null) 
+        {
+            potentialHealthPoints.AddHealth(healthAmount);
         }
-        this.gameObject.SetActive(false);
+        WaitThenDie();
 
     }
 
