@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Get the InputControls component from the player
         playerInput = GetComponent<InputControls>();
+        Application.targetFrameRate = 60;
     }
 
     // FixedUpdate is called every fixed frame rate 

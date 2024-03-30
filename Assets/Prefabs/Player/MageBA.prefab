@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107264354013995256}
-  - component: {fileID: 7355800498403638694}
   - component: {fileID: 5150111593692239222}
   - component: {fileID: 8920486026225080589}
+  - component: {fileID: 7355800498403638694}
   m_Layer: 0
   m_Name: MageBA
   m_TagString: Untagged
@@ -37,21 +37,6 @@ Transform:
   - {fileID: 5853698361044150845}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7355800498403638694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971724485026557118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9185c03ade39de94abb009a537d39f31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpeed: 1250
-  maxLifeTime: 2
-  projectileDamage: 10
 --- !u!50 &5150111593692239222
 Rigidbody2D:
   serializedVersion: 4
@@ -114,6 +99,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.6, y: 0}
   m_Size: {x: 1.43, y: 0.57}
   m_Direction: 1
+--- !u!114 &7355800498403638694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971724485026557118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9185c03ade39de94abb009a537d39f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 1250
+  maxLifeTime: 2
+  projectileDamage: 10
 --- !u!1 &4364223327094119539
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 4168140419249555342}
   - component: {fileID: 2348918187810188298}
   m_Layer: 0
-  m_Name: Mage Ability Basic Visual
+  m_Name: Basic Attack Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

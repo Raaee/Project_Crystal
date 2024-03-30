@@ -10,7 +10,7 @@ public class PiercingProjectile : MonoBehaviour
     [SerializeField] private float projectileSpeed = 1000f; // Speed of the projectile
     [SerializeField] private float maxLifeTime = 2f; // Maximum lifetime of the projectile
     [SerializeField] private int projectileDamage = 10; // Damage dealt by the projectile
-    [SerializeField] private int maxPiercingAmount; // Maximum number of enemies the projectile can pierce through
+    [SerializeField] private int maxPiercingAmount = 4; // Maximum number of enemies the projectile can pierce through
 
     private int currentPiercingAmount; // Current number of enemies the projectile can still pierce through
 
