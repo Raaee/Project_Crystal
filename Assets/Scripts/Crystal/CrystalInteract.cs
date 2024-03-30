@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crystal : MonoBehaviour, IInteractable {
+public class CrystalInteract : MonoBehaviour, IInteractable {
 
     [Header("Sprite Renderer Stuff")]
     [SerializeField] private Material outlineMat;
