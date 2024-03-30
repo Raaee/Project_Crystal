@@ -25,4 +25,9 @@ public class AudioManager : MonoBehaviour
     StartCoroutine(FadeAudio(activeSource,transitionTime,targetVolume));
     
    }
+
+    public void PlayAudioOneShot(AudioSource source, AudioClip clip)
+    {
+        source.PlayOneShot(clip);
+    }
 }   

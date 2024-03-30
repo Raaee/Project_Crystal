@@ -121,10 +121,12 @@ public class EnemyAI : Movement {
 
             case EnemyState.ATTACKINGCRYSTAL:
                 // do attack
+                FreezeEnemy();
                 enemyRangedBasicAttack.AttackTarget(currTarget);
                 break;
 
             case EnemyState.ATTACKINGPLAYER:
+                FreezeEnemy();
                 IfPlayerInRange();
                 enemyRangedBasicAttack.AttackTarget(currTarget);
                 // do attack
@@ -181,6 +183,11 @@ public class EnemyAI : Movement {
     }
     public void SetCrystalObject(Transform transform) {
         crystalObject = transform;
+    }
+
+    public void SetEnemyToIdle()
+    {
+        enemyCurrentState = EnemyState.IDLE;
     }
 }
 
