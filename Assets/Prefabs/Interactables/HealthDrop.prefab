@@ -138,7 +138,7 @@ MonoBehaviour:
   dropChance: 35
   interactableType: 0
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
-  dropInteractSfxClip: {fileID: 0}
+  dropInteractSfxClip: {fileID: 8300000, guid: 2f7469dedfd7db448973e6a8a16ac171, type: 3}
 --- !u!114 &1171141351158396926
 MonoBehaviour:
   m_ObjectHideFlags: 0

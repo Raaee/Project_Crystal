@@ -26,7 +26,7 @@ public class ManaDrop : DropData
         potentialManaPoints.AddMana(manaAmount);
 
         }
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);//be invisible, disable logic, play sound then die 
 
     }
 
