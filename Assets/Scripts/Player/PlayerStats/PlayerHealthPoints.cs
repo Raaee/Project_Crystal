@@ -5,11 +5,19 @@ using UnityEngine;
 public class PlayerHealthPoints : HealthPoints
 {
     InputControls input;
-  
+    [SerializeField]private bool IsDrowning = false;
+    [SerializeField] private float drowningTimer = 0f;
+    [SerializeField] public float drowningInterval = 2f;
+
     public override void Start() {
         base.Start();
         input = GetComponent<InputControls>();
       
+    }
+
+    private void Update()
+    {
+        PlayerDrowning(IsDrowning);
     }
     public override void Die()
     {
@@ -20,9 +28,24 @@ public class PlayerHealthPoints : HealthPoints
         base.ResetHealth();
     }
 
-    public void OnTriggerEnter2D(Collider2D x) {
-        if (x.gameObject.tag == "Water") { 
-            Debug.Log("Remove Health");
+    public void PlayerDrowning(bool Drowning) {
+        drowningTimer += Time.deltaTime;
+        if (Drowning && drowningTimer >= drowningInterval)
+        {
+            RemoveHealth(1);
+            drowningTimer = 0f;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Water") { 
+            IsDrowning = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision){
+        if (collision.gameObject.tag == "Water"){
+            IsDrowning = false;
         }
     }
 }
