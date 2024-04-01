@@ -41,4 +41,7 @@ public class ManaPoints : MonoBehaviour
     {
         return currentMP;
     }
+    public int GetMaxMP() {
+        return MAX_MP;
+    }
 }

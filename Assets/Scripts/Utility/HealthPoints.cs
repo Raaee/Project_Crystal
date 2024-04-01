@@ -71,4 +71,7 @@ public class HealthPoints : MonoBehaviour
     {
         return currentHP;
     }
+    public int GetMaxHP() {
+        return MAX_HP;
+    }
 }

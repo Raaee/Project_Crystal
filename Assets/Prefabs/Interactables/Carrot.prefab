@@ -101,6 +101,7 @@ MonoBehaviour:
   dropChance: 0
   interactableType: 3
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
+  dropInteractSfxClip: {fileID: 0}
 --- !u!61 &3670746548255746502
 BoxCollider2D:
   m_ObjectHideFlags: 0
