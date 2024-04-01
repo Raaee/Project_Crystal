@@ -9,6 +9,7 @@ public class UpgradeMenu : MonoBehaviour
     public GameObject cardPrefab;
 
     public Transform cardParent;
+    public Transform confirmButton;
     public Color selectedColor = Color.green;
     public Color defaultColor = Color.white;
     private Transform selectedCard;
@@ -29,6 +30,13 @@ public class UpgradeMenu : MonoBehaviour
                 cardTransform.GetComponent<Image>().color = selectedColor;
             }
         }
+    }
+
+    // whenever the menu is enabled, generate new cards and enable the confirm button
+    private void OnEnable()
+    {
+        GenerateCards();
+        confirmButton.GetComponent<Button>().interactable = true;
     }
 
     public void GenerateCards(int amount = 3)
@@ -65,5 +73,9 @@ public class UpgradeMenu : MonoBehaviour
     public void ApplyUpgrade()
     {
         cardUpgradeDict[selectedCard].ApplyUpgrade();
+        // Disable the confirm button after applying the upgrade
+        confirmButton.GetComponent<Button>().interactable = false;
+        // Disable the menu
+        gameObject.SetActive(false);
     }
 }
