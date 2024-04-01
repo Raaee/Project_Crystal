@@ -11,7 +11,7 @@ public class RangedBasicAttack : Ability
     private Actions actions;
 
     // Object pooler for projectiles
-    [SerializeField] private ObjectPooler projPooler;
+    [SerializeField] public ObjectPooler projPooler;
     [SerializeField] private bool isPlayerShooting;
     [SerializeField] private float enemyFireRate = 5.0f;
     [SerializeField] private float playerFireRate = 0.1f;
@@ -77,5 +77,17 @@ public class RangedBasicAttack : Ability
     private IEnumerator ResetPlayerShoot()  {
         yield return new WaitForSeconds(playerFireRate);
         isOnCooldown = true;
+    }
+    public float GetPlayerFireRate() {
+        return playerFireRate;
+    }
+    public void SetPlayerFireRate(float rate) {
+        playerFireRate = rate;
+    }
+    public int GetMaxDamage() {
+        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetProjectileDamage();
+    }
+    public void SetMaxDamage(int amt) {
+        projPooler.GetObjectToPool().GetComponent<Projectile>().SetMaxProjectileDamage(amt);
     }
 }

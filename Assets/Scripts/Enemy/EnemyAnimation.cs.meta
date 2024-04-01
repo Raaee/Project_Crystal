@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Enemy/EnemyAnimation.cs.meta
 guid: 9bc3012d39689e84d9d7f2450aebea7a
+========
+guid: 8a694dd322419ab4bb9f63870ebe69b7
+>>>>>>>> origin/managers:Assets/Scripts/Player/PlayerStats/BuffManager.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
