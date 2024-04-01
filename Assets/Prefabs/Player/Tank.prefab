@@ -5239,7 +5239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1206d52936b46c99fbb379d7763d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
 --- !u!114 &6698978688436824222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5256,10 +5256,6 @@ MonoBehaviour:
   - {fileID: 583352322101942660, guid: 12b2876ab4f699442bc9b2ba6b0c8f67, type: 3}
   - {fileID: 2728916520030732642, guid: ec06cc99cd3081543bb7b7605bb019ff, type: 3}
   - {fileID: 1103908666556385156, guid: c5b2123234eb24a448019446b8b5b7c5, type: 3}
-  chestOpenSprite: {fileID: 1233132977, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
-  chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
-  respawnTime: 3
-  disappearTime: 1
 --- !u!114 &5288228236752367165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5289,7 +5285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f67c6971fa73f74a833a709cfaf90b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 20
+  MAX_HP: 150
   currentHP: 0
   godMode: 0
   OnDead:
@@ -5310,7 +5306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f2948a971441d408e977c51a497f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_MP: 100
+  MAX_MP: 75
   currentMP: 0
 --- !u!1 &3243575590588145836
 GameObject:
@@ -5569,8 +5565,11 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 0}
-  teleportDistance: 5
+  userMana: {fileID: 47992779867472359}
+  teleportDistance: 3
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5583,12 +5582,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
+  cooldown: 1
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 0}
+  userMana: {fileID: 47992779867472359}
   projPooler: {fileID: 4156343975335828177}
-  isPlayerShooting: 0
+  isPlayerShooting: 1
   enemyFireRate: 5
   playerFireRate: 0.5
 --- !u!114 &8156202257822150933
@@ -5604,9 +5603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  manaCost: 10
-  IsActive: 0
-  userMana: {fileID: 0}
+  manaCost: 15
+  IsActive: 1
+  userMana: {fileID: 47992779867472359}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
   projPooler: {fileID: 3416345396890490197}
 --- !u!1 &7360943041567263304
