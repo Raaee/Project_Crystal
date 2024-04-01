@@ -19,6 +19,7 @@ public class UpgradeMenu : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        gameObject.SetActive(false);
     }
 
     public GameObject cardPrefab;
