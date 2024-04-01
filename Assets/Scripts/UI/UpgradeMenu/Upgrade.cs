@@ -39,7 +39,7 @@ public class Upgrade
         var health = player.GetComponent<PlayerHealthPoints>();
         var mana = player.GetComponent<ManaPoints>();
         var basicAttackProjectile = player.GetComponentInChildren<RangedBasicAttack>().projPooler.objectToPool.GetComponentInChildren<Projectile>();
-        var pierceAttackProjectile = player.GetComponentInChildren<PiercingShotAbility>().projPooler.objectToPool.GetComponentInChildren<Projectile>();
+        var pierceAttackProjectile = player.GetComponentInChildren<PiercingShotAbility>().projPooler.objectToPool.GetComponent<PiercingProjectile>();
         var allAbilities = player.GetComponentsInChildren<Ability>();
 
         switch (upgradeType)
