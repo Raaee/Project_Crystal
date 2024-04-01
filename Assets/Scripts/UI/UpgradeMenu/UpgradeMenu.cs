@@ -6,6 +6,21 @@ using TMPro;
 
 public class UpgradeMenu : MonoBehaviour
 {
+    // Singleton pattern
+    public static UpgradeMenu instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     public GameObject cardPrefab;
 
     public Transform cardParent;
