@@ -996,7 +996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &422016242
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2169,14 +2169,6 @@ PrefabInstance:
     - target: {fileID: 3221412779736232927, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
       propertyPath: m_Name
       value: Mage
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156343975335828177, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
-      propertyPath: objectToPool
-      value: 
-      objectReference: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
-    - target: {fileID: 5220982741878226084, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
-      propertyPath: drowningInterval
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7238265307839878932, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4593,6 +4585,14 @@ PrefabInstance:
     - target: {fileID: 200275286298821163, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
       propertyPath: m_UsedByComposite
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 200275286298821163, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100880634563296667, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2735151740425502189, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
       propertyPath: m_Name
@@ -24933,6 +24933,18 @@ PrefabInstance:
     - target: {fileID: 3837819866722367004, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[43].Array.data[621].X
       value: -760000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685611152759939456, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685611152759939456, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685611152759939456, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5879003050169382356, guid: 5fc864d8eebdb5145b07dbbf14499cc9, type: 3}
       propertyPath: m_UsedByComposite
