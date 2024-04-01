@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  manaCost: 10
+  manaCost: 0
   IsActive: 0
   userMana: {fileID: 3038308969333731784}
   teleportDistance: 5
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  manaCost: 25
+  manaCost: 10
   IsActive: 1
   userMana: {fileID: 3038308969333731784}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
