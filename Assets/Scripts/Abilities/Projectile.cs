@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
     private const String PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const String CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
-    [SerializeField] private int projectileDamage = 10; // The damage dealt by the projectile.
+    [SerializeField] public int damage = 10; // The damage dealt by the projectile.
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
@@ -78,7 +78,7 @@ public class Projectile : MonoBehaviour
                     return;
                 }
                 // Reduce the health of the enemy by the damage of the projectile
-                potentialEnemyHealth.RemoveHealth(projectileDamage);
+                potentialEnemyHealth.RemoveHealth(damage);
                 // Disable the projectile after it has hit an enemy
                 DisableProjectile();
             }
@@ -98,7 +98,7 @@ public class Projectile : MonoBehaviour
                 return;
             }
             // Reduce the health of the player by the damage of the projectile
-            potentialPlayerHealth.RemoveHealth(projectileDamage);
+            potentialPlayerHealth.RemoveHealth(damage);
             // Disable the projectile after it has hit the player
             DisableProjectile();
         }
@@ -117,7 +117,7 @@ public class Projectile : MonoBehaviour
                 return;
             }
             // Reduce the health of the crystal by the damage of the projectile
-            potentialCrystalHealth.RemoveHealth(projectileDamage);
+            potentialCrystalHealth.RemoveHealth(damage);
             // Disable the projectile after it has hit the player
             DisableProjectile();
         }
@@ -128,5 +128,11 @@ public class Projectile : MonoBehaviour
     private void DisableProjectile()
     {
         this.gameObject.SetActive(false);
+    }
+    public int GetProjectileDamage() {
+        return damage;
+    }
+    public void SetMaxProjectileDamage(int amt) {
+        damage = amt;
     }
 }

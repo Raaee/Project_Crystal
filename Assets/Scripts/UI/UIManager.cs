@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour  {
 
     // Var Teleport
     [Header("Teleport Ability")]
-    [SerializeField] private TeleportAbility1 teleportAbility;
+    [SerializeField] private TeleportAbility teleportAbility;
     [SerializeField] private Image teleportShadow;
     private float teleportTimer;
     private float teleportCooldown;
@@ -52,11 +52,11 @@ public class UIManager : MonoBehaviour  {
 
     void Update()   {
         
-        manaFilling.fillAmount = playerMP.GetCurrentMP() / 100f;
-        manaText.text = playerMP.GetCurrentMP() + " / " + playerMP.GetMaxMP();
+        manaFilling.fillAmount = playerMP.currentMP / 100f;
+        manaText.text = playerMP.currentMP + " / " + playerMP.maxMP;
 
-        hpFilling.fillAmount = playerHP.GetCurrentHP() / 100f;
-        hpText.text = playerHP.GetCurrentHP() + " / " + playerHP.GetMaxHP();
+        hpFilling.fillAmount = playerHP.currentHP / 100f;
+        hpText.text = playerHP.currentHP + " / " + playerHP.maxHP;
         
         // Teleport Box
         UpdateAbilityCooldown(teleportAbility, teleportCooldown, ref teleportTimer, teleportShadow);

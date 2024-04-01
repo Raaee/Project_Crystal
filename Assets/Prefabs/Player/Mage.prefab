@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f67c6971fa73f74a833a709cfaf90b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 100
+  maxHP: 100
   currentHP: 0
   godMode: 0
   OnDead:
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f2948a971441d408e977c51a497f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_MP: 100
+  maxMP: 100
   currentMP: 0
 --- !u!1 &3243575590588145836
 GameObject:
@@ -544,9 +544,9 @@ GameObject:
   - component: {fileID: 3460960871319162507}
   - component: {fileID: 4156343975335828177}
   - component: {fileID: 3416345396890490197}
-  - component: {fileID: 1927185540186520050}
   - component: {fileID: 5606925210253363792}
   - component: {fileID: 8156202257822150933}
+  - component: {fileID: 3258390402626218228}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -601,26 +601,6 @@ MonoBehaviour:
   objectToPool: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   parent: {fileID: 3221412779736232927}
   pooledObjects: []
---- !u!114 &1927185540186520050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7056759831097537879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 2
-  manaCost: 10
-  IsActive: 0
-  userMana: {fileID: 3038308969333731784}
-  teleportDistance: 5
-  OnTeleport:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +616,6 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 3038308969333731784}
   projPooler: {fileID: 4156343975335828177}
   isPlayerShooting: 1
   enemyFireRate: 5
@@ -656,9 +635,27 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 25
   IsActive: 1
-  userMana: {fileID: 3038308969333731784}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   projPooler: {fileID: 3416345396890490197}
+--- !u!114 &3258390402626218228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056759831097537879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88fe5eccee5cfa4aa4ca7af0b34cb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
+  manaCost: 50
+  IsActive: 1
+  teleportDistance: 5
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7360943041567263304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1005,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c2e37726fc3c97445af30c78fc9656e1, type: 3}
   - {fileID: 8300000, guid: 6bfba76ee5327b042b834988ef966135, type: 3}
   - {fileID: 8300000, guid: 40dfdb54d7d39aa46b9a05b84f855f21, type: 3}
-  teleportAbility: {fileID: 1927185540186520050}
+  teleportAbility: {fileID: 3258390402626218228}
 --- !u!82 &5224583764699275990
 AudioSource:
   m_ObjectHideFlags: 0

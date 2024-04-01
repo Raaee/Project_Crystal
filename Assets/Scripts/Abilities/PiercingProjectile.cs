@@ -9,7 +9,7 @@ public class PiercingProjectile : MonoBehaviour
    
     [SerializeField] private float projectileSpeed = 1000f; // Speed of the projectile
     [SerializeField] private float maxLifeTime = 2f; // Maximum lifetime of the projectile
-    [SerializeField] private int projectileDamage = 10; // Damage dealt by the projectile
+    [SerializeField] public int damage = 10; // Damage dealt by the projectile
     [SerializeField] private int maxPiercingAmount = 4; // Maximum number of enemies the projectile can pierce through
 
     private int currentPiercingAmount; // Current number of enemies the projectile can still pierce through
@@ -73,7 +73,7 @@ public class PiercingProjectile : MonoBehaviour
                 return; // Exit the method
             }
             // Damage the enemy
-            potentialEnemyHealth.RemoveHealth(projectileDamage);
+            potentialEnemyHealth.RemoveHealth(damage);
             // Decrease the current piercing amount
             currentPiercingAmount--;
             if (currentPiercingAmount <= 0) // If the projectile can no longer pierce through enemies
@@ -95,5 +95,11 @@ public class PiercingProjectile : MonoBehaviour
     {
         // Reset the current piercing amount
         currentPiercingAmount = maxPiercingAmount;
+    }
+    public int GetProjectileDamage() {
+        return damage;
+    }
+    public void SetMaxProjectileDamage(int amt) {
+        damage = amt;
     }
 }
