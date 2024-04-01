@@ -640,7 +640,7 @@ MonoBehaviour:
   projPooler: {fileID: 4156343975335828177}
   isPlayerShooting: 1
   enemyFireRate: 5
-  playerFireRate: 0.5
+  playerFireRate: 0.2
 --- !u!114 &8156202257822150933
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -133,7 +133,7 @@ MonoBehaviour:
   enemyAIType: 0
   playerAggroTime: 5
   avoidTime: 1
-  attackRange: 4
+  attackRange: 2
   enemyCurrentState: 5
 --- !u!114 &8506391581786044554
 MonoBehaviour:
