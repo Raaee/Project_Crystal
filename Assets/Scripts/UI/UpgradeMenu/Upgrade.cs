@@ -5,8 +5,8 @@ public class Upgrade
 {
     public enum UpgradeType
     {
-        AttackDamagePercent,
-        AttackPiercePercent,
+        NormalDamagePercent,
+        PierceDamagePercent,
         MaxManaPercent,
         MaxHealthPercent,
         AbilityCooldownPercent,
@@ -19,10 +19,10 @@ public class Upgrade
     {
         switch (upgradeType)
         {
-            case UpgradeType.AttackDamagePercent:
-                return "Increase Attack Damage by " + upgradeValue * 100 + "%";
-            case UpgradeType.AttackPiercePercent:
-                return "Increase Attack Pierce by " + upgradeValue * 100 + "%";
+            case UpgradeType.NormalDamagePercent:
+                return "Increase Normal Attack Damage by " + upgradeValue * 100 + "%";
+            case UpgradeType.PierceDamagePercent:
+                return "Increase Pierce Attack Damage by " + upgradeValue * 100 + "%";
             case UpgradeType.MaxManaPercent:
                 return "Increase Max Mana by " + upgradeValue * 100 + "%";
             case UpgradeType.MaxHealthPercent:
@@ -38,14 +38,17 @@ public class Upgrade
     {
         var health = player.GetComponent<PlayerHealthPoints>();
         var mana = player.GetComponent<ManaPoints>();
+        var basicAttackProjectile = player.GetComponentInChildren<RangedBasicAttack>().projPooler.objectToPool.GetComponentInChildren<Projectile>();
+        var pierceAttackProjectile = player.GetComponentInChildren<PiercingShotAbility>().projPooler.objectToPool.GetComponentInChildren<Projectile>();
+        var allAbilities = player.GetComponentsInChildren<Ability>();
 
         switch (upgradeType)
         {
-            case UpgradeType.AttackDamagePercent:
-                Debug.Log("Damage upgrade not implemented yet");
+            case UpgradeType.NormalDamagePercent:
+                basicAttackProjectile.damage += (int)(basicAttackProjectile.damage * upgradeValue);
                 break;
-            case UpgradeType.AttackPiercePercent:
-                Debug.Log("Pierce upgrade not implemented yet");
+            case UpgradeType.PierceDamagePercent:
+                pierceAttackProjectile.damage += (int)(pierceAttackProjectile.damage * upgradeValue);
                 break;
             case UpgradeType.MaxManaPercent:
                 mana.maxMP += (int)(mana.maxMP * upgradeValue);
@@ -55,7 +58,10 @@ public class Upgrade
                 health.currentHP += (int)(health.currentHP * upgradeValue);
                 break;
             case UpgradeType.AbilityCooldownPercent:
-                Debug.Log("Cooldown upgrade not implemented yet");
+                foreach (var ability in allAbilities)
+                {
+                    ability.cooldown -= ability.cooldown * upgradeValue;
+                }
                 break;
         }
     }

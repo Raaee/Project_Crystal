@@ -10,7 +10,7 @@ public class RangedBasicAttack : Ability
     private Actions actions;
 
     // Object pooler for projectiles
-    [SerializeField] private ObjectPooler projPooler;
+    [SerializeField] public ObjectPooler projPooler;
     [SerializeField] private bool isPlayerShooting;
     [SerializeField] private float enemyFireRate = 5.0f;
     [SerializeField] private float playerFireRate = 0.1f;
