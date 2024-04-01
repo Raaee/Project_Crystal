@@ -2186,6 +2186,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 2501423407982964791, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
   cardParent: {fileID: 1773629811}
   confirmButton: {fileID: 1471588015}
+  player: {fileID: 2057996675}
   selectedColor: {r: 0, g: 1, b: 0, a: 1}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1322358046
