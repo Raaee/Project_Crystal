@@ -55,7 +55,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         GenerateCards();
         confirmButton.GetComponent<Button>().interactable = true;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     // whenever the menu is disabled, unfreeze time
