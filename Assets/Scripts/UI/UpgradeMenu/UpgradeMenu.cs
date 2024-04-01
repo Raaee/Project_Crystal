@@ -96,7 +96,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void ApplyUpgrade()
     {
-        cardUpgradeDict[selectedCard].ApplyUpgrade(player);
+        cardUpgradeDict[selectedCard].ApplyUpgrade();
         // Disable the confirm button after applying the upgrade
         confirmButton.GetComponent<Button>().interactable = false;
         // Disable the menu

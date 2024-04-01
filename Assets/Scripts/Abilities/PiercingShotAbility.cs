@@ -64,9 +64,9 @@ public class PiercingShotAbility : Ability
     }
 
     public int GetMaxDamage() {
-        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetProjectileDamage();
+        return projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().GetProjectileDamage();
     }
     public void SetMaxDamage(int amt) {
-        projPooler.GetObjectToPool().GetComponent<Projectile>().SetMaxProjectileDamage(amt);
+        projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
     }
 }

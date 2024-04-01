@@ -34,34 +34,24 @@ public class Upgrade
         }
     }
 
-    public void ApplyUpgrade(Transform player)
+    public void ApplyUpgrade()
     {
-        var health = player.GetComponent<PlayerHealthPoints>();
-        var mana = player.GetComponent<ManaPoints>();
-        var basicAttackProjectile = player.GetComponentInChildren<RangedBasicAttack>().projPooler.objectToPool.GetComponentInChildren<Projectile>();
-        var pierceAttackProjectile = player.GetComponentInChildren<PiercingShotAbility>().projPooler.objectToPool.GetComponent<PiercingProjectile>();
-        var allAbilities = player.GetComponentsInChildren<Ability>();
-
         switch (upgradeType)
         {
             case UpgradeType.NormalDamagePercent:
-                basicAttackProjectile.damage += (int)(basicAttackProjectile.damage * upgradeValue);
+                BuffManager.instance.IncreaseMaxBasicAttackDamage(upgradeValue);
                 break;
             case UpgradeType.PierceDamagePercent:
-                pierceAttackProjectile.damage += (int)(pierceAttackProjectile.damage * upgradeValue);
+                BuffManager.instance.IncreaseMaxPierceShotDamage(upgradeValue);
                 break;
             case UpgradeType.MaxManaPercent:
-                mana.maxMP += (int)(mana.maxMP * upgradeValue);
+                BuffManager.instance.IncreaseMaxMana(upgradeValue);
                 break;
             case UpgradeType.MaxHealthPercent:
-                health.maxHP += (int)(health.maxHP * upgradeValue);
-                health.currentHP += (int)(health.currentHP * upgradeValue);
+                BuffManager.instance.IncreaseMaxHealth(upgradeValue);
                 break;
             case UpgradeType.AbilityCooldownPercent:
-                foreach (var ability in allAbilities)
-                {
-                    ability.cooldown -= ability.cooldown * upgradeValue;
-                }
+                BuffManager.instance.ReduceAllAbilityCooldowns(upgradeValue);
                 break;
         }
     }

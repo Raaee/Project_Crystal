@@ -5,6 +5,23 @@ using UnityEngine;
 
 public class BuffManager : MonoBehaviour  {
 
+    // Singleton pattern
+    public static BuffManager instance;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+
+        playerHealth = playerPrefab.GetComponent<PlayerHealthPoints>();
+        playerMana = playerPrefab.GetComponent<ManaPoints>();
+        playerMovement = playerPrefab.GetComponent<PlayerMovement>();
+        teleportAbility = playerPrefab.GetComponentInChildren<TeleportAbility>();
+        basicAttack = playerPrefab.GetComponentInChildren<RangedBasicAttack>();
+        piercingShot = playerPrefab.GetComponentInChildren<PiercingShotAbility>();
+    }
     [SerializeField] private GameObject playerPrefab;
     // Player Stats
     private PlayerHealthPoints playerHealth;
@@ -15,15 +32,6 @@ public class BuffManager : MonoBehaviour  {
     private TeleportAbility teleportAbility;
     private RangedBasicAttack basicAttack;
     private PiercingShotAbility piercingShot;
-
-    void Awake() {
-        playerHealth = playerPrefab.GetComponent<PlayerHealthPoints>();
-        playerMana = playerPrefab.GetComponent<ManaPoints>();
-        playerMovement = playerPrefab.GetComponent<PlayerMovement>();
-        teleportAbility = playerPrefab.GetComponentInChildren<TeleportAbility>();
-        basicAttack = playerPrefab.GetComponentInChildren<RangedBasicAttack>();
-        piercingShot = playerPrefab.GetComponentInChildren<PiercingShotAbility>();
-    }
     // Health
     public void AddHealth(int amt) {
         playerHealth.AddHealth(amt);
