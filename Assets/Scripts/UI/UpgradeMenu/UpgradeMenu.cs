@@ -20,7 +20,7 @@ public class UpgradeMenu : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     public GameObject cardPrefab;
 
     public Transform cardParent;
@@ -48,10 +48,18 @@ public class UpgradeMenu : MonoBehaviour
     }
 
     // whenever the menu is enabled, generate new cards and enable the confirm button
+    // Also freeze time
     private void OnEnable()
     {
         GenerateCards();
         confirmButton.GetComponent<Button>().interactable = true;
+        Time.timeScale = 0;
+    }
+
+    // whenever the menu is disabled, unfreeze time
+    private void OnDisable()
+    {
+        Time.timeScale = 1;
     }
 
     public void GenerateCards(int amount = 3)
