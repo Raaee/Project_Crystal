@@ -65,4 +65,16 @@ public class HealthPoints : MonoBehaviour
         currentHP = maxHP;
         isDead = false;
     }
+
+    // Method To Get Current HP
+    public int GetCurrentHP()
+    {
+        return currentHP;
+    }
+    public void SetMaxHealth(int amt) {
+        maxHP = amt;
+    }
+    public int GetMaxHealth() {
+        return maxHP;
+    }
 }

@@ -96,4 +96,10 @@ public class PiercingProjectile : MonoBehaviour
         // Reset the current piercing amount
         currentPiercingAmount = maxPiercingAmount;
     }
+    public int GetProjectileDamage() {
+        return damage;
+    }
+    public void SetMaxProjectileDamage(int amt) {
+        damage = amt;
+    }
 }

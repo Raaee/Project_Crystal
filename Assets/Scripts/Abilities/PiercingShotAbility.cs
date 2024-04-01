@@ -63,6 +63,10 @@ public class PiercingShotAbility : Ability
         SpawnProjectile(direction);
     }
 
-    
-   
+    public int GetMaxDamage() {
+        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetProjectileDamage();
+    }
+    public void SetMaxDamage(int amt) {
+        projPooler.GetObjectToPool().GetComponent<Projectile>().SetMaxProjectileDamage(amt);
+    }
 }

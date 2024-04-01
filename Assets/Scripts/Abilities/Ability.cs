@@ -13,9 +13,13 @@ public abstract class Ability : MonoBehaviour
     // Flag to check if the ability is active
     [SerializeField] protected bool IsActive;
     // Reference to the player's mana points
-    [SerializeField] protected ManaPoints userMana;
+    protected ManaPoints userMana;
     // Flag to check if the ability is on cooldown
     protected bool isOnCoolDown = false;
+
+    void Start() {
+        userMana = GetComponentInParent<ManaPoints>();
+    }
 
     // Coroutine to use the ability and put it on cooldown
     public IEnumerator UseAbility()
@@ -54,5 +58,8 @@ public abstract class Ability : MonoBehaviour
     public bool GetIsOnCooldown()
     {
         return isOnCoolDown;
+    }
+    public void SetCooldown(float cd) {
+        cooldown = cd;
     }
 }

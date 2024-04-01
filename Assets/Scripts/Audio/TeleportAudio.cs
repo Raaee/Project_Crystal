@@ -6,7 +6,7 @@ public class TeleportAudio : MonoBehaviour
 {
     [SerializeField] private AudioSource teleportAudioSource;
     [SerializeField] private List<AudioClip> teleportAudioClips;
-    [SerializeField] private TeleportAbility1 teleportAbility;
+    [SerializeField] private TeleportAbility teleportAbility;
 
     private void Start()
     {
