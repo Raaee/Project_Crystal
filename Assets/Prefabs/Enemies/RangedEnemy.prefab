@@ -13,10 +13,8 @@ GameObject:
   - component: {fileID: 4917669121937368097}
   - component: {fileID: 7223677986230081562}
   - component: {fileID: 8506391581786044554}
-  - component: {fileID: 8825795100716990109}
   - component: {fileID: 1167119103067770847}
   - component: {fileID: 1346679655619126017}
-  - component: {fileID: 5018605951332905295}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -100,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.001375556, y: 0.122428775}
+  m_Offset: {x: 0.09462166, y: 0.06544495}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1017947, y: 2.063278}
+  m_Size: {x: 1.6819954, y: 2.1150818}
   m_EdgeRadius: 0
 --- !u!114 &7223677986230081562
 MonoBehaviour:
@@ -150,26 +148,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_HP: 75
   currentHP: 0
+  godMode: 0
   OnDead:
     m_PersistentCalls:
       m_Calls: []
   OnHurt:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8825795100716990109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a335f6ca2b447ce4395a703b57e4874d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MAX_MP: 1000
-  currentMP: 0
 --- !u!114 &1167119103067770847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,20 +181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathColorTint: {r: 0.8679245, g: 0.1432894, b: 0.1432894, a: 0.62352943}
---- !u!114 &5018605951332905295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpriteRenderer: {fileID: 1306762602531067334}
-  enemyAnim: {fileID: 0}
 --- !u!1 &6453280248707733763
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +191,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8993497945352709441}
   - component: {fileID: 1306762602531067334}
+  - component: {fileID: 5254956924109737428}
+  - component: {fileID: 1883295130148061768}
   m_Layer: 0
   m_Name: Enemy Visual
   m_TagString: Untagged
@@ -294,6 +267,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5254956924109737428
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eefeee2d6d575d14f80577e675527ff8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1883295130148061768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpriteRenderer: {fileID: 1306762602531067334}
 --- !u!1 &8120154399766981587
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +365,7 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 8825795100716990109}
+  userMana: {fileID: 0}
   projPooler: {fileID: 3338611496508601949}
   isPlayerShooting: 0
   enemyFireRate: 0.7

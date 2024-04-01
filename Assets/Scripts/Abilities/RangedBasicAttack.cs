@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 // This class handles the ranged basic attack for a game character
@@ -14,7 +15,7 @@ public class RangedBasicAttack : Ability
     [SerializeField] private bool isPlayerShooting;
     [SerializeField] private float enemyFireRate = 5.0f;
     [SerializeField] private float playerFireRate = 0.1f;
-
+    [HideInInspector] public UnityEvent OnAttack;
     private float lastPlayerAttackTime = 0f;
     private float lastEnemyAttackTime = 0f;
     private bool isOnCooldown = true; 
@@ -64,7 +65,8 @@ public class RangedBasicAttack : Ability
     public void AttackTarget(Transform currentTarget) {
 
         if(Time.time < lastEnemyAttackTime + enemyFireRate) return;
-
+        
+        OnAttack.Invoke();
         Vector2 directionToTarget = (currentTarget.position - this.transform.parent.transform.position).normalized;
         SpawnProjectile(directionToTarget);
 

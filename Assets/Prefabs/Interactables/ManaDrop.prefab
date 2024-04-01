@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 420027406793591385}
   - component: {fileID: 6949517052174242399}
   - component: {fileID: -4672447542604537031}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ManaDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,9 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03}
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.29334584
 --- !u!114 &420027406793591385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 35
+  dropChance: 50
   interactableType: 1
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
   dropInteractSfxClip: {fileID: 8300000, guid: 2cf6069f791e58c48a397d3226b89235, type: 3}

@@ -8,7 +8,7 @@ public class ChestVisual : MonoBehaviour
     private Collider2D chestCollider2d;
     [SerializeField] private Sprite chestOpenSprite;
     [SerializeField] private Sprite chestClosedSprite;
-    [SerializeField] [Range(3f, 5f)] private float respawnTime = 3f;
+    [SerializeField] [Range(3f, 180f)] private float respawnTimeInSeconds = 3f;
     private float disappearTime = 2.5f; //longer dissapear time to play the chest audio fully
     private void Awake()
     {
@@ -23,14 +23,12 @@ public class ChestVisual : MonoBehaviour
         yield return new WaitForSeconds(disappearTime);
         chestSr.enabled = false;
         chestCollider2d.enabled = false;
-        
-        //  StartCoroutine(RespawnChest(sr, obj));
         yield return RespawnChest();
     }
 
     private IEnumerator RespawnChest()
     {
-        yield return new WaitForSeconds(respawnTime);
+        yield return new WaitForSeconds(respawnTimeInSeconds);
         chestSr.sprite = chestClosedSprite;
         chestSr.enabled = true;
         chestCollider2d.enabled = true;

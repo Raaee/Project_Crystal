@@ -87,7 +87,7 @@ public class EnemyAI : Movement {
     // The if statements check if isAvoidTimerActive/isAggroTimerActive are true and start a timer
     // enemyCurrentState is set to MOVETOWARDSCRYSTAL when timer reaches 0
     // The switch-case statement is repeatedly called to change enemyCurrentState to any of the states within the EnemyState enum it is set to
-    private void Update()   { 
+    private void Update()   {
         if (isAvoidTimerActive)
         {
             currentAvoidTimer -= Time.deltaTime;
@@ -107,7 +107,8 @@ public class EnemyAI : Movement {
         }
         switch (enemyCurrentState)  {
             case EnemyState.MOVETOWARDSCRYSTAL:
-                currTarget = crystalObject;
+                SetInitialTarget();
+                //currTarget = crystalObject;
                 MoveTowardsTarget(currTarget);
                 IfCrystalInRange();
                 break;
@@ -177,6 +178,7 @@ public class EnemyAI : Movement {
         }      
     }
     public void IfCrystalInRange() {
+        if (!crystalObject) return;
         if (attackRange >= Vector3.Distance(transform.position, crystalObject.transform.position)) {
             enemyCurrentState = EnemyState.ATTACKINGCRYSTAL;
         }

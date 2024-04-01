@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1063180201422253634}
   - component: {fileID: 4636055209167143152}
   - component: {fileID: 3670746548255746502}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Carrot
   m_TagString: Carrot
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
