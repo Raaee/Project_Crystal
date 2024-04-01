@@ -55,8 +55,8 @@ public class UIManager : MonoBehaviour  {
         manaFilling.fillAmount = playerMP.GetCurrentMP() / 100f;
         manaText.text = playerMP.GetCurrentMP() + " / " + playerMP.GetMaxMP();
 
-        hpFilling.fillAmount = playerHP.GetCurrentHP() / 100f;
-        hpText.text = playerHP.GetCurrentHP() + " / " + playerHP.GetMaxHP();
+        hpFilling.fillAmount = playerHP.currentHP / 100f;
+        hpText.text = playerHP.currentHP + " / " + playerHP.maxHP;
         
         // Teleport Box
         UpdateAbilityCooldown(teleportAbility, teleportCooldown, ref teleportTimer, teleportShadow);

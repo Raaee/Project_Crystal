@@ -9,8 +9,8 @@ using UnityEngine.Events;
 public class HealthPoints : MonoBehaviour
 {
     // Max health is set at 100
-    [SerializeField] private int MAX_HP = 100;
-    [SerializeField] private int currentHP;
+    [SerializeField] public int maxHP = 100;
+    [SerializeField] public int currentHP;
     [SerializeField] private bool godMode;
     
     private bool isDead = false;
@@ -25,8 +25,8 @@ public class HealthPoints : MonoBehaviour
     // Add a certain amount of health while character's current health is between 0 and max
     public void AddHealth(int healAmount)   {
         currentHP += healAmount;
-        if (currentHP >= MAX_HP)    {
-            currentHP = MAX_HP;
+        if (currentHP >= maxHP)    {
+            currentHP = maxHP;
         }
     }
 
@@ -62,16 +62,7 @@ public class HealthPoints : MonoBehaviour
     } 
     [ProButton]
     public virtual void ResetHealth()   {
-        currentHP = MAX_HP;
+        currentHP = maxHP;
         isDead = false;
-    }
-
-    // Method To Get Current HP
-    public int GetCurrentHP()
-    {
-        return currentHP;
-    }
-    public int GetMaxHP() {
-        return MAX_HP;
     }
 }

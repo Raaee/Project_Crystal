@@ -25,6 +25,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public Transform cardParent;
     public Transform confirmButton;
+    public Transform player;
     public Color selectedColor = Color.green;
     public Color defaultColor = Color.white;
     private Transform selectedCard;
@@ -95,7 +96,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void ApplyUpgrade()
     {
-        cardUpgradeDict[selectedCard].ApplyUpgrade();
+        cardUpgradeDict[selectedCard].ApplyUpgrade(player);
         // Disable the confirm button after applying the upgrade
         confirmButton.GetComponent<Button>().interactable = false;
         // Disable the menu

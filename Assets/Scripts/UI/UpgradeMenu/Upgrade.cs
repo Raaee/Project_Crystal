@@ -34,8 +34,29 @@ public class Upgrade
         }
     }
 
-    public void ApplyUpgrade()
+    public void ApplyUpgrade(Transform player)
     {
-        Debug.Log(GetUpgradeDescription());
+        var health = player.GetComponent<PlayerHealthPoints>();
+        var mana = player.GetComponent<ManaPoints>();
+
+        switch (upgradeType)
+        {
+            case UpgradeType.AttackDamagePercent:
+                Debug.Log("Damage upgrade not implemented yet");
+                break;
+            case UpgradeType.AttackPiercePercent:
+                Debug.Log("Pierce upgrade not implemented yet");
+                break;
+            case UpgradeType.MaxManaPercent:
+                mana.maxMP += (int)(mana.maxMP * upgradeValue);
+                break;
+            case UpgradeType.MaxHealthPercent:
+                health.maxHP += (int)(health.maxHP * upgradeValue);
+                health.currentHP += (int)(health.currentHP * upgradeValue);
+                break;
+            case UpgradeType.AbilityCooldownPercent:
+                Debug.Log("Cooldown upgrade not implemented yet");
+                break;
+        }
     }
 }
