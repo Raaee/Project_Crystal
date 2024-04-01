@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHP: {fileID: 1030887815}
-  playerMP: {fileID: 0}
+  playerMP: {fileID: 2057996676}
   playerHPBar: {fileID: 1494118296}
   hpFilling: {fileID: 148458352}
   hpText: {fileID: 2112335529}
@@ -3249,6 +3249,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7238265307839878932, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
   m_PrefabInstance: {fileID: 1058053100}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2057996676 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3038308969333731784, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
+  m_PrefabInstance: {fileID: 1058053100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f2948a971441d408e977c51a497f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2083062450
 PrefabInstance:
   m_ObjectHideFlags: 0

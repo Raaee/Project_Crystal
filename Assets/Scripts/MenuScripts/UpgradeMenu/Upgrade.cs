@@ -1,4 +1,4 @@
-using System.Diagnostics;
+using UnityEngine;
 
 [System.Serializable]
 public class Upgrade
@@ -36,6 +36,6 @@ public class Upgrade
 
     public void ApplyUpgrade()
     {
-        Debug.WriteLine(GetUpgradeDescription());
+        Debug.Log(GetUpgradeDescription());
     }
 }
