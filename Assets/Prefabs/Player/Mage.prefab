@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountToPool: 3
-  objectToPool: {fileID: 971724485026557118, guid: 50e9f81328c3753468da15116462022f, type: 3}
+  objectToPool: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
   parent: {fileID: 3221412779736232927}
   pooledObjects: []
 --- !u!114 &3416345396890490197
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  manaCost: 0
+  manaCost: 10
   IsActive: 0
   userMana: {fileID: 3038308969333731784}
   teleportDistance: 5
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  manaCost: 0
+  manaCost: 25
   IsActive: 1
   userMana: {fileID: 3038308969333731784}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
