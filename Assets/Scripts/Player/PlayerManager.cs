@@ -7,11 +7,16 @@ using UnityEngine.Events;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; set; }
+    [HideInInspector] public PlayerHealthPoints hp { get; set; }
+    [HideInInspector] public ManaPoints mp { get; set; }
+    [HideInInspector] public RangedBasicAttack rangedBA { get; set; }
+    [HideInInspector] public PiercingShotAbility pierceShot { get; set; }
+    [HideInInspector] public TeleportAbility teleport { get; set; }
+
+    [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject reviveParticles;
     [SerializeField] private float reviveTime = 1f;
-    [SerializeField] private GameObject spawnPoint;
-    private PlayerHealthPoints hp;
-    private ManaPoints mp;
+    
     private InputControls input;
     [HideInInspector] public UnityEvent OnRevive;
     
@@ -23,12 +28,18 @@ public class PlayerManager : MonoBehaviour
 
     private void Start() {
         Init();
+        Components();
+        hp.OnDead.AddListener(Death);
+        reviveParticles.SetActive(false);
+    }
+    public void Components() {
         input = GetComponent<InputControls>();
         hp = GetComponent<PlayerHealthPoints>();
         mp = GetComponent<ManaPoints>();
         animator = GetComponentInChildren<Animator>();
-        hp.OnDead.AddListener(Death);
-        reviveParticles.SetActive(false);
+        rangedBA = GetComponentInChildren<RangedBasicAttack>();
+        pierceShot = GetComponentInChildren<PiercingShotAbility>();
+        teleport = GetComponentInChildren<TeleportAbility>();
     }
     public void Death() {
         Debug.Log("dieeeeeeee");
@@ -63,5 +74,5 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
         }
     }
-
+    
 }

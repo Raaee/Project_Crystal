@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 // This is an abstract class for player abilities
@@ -16,6 +17,7 @@ public abstract class Ability : MonoBehaviour
     protected ManaPoints userMana;
     // Flag to check if the ability is on cooldown
     protected bool isOnCoolDown = false;
+    [HideInInspector] public UnityEvent OnAbilityUsage;
 
     void Awake() {
         userMana = GetComponentInParent<ManaPoints>();
@@ -30,6 +32,7 @@ public abstract class Ability : MonoBehaviour
         AbilityUsage();
         // Use the required mana points for the ability
         UseManaPoints();
+        OnAbilityUsage.Invoke();
         // Wait for the cooldown period
         yield return new WaitForSeconds(cooldown);
         // Set the ability to be off cooldown

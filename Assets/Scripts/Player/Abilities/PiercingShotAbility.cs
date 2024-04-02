@@ -6,15 +6,9 @@ using UnityEngine.InputSystem;
 // This class represents the Piercing Shot ability for a player character.
 public class PiercingShotAbility : Ability
 {
-    // Serialized fields for Unity inspector
-    [SerializeField] private GameObject rangedAbility1Prefab;
     [SerializeField] public ObjectPooler projPooler;
-  //  [SerializeField] float delayBetweenPresses = 0.25f;
-
-    // Private fields
     private Actions actions;
     
-
     void Awake()
     {
         // Get the Actions component from the parent object
