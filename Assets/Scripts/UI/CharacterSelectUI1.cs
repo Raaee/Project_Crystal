@@ -7,9 +7,10 @@ using TMPro;
 public class CharacterSelectUI1 : MonoBehaviour
 {
    [SerializeField] private Image characterHolder;
-   [SerializeField] private Image descriptionHolder;
    [SerializeField] private TextMeshProUGUI titleText;
    [SerializeField] private TextMeshProUGUI descriptionText;
+   [SerializeField] private TextMeshProUGUI basicAttackText;
+   [SerializeField] private TextMeshProUGUI specialAttackText;
    private int currentCharacterIndex = 0;
    public List<CharacterDataSO> characters;
 
@@ -17,9 +18,10 @@ public class CharacterSelectUI1 : MonoBehaviour
    private void setCharacterDisplay(int characterIndex)
    {
     characterHolder.sprite = characters[characterIndex].characterSprite;
-    // descriptionHolder.sprite = characters[characterIndex].characterSprite;
     titleText.text = characters[characterIndex].characterName;
     descriptionText.text = characters[characterIndex].characterDescription;
+    basicAttackText.text =  " basic attack " + characters[characterIndex].basicAttackDamage;
+    specialAttackText.text = " special attack " + characters[characterIndex].specialAttackDamage;
    }
 
    private void Start()
@@ -44,6 +46,10 @@ public class CharacterSelectUI1 : MonoBehaviour
 
    }
 
+    public CharacterDataSO getCurrentCharacterData()
+    {
+        return characters[currentCharacterIndex];
+    }
    public void decreaseIndex(){
     
     currentCharacterIndex--;

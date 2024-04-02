@@ -17,3 +17,8 @@ MonoBehaviour:
   characterName: Tank
   characterDescription: a sturdy soldier, loves the glory and the smell of battle.
     Has a hard hitting attack
+  health: 100
+  mana: 100
+  basicAttackDamage: 25
+  specialAttackDamage: 10
+  pierceAmount: 4

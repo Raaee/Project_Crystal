@@ -11,19 +11,20 @@ public class MenuOptions : MonoBehaviour
     public string sceneStart;
     public void StartGame()
     {
-        if (menuScreen != null && characterSelectScreen != null)
-        {
-            // SceneManager.LoadScene(sceneStart);
-            characterSelectScreen.SetActive(true);
-            menuScreen.SetActive(false);
-            Debug.Log("Open Character Select Screen");
-        }
-        else
-        {
-            Debug.Log("There is no instance of menu and setting screen in the editor");
-        }
+        
+            
+        characterSelectScreen.SetActive(true);
+        menuScreen.SetActive(false);
+        Debug.Log("Open Character Select Screen");
         
         
+    }
+
+    public void startPlayGame()
+    {
+        SceneManager.LoadScene(sceneStart);
+        CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI1>().getCurrentCharacterData();
+        ChosenPlayerData.Instance.setChosenPlayer(chosenPlayer);
     }
 
     public void OpenCredits()
@@ -43,6 +44,12 @@ public class MenuOptions : MonoBehaviour
     {
         Debug.Log("There is no instance of menu and setting screen in the editor");
     }
+    }
+
+    public void backToMainMenu()
+    {
+        menuScreen.SetActive(true);
+        characterSelectScreen.SetActive(false);
     }
 
     public void QuitGame()
