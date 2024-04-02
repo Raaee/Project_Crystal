@@ -8,7 +8,7 @@ public class PiercingShotAbility : Ability
 {
     // Serialized fields for Unity inspector
     [SerializeField] private GameObject rangedAbility1Prefab;
-    [SerializeField] private ObjectPooler projPooler;
+    [SerializeField] public ObjectPooler projPooler;
   //  [SerializeField] float delayBetweenPresses = 0.25f;
 
     // Private fields
@@ -63,6 +63,10 @@ public class PiercingShotAbility : Ability
         SpawnProjectile(direction);
     }
 
-    
-   
+    public int GetMaxDamage() {
+        return projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().GetProjectileDamage();
+    }
+    public void SetMaxDamage(int amt) {
+        projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
+    }
 }
