@@ -4696,7 +4696,6 @@ GameObject:
   - component: {fileID: 895471250}
   - component: {fileID: 895471252}
   - component: {fileID: 895471251}
-  - component: {fileID: 895471253}
   m_Layer: 5
   m_Name: ManaText
   m_TagString: Untagged
@@ -4820,18 +4819,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895471249}
   m_CullTransparentMesh: 1
---- !u!114 &895471253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895471249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cf55cdc71460dd47946f09a4fade9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &934295615
 GameObject:
   m_ObjectHideFlags: 0
@@ -10225,7 +10212,6 @@ GameObject:
   - component: {fileID: 1834914268}
   - component: {fileID: 1834914267}
   - component: {fileID: 1834914265}
-  - component: {fileID: 1834914266}
   m_Layer: 5
   m_Name: SpecialAttackText
   m_TagString: Untagged
@@ -10322,18 +10308,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1834914266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834914264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cf55cdc71460dd47946f09a4fade9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &1834914267
 CanvasRenderer:
   m_ObjectHideFlags: 0
