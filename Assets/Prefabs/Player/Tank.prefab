@@ -5404,7 +5404,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1206d52936b46c99fbb379d7763d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
+--- !u!114 &6698978688436824222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788f96de98267d04d9587e7a4eba9d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestDrops:
+  - {fileID: 583352322101942660, guid: 12b2876ab4f699442bc9b2ba6b0c8f67, type: 3}
+  - {fileID: 2728916520030732642, guid: ec06cc99cd3081543bb7b7605bb019ff, type: 3}
+  - {fileID: 1103908666556385156, guid: c5b2123234eb24a448019446b8b5b7c5, type: 3}
 --- !u!114 &5288228236752367165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5435,7 +5451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f67c6971fa73f74a833a709cfaf90b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  MAX_HP: 180
   currentHP: 0
   godMode: 0
   OnDead:
@@ -5456,7 +5472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f2948a971441d408e977c51a497f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMP: 100
+  MAX_MP: 70
   currentMP: 0
 --- !u!1 &3243575590588145836
 GameObject:
@@ -5733,6 +5749,26 @@ MonoBehaviour:
   objectToPool: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
   parent: {fileID: 3221412779736232927}
   pooledObjects: []
+--- !u!114 &1927185540186520050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056759831097537879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
+  manaCost: 0
+  IsActive: 0
+  userMana: {fileID: 47992779867472359}
+  teleportDistance: 3
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5745,11 +5781,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
+  cooldown: 1
   manaCost: 0
   IsActive: 0
+  userMana: {fileID: 47992779867472359}
   projPooler: {fileID: 4156343975335828177}
-  isPlayerShooting: 0
+  isPlayerShooting: 1
   enemyFireRate: 5
   playerFireRate: 0.5
   OnAttack:
@@ -5768,8 +5805,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  manaCost: 10
-  IsActive: 0
+  manaCost: 15
+  IsActive: 1
+  userMana: {fileID: 47992779867472359}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
   projPooler: {fileID: 3416345396890490197}
 --- !u!114 &7227149741713791751

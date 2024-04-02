@@ -5502,6 +5502,26 @@ MonoBehaviour:
   objectToPool: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   parent: {fileID: 3221412779736232927}
   pooledObjects: []
+--- !u!114 &1927185540186520050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056759831097537879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
+  manaCost: 0
+  IsActive: 0
+  userMana: {fileID: 3038308969333731784}
+  teleportDistance: 5
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5520,10 +5540,7 @@ MonoBehaviour:
   projPooler: {fileID: 4156343975335828177}
   isPlayerShooting: 1
   enemyFireRate: 5
-  playerFireRate: 0.5
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls: []
+  playerFireRate: 0.2
 --- !u!114 &8156202257822150933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5537,7 +5554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  manaCost: 15
+  manaCost: 10
   IsActive: 1
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
   projPooler: {fileID: 3416345396890490197}

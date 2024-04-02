@@ -522,7 +522,7 @@ MonoBehaviour:
   enemyAIType: 0
   playerAggroTime: 5
   avoidTime: 1
-  attackRange: 4
+  attackRange: 2
   enemyCurrentState: 5
 --- !u!114 &8506391581786044554
 MonoBehaviour:
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  MAX_HP: 80
   currentHP: 0
   godMode: 0
   OnDead:
