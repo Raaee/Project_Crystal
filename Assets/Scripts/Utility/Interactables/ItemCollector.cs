@@ -7,15 +7,12 @@ public class ItemCollector : MonoBehaviour  {
    
     [Header("Chest Stuff")]
     [Tooltip("Possible drops from chest")]
-    [SerializeField] private List<GameObject> chestDrops;
-   
+    [SerializeField] private List<GameObject> enemies;
 
     private void Awake() {
         Init();
     }
     private void Init() {
-      
-
         if (instance != null && instance != this) {
             Destroy(this);
         }
@@ -40,36 +37,10 @@ public class ItemCollector : MonoBehaviour  {
         }
     }
     public void ChestInteraction(GameObject chestGO) {
-        bool somethingDropped = false;
-        float draw = Random.Range(0f, 100f);
-      
-
-        foreach (GameObject dropPrefab in chestDrops) {
-            Drop drop = dropPrefab.GetComponent<Drop>();
-            Debug.Log("draw: " + draw);
-            Debug.Log("drop chance: " + drop.GetDropChance());
-
-            if (draw <= drop.GetDropChance()) {
-                //GameObject go = Instantiate(drop, this.transform.position, Quaternion.identity);
-                // go.transform.parent = allDropsParentGO.transform;
-                //Debug.Log(go);
-
-                float randomOffset = Random.Range(1f,1f); //adding a random offset its not spawned right on chest
-                Vector3 spawnLocation = new Vector3(transform.position.x + randomOffset, transform.position.y + randomOffset, 0);
-                switch(drop.GetInteractableType())
-                {
-                    case InteractableType.HEALTH:
-                        DropManager.Instance?.GetHealthDrop(spawnLocation);
-                        break;
-                    case InteractableType.MANA:
-                        DropManager.Instance?.GetManaDrop(spawnLocation);
-                        break;
-                }
-                somethingDropped = true;
-            }           
-        }
         // This is for the mimic behavior:
-        if (!somethingDropped) {
+        if (!DropManager.Instance.DropItems(transform)) {
+            int ran = Random.Range(0, enemies.Count);
+            Instantiate(enemies[ran], transform.position, Quaternion.identity);
             Debug.Log("************ Enemy spawned");
         }
      

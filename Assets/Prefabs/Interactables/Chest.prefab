@@ -259,4 +259,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestOpenSprite: {fileID: 1233132977, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
   chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
-  respawnTimeInSeconds: 3
+  respawnTimeInSeconds: 180

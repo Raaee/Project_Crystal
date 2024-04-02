@@ -1,5 +1,6 @@
 // singleton gameobject component that swaps tiles between their corrupt and purified states
 
+using com.cyborgAssets.inspectorButtonPro;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ public class TilePurificationManager : MonoBehaviour
     public List<Tilemap> tilemaps;
 
     public List<TilePair> tilePairs = new List<TilePair>();
+    public GameObject crystal;
 
     private void Awake()
     {
@@ -82,7 +84,11 @@ public class TilePurificationManager : MonoBehaviour
             }
         }
     }
-
+    public void TestPurifyTiles() {
+        Vector3Int cellPosition = this.GetComponent<Grid>().WorldToCell(crystal.transform.position);
+        cellPosition.x += 6; // this number never changes. purification offset for center pos
+        PurifyTilesInRadius(cellPosition, 20);
+    }
     public void PurifyTilesInRadius(Vector3Int center, int radius)
     {
         foreach (Tilemap tilemap in tilemaps)

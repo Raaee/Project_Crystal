@@ -4,10 +4,11 @@ using UnityEngine;
 /// <summary>
 /// Script for handling the enemy visuals
 /// </summary>
-public class EnemyAnimation : AnimationControl
+public class EnemyAnimation : MonoBehaviour
 {
     [Header("Enemy Visual Configs")]
     [SerializeField] private SpriteRenderer enemySpriteRenderer;
+    private AnimationControl animControl;
   
    //helper components
     private EnemyAI enemyAI;
@@ -17,9 +18,12 @@ public class EnemyAnimation : AnimationControl
     {
         enemyAI = GetComponentInParent<EnemyAI>();
         rangedBA = this.transform.parent.GetComponentInChildren<RangedBasicAttack>();
-        //rangedBA.OnAttack.AddListener(PlayAttack);
+        animControl = GetComponent<AnimationControl>();
+        rangedBA.OnAttack.AddListener(PlayAttack);
     }
-
+    public void PlayAttack() {
+        animControl.PlayAttack();
+    }
     private void Update()
     {
             enemySpriteRenderer.flipX = enemyAI.GetMovementState() == MovementState.LEFT; 

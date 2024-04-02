@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 75
+  maxHP: 100
   currentHP: 0
   godMode: 0
   OnDead:
@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba9267bcbcac454f964c2a7e04e5a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootDropChance: 0.424
 --- !u!114 &1346679655619126017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +192,7 @@ GameObject:
   - component: {fileID: 1306762602531067334}
   - component: {fileID: 5254956924109737428}
   - component: {fileID: 1883295130148061768}
+  - component: {fileID: 3033950607122504338}
   m_Layer: 0
   m_Name: Enemy Visual
   m_TagString: Untagged
@@ -301,6 +301,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpriteRenderer: {fileID: 1306762602531067334}
+--- !u!114 &3033950607122504338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d5ba05e165cfb4b95277675b8ad72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8120154399766981587
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,8 +377,10 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 0}
   projPooler: {fileID: 3338611496508601949}
   isPlayerShooting: 0
   enemyFireRate: 0.7
   playerFireRate: 0.1
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []

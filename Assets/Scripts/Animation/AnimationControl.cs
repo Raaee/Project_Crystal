@@ -15,7 +15,6 @@ public class AnimationControl : MonoBehaviour   {
     public void PlayMovement() {
         animator.Play("Down Walk");
     }
-    [ProButton]
     public void PlayAttack() {
         animator.Play("Attack");
     }
