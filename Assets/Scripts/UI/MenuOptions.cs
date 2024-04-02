@@ -23,7 +23,8 @@ public class MenuOptions : MonoBehaviour
     public void startPlayGame()
     {
         SceneManager.LoadScene(sceneStart);
-    
+        CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI1>().getCurrentCharacterData();
+        ChosenPlayerData.Instance.setChosenPlayer(chosenPlayer);
     }
 
     public void OpenCredits()

@@ -46,6 +46,10 @@ public class CharacterSelectUI1 : MonoBehaviour
 
    }
 
+    public CharacterDataSO getCurrentCharacterData()
+    {
+        return characters[currentCharacterIndex];
+    }
    public void decreaseIndex(){
     
     currentCharacterIndex--;
