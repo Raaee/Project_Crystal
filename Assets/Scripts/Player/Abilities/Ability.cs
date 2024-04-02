@@ -17,7 +17,7 @@ public abstract class Ability : MonoBehaviour
     // Flag to check if the ability is on cooldown
     protected bool isOnCoolDown = false;
 
-    void Start() {
+    void Awake() {
         userMana = GetComponentInParent<ManaPoints>();
     }
 
@@ -41,6 +41,7 @@ public abstract class Ability : MonoBehaviour
     {
         // Remove the mana cost of the ability from the player's mana points
         userMana.RemoveMana(manaCost);
+        Debug.Log(userMana);
     }
     // Abstract method for ability usage to be implemented by child classes
     public abstract void AbilityUsage();

@@ -5419,6 +5419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reviveParticles: {fileID: 586051530861282325}
   reviveTime: 0.9
+  spawnPoint: {fileID: 0}
   OnRevive:
     m_PersistentCalls:
       m_Calls: []
@@ -5675,9 +5676,9 @@ GameObject:
   - component: {fileID: 3460960871319162507}
   - component: {fileID: 4156343975335828177}
   - component: {fileID: 3416345396890490197}
-  - component: {fileID: 1927185540186520050}
   - component: {fileID: 5606925210253363792}
   - component: {fileID: 8156202257822150933}
+  - component: {fileID: 7227149741713791751}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -5732,25 +5733,6 @@ MonoBehaviour:
   objectToPool: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
   parent: {fileID: 3221412779736232927}
   pooledObjects: []
---- !u!114 &1927185540186520050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7056759831097537879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b816e4a164ba144a1c6a3fd9665385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 2
-  manaCost: 0
-  IsActive: 0
-  teleportDistance: 5
-  OnTeleport:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5790,6 +5772,25 @@ MonoBehaviour:
   IsActive: 0
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
   projPooler: {fileID: 3416345396890490197}
+--- !u!114 &7227149741713791751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056759831097537879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88fe5eccee5cfa4aa4ca7af0b34cb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
+  manaCost: 5
+  IsActive: 0
+  teleportDistance: 5
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7360943041567263304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5937,7 +5938,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1520644
+  m_InstanceId: -2293118
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}

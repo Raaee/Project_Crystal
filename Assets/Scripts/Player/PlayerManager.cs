@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance { get; set; }
     [SerializeField] private GameObject reviveParticles;
     [SerializeField] private float reviveTime = 1f;
+    [SerializeField] private GameObject spawnPoint;
     private PlayerHealthPoints hp;
     private ManaPoints mp;
     private InputControls input;
@@ -37,6 +38,7 @@ public class PlayerManager : MonoBehaviour
     }
     [ProButton]
     public void Respawn() {
+        this.gameObject.transform.position = spawnPoint.transform.position;
         this.gameObject.SetActive(true);
         StartCoroutine(Revive());
         animator.Play(RESPAWN);

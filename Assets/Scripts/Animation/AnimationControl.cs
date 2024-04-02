@@ -9,7 +9,6 @@ public class AnimationControl : MonoBehaviour   {
 
     private void Start() {
         animator = GetComponent<Animator>();
-        Debug.Log(animator);
     }
 
     public void PlayMovement() {
