@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 6698978688436824222}
   - component: {fileID: 5220982741878226084}
   - component: {fileID: 3038308969333731784}
+  - component: {fileID: 8287637596035652119}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -108,7 +109,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -359,8 +360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMP: 100
   currentMP: 0
---- !u!1 &3231979542098627008
-GameObject:
+--- !u!114 &8287637596035652119
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5208,6 +5209,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c9f6af5a0f24770a96c03f01257bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drowningDamage: 1
+  colliderTille: Water
+  isDrowning: 0
+  timeBetweenDamage: 1
+  boxCollider2D: {fileID: 0}
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
