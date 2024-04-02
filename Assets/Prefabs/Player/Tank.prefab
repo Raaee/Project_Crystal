@@ -5256,10 +5256,6 @@ MonoBehaviour:
   - {fileID: 583352322101942660, guid: 12b2876ab4f699442bc9b2ba6b0c8f67, type: 3}
   - {fileID: 2728916520030732642, guid: ec06cc99cd3081543bb7b7605bb019ff, type: 3}
   - {fileID: 1103908666556385156, guid: c5b2123234eb24a448019446b8b5b7c5, type: 3}
-  chestOpenSprite: {fileID: 1233132977, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
-  chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
-  respawnTime: 3
-  disappearTime: 1
 --- !u!114 &5288228236752367165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5571,6 +5567,9 @@ MonoBehaviour:
   IsActive: 0
   userMana: {fileID: 0}
   teleportDistance: 5
+  OnTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5620,6 +5619,7 @@ GameObject:
   - component: {fileID: 4753752826396503389}
   - component: {fileID: 6262924791448149945}
   - component: {fileID: 3521332388731034868}
+  - component: {fileID: 1055328703212279693}
   m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
@@ -5716,6 +5716,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1055328703212279693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360943041567263304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6b879f6f7ffd04f8222fc80ecd647d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 6262924791448149945}
 --- !u!1 &8271713260674164174
 GameObject:
   m_ObjectHideFlags: 0

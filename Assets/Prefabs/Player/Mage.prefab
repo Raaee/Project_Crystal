@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4770437528057913785}
   - component: {fileID: 2958854895892277169}
   - component: {fileID: 5501403138592898320}
+  - component: {fileID: 3153552638900528616}
   - component: {fileID: 1505295975441594292}
   - component: {fileID: 5845282077483441882}
   - component: {fileID: 8873837518193116210}
@@ -188,6 +189,21 @@ MonoBehaviour:
   OnAbilityConfirm:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3153552638900528616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20c0dc1a3c780c47842197016c506ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2958854895892277169}
+  knockBackForce: 10000
+  knockBackTime: 1
 --- !u!114 &1505295975441594292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,17 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6b879f6f7ffd04f8222fc80ecd647d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 100
-  currentHP: 0
-  godMode: 0
-  OnDead:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHurt:
-    m_PersistentCalls:
-      m_Calls: []
-  flashMaterial: {fileID: 7673094459018304910, guid: 24a22668affbd15479354bd62f436a5b, type: 3}
-  defaultMaterial: {fileID: 6262924791448149945}
+  flashMaterial: {fileID: 6262924791448149945}
 --- !u!1 &7671935291099421684
 GameObject:
   m_ObjectHideFlags: 0
