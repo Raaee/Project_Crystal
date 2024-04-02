@@ -17,5 +17,8 @@ public class TilePurificationManagerEditor : Editor
         {
             myScript.CorruptAllTiles();
         }
+        if (GUILayout.Button("Purify in raiuds")) {
+            myScript.TestPurifyTiles();
+        }
     }
 }

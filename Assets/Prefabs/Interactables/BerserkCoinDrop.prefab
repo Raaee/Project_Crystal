@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2630844730416778567}
   - component: {fileID: 5525721570104264928}
   - component: {fileID: 3289564606531859991}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BerserkCoinDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.35856545
 --- !u!114 &5525721570104264928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 0
+  dropChance: 10
   interactableType: 2
-  outlineMat: {fileID: 0}
+  outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
+  dropInteractSfxClip: {fileID: 0}
 --- !u!114 &3289564606531859991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,5 +150,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff292e90b667431abd0ddbd610f4636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  berserkerDamageIncrease: 0
-  berserkerDamageTime: 0
+  berserkerDamageIncrease: 10
+  berserkerDamageTime: 5

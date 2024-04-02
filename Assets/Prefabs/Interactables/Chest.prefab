@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1054101820856471361}
   - component: {fileID: 116463848299958049}
-  - component: {fileID: 4591366720018861386}
   - component: {fileID: 4568890113209193678}
   - component: {fileID: 4014824749094927552}
+  - component: {fileID: 4591366720018861386}
   - component: {fileID: 819739123633626254}
   m_Layer: 0
   m_Name: Chest
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4591366720018861386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891175567560889161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropChance: 0
-  interactableType: 4
-  outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
-  dropInteractSfxClip: {fileID: 8300000, guid: cfcf3d06b8a72d64689aced3a8b3ee2d, type: 3}
 --- !u!61 &4568890113209193678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -245,6 +229,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4591366720018861386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891175567560889161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropChance: 0
+  interactableType: 4
+  outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
+  dropInteractSfxClip: {fileID: 8300000, guid: cfcf3d06b8a72d64689aced3a8b3ee2d, type: 3}
 --- !u!114 &819739123633626254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,4 +259,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestOpenSprite: {fileID: 1233132977, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
   chestClosedSprite: {fileID: 1271680694, guid: 8055baac96149e54cba0f5176d1785fc, type: 3}
-  respawnTime: 5
+  respawnTimeInSeconds: 180

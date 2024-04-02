@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6719044664449030986}
   - component: {fileID: 1171141351158396926}
   - component: {fileID: 3651300448440803800}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 35
+  dropChance: 30
   interactableType: 0
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
   dropInteractSfxClip: {fileID: 8300000, guid: 2f7469dedfd7db448973e6a8a16ac171, type: 3}
