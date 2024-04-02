@@ -17,3 +17,8 @@ MonoBehaviour:
   characterName: Mage
   characterDescription: a magical wizard, from the land of Latsyrc. Is very catious
     in its attack and prefers to attack at a distance
+  health: 100
+  mana: 100
+  basicAttackDamage: 10
+  specialAttackDamage: 10
+  pierceAmount: 4
