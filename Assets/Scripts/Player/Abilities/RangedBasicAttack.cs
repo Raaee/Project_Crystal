@@ -10,8 +10,8 @@ public class RangedBasicAttack : Ability
 
     private Actions actions;
 
-    // Object pooler for projectiles
-    [SerializeField] public ObjectPooler projPooler;
+    [SerializeField] private GameObject rangedAbility1Prefab;
+
     [SerializeField] private bool isPlayerShooting;
     [SerializeField] private float enemyFireRate = 5.0f;
     [SerializeField] private float playerFireRate = 0.1f;
@@ -19,6 +19,7 @@ public class RangedBasicAttack : Ability
     private float lastPlayerAttackTime = 0f;
     private float lastEnemyAttackTime = 0f;
     private bool isOnCooldown = true; 
+    private ObjectPooler projPooler;
        
     void Awake() { 
         
@@ -27,6 +28,10 @@ public class RangedBasicAttack : Ability
         actions?.OnBasicAttack.AddListener(AbilityUsage);
 
         cooldown = playerFireRate;
+    }
+
+    void Start() {
+        projPooler = ObjPoolerManager.instance.getPool(rangedAbility1Prefab);
     }
 
     // Method to spawn a projectile

@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 8506391581786044554}
   - component: {fileID: 6853966967484349388}
   - component: {fileID: 333826428042613783}
+  - component: {fileID: 3206039363244412262}
   m_Layer: 0
   m_Name: TankEnemy
   m_TagString: Enemy
@@ -638,7 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 100
+  maxHP: 100
   currentHP: 0
   godMode: 0
   OnDead:
@@ -659,7 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba9267bcbcac454f964c2a7e04e5a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootDropChance: 0.424
 --- !u!114 &333826428042613783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +686,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpriteRenderer: {fileID: 1306762602531067334}
-  enemyAnim: {fileID: 0}
 --- !u!1 &5870055649791206350
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,8 +774,8 @@ GameObject:
   - component: {fileID: 8993497945352709441}
   - component: {fileID: 1306762602531067334}
   - component: {fileID: 4268861783813776509}
-  - component: {fileID: 4261726279337833632}
   - component: {fileID: 7338658861132368715}
+  - component: {fileID: 6613564118738782395}
   m_Layer: 0
   m_Name: Enemy Visual
   m_TagString: Untagged
@@ -872,7 +871,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4261726279337833632
+--- !u!114 &7338658861132368715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d5ba05e165cfb4b95277675b8ad72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6613564118738782395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpriteRenderer: {fileID: 1306762602531067334}
 --- !u!1 &8104109759933092903
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +906,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2797721206342509600}
   - component: {fileID: 8071365172933274199}
-  - component: {fileID: 6613564118738782395}
   m_Layer: 5
   m_Name: Filling
   m_TagString: Untagged
@@ -918,55 +940,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8104109759933092903}
   m_CullTransparentMesh: 1
---- !u!114 &6613564118738782395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6453280248707733763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpriteRenderer: {fileID: 1306762602531067334}
---- !u!114 &7338658861132368715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6453280248707733763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8d5ba05e165cfb4b95277675b8ad72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_GameObject: {fileID: 8104109759933092903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 1590336508, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8120154399766981587
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +949,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2961924268343594234}
-  - component: {fileID: 3338611496508601949}
   - component: {fileID: 6591155542283745218}
   m_Layer: 0
   m_Name: Abilities
@@ -1000,22 +972,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2343447669287320918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3338611496508601949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8120154399766981587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToPool: 3
-  objectToPool: {fileID: 971724485026557118, guid: da5bc063b3c4f446a9c0c2a06a8eea54, type: 3}
-  parent: {fileID: 5281210970760375665}
-  pooledObjects: []
 --- !u!114 &6591155542283745218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,8 +987,7 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 0}
-  projPooler: {fileID: 3338611496508601949}
+  rangedAbility1Prefab: {fileID: 971724485026557118, guid: da5bc063b3c4f446a9c0c2a06a8eea54, type: 3}
   isPlayerShooting: 0
   enemyFireRate: 0.8
   playerFireRate: 0.1
