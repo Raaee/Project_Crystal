@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 75
+  maxHP: 100
   currentHP: 75
   godMode: 0
   OnDead:
@@ -690,20 +690,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathColorTint: {r: 0.8679245, g: 0.1432894, b: 0.1432894, a: 0.62352943}
---- !u!114 &5018605951332905295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpriteRenderer: {fileID: 1306762602531067334}
-  enemyAnim: {fileID: 0}
 --- !u!1 &5637604997345082740
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +966,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2961924268343594234}
-  - component: {fileID: 3338611496508601949}
   - component: {fileID: 6591155542283745218}
   m_Layer: 0
   m_Name: Abilities
@@ -1004,22 +989,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2343447669287320918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3338611496508601949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8120154399766981587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToPool: 3
-  objectToPool: {fileID: 971724485026557118, guid: 1955fa9e73f7d4331b500c704e4c769e, type: 3}
-  parent: {fileID: 5281210970760375665}
-  pooledObjects: []
 --- !u!114 &6591155542283745218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,8 +1004,7 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 0}
-  projPooler: {fileID: 3338611496508601949}
+  rangedAbility1Prefab: {fileID: 971724485026557118, guid: 1955fa9e73f7d4331b500c704e4c769e, type: 3}
   isPlayerShooting: 0
   enemyFireRate: 0.7
   playerFireRate: 0.1

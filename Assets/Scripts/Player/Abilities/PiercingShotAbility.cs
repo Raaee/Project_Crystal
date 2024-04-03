@@ -8,12 +8,12 @@ public class PiercingShotAbility : Ability
 {
     // Serialized fields for Unity inspector
     [SerializeField] private GameObject rangedAbility1Prefab;
-    [SerializeField] public ObjectPooler projPooler;
+    
   //  [SerializeField] float delayBetweenPresses = 0.25f;
 
     // Private fields
     private Actions actions;
-    
+    private ObjectPooler projPooler;
 
     void Awake()
     {
@@ -29,6 +29,11 @@ public class PiercingShotAbility : Ability
 
         // Add ShootIfActive method as a listener to OnAbility1 event
         actions.OnAbility1.AddListener(ShootIfActive);
+    }
+
+    void Start()
+    {
+        projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
     }
 
     // Method to spawn a projectile in a given direction
