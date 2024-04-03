@@ -14,12 +14,12 @@ public abstract class Ability : MonoBehaviour
     // Flag to check if the ability is active
     [SerializeField] protected bool IsActive;
     // Reference to the player's mana points
-    protected ManaPoints userMana;
+   [SerializeField] protected ManaPoints userMana;
     // Flag to check if the ability is on cooldown
     protected bool isOnCoolDown = false;
     [HideInInspector] public UnityEvent OnAbilityUsage;
 
-    void Awake() {
+   public virtual void Start() {
         userMana = GetComponentInParent<ManaPoints>();
     }
 

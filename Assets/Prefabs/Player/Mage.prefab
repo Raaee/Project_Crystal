@@ -4865,9 +4865,8 @@ GameObject:
   - component: {fileID: 1505295975441594292}
   - component: {fileID: 5845282077483441882}
   - component: {fileID: 8873837518193116210}
-  - component: {fileID: 6698978688436824222}
-  - component: {fileID: 1276699238988062058}
   - component: {fileID: 3439780717632776245}
+  - component: {fileID: 6698978688436824222}
   - component: {fileID: 5220982741878226084}
   - component: {fileID: 3038308969333731784}
   m_Layer: 0
@@ -5146,6 +5145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5ca080b866ce54c90a294c994fd172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3439780717632776245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1206d52936b46c99fbb379d7763d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
 --- !u!114 &6698978688436824222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5443,8 +5455,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3460960871319162507}
-  - component: {fileID: 4156343975335828177}
-  - component: {fileID: 3416345396890490197}
   - component: {fileID: 5606925210253363792}
   - component: {fileID: 8156202257822150933}
   - component: {fileID: 3804630020332660525}
@@ -5470,38 +5480,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7238265307839878932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4156343975335828177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7056759831097537879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToPool: 3
-  objectToPool: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
-  parent: {fileID: 3221412779736232927}
-  pooledObjects: []
---- !u!114 &3416345396890490197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7056759831097537879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToPool: 3
-  objectToPool: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
-  parent: {fileID: 3221412779736232927}
-  pooledObjects: []
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5517,7 +5495,8 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 0
   IsActive: 0
-  projPooler: {fileID: 4156343975335828177}
+  userMana: {fileID: 0}
+  rangedAbility1Prefab: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
   isPlayerShooting: 1
   enemyFireRate: 5
   playerFireRate: 0.2
@@ -5539,9 +5518,9 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 10
   IsActive: 1
+  userMana: {fileID: 3038308969333731784}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
-  projPooler: {fileID: 3416345396890490197}
---- !u!114 &3804630020332660525
+--- !u!114 &3258390402626218228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5555,7 +5534,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 2
   manaCost: 5
-  IsActive: 0
+  IsActive: 1
+  userMana: {fileID: 0}
   teleportDistance: 5
   OnTeleport:
     m_PersistentCalls:

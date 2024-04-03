@@ -570,20 +570,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathColorTint: {r: 0.8679245, g: 0.1432894, b: 0.1432894, a: 0.62352943}
---- !u!114 &3206039363244412262
+--- !u!1 &5870055649791206350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2169213820661261588}
+  - component: {fileID: 8284140494312155744}
+  - component: {fileID: 2518697803390398017}
+  m_Layer: 5
+  m_Name: HPBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2169213820661261588
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870055649791206350}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.017787192, y: 0.017787192, z: 0.017787192}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2797721206342509600}
+  - {fileID: 2450442273136527528}
+  m_Father: {fileID: 6025231310893120138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -51.25, y: -1134.6}
+  m_SizeDelta: {x: 177.69, y: -1043.45}
+  m_Pivot: {x: 1, y: 1}
+--- !u!222 &8284140494312155744
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870055649791206350}
+  m_CullTransparentMesh: 1
+--- !u!114 &2518697803390398017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
+  m_GameObject: {fileID: 5870055649791206350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpriteRenderer: {fileID: 1306762602531067334}
-  hpBarCanvas: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: abb0057164d43d34ea93a497702c4948, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1754488709, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6453280248707733763
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +780,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpriteRenderer: {fileID: 1306762602531067334}
+--- !u!1 &8104109759933092903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d5ba05e165cfb4b95277675b8ad72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6613564118738782395
+MonoBehaviour:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2797721206342509600}
+  - component: {fileID: 8071365172933274199}
+  m_Layer: 5
+  m_Name: Filling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2797721206342509600
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpriteRenderer: {fileID: 1306762602531067334}
   hpBarCanvas: {fileID: 0}
 --- !u!1 &8120154399766981587
 GameObject:
@@ -727,7 +828,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2961924268343594234}
-  - component: {fileID: 3338611496508601949}
   - component: {fileID: 6591155542283745218}
   m_Layer: 0
   m_Name: Abilities
@@ -751,22 +851,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2343447669287320918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3338611496508601949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8120154399766981587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToPool: 3
-  objectToPool: {fileID: 971724485026557118, guid: da5bc063b3c4f446a9c0c2a06a8eea54, type: 3}
-  parent: {fileID: 5281210970760375665}
-  pooledObjects: []
 --- !u!114 &6591155542283745218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +867,7 @@ MonoBehaviour:
   manaCost: 0
   IsActive: 0
   projPooler: {fileID: 3338611496508601949}
+  rangedAbility1Prefab: {fileID: 971724485026557118, guid: da5bc063b3c4f446a9c0c2a06a8eea54, type: 3}
   isPlayerShooting: 0
   enemyFireRate: 0.8
   playerFireRate: 0.1

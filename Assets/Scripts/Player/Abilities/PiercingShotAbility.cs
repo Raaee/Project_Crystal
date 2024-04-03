@@ -6,9 +6,15 @@ using UnityEngine.InputSystem;
 // This class represents the Piercing Shot ability for a player character.
 public class PiercingShotAbility : Ability
 {
-    [SerializeField] public ObjectPooler projPooler;
-    private Actions actions;
+    // Serialized fields for Unity inspector
+    [SerializeField] private GameObject rangedAbility1Prefab;
     
+  //  [SerializeField] float delayBetweenPresses = 0.25f;
+
+    // Private fields
+    private Actions actions;
+    private ObjectPooler projPooler;
+
     void Awake()
     {
         // Get the Actions component from the parent object
@@ -23,6 +29,11 @@ public class PiercingShotAbility : Ability
 
         // Add ShootIfActive method as a listener to OnAbility1 event
         actions.OnAbility1.AddListener(ShootIfActive);
+    }
+
+    void Start()
+    {
+        projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
     }
 
     // Method to spawn a projectile in a given direction

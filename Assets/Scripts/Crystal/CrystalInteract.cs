@@ -17,7 +17,7 @@ public class CrystalInteract : MonoBehaviour, IInteractable {
         spawnerCrystal.state = Spawner.State.Idle;
     }
     public void Interact() {
-        Debug.Log("crystal  interaction");
+     
         spawnerCrystal.state = Spawner.State.Cooldown;
         this.enabled = false;
     }
