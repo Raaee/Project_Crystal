@@ -9,7 +9,7 @@ public class BuffManager : MonoBehaviour  {
     public static BuffManager instance;
 
    
-    [SerializeField] private GameObject playerPrefab;
+    private GameObject playerPrefab;
     // Player Stats
     private PlayerHealthPoints playerHealth;
     private ManaPoints playerMana;
@@ -31,6 +31,10 @@ public class BuffManager : MonoBehaviour  {
         {
             Destroy(gameObject);
         }
+        
+    }
+    private void Start() {
+        playerPrefab = PlayerManager.Instance.gameObject;
 
         playerHealth = playerPrefab.GetComponent<PlayerHealthPoints>();
         playerMana = playerPrefab.GetComponent<ManaPoints>();

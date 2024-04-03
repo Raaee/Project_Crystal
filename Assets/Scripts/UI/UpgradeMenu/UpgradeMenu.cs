@@ -21,6 +21,10 @@ public class UpgradeMenu : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
+    private void Start() {
+        player = PlayerManager.Instance.gameObject.transform;
+
+    }
 
     public GameObject cardPrefab;
 

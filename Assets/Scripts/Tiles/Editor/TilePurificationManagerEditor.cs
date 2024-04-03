@@ -13,12 +13,8 @@ public class TilePurificationManagerEditor : Editor
         {
             myScript.PurifyAllTiles();
         }
-        if(GUILayout.Button("Corrupt All Tiles"))
-        {
+        if (GUILayout.Button("Corrupt All Tiles")) {
             myScript.CorruptAllTiles();
-        }
-        if (GUILayout.Button("Purify in raiuds")) {
-            myScript.TestPurifyTiles();
         }
     }
 }

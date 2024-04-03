@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1594299274412594500}
   - component: {fileID: 7874370275214455691}
   - component: {fileID: 4497958005192107366}
+  - component: {fileID: 7877230648926917260}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Crystal
@@ -241,6 +242,12 @@ MonoBehaviour:
   spawnedObjects: []
   state: 2
   time: 0
+  OnSpawnerStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnerComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1594299274412594500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
+  interactable: 1
 --- !u!114 &7874370275214455691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,13 +274,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1a8c200abe7714a9ea5474286baa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 1000
+  maxHP: 3000
   currentHP: 0
   godMode: 0
   OnDead:
     m_PersistentCalls:
       m_Calls: []
   OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &4497958005192107366
@@ -296,6 +307,19 @@ MonoBehaviour:
   corruptedShadowSprite: {fileID: -735974454, guid: bb1b616e0066fe94090830f9ae79696b, type: 3}
   purifiedSprite: {fileID: 243064538, guid: 709222a7450fc324cb7e91c02aeec9cd, type: 3}
   purifiedShadowSprite: {fileID: -42816084, guid: bb1b616e0066fe94090830f9ae79696b, type: 3}
+--- !u!114 &7877230648926917260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97506262352889314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34dc8348c87d0c458d936d5e7ea4c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
 --- !u!1 &811520973873613181
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,5 +52,6 @@ public class ManaPoints : MonoBehaviour
     }
     public void SetMaxMana(int amt) {
         maxMP = amt;
+        OnManaChange.Invoke();
     }
 }

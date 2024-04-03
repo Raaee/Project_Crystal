@@ -46,9 +46,11 @@ public class Upgrade
                 break;
             case UpgradeType.MaxManaPercent:
                 BuffManager.instance.IncreaseMaxMana(upgradeValue);
+                BuffManager.instance.AddMana(Mathf.RoundToInt(upgradeValue * 100));
                 break;
             case UpgradeType.MaxHealthPercent:
                 BuffManager.instance.IncreaseMaxHealth(upgradeValue);
+                BuffManager.instance.AddHealth(Mathf.RoundToInt(upgradeValue * 100));
                 break;
             case UpgradeType.AbilityCooldownPercent:
                 BuffManager.instance.ReduceAllAbilityCooldowns(upgradeValue);

@@ -9,6 +9,8 @@ public class CrystalInteract : MonoBehaviour, IInteractable {
     private Material normalMat;
     private SpriteRenderer sr;
     private Spawner spawnerCrystal;
+    public bool interactable = true;
+    public bool Interactable { get => interactable; set => interactable = value; }
 
     private void Start() {
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -17,9 +19,10 @@ public class CrystalInteract : MonoBehaviour, IInteractable {
         spawnerCrystal.state = Spawner.State.Idle;
     }
     public void Interact() {
-     
-        spawnerCrystal.state = Spawner.State.Cooldown;
-        this.enabled = false;
+        if (Interactable) {
+            spawnerCrystal.state = Spawner.State.Cooldown;
+            Interactable = false;
+        }        
     }
     public void HighlightSprite() {
         sr.material = outlineMat;

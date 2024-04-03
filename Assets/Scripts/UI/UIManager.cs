@@ -67,11 +67,11 @@ public class UIManager : MonoBehaviour  {
         UpdateAbilityCooldown(PlayerManager.Instance.pierceShot, pierceAttackCooldown, ref pierceAttackTimer, pierceAttackShadow);
     }
     public void UpdateHealth() {
-        hpFilling.fillAmount = PlayerManager.Instance.hp.currentHP / 100f;
+        hpFilling.fillAmount = (float) PlayerManager.Instance.hp.currentHP / PlayerManager.Instance.hp.maxHP;
         hpText.text = PlayerManager.Instance.hp.currentHP + " / " + PlayerManager.Instance.hp.maxHP;
     }
     public void UpdateMana() {
-        manaFilling.fillAmount = PlayerManager.Instance.mp.currentMP / 100f;
+        manaFilling.fillAmount = (float) PlayerManager.Instance.mp.currentMP / PlayerManager.Instance.mp.maxMP;
         manaText.text = PlayerManager.Instance.mp.currentMP + " / " + PlayerManager.Instance.mp.maxMP;
     }
 
