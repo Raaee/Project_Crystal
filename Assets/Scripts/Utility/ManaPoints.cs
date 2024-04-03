@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ManaPoints : MonoBehaviour
 {
     // Max mana is set at 50
     [SerializeField] public int maxMP = 100;
     [SerializeField] public int currentMP;
+    [HideInInspector] public UnityEvent OnManaChange;
 
     // Character starts with maximum mana value
     private void Start()
@@ -22,6 +24,7 @@ public class ManaPoints : MonoBehaviour
         if (currentMP > maxMP) {
             currentMP = maxMP;
         }
+        OnManaChange.Invoke();
     }
 
     // Remove a certain amount of mana while character's current mana is above 0
@@ -33,9 +36,11 @@ public class ManaPoints : MonoBehaviour
             currentMP = 0;
             
         }
+        OnManaChange.Invoke();
     }
     public void ResetMana() {
         currentMP = maxMP;
+        OnManaChange.Invoke();
     }
 
     public int GetCurrentMP()

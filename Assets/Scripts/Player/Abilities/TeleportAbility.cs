@@ -43,7 +43,8 @@ public class TeleportAbility : Ability
             return;
 
         // Start the UseAbility coroutine.
-        StartCoroutine(UseAbility());
+        if (GetCurrentMana() >= manaCost)
+            StartCoroutine(UseAbility());
     }
 
     // This method is called when the ability is used.

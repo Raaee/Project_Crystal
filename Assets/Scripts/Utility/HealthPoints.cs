@@ -16,6 +16,7 @@ public class HealthPoints : MonoBehaviour
     private bool isDead = false;
     [HideInInspector] public UnityEvent OnDead;
     [HideInInspector] public UnityEvent OnHurt;
+    [HideInInspector] public UnityEvent OnHealthChange;
 
     // Character starts with maximum health value
     public virtual void Start()    {
@@ -28,6 +29,7 @@ public class HealthPoints : MonoBehaviour
         if (currentHP >= maxHP)    {
             currentHP = maxHP;
         }
+        OnHealthChange.Invoke();
     }
 
     // Remove a certain amount of health while character's current health is above 0
@@ -50,6 +52,7 @@ public class HealthPoints : MonoBehaviour
             return;
         }
         OnHurt.Invoke();
+        OnHealthChange.Invoke();
     }
 
     // Returns true if character's health is 0
@@ -64,6 +67,7 @@ public class HealthPoints : MonoBehaviour
     public virtual void ResetHealth()   {
         currentHP = maxHP;
         isDead = false;
+        OnHealthChange.Invoke();
     }
 
     // Method To Get Current HP

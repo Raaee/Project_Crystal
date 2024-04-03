@@ -8,6 +8,7 @@ public class EnemyAnimation : MonoBehaviour
 {
     [Header("Enemy Visual Configs")]
     [SerializeField] private SpriteRenderer enemySpriteRenderer;
+    [SerializeField] private Canvas hpBarCanvas;
     private AnimationControl animControl;
   
    //helper components
@@ -19,6 +20,7 @@ public class EnemyAnimation : MonoBehaviour
         enemyAI = GetComponentInParent<EnemyAI>();
         rangedBA = this.transform.parent.GetComponentInChildren<RangedBasicAttack>();
         animControl = GetComponent<AnimationControl>();
+        hpBarCanvas.worldCamera = FindFirstObjectByType<Camera>();
         rangedBA.OnAttack.AddListener(PlayAttack);
     }
     public void PlayAttack() {

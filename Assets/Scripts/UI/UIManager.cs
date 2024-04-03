@@ -6,10 +6,6 @@ using TMPro;
 
 public class UIManager : MonoBehaviour  {
 
-    // var player stats
-    [SerializeField] private PlayerHealthPoints playerHP;
-    [SerializeField] private ManaPoints playerMP;
-
     // Var HP
     [Header("Player Health")]
     [SerializeField] private GameObject playerHPBar;
@@ -24,50 +20,62 @@ public class UIManager : MonoBehaviour  {
 
     // Var Teleport
     [Header("Teleport Ability")]
-    [SerializeField] private TeleportAbility teleportAbility;
     [SerializeField] private Image teleportShadow;
     private float teleportTimer;
     private float teleportCooldown;
 
     // Var BasicAttack
     [Header("Basic Attack")]
-    [SerializeField] private RangedBasicAttack basicAttack;
     [SerializeField] private Image basicAttackShadow;
     private float basicAttackTimer;
     private float basicAttackCooldown;
 
     // Var PierceAttack
     [Header("Pierce Attack")]
-    [SerializeField] private PiercingShotAbility pierceAttack;
     [SerializeField] private Image pierceAttackShadow;
     private float pierceAttackTimer;
-    private float pierceAttackCooldown; 
-
+    private float pierceAttackCooldown;
 
     void Start()    {
-        teleportCooldown = teleportAbility.GetCooldownTime();
-        basicAttackCooldown = basicAttack.GetCooldownTime();
-        pierceAttackCooldown = pierceAttack.GetCooldownTime();
+      //  PlayerManager.Instance.teleport.OnAbilityUsage.AddListener(UpdateTeleportUI);
+      //  PlayerManager.Instance.rangedBA.OnAbilityUsage.AddListener(UpdateBasicAttackUI);
+      //  PlayerManager.Instance.pierceShot.OnAbilityUsage.AddListener(UpdatePierceUI);
+        PlayerManager.Instance.hp.OnHealthChange.AddListener(UpdateHealth);
+        PlayerManager.Instance.mp.OnManaChange.AddListener(UpdateMana);
+        InitUI();
+    } 
+    public void InitUI() {
+        teleportCooldown = PlayerManager.Instance.teleport.GetCooldownTime();
+        basicAttackCooldown = PlayerManager.Instance.rangedBA.GetCooldownTime();
+        pierceAttackCooldown = PlayerManager.Instance.pierceShot.GetCooldownTime();
+
+        UpdateHealth();
+        UpdateMana();
+    }
+    private void Update() {
+        UpdateTeleportUI();
+        UpdateBasicAttackUI();
+        UpdatePierceUI();
+    }
+    public void UpdateTeleportUI() {
+        UpdateAbilityCooldown(PlayerManager.Instance.teleport, teleportCooldown, ref teleportTimer, teleportShadow);
+    }
+    public void UpdateBasicAttackUI() {
+        UpdateAbilityCooldown(PlayerManager.Instance.rangedBA, basicAttackCooldown, ref basicAttackTimer, basicAttackShadow);
+    }
+    public void UpdatePierceUI() {
+        UpdateAbilityCooldown(PlayerManager.Instance.pierceShot, pierceAttackCooldown, ref pierceAttackTimer, pierceAttackShadow);
+    }
+    public void UpdateHealth() {
+        hpFilling.fillAmount = PlayerManager.Instance.hp.currentHP / 100f;
+        hpText.text = PlayerManager.Instance.hp.currentHP + " / " + PlayerManager.Instance.hp.maxHP;
+    }
+    public void UpdateMana() {
+        manaFilling.fillAmount = PlayerManager.Instance.mp.currentMP / 100f;
+        manaText.text = PlayerManager.Instance.mp.currentMP + " / " + PlayerManager.Instance.mp.maxMP;
     }
 
-    void Update()   {
-        
-        manaFilling.fillAmount = playerMP.currentMP / 100f;
-        manaText.text = playerMP.currentMP + " / " + playerMP.maxMP;
 
-        hpFilling.fillAmount = playerHP.currentHP / 100f;
-        hpText.text = playerHP.currentHP + " / " + playerHP.maxHP;
-        
-        // Teleport Box
-        UpdateAbilityCooldown(teleportAbility, teleportCooldown, ref teleportTimer, teleportShadow);
-
-        // PierceAttack Box
-        UpdateAbilityCooldown(pierceAttack, pierceAttackCooldown, ref pierceAttackTimer, pierceAttackShadow);
-
-        // RangedBasicAttack Box Currently Not Working
-        UpdateAbilityCooldown(basicAttack, basicAttackCooldown, ref basicAttackTimer, basicAttackShadow);
-    }
-    
     // Updates Animation For The Abilities Boxes
     private void UpdateAbilityCooldown(Ability ability, float cooldown, ref float timer, Image shadow)  {
         if (ability.GetIsOnCooldown())  {
