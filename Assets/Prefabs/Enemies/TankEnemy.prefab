@@ -505,7 +505,6 @@ GameObject:
   - component: {fileID: 8506391581786044554}
   - component: {fileID: 6853966967484349388}
   - component: {fileID: 333826428042613783}
-  - component: {fileID: 3206039363244412262}
   m_Layer: 0
   m_Name: TankEnemy
   m_TagString: Enemy
@@ -673,19 +672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathColorTint: {r: 0.8679245, g: 0.1432894, b: 0.1432894, a: 0.62352943}
---- !u!114 &3206039363244412262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281210970760375665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpriteRenderer: {fileID: 1306762602531067334}
 --- !u!1 &5870055649791206350
 GameObject:
   m_ObjectHideFlags: 0

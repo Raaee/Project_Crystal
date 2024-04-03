@@ -27,11 +27,9 @@ public class RangedBasicAttack : Ability
         // Add listener for basic attack event when basic attack button is pressed
         actions?.OnBasicAttack.AddListener(AbilityUsage);
 
-        cooldown = playerFireRate;
-    }
-
-    void Start() {
         projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
+        Debug.Log(projPooler);
+        cooldown = playerFireRate;
     }
 
     // Method to spawn a projectile
