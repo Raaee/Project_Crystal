@@ -8,6 +8,7 @@ public class MenuOptions : MonoBehaviour
     [SerializeField] private GameObject menuScreen;
     [SerializeField] private GameObject settingsScreen;
     [SerializeField] private GameObject characterSelectScreen;
+    [SerializeField] private GameObject creditsScreen;
     public string sceneStart;
     public void StartGame()
     {
@@ -22,9 +23,10 @@ public class MenuOptions : MonoBehaviour
 
     public void startPlayGame()
     {
-        SceneManager.LoadScene(sceneStart);
+        
         CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI1>().getCurrentCharacterData();
         ChosenPlayerData.Instance.setChosenPlayer(chosenPlayer);
+        SceneManager.LoadScene(sceneStart);
     }
 
     public void OpenCredits()
@@ -47,5 +49,20 @@ public class MenuOptions : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Close Game");
+    }
+
+    public void OpenCreditsScreen()
+    {
+        creditsScreen.SetActive(true);
+        menuScreen.SetActive(false);
+    }
+
+
+    public void CloseCreditsScreen()
+    {
+
+        creditsScreen.SetActive(false);
+        menuScreen.SetActive(true);
+
     }
 }
