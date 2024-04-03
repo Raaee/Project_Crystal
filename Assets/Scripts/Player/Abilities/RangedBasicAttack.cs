@@ -97,4 +97,14 @@ public class RangedBasicAttack : Ability
     public void SetMaxDamage(int amt) {
         projPooler.GetObjectToPool().GetComponent<Projectile>().SetMaxProjectileDamage(amt);
     }
+
+    public void SetCurrentDamge(int amt)
+    {
+        projPooler.GetObjectToPool().GetComponent<Projectile>().SetProjectileDamage(amt);
+    }
+
+    public int GetCurrentDamge()
+    {
+        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetCurrentProjectileDamage();
+    }
 }

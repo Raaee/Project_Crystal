@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 268354910384900353}
   - component: {fileID: 5220982741878226084}
   - component: {fileID: 3038308969333731784}
+  - component: {fileID: 2865712635867247030}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -382,6 +383,26 @@ MonoBehaviour:
   maxMP: 100
   currentMP: 0
   OnManaChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2865712635867247030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c9f6af5a0f24770a96c03f01257bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drowningDamage: 1
+  colliderTille: Water
+  isDrowning: 0
+  timeBetweenDamage: 1
+  boxCollider2D: {fileID: 0}
+  OnDrowning:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &3243575590588145836
@@ -841,7 +862,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 152438
+  m_InstanceId: -64204
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
