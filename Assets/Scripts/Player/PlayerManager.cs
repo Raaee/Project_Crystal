@@ -26,8 +26,13 @@ public class PlayerManager : MonoBehaviour
     private const string DOWN_WALK = "Down Walk";
     private const string RESPAWN = "Respawn";
 
-    private void Start() {
+    void Awake()
+    {
         Init();
+    }
+
+    private void Start() {
+        
         Components();
         hp.OnDead.AddListener(Death);
         reviveParticles.SetActive(false);

@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 7338658861132368715}
   - component: {fileID: 6613564118738782395}
   - component: {fileID: 5792991449023194857}
+  - component: {fileID: 5704686705187868466}
   m_Layer: 0
   m_Name: Enemy Visual
   m_TagString: Untagged
@@ -900,6 +901,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 1306762602531067334}
+--- !u!114 &5704686705187868466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8c88e23e6ed3a42b669d53c55505a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.15
+  shakeMagnitude: 0.4
+  hp: {fileID: 8506391581786044554}
 --- !u!1 &8104109759933092903
 GameObject:
   m_ObjectHideFlags: 0

@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 2472472596460452453}
   - component: {fileID: 8430092951458936386}
   - component: {fileID: 6678135590822245945}
+  - component: {fileID: 8577048506827100115}
   m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
@@ -842,7 +843,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35892
+  m_InstanceId: 84776
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -859,6 +860,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 6262924791448149945}
+--- !u!114 &8577048506827100115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360943041567263304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8c88e23e6ed3a42b669d53c55505a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.15
+  shakeMagnitude: 0.4
+  hp: {fileID: 5220982741878226084}
 --- !u!1 &7671935291099421684
 GameObject:
   m_ObjectHideFlags: 0
