@@ -10,31 +10,16 @@ public class SettingsOptions : MonoBehaviour
 
    public void ExitSettingsScreen()
    {
-    if (menuScreen != null && settingsScreen != null)
-    {
-        menuScreen.SetActive(true);
-        settingsScreen.SetActive(false);
-        Debug.Log("Exiting Settings Screen");
-    }
-    else
-    {
-        Debug.Log("There is no instance of menu and setting screen in the editor");
-    }
+    Debug.Log("Exiting Settings");
+    menuScreen.SetActive(true);
+    settingsScreen.SetActive(false);
    }
 
 
    public void ExitCharacterSelectScreen()
    {
-    if(menuScreen != null && selectCharacterScreen != null)
-    {
-        menuScreen.SetActive(true);
-        selectCharacterScreen.SetActive(false);
-        Debug.Log("Exiting Select Character Screen");
-    }else
-    {
-        Debug.Log("There is no instance of menu and character select screen in the editor");
-    }
-    
+    selectCharacterScreen.SetActive(false);
+    menuScreen.SetActive(true);    
    }
    
 }
