@@ -614,6 +614,7 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 0
   IsActive: 0
+  userMana: {fileID: 0}
   rangedAbility1Prefab: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
   isPlayerShooting: 1
   enemyFireRate: 5
@@ -636,6 +637,7 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 15
   IsActive: 1
+  userMana: {fileID: 3038308969333731784}
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
 --- !u!114 &3258390402626218228
 MonoBehaviour:
@@ -652,6 +654,7 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 5
   IsActive: 1
+  userMana: {fileID: 0}
   teleportDistance: 5
   OnTeleport:
     m_PersistentCalls:
@@ -803,7 +806,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1644
+  m_InstanceId: 93300
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}

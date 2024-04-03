@@ -23,6 +23,10 @@ public class ObjPoolerManager : MonoBehaviour
     public ObjectPooler GetPool(GameObject obj)
     {
         ObjectPooler[] pools = GetComponentsInChildren<ObjectPooler>();
+        if (pools == null)
+            Debug.Log("pools is null");
+
+
         foreach (ObjectPooler pool in pools)
         {
             if (pool.GetObjectToPool().name == obj.name)
