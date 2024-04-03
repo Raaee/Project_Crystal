@@ -20,7 +20,7 @@ public class ObjPoolerManager : MonoBehaviour
         }
     }
 
-    public ObjectPooler getPool(GameObject obj)
+    public ObjectPooler GetPool(GameObject obj)
     {
         ObjectPooler[] pools = GetComponentsInChildren<ObjectPooler>();
         foreach (ObjectPooler pool in pools)

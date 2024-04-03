@@ -33,7 +33,7 @@ public class PiercingShotAbility : Ability
 
     void Start()
     {
-        projPooler = ObjPoolerManager.instance.getPool(rangedAbility1Prefab);
+        projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
     }
 
     // Method to spawn a projectile in a given direction

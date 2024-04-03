@@ -31,7 +31,7 @@ public class RangedBasicAttack : Ability
     }
 
     void Start() {
-        projPooler = ObjPoolerManager.instance.getPool(rangedAbility1Prefab);
+        projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
     }
 
     // Method to spawn a projectile
