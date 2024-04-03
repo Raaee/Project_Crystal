@@ -77,6 +77,7 @@ public class HealthPoints : MonoBehaviour
     }
     public void SetMaxHealth(int amt) {
         maxHP = amt;
+        OnHealthChange.Invoke();
     }
     public int GetMaxHealth() {
         return maxHP;

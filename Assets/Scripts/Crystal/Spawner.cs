@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using System;
 
@@ -62,6 +63,10 @@ public class Spawner : MonoBehaviour
     [Tooltip("The current time of the spawner. Used to track wave and cooldown times.")]
     public float time;
 
+    [HideInInspector] public UnityEvent OnSpawnerStart;
+    private bool started = false;
+    [HideInInspector] public UnityEvent OnSpawnerComplete;
+    private bool completed = false;
     /// <summary>
     /// Spawns objects for each wave based on the specified radius, duration, and spawn objects.
     /// </summary>
@@ -151,6 +156,10 @@ public class Spawner : MonoBehaviour
                 }
                 break;
             case State.Cooldown:
+                if (!started) {
+                    OnSpawnerStart?.Invoke();
+                    started = true;
+                }
                 time += Time.deltaTime;
                 cooldownLabel.text = cooldownTime - time > 0 ? Mathf.CeilToInt(cooldownTime - time).ToString("D") : "";
                 if (time >= cooldownTime)
@@ -160,6 +169,10 @@ public class Spawner : MonoBehaviour
                 }
                 break;
             case State.Complete:
+                if (!completed) {
+                    OnSpawnerComplete?.Invoke();
+                    completed = true;
+                }
                 break;
         }
     }

@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject reviveParticles;
-    [SerializeField] private float reviveTime = 1f;
+    [SerializeField] private float reviveTime = 0.9f;
     
     private InputControls input;
     [HideInInspector] public UnityEvent OnRevive;
@@ -46,6 +46,7 @@ public class PlayerManager : MonoBehaviour
         animator.Play(DEATH);
        // input.DisableControls();
         DisablePlayer();
+        // lose a life
     }
     [ProButton]
     public void Respawn() {

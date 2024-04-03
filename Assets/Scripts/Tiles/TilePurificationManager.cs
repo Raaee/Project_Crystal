@@ -84,10 +84,10 @@ public class TilePurificationManager : MonoBehaviour
             }
         }
     }
-    public void TestPurifyTiles() {
-        Vector3Int cellPosition = this.GetComponent<Grid>().WorldToCell(crystal.transform.position);
+    public void PurifyInRadius(Transform crystalLoc, float radius) {
+        Vector3Int cellPosition = this.GetComponent<Grid>().WorldToCell(crystalLoc.position);
         cellPosition.x += 6; // this number never changes. purification offset for center pos
-        PurifyTilesInRadius(cellPosition, 20);
+        PurifyTilesInRadius(cellPosition, (int)radius);
     }
     public void PurifyTilesInRadius(Vector3Int center, int radius)
     {

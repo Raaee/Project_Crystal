@@ -5123,9 +5123,9 @@ Transform:
   m_Children:
   - {fileID: 5799196325404462849}
   - {fileID: 3783074155750932481}
+  - {fileID: 910021462283336420}
   - {fileID: 6186234305060159279}
   - {fileID: 4753752826396503389}
-  - {fileID: 910021462283336420}
   - {fileID: 3460960871319162507}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5415,6 +5415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd6208ac2698c4448dc239747feef28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
   reviveParticles: {fileID: 586051530861282325}
   reviveTime: 0.9
   OnRevive:
@@ -5441,6 +5442,9 @@ MonoBehaviour:
   OnHurt:
     m_PersistentCalls:
       m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &47992779867472359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5455,6 +5459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMP: 100
   currentMP: 0
+  OnManaChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,6 +5753,9 @@ MonoBehaviour:
   manaCost: 0
   IsActive: 0
   userMana: {fileID: 47992779867472359}
+  OnAbilityUsage:
+    m_PersistentCalls:
+      m_Calls: []
   rangedAbility1Prefab: {fileID: 971724485026557118, guid: 50e9f81328c3753468da15116462022f, type: 3}
   isPlayerShooting: 1
   enemyFireRate: 5
@@ -5769,6 +5779,9 @@ MonoBehaviour:
   manaCost: 10
   IsActive: 0
   userMana: {fileID: 47992779867472359}
+  OnAbilityUsage:
+    m_PersistentCalls:
+      m_Calls: []
   rangedAbility1Prefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
 --- !u!114 &4155009513920997700
 MonoBehaviour:
@@ -5786,6 +5799,9 @@ MonoBehaviour:
   manaCost: 5
   IsActive: 0
   userMana: {fileID: 47992779867472359}
+  OnAbilityUsage:
+    m_PersistentCalls:
+      m_Calls: []
   teleportDistance: 3
   OnTeleport:
     m_PersistentCalls:

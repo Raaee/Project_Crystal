@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 200}
+  m_AnchoredPosition: {x: 19.5, y: -10.302002}
+  m_SizeDelta: {x: 173.9341, y: 220.604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1976522109261346160
 CanvasRenderer:
@@ -95,8 +95,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
+  m_ChildAlignment: 4
+  m_Spacing: 1
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -213,7 +213,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Upgrade
+
+    %'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbccffbf55ae38429db556272916476, type: 2}
   m_sharedMaterial: {fileID: -4607980047586035809, guid: 9dbccffbf55ae38429db556272916476, type: 2}
@@ -222,7 +224,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
