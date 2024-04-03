@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class SettingsButton : MonoBehaviour
 {
+    [SerializeField] private GameObject musicTab;
+    [SerializeField] private GameObject generalTab;
 
-    public GameObject[] tabs;
 
-    public void openTab(int buttonIndex)
+    
+
+    public void openTab(GameObject tab)
     {
-        for (int i = 0; i < 4; i++)
-        {
-            if (buttonIndex == i)
-            {
-                tabs[i].SetActive(true);
-            }
-            else
-            {
-                tabs[i].SetActive(false);
-            }
-        }
+       closeAllTabs();
+       tab.SetActive(true);
+    }
+
+
+
+    private void closeAllTabs()
+    {
+        musicTab.SetActive(false);
+        generalTab.SetActive(false);
     }
 }

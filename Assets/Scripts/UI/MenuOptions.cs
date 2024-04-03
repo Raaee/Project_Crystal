@@ -34,16 +34,8 @@ public class MenuOptions : MonoBehaviour
 
     public void OpenSettingsScreen()
     {
-          if (menuScreen != null && settingsScreen != null)
-    {
         settingsScreen.SetActive(true);
         menuScreen.SetActive(false);
-        Debug.Log("Opening Settings Screen");
-    }
-    else
-    {
-        Debug.Log("There is no instance of menu and setting screen in the editor");
-    }
     }
 
     public void backToMainMenu()
