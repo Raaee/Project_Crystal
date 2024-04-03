@@ -665,6 +665,9 @@ MonoBehaviour:
   OnHurt:
     m_PersistentCalls:
       m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1167119103067770847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,6 +840,7 @@ GameObject:
   - component: {fileID: 5254956924109737428}
   - component: {fileID: 1883295130148061768}
   - component: {fileID: 3033950607122504338}
+  - component: {fileID: 8510151263338052472}
   m_Layer: 0
   m_Name: Enemy Visual
   m_TagString: Untagged
@@ -945,6 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpriteRenderer: {fileID: 1306762602531067334}
+  hpBarCanvas: {fileID: 0}
 --- !u!114 &3033950607122504338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,6 +962,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d5ba05e165cfb4b95277675b8ad72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8510151263338052472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6b879f6f7ffd04f8222fc80ecd647d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 1306762602531067334}
 --- !u!1 &8120154399766981587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1022,10 @@ MonoBehaviour:
   cooldown: 0
   manaCost: 0
   IsActive: 0
+  userMana: {fileID: 0}
+  OnAbilityUsage:
+    m_PersistentCalls:
+      m_Calls: []
   rangedAbility1Prefab: {fileID: 971724485026557118, guid: 1955fa9e73f7d4331b500c704e4c769e, type: 3}
   isPlayerShooting: 0
   enemyFireRate: 0.7
