@@ -7,7 +7,7 @@ public class BuffUI : MonoBehaviour
     [SerializeField] private GameObject BezerkerIU;
     [SerializeField] private GameObject DrowingIU;
     [SerializeField] private Drowning drowningEffect;
-    [SerializeField] private Drowning bezerkerEffect;
+    [SerializeField] private BezerkerCubeDrop bezerkerEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -15,17 +15,8 @@ public class BuffUI : MonoBehaviour
         drowningEffect.OnDrowning.AddListener(DrowingUIActive);
         drowningEffect.StopDrowning.AddListener(DrowningUINotActive);
 
-        //bezerkerEffect.OnBezerker.AddListener(BezerkerUIActive);
-
-
-        BezerkerIU.SetActive(false);
-        DrowingIU.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        bezerkerEffect.OnBezerker.AddListener(BezerkerUIActive);
+        bezerkerEffect.StopBezerker.AddListener(BezerkerUINotActive);
     }
 
     public void BezerkerUIActive() {

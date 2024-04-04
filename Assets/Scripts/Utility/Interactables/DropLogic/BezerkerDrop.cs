@@ -6,30 +6,44 @@ using UnityEngine.Events;
 public class BezerkerCubeDrop : DropData
 {    
     [SerializeField] public int berserkerDamageMultplyer = 2;
-    [SerializeField] public float berserkerDamageTime = 10;
+    [SerializeField] public float berserkerDamageTime = 5f;
     [SerializeField] public bool testIsBezerker = false;
 
     public UnityEvent OnBezerker;
-    public UnityEvent StopBezerkerg;
+    public UnityEvent StopBezerker;
 
-
-
+    SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         //bezerkerTag.gameObject.SetActive(true);
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     public override void OnDropInteract()
     {
-        BuffManager.instance.MultiplyBasicAttackDamage(berserkerDamageMultplyer);
-        BuffManager.instance.MultiplyPierceDamage(berserkerDamageMultplyer);
         OnBezerker.Invoke();
-
-        Debug.Log("Increasing damage by " + berserkerDamageMultplyer + " for " + berserkerDamageTime + " seconds.");
-        this.gameObject.SetActive(false);
-        //getting player game object
+        ApplyBezerkerBuff();
+        spriteRenderer.enabled = false;
     }
 
-    
+    private IEnumerator RemoveBerzerker(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        // Revert buff modifiers
+        StopBezerker.Invoke();
+        this.gameObject.SetActive(false);
+    }
+
+    public void ApplyBezerkerBuff()
+    {
+        BuffManager.instance.MultiplyBasicAttackDamage(berserkerDamageMultplyer);
+        BuffManager.instance.MultiplyPierceDamage(berserkerDamageMultplyer);
+
+        Debug.Log("Increasing damage by " + berserkerDamageMultplyer + " for " + berserkerDamageTime + " seconds.");
+
+        Debug.Log(StartCoroutine(RemoveBerzerker(berserkerDamageTime)));
+        StartCoroutine(RemoveBerzerker(berserkerDamageTime));
+    }
 }
