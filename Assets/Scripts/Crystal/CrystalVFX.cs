@@ -8,6 +8,7 @@ public class CrystalVFX : MonoBehaviour {
     [Header("VFX")]
     [SerializeField] private GameObject corruptParticleEffect;
     [SerializeField] private GameObject purifiedParticleEffect;
+    [SerializeField] private GameObject purifiedAreaLight;
     [SerializeField] private GameObject crystalVisual;
     [SerializeField] private GameObject crystalShadowVisual;
     [SerializeField] private GameObject crystalRadius;
@@ -32,8 +33,10 @@ public class CrystalVFX : MonoBehaviour {
     public void ActivatePurifiedParticles() {
         corruptParticleEffect.SetActive(false);
         purifiedParticleEffect.SetActive(true);
+        purifiedAreaLight.SetActive(true);
     }
     public void ActivateCorruptedParticles() {
+        purifiedAreaLight.SetActive(false);
         purifiedParticleEffect.SetActive(false);
         corruptParticleEffect.SetActive(true);
     }

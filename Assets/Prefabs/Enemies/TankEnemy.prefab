@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: abb0057164d43d34ea93a497702c4948, type: 2}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 2497940398578996030}
   - component: {fileID: 4736054154240947442}
   - component: {fileID: 7920819002311210890}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,6 +437,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathColorTint: {r: 0.8679245, g: 0.1432894, b: 0.1432894, a: 0.62352943}
+--- !u!1 &5609662506151294143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6087674483362490034}
+  - component: {fileID: 5795316744838976289}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6087674483362490034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609662506151294143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.47, y: 0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8993497945352709441}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5795316744838976289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609662506151294143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.6
+  m_Color: {r: 0.9411765, g: 0.3137255, b: 0.5176471, a: 1}
+  m_Intensity: 0.9
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850a
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 1
+  m_ShadowIntensity: 1
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.35
+  m_PointLightOuterRadius: 1.4
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &6453280248707733763
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +534,7 @@ GameObject:
   - component: {fileID: 6613564118738782395}
   - component: {fileID: 5792991449023194857}
   - component: {fileID: 5704686705187868466}
+  - component: {fileID: 4348047738436935562}
   m_Layer: 0
   m_Name: Enemy Visual
   m_TagString: Untagged
@@ -471,7 +554,8 @@ Transform:
   m_LocalPosition: {x: 0.009183453, y: 0.1306555, z: -0.0027633877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6087674483362490034}
   m_Father: {fileID: 2343447669287320918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1306762602531067334
@@ -571,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc3012d39689e84d9d7f2450aebea7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpriteRenderer: {fileID: 1306762602531067334}
+  enemyVisual: {fileID: 6453280248707733763}
   hpBarCanvas: {fileID: 2497940398578996030}
 --- !u!114 &5792991449023194857
 MonoBehaviour:
@@ -602,6 +686,42 @@ MonoBehaviour:
   shakeDuration: 0.15
   shakeMagnitude: 0.4
   hp: {fileID: 8506391581786044554}
+--- !u!114 &4348047738436935562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453280248707733763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850a
+  m_ShapePath:
+  - {x: -1.4666901, y: -1.4421263, z: -0.00000036042184}
+  - {x: -1.4478455, y: -0.556149, z: 0}
+  - {x: -0.80068207, y: 0.22255135, z: -0.00000036042184}
+  - {x: -0.4559784, y: 0.8832269, z: -0.00000036042184}
+  - {x: 0.83664703, y: 0.8545022, z: -0.00000036042184}
+  - {x: 1.3919983, y: 0.18425083, z: -0.00000036042184}
+  - {x: 1.1921844, y: -0.36214542, z: 0}
+  - {x: 1.1080704, y: -0.9466491, z: 0}
+  - {x: 0.74089813, y: -1.2041264, z: -0.00000036042184}
+  - {x: 0.80792236, y: -1.4052019, z: -0.00000036042184}
+  m_ShapePathHash: -1582723859
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 203704
+  m_LocalBounds:
+    m_Center: {x: -0.037345886, y: -0.2794497, z: 0}
+    m_Extent: {x: 1.4293442, y: 1.1626766, z: 0}
 --- !u!1 &8120154399766981587
 GameObject:
   m_ObjectHideFlags: 0

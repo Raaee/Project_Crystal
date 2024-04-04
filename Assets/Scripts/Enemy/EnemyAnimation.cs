@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyAnimation : MonoBehaviour
 {
     [Header("Enemy Visual Configs")]
-    [SerializeField] private SpriteRenderer enemySpriteRenderer;
+    [SerializeField] private GameObject enemyVisual;
     [SerializeField] private Canvas hpBarCanvas;
     private AnimationControl animControl;
   
@@ -28,7 +28,12 @@ public class EnemyAnimation : MonoBehaviour
     }
     private void Update()
     {
-            enemySpriteRenderer.flipX = enemyAI.GetMovementState() == MovementState.LEFT; 
+           // enemySpriteRenderer.flipX = enemyAI.GetMovementState() == MovementState.LEFT; 
+        if (enemyAI.GetMovementState() == MovementState.LEFT) {
+            enemyVisual.transform.rotation = Quaternion.Euler(0, -180, 0);
+        } else {
+            enemyVisual.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
 }
