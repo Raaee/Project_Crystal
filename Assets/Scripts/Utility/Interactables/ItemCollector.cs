@@ -41,7 +41,7 @@ public class ItemCollector : MonoBehaviour  {
         if (!DropManager.Instance.DropItems(transform)) {
             int ran = Random.Range(0, enemies.Count);
             Instantiate(enemies[ran], transform.position, Quaternion.identity);
-            Debug.Log("************ Enemy spawned");
+            Debug.Log("xxxxxxxxxx Enemy spawned");
         }
      
         ChestVisual chestVisual = chestGO.GetComponent<ChestVisual>();

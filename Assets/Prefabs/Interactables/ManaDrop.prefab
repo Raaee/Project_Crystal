@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 50
+  dropChance: 38
   interactableType: 1
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
   dropInteractSfxClip: {fileID: 8300000, guid: 2cf6069f791e58c48a397d3226b89235, type: 3}

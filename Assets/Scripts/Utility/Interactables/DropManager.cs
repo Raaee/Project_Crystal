@@ -30,13 +30,13 @@ public class DropManager : MonoBehaviour
                 Vector3 spawnLocation = new Vector3(parentPos.position.x + randomOffset, parentPos.position.y + randomOffset, 0);
                 switch (drop.GetInteractableType()) {
                     case InteractableType.HEALTH:
-                        GetHealthDrop(spawnLocation);
+                        CreateDrop(InteractableType.HEALTH, spawnLocation);
                         break;
                     case InteractableType.MANA:
-                        GetManaDrop(spawnLocation);
+                        CreateDrop(InteractableType.MANA, spawnLocation);
                         break;
                     case InteractableType.BERSERK:
-                        GetBerserkDrop(spawnLocation);
+                        CreateDrop(InteractableType.BERSERK, spawnLocation);
                         break;
                 }
                 somethingDropped = true;
@@ -44,18 +44,10 @@ public class DropManager : MonoBehaviour
         }
         return somethingDropped;
     }
-
-    public GameObject GetManaDrop(Vector3 location) {
-        GameObject go = Instantiate(GetDropObj(InteractableType.MANA), location, Quaternion.identity);
-        return go; //return not really needed, the method abouve spawns and sets the drop
-    }
-    public GameObject GetHealthDrop(Vector3 location)   {
-        GameObject go = Instantiate(GetDropObj(InteractableType.HEALTH), location, Quaternion.identity);
-        return go;
-    }
-    public GameObject GetBerserkDrop(Vector3 location) {
-        GameObject go = Instantiate(GetDropObj(InteractableType.BERSERK), location, Quaternion.identity);
-        return go;
+    public void CreateDrop(InteractableType type, Vector3 location) {
+        GameObject go = Instantiate(GetDropObj(type), location, Quaternion.identity);
+        go.transform.parent = transform;
+         //return not really needed, the method abouve spawns and sets the drop
     }
     public GameObject GetDropObj(InteractableType type) {        
         return possibleDrops.First(drop => drop.GetComponent<Drop>().GetInteractableType() == type);
