@@ -6,7 +6,7 @@ public class EnemyHealthPoints : HealthPoints
 {
     public override void Die()
     {
-       
+        OnHealthChange.Invoke();
         OnDead?.Invoke();
        
     }

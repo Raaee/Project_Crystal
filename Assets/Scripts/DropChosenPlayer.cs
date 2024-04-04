@@ -10,7 +10,7 @@ public class DropChosenPlayer : MonoBehaviour
     [SerializeField] private CharacterDataSO debugCharacterSO;
 
 
-    private void Start()
+    private void Awake()
     {
         SpawnPlayer();
     }
@@ -21,14 +21,16 @@ public class DropChosenPlayer : MonoBehaviour
         {
             chosenPlayer = debugCharacterSO;
         }
-      
-        GameObject player = Instantiate(chosenPlayer.characterPreFab, spawnLocation.position, Quaternion.identity);
+        GameObject player = Instantiate(chosenPlayer.characterPrefab, spawnLocation.position, Quaternion.identity);
+        PlayerManager.Instance.SetPlayer(player);
+        PlayerManager.Instance.SetSpawnPoint(spawnLocation);
         Debug.Log("spawning player", player);
+
     }
 
     private void TryGetChosenPlayer()
     {
         if(ChosenPlayerData.Instance)
-           chosenPlayer = ChosenPlayerData.Instance.getChosenPlayer();
+           chosenPlayer = ChosenPlayerData.Instance.GetChosenPlayer();
     }
 }

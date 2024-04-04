@@ -34,7 +34,7 @@ public class BuffManager : MonoBehaviour  {
         
     }
     private void Start() {
-        playerPrefab = PlayerManager.Instance.gameObject;
+        playerPrefab = PlayerManager.Instance.GetPlayer();
 
         playerHealth = playerPrefab.GetComponent<PlayerHealthPoints>();
         playerMana = playerPrefab.GetComponent<ManaPoints>();

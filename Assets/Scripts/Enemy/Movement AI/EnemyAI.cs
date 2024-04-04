@@ -46,8 +46,6 @@ public class EnemyAI : Movement {
     private float currentAvoidTimer;
     private bool isAvoidTimerActive = false;
 
-    private const string PLAYER_TAG = "Player";
-
     // Start() calls SetInitialTarget()
     private void Awake() {
         enemyHP = GetComponent<EnemyHealthPoints>();
@@ -63,7 +61,7 @@ public class EnemyAI : Movement {
     // SetInitialTarget(), if crystalObject is not null, sets currTarget to crystalObject and enemyCurrentState to MOVETOWARDSCRYSTAL
     // If crystalObject is null, enemyCurrentState is set to MOVETOWARDSPLAYER
     public void SetInitialTarget()  {
-        player = GameObject.FindWithTag(PLAYER_TAG).transform;
+        player = PlayerManager.Instance.GetPlayer().transform;
 
         if (!crystalObject) {          
             IfNoPlayer();

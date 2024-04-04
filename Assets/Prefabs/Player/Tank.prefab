@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 631615278348853081}
   m_Layer: 5
   m_Name: Revive Particle System
-  m_TagString: Untagged
+  m_TagString: Particles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5098,9 +5098,9 @@ GameObject:
   - component: {fileID: 8873837518193116210}
   - component: {fileID: 3439780717632776245}
   - component: {fileID: 6698978688436824222}
-  - component: {fileID: 5288228236752367165}
   - component: {fileID: 279863175518761902}
   - component: {fileID: 47992779867472359}
+  - component: {fileID: 3286475891682527478}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -5403,24 +5403,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
---- !u!114 &5288228236752367165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3221412779736232927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd6208ac2698c4448dc239747feef28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
-  reviveParticles: {fileID: 586051530861282325}
-  reviveTime: 0.9
-  OnRevive:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &279863175518761902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5435,7 +5417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  godMode: 0
+  godMode: 1
   OnDead:
     m_PersistentCalls:
       m_Calls: []
@@ -5462,6 +5444,23 @@ MonoBehaviour:
   OnManaChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3286475891682527478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c9f6af5a0f24770a96c03f01257bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drowningDamage: 2
+  colliderTile: Water
+  isDrowning: 0
+  timeBetweenDamage: 1
+  boxCollider2D: {fileID: 2801556117394603853}
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,6 +5926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 6262924791448149945}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8271713260674164174
 GameObject:
   m_ObjectHideFlags: 0

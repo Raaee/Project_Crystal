@@ -16,7 +16,6 @@ public class DamageShake : MonoBehaviour
       //PlayerManager.Instance.hp.OnHurt.AddListener(TriggerScreenShake);
       hp.OnHurt.AddListener(TriggerScreenShake);
       
-        Debug.Log("Object:");
     }
     
     

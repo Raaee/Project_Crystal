@@ -25,7 +25,7 @@ public class MenuOptions : MonoBehaviour
     {
         
         CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI1>().getCurrentCharacterData();
-        ChosenPlayerData.Instance.setChosenPlayer(chosenPlayer);
+        ChosenPlayerData.Instance.SetChosenPlayer(chosenPlayer);
         SceneManager.LoadScene(sceneStart);
     }
 
