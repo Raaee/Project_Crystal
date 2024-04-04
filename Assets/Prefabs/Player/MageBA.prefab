@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
   maxLifeTime: 2
-  projectileDamage: 10
+  damage: 10
 --- !u!1 &4389119191549526993
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
-  m_Color: {r: 1, g: 0.9525655, b: 0.2783019, a: 1}
+  m_Color: {r: 0.27843142, g: 0.9071365, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
