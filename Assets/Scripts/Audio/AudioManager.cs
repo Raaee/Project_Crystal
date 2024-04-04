@@ -30,4 +30,18 @@ public class AudioManager : MonoBehaviour
     {
         source.PlayOneShot(clip);
     }
+     public void PlayAudioOneShot(AudioSource source, AudioClip clip, bool isRandomVol)
+    {
+        if (isRandomVol == true)
+        {
+            RandomVolume();
+        }
+        source.PlayOneShot(clip);
+    }
+    private void RandomVolume(AudioSource source)
+    {
+        float randomVolume = Random.Range(0.8f, 1.0f); 
+        source.volume = randomVolume;
+    }
+
 }   
