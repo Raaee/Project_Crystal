@@ -32,6 +32,8 @@ public class BezerkerCubeDrop : DropData
         yield return new WaitForSeconds(duration);
 
         // Revert buff modifiers
+        BuffManager.instance.RemoveBasicAttckDamege();
+        BuffManager.instance.RemovePiercesDamage();
         StopBezerker.Invoke();
         this.gameObject.SetActive(false);
     }

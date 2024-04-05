@@ -84,4 +84,9 @@ public class PiercingShotAbility : Ability
     {
         return projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().GetPiercingCurrentProjectileDamage();
     }
+
+    public void NormalPiercesDamage()
+    {
+        projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().NormalProjectileDamage();
+    }
 }

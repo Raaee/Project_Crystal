@@ -107,4 +107,8 @@ public class RangedBasicAttack : Ability
     {
         return projPooler.GetObjectToPool().GetComponent<Projectile>().GetCurrentProjectileDamage();
     }
+
+    public void NormalDamage() {
+        projPooler.GetObjectToPool().GetComponent<Projectile>().NormalProjectileDamage();
+    }
 }

@@ -103,4 +103,11 @@ public class BuffManager : MonoBehaviour  {
         piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
     }
 
+    public void RemoveBasicAttckDamege() {
+        basicAttack.NormalDamage();
+    }
+
+    public void RemovePiercesDamage() {
+        piercingShot.NormalPiercesDamage();
+    }
 }
