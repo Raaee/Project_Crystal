@@ -11,6 +11,11 @@ public class DeathPanelTimer : MonoBehaviour
     void Start()
     {
         countdown = countdownDuration;
+        StartTimer();
+    }
+
+    public void StartTimer()
+    {
         InvokeRepeating("UpdateTimer", 0f, 1f);
     }
 
@@ -23,7 +28,8 @@ public class DeathPanelTimer : MonoBehaviour
             // Respawn player or perform any other relevant action
             // For example: GameManager.Instance.RespawnPlayer();
             // You might want to disable the death panel here too
-            gameObject.SetActive(false);
+            PlayerManager.Instance.Respawn();
+            Destroy(gameObject);
         }
     }
 }

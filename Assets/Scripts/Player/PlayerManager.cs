@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour {
     [HideInInspector] public PiercingShotAbility pierceShot { get; set; }
     [HideInInspector] public TeleportAbility teleport { get; set; }
 
+
+    [SerializeField] private GameObject deathPanel;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject reviveParticles;
     [SerializeField] string reviveParticleGOName;
@@ -50,6 +52,7 @@ public class PlayerManager : MonoBehaviour {
     public void Death() {
         Debug.Log("dieeeeeeee");
         animator.Play(DEATH);
+        Instantiate(deathPanel);
         StartCoroutine(WaitBeforeDisable());
         // input.DisableControls();
         // lose a life
@@ -60,7 +63,7 @@ public class PlayerManager : MonoBehaviour {
         player.SetActive(true);
         StartCoroutine(Revive());
         animator.Play(RESPAWN);
-       // input.EnableControls();
+        // input.EnableControls();
         hp.ResetHealth();
         mp.ResetMana();
     }

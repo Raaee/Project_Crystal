@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerHealthPoints : HealthPoints
 {
 
+
     public override void Start() {
         base.Start();
       
@@ -16,6 +17,7 @@ public class PlayerHealthPoints : HealthPoints
         Debug.Log("Player dead");
         OnHealthChange.Invoke();
         OnDead?.Invoke();
+
     }
     public override void ResetHealth() {
         base.ResetHealth();
