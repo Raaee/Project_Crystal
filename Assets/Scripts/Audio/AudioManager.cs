@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
     {
         if (isRandomVol == true)
         {
-            RandomVolume();
+            RandomVolume(source);
         }
         source.PlayOneShot(clip);
     }
