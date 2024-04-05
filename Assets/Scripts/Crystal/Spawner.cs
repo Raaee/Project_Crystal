@@ -125,7 +125,6 @@ public class Spawner : MonoBehaviour
                 if (waves.Count == 0)
                 {
                     state = State.Complete;
-                    UpgradeMenu.instance.gameObject.SetActive(true);
                     time = 0;
                     break;
                 }
@@ -147,7 +146,6 @@ public class Spawner : MonoBehaviour
                         if (waves.Count == 0)
                         {
                             state = State.Complete;
-                            UpgradeMenu.instance.gameObject.SetActive(true);
                             time = 0;
                             break;
                         }
