@@ -21,14 +21,7 @@ public class Upgrade : MonoBehaviour
     public int maxValuePercent;
     public Image cardBackground;
     public TMP_Text upgradeDescription;
-
-
-    public void Awake()
-    {
-        // Set the upgrade value to a random integer percentage between the min and max values
-        
-    }
-
+    
     public void Start()
     {
         // Set the upgrade description text

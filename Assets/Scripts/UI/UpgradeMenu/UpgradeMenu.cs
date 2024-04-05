@@ -69,11 +69,13 @@ public class UpgradeMenu : MonoBehaviour
         }
         selectedUpgrade = null;
 
-        // Generate new cards
+        List<GameObject> shuffledCards = possibleCards.GetRandomElements(amount, false);
         for (int i = 0; i < amount; i++)
         {
-            Instantiate(possibleCards[Random.Range(0, possibleCards.Count)], cardParent);
+            GameObject card = Instantiate(shuffledCards[i], cardParent);
+            card.GetComponent<Upgrade>().Start();
         }
+
     }
 
     public void ApplyUpgrade()
