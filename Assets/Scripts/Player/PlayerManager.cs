@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour {
 
-    public GameObject player;
+    private GameObject player;
     public static PlayerManager Instance { get; set; }
     [HideInInspector] public PlayerHealthPoints hp { get; set; }
     [HideInInspector] public ManaPoints mp { get; set; }
@@ -29,6 +29,7 @@ public class PlayerManager : MonoBehaviour {
 
     void Awake() {
         Init();
+        Debug.Log(Instance);
     }
     private void Start() {
         Components();
