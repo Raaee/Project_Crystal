@@ -2,8 +2,11 @@ using com.cyborgAssets.inspectorButtonPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Crystal : MonoBehaviour { 
+
+    [HideInInspector] public UnityEvent OnCrystalDeathEvent;
 
     private Spawner spawner;
     private CrystalVFX crystalVFX;
@@ -12,6 +15,7 @@ public class Crystal : MonoBehaviour {
 
     [Header("Debug")]
     [SerializeField] private CrystalState currentState;
+    
 
     public CrystalState CurrentState { get => currentState; set => currentState = value; }
 
@@ -33,6 +37,7 @@ public class Crystal : MonoBehaviour {
     public void OnCrystalDeath() {
         currentState = CrystalState.SHATTERED;
         CrystalManager.Instance.UnLockInteractions();
+        OnCrystalDeathEvent?.Invoke(); 
         // visual using VFX
         // SFX
         // lose a life
