@@ -28,6 +28,7 @@ public class Crystal : MonoBehaviour {
     public void OnCrystalComplete() {
         if(currentState == CrystalState.SHATTERED) return;
         currentState = CrystalState.PURIFIED;
+        UpgradeMenu.instance.gameObject.SetActive(true);
         PurifyInRadius();
         CrystalManager.Instance.UnLockInteractions();
     }
