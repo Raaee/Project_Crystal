@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
-public class Upgrade
+public class Upgrade : MonoBehaviour
 {
+    [System.Serializable]
     public enum UpgradeType
     {
         BasicDamagePercent,
@@ -13,24 +16,46 @@ public class Upgrade
     }
 
     public UpgradeType upgradeType;
-    public float upgradeValue;
+    [HideInInspector] public float upgradeValue;
+    public int minValuePercent;
+    public int maxValuePercent;
+    public Image cardBackground;
+    public TMP_Text upgradeDescription;
+
+    public void Start()
+    {
+        // Set the upgrade description text
+        upgradeValue = Random.Range(minValuePercent, maxValuePercent + 1) / 100f;
+        upgradeDescription.text = GetUpgradeDescription();
+        cardBackground.color = UpgradeMenu.instance.defaultColor;
+    }
+
+    public void SelectCard()
+    {
+        // Set the card background color to the selected color
+        cardBackground.color = UpgradeMenu.instance.selectedColor;
+        UpgradeMenu.instance.SelectCard(this);
+    }
 
     public string GetUpgradeDescription()
     {
+        string green = "<color=\"green\">";
+        string yellow = "<color=\"yellow\">";
+        string white = "<color=\"white\">";
         switch (upgradeType)
         {
             case UpgradeType.BasicDamagePercent:
-                return "Increase Basic Attack (M1) Damage by " + (int)(upgradeValue * 100) + "%";
+                return $"{white}Increase {green}Basic Attack {white}(M1) Damage by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.PierceDamagePercent:
-                return "Increase Pierce Attack (Q) Damage by " + (int)(upgradeValue * 100) + "%";
+                return $"{white}Increase {green}Pierce Attack {white}(Q) Damage by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.MaxManaPercent:
-                return "Increase Max Mana by " + (int)(upgradeValue * 100) + "%";
+                return $"{white}Increase Max {green}Mana {white}by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.MaxHealthPercent:
-                return "Increase Max Health by " + (int)(upgradeValue * 100) + "%";
+                return $"{white}Increase Max {green}Health {white}by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.AbilityCooldownPercent:
-                return "Decrease All Ability Cooldowns by " + (int)(upgradeValue * 100) + "%";
+                return $"{white}Decrease {green}All Ability {white}Cooldowns by {yellow}{(int)(upgradeValue * 100)}%";
             default:
-                return "Unknown";
+                return $"{white}Unknown";
         }
     }
 
