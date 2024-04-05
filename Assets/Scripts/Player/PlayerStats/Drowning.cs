@@ -30,7 +30,6 @@ public class Drowning : MonoBehaviour
             healthPoints.RemoveHealth(drowningDamage);
             yield return new WaitForSeconds(timeBetweenDamage);
             StartCoroutine(PlayerDrowning());
-            Debug.Log("drown ***");
         }
     }
 

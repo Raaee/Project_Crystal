@@ -95,7 +95,7 @@ public class BuffManager : MonoBehaviour  {
         ReduceTeleportCooldown(percentageDecrease);
         ReducePierceShotCooldown(percentageDecrease);
     }
-    //Damege Multiplyer
+    //Damage Multiplyer
     public void MultiplyBasicAttackDamage(int damageIncrese) {
         basicAttack.SetCurrentDamge(basicAttack.GetCurrentDamge() * damageIncrese);
     }
