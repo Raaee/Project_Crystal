@@ -12,6 +12,7 @@ public class BuffUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerManager.Instance.GetPlayer().GetComponent<Drowning>();
         drowningEffect.OnDrowning.AddListener(DrowingUIActive);
         drowningEffect.StopDrowning.AddListener(DrowningUINotActive);
 
