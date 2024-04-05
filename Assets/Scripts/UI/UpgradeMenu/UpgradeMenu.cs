@@ -44,6 +44,7 @@ public class UpgradeMenu : MonoBehaviour
                 cardTransform.GetComponent<Upgrade>().cardBackground.color = selectedColor;
             }
         }
+        confirmButton.interactable = true;
     }
 
     // whenever the menu is enabled, generate new cards and enable the confirm button
@@ -51,7 +52,7 @@ public class UpgradeMenu : MonoBehaviour
     private void OnEnable()
     {
         GenerateCards();
-        confirmButton.interactable = true;
+        confirmButton.interactable = false;
     }
 
     // whenever the menu is disabled, unfreeze time
