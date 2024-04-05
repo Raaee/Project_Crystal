@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
-public class Upgrade
+public class Upgrade : MonoBehaviour
 {
+    [System.Serializable]
     public enum UpgradeType
     {
         BasicDamagePercent,
@@ -13,7 +16,33 @@ public class Upgrade
     }
 
     public UpgradeType upgradeType;
-    public float upgradeValue;
+    [HideInInspector] public float upgradeValue;
+    public int minValuePercent;
+    public int maxValuePercent;
+    public Image cardBackground;
+    public TMP_Text upgradeDescription;
+
+
+    public void Awake()
+    {
+        // Set the upgrade value to a random integer percentage between the min and max values
+        
+    }
+
+    public void Start()
+    {
+        // Set the upgrade description text
+        upgradeValue = Random.Range(minValuePercent, maxValuePercent + 1) / 100f;
+        upgradeDescription.text = GetUpgradeDescription();
+        cardBackground.color = UpgradeMenu.instance.defaultColor;
+    }
+
+    public void SelectCard()
+    {
+        // Set the card background color to the selected color
+        cardBackground.color = UpgradeMenu.instance.selectedColor;
+        UpgradeMenu.instance.SelectCard(this);
+    }
 
     public string GetUpgradeDescription()
     {

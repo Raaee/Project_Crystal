@@ -319,10 +319,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773fa3a5a9a47334880007fb910b0b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 2501423407982964791, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
   cardParent: {fileID: 6875236616045939512}
-  confirmButton: {fileID: 4035675185579700906}
-  player: {fileID: 0}
+  confirmButton: {fileID: 7197904357879344131}
+  possibleCards:
+  - {fileID: 653828775268203507, guid: bca17e511155bdc419cab0db6045464b, type: 3}
+  - {fileID: 653828775268203507, guid: 8c6c0ba6f8cfefd4a8170781b3a9e0a6, type: 3}
+  - {fileID: 653828775268203507, guid: a5e01e15bacdafe43871280526f067a9, type: 3}
+  - {fileID: 653828775268203507, guid: 75598af09003d4f4f9ddeb8c9876e92b, type: 3}
+  - {fileID: 653828775268203507, guid: 870370ce0436cfc458a6d673bdfbea46, type: 3}
   selectedColor: {r: 0, g: 1, b: 0, a: 1}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &6922252104314271107
