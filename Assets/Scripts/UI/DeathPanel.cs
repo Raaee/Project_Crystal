@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DeathPanelTimer : MonoBehaviour
 {
     public float countdownDuration = 5f; // Adjust as needed
-    public Text countdownText;
+    public TextMeshProUGUI countdownText;
     private float countdown;
 
     void Start()
