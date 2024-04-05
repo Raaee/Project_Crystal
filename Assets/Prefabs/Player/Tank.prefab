@@ -5107,7 +5107,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5377,10 +5377,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drowningDamage: 2
-  colliderTile: Water
+  colliderTille: Water
   isDrowning: 0
   timeBetweenDamage: 1
   boxCollider2D: {fileID: 2801556117394603853}
+  OnDrowning:
+    m_PersistentCalls:
+      m_Calls: []
+  StopDrowning:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
