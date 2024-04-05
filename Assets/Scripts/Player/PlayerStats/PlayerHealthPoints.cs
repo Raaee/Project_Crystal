@@ -1,20 +1,20 @@
+using com.cyborgAssets.inspectorButtonPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealthPoints : HealthPoints
 {
-    InputControls input;
 
     public override void Start() {
         base.Start();
-        input = GetComponent<InputControls>();
       
     }
-
+    [ProButton]
     public override void Die()
     {
         Debug.Log("Player dead");
+        OnHealthChange.Invoke();
         OnDead?.Invoke();
     }
     public override void ResetHealth() {

@@ -7,6 +7,7 @@ public class DamageVisuals : MonoBehaviour
 {
     [SerializeField] public SpriteRenderer flashMaterial;
     private HealthPoints healthPoints;
+    [SerializeField] private Color flashColor = Color.red;
     
     // Start is called before the first frame update
     
@@ -33,7 +34,7 @@ public class DamageVisuals : MonoBehaviour
 
     {
         
-        flashMaterial.color = Color.red;
+        flashMaterial.color = flashColor;
         yield
         return new WaitForSeconds(0.1f);
         flashMaterial.color = Color.white;

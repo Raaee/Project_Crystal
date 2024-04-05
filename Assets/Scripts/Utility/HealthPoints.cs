@@ -59,10 +59,7 @@ public class HealthPoints : MonoBehaviour
     public bool IsDead()    {
         return isDead;
     }
-
-    public virtual void Die()   {
-        
-    } 
+    public virtual void Die() {} 
     [ProButton]
     public virtual void ResetHealth()   {
         currentHP = maxHP;

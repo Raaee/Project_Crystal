@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerManager : MonoBehaviour
-{
+public class PlayerManager : MonoBehaviour {
+
+    private GameObject player;
     public static PlayerManager Instance { get; set; }
     [HideInInspector] public PlayerHealthPoints hp { get; set; }
     [HideInInspector] public ManaPoints mp { get; set; }
@@ -13,53 +14,62 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector] public PiercingShotAbility pierceShot { get; set; }
     [HideInInspector] public TeleportAbility teleport { get; set; }
 
-    [SerializeField] private GameObject spawnPoint;
+    [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject reviveParticles;
-    [SerializeField] private float reviveTime = 0.9f;
-    
+    [SerializeField] string reviveParticleGOName;
+    [SerializeField] private float reviveTime = 1f;
+
     private InputControls input;
     [HideInInspector] public UnityEvent OnRevive;
-    
+
     // Animation
     private Animator animator;
     private const string DEATH = "Death";
-    private const string DOWN_WALK = "Down Walk";
     private const string RESPAWN = "Respawn";
 
-    private void Start() {
+    void Awake() {
         Init();
+        Debug.Log(Instance);
+    }
+    private void Start() {
         Components();
         hp.OnDead.AddListener(Death);
         reviveParticles.SetActive(false);
+        Respawn();
     }
     public void Components() {
-        input = GetComponent<InputControls>();
-        hp = GetComponent<PlayerHealthPoints>();
-        mp = GetComponent<ManaPoints>();
-        animator = GetComponentInChildren<Animator>();
-        rangedBA = GetComponentInChildren<RangedBasicAttack>();
-        pierceShot = GetComponentInChildren<PiercingShotAbility>();
-        teleport = GetComponentInChildren<TeleportAbility>();
+        input = player.GetComponent<InputControls>();
+        hp = player.GetComponent<PlayerHealthPoints>();
+        mp = player.GetComponent<ManaPoints>();
+        animator = player.GetComponentInChildren<Animator>();
+        rangedBA = player.GetComponentInChildren<RangedBasicAttack>();
+        pierceShot = player.GetComponentInChildren<PiercingShotAbility>();
+        teleport = player.GetComponentInChildren<TeleportAbility>();
+        reviveParticles = player.transform.Find(reviveParticleGOName).gameObject; // Dont worry about it.
     }
     public void Death() {
         Debug.Log("dieeeeeeee");
         animator.Play(DEATH);
-       // input.DisableControls();
-        DisablePlayer();
+        StartCoroutine(WaitBeforeDisable());
+        // input.DisableControls();
         // lose a life
     }
     [ProButton]
     public void Respawn() {
-        this.gameObject.transform.position = spawnPoint.transform.position;
-        this.gameObject.SetActive(true);
+        player.transform.position = spawnPoint.transform.position;
+        player.SetActive(true);
         StartCoroutine(Revive());
         animator.Play(RESPAWN);
        // input.EnableControls();
         hp.ResetHealth();
         mp.ResetMana();
     }
+    public IEnumerator WaitBeforeDisable() {
+        yield return new WaitForSeconds(reviveTime);
+        DisablePlayer();
+    }
     public void DisablePlayer() {
-        this.gameObject.SetActive(false);
+        player.gameObject.SetActive(false);
     }
     public IEnumerator Revive() {
         reviveParticles.SetActive(true);
@@ -75,5 +85,13 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
         }
     }
-    
+    public void SetPlayer(GameObject prefab) {
+        player = prefab;
+    }
+    public void SetSpawnPoint(Transform loc) {
+        spawnPoint = loc;
+    }
+    public GameObject GetPlayer() {
+        return player;
+    }
 }

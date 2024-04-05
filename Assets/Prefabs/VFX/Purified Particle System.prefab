@@ -4860,7 +4860,7 @@ GameObject:
   - component: {fileID: 5007279735505837107}
   m_Layer: 5
   m_Name: Purified Particle System
-  m_TagString: Particles
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

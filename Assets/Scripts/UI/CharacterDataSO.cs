@@ -6,7 +6,7 @@ using TMPro;
 
 public class CharacterDataSO : ScriptableObject
 {
-    public GameObject characterPreFab;
+    public GameObject characterPrefab;
     public Sprite characterSprite;
     public string characterName;
     public string characterDescription;
