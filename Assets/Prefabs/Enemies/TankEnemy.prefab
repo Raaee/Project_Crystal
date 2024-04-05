@@ -657,6 +657,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyVisual: {fileID: 6453280248707733763}
   hpBarCanvas: {fileID: 2497940398578996030}
+  hpEnemyFilling: {fileID: 1644870550838940606}
+  hp: {fileID: 8506391581786044554}
 --- !u!114 &5792991449023194857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +720,7 @@ MonoBehaviour:
   - {x: 0.80792236, y: -1.4052019, z: -0.00000036042184}
   m_ShapePathHash: -1582723859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 203704
+  m_InstanceId: 34390
   m_LocalBounds:
     m_Center: {x: -0.037345886, y: -0.2794497, z: 0}
     m_Extent: {x: 1.4293442, y: 1.1626766, z: 0}
