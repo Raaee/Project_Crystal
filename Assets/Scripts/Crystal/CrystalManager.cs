@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CrystalManager : MonoBehaviour
 {
@@ -9,13 +10,24 @@ public class CrystalManager : MonoBehaviour
     public static CrystalManager Instance { get; set; }
     public List<Crystal> crystals;
     private Crystal currentCrystal;
-
+    [HideInInspector] public CrystalHealthPoints hp { get; set; }
+    [HideInInspector] public Spawner wave { get; set; }
+    [HideInInspector] public UnityEvent OnCrystalActivate;
+    
     private void Awake() {
         Init();        
     }
+
     public void SetCurrentCrystal(Crystal curr) {
         currentCrystal = curr;
     }
+
+    public void SetCrystalComponents(Crystal curr){
+        hp = curr.GetComponent<CrystalHealthPoints>();
+        wave = curr.GetComponent<Spawner>();
+        OnCrystalActivate.Invoke();
+    }
+
     public void LockInteractions() {
         foreach(Crystal cryst in crystals) {
             if (cryst == currentCrystal) continue;
@@ -39,4 +51,5 @@ public class CrystalManager : MonoBehaviour
             Instance = this;
         }
     }
+
 }

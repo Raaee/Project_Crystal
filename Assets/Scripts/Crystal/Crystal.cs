@@ -40,6 +40,7 @@ public class Crystal : MonoBehaviour {
     private void OnCrystalEngaing() {
         currentState = CrystalState.ENGAGING;
         CrystalManager.Instance.SetCurrentCrystal(this);
+        CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
     }
     public void PurifyInRadius() {
