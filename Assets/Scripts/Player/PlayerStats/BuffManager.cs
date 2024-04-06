@@ -95,5 +95,19 @@ public class BuffManager : MonoBehaviour  {
         ReduceTeleportCooldown(percentageDecrease);
         ReducePierceShotCooldown(percentageDecrease);
     }
+    //Damage Multiplyer
+    public void MultiplyBasicAttackDamage(int damageIncrese) {
+        basicAttack.SetCurrentDamge(basicAttack.GetCurrentDamge() * damageIncrese);
+    }
+    public void MultiplyPierceDamage(int damageIncrese) {
+        piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
+    }
 
+    public void RemoveBasicAttckDamege() {
+        basicAttack.NormalDamage();
+    }
+
+    public void RemovePiercesDamage() {
+        piercingShot.NormalPiercesDamage();
+    }
 }

@@ -6,25 +6,30 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // The Projectile class handles the behavior of projectiles in the game.
-public class Projectile : MonoBehaviour 
-{ 
+public class Projectile : MonoBehaviour
+{
     [SerializeField] private float projectileSpeed = 1000f; // The speed of the projectile.
     [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
     private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
     private const String PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const String CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
     [SerializeField] public int damage = 10; // The damage dealt by the projectile.
+    private int currentProjectileDamage;
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
     private bool isPlayerShooting = true;
- 
+
     private void Awake()
     {
         // Get the Rigidbody2D component attached to the game object this script is attached to.
         rb2D = GetComponent<Rigidbody2D>();
 
         // Set the initial direction of the projectile to upwards.
+    }
+    private void Start()
+    {
+        currentProjectileDamage = damage;
     }
 
     // FixedUpdate is called every fixed framerate frame.
@@ -48,7 +53,7 @@ public class Projectile : MonoBehaviour
     }
 
     // Moves the projectile in its current direction.
-    public void MoveProjectile()    {
+    public void MoveProjectile() {
         // Calculate the angle of the projectile's direction in degrees.
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
         // Set the rotation of the projectile to face the direction it's moving, smoothly transitioning over time.
@@ -129,10 +134,27 @@ public class Projectile : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
     public int GetProjectileDamage() {
         return damage;
     }
+
     public void SetMaxProjectileDamage(int amt) {
         damage = amt;
+    }
+
+    public void NormalProjectileDamage()
+    {
+        currentProjectileDamage = damage;
+    }
+
+    public void SetProjectileDamage(int setdamage)
+    {
+        currentProjectileDamage = setdamage;
+    }
+
+    public int GetCurrentProjectileDamage()
+    {
+        return currentProjectileDamage;
     }
 }

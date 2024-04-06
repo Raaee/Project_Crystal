@@ -21,36 +21,30 @@ public class UpgradeMenu : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
-    private void Start() {
-        player = PlayerManager.Instance.gameObject.transform;
-
-    }
-
-    public GameObject cardPrefab;
 
     public Transform cardParent;
-    public Transform confirmButton;
-    public Transform player;
+    public Button confirmButton;
+    public List<GameObject> possibleCards;
+
     public Color selectedColor = Color.green;
     public Color defaultColor = Color.white;
-    private Transform selectedCard;
+    private Upgrade selectedUpgrade;
 
-    private Dictionary<Transform, Upgrade> cardUpgradeDict = new Dictionary<Transform, Upgrade>();
-
-    public void SelectCard(Transform card)
+    public void SelectCard(Upgrade upgrade)
     {
-        selectedCard = card;
-        foreach (Transform cardTransform in cardUpgradeDict.Keys)
+        selectedUpgrade = upgrade;
+        foreach (Transform cardTransform in cardParent)
         {
-            if (cardTransform != card)
+            if (cardTransform != upgrade.transform)
             {
-                cardTransform.GetComponent<Image>().color = defaultColor;
+                cardTransform.GetComponent<Upgrade>().cardBackground.color = defaultColor;
             }
             else
             {
-                cardTransform.GetComponent<Image>().color = selectedColor;
+                cardTransform.GetComponent<Upgrade>().cardBackground.color = selectedColor;
             }
         }
+        confirmButton.interactable = true;
     }
 
     // whenever the menu is enabled, generate new cards and enable the confirm button
@@ -58,8 +52,7 @@ public class UpgradeMenu : MonoBehaviour
     private void OnEnable()
     {
         GenerateCards();
-        confirmButton.GetComponent<Button>().interactable = true;
-        //Time.timeScale = 0;
+        confirmButton.interactable = false;
     }
 
     // whenever the menu is disabled, unfreeze time
@@ -75,35 +68,23 @@ public class UpgradeMenu : MonoBehaviour
         {
             Destroy(card.gameObject);
         }
-        cardUpgradeDict.Clear();
-        selectedCard = null;
+        selectedUpgrade = null;
 
-        // Generate new cards
+        List<GameObject> shuffledCards = possibleCards.GetRandomElements(amount, false);
         for (int i = 0; i < amount; i++)
         {
-            GameObject card = Instantiate(cardPrefab, cardParent);
-
-            // Use reflection to get the total number of UpgradeTypes, and select a random one
-            int totalUpgrades = System.Enum.GetNames(typeof(Upgrade.UpgradeType)).Length;
-            Upgrade upgrade = new()
-            {
-                upgradeType = (Upgrade.UpgradeType)Random.Range(0, totalUpgrades),
-                upgradeValue = Random.Range(0.1f, 0.5f)
-            };
-
-            // Configure the card, including setting its button listener
-            card.GetComponent<Image>().color = defaultColor;
-            card.GetComponent<Button>().onClick.AddListener(() => SelectCard(card.transform));
-            card.GetComponentInChildren<TMP_Text>().text = upgrade.GetUpgradeDescription();
-            cardUpgradeDict.Add(card.transform, upgrade);
+            GameObject card = Instantiate(shuffledCards[i], cardParent);
+            card.GetComponent<Upgrade>().Start();
         }
+
     }
 
     public void ApplyUpgrade()
     {
-        cardUpgradeDict[selectedCard].ApplyUpgrade();
+
+        selectedUpgrade.ApplyUpgrade();
         // Disable the confirm button after applying the upgrade
-        confirmButton.GetComponent<Button>().interactable = false;
+        confirmButton.interactable = false;
         // Disable the menu
         gameObject.SetActive(false);
     }

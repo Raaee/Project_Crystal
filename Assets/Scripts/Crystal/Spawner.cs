@@ -125,6 +125,7 @@ public class Spawner : MonoBehaviour
                 if (waves.Count == 0)
                 {
                     state = State.Complete;
+                    time = 0;
                     break;
                 }
                 else
@@ -145,7 +146,6 @@ public class Spawner : MonoBehaviour
                         if (waves.Count == 0)
                         {
                             state = State.Complete;
-                            UpgradeMenu.instance.gameObject.SetActive(true);
                             time = 0;
                             break;
                         }
@@ -156,7 +156,8 @@ public class Spawner : MonoBehaviour
                 }
                 break;
             case State.Cooldown:
-                if (!started) {
+                if (!started)
+                {
                     OnSpawnerStart?.Invoke();
                     started = true;
                 }
@@ -169,7 +170,8 @@ public class Spawner : MonoBehaviour
                 }
                 break;
             case State.Complete:
-                if (!completed) {
+                if (!completed)
+                {
                     OnSpawnerComplete?.Invoke();
                     completed = true;
                 }
