@@ -30,7 +30,7 @@ public class RangedBasicAttack : Ability
    
         cooldown = playerFireRate;
     }
-    private void Start()
+    public override void Start()
     {
       
         projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);

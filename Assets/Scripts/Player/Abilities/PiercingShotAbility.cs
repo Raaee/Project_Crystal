@@ -31,7 +31,7 @@ public class PiercingShotAbility : Ability
         actions.OnAbility1.AddListener(ShootIfActive);
     }
 
-    void Start()
+    public override void Start()
     {
         projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
     }

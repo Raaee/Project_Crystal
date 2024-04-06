@@ -45,7 +45,7 @@ public class BezerkerCubeDrop : DropData
 
         Debug.Log("Increasing damage by " + berserkerDamageMultplyer + " for " + berserkerDamageTime + " seconds.");
 
-        Debug.Log(StartCoroutine(RemoveBerzerker(berserkerDamageTime)));
+      //  Debug.Log(StartCoroutine(RemoveBerzerker(berserkerDamageTime)));
         StartCoroutine(RemoveBerzerker(berserkerDamageTime));
     }
 }

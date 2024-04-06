@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21621cec62b793545847d4db85a1efdc, type: 3}
-  m_Name: character1
+  m_Name: TankSO
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 3221412779736232927, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
-  characterSprite: {fileID: 588703277, guid: a2bc2b19036b94b4dbff0c45945b0497, type: 3}
-  characterName: Mage
-  characterDescription: a magical wizard, from the land of Latsyrc. Is very catious
-    in its attack and prefers to attack at a distance
+  characterPrefab: {fileID: 3221412779736232927, guid: 2660a113ad05f88408d1d7e2327ed54e, type: 3}
+  characterSprite: {fileID: -1213899584, guid: 2122c0e2182c9304981bb6b4bb190e13, type: 3}
+  characterName: Tank
+  characterDescription: a sturdy soldier, loves the glory and the smell of battle.
+    Has a hard hitting attack
   health: 100
   mana: 100
-  basicAttackDamage: 10
+  basicAttackDamage: 25
   specialAttackDamage: 10
   pierceAmount: 4

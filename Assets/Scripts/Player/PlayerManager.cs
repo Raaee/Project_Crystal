@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour {
 
     void Awake() {
         Init();
-        Debug.Log(Instance);
+     
     }
     private void Start() {
         Components();
@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour {
         reviveParticles = player.transform.Find(reviveParticleGOName).gameObject; // Dont worry about it.
     }
     public void Death() {
-        Debug.Log("dieeeeeeee");
+     
         animator.Play(DEATH);
         StartCoroutine(WaitBeforeDisable());
         // input.DisableControls();
