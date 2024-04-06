@@ -46,6 +46,8 @@ public class EnemyAI : Movement {
     private float currentAvoidTimer;
     private bool isAvoidTimerActive = false;
 
+    private bool isCrystalDeath = false;
+
     // Start() calls SetInitialTarget()
     private void Awake() {
         enemyHP = GetComponent<EnemyHealthPoints>();
@@ -66,7 +68,7 @@ public class EnemyAI : Movement {
         if (!crystalObject) {          
             IfNoPlayer();
         } 
-        else {
+        else if (!isCrystalDeath) {
             currTarget = crystalObject;
             enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
         }
@@ -86,10 +88,11 @@ public class EnemyAI : Movement {
     // enemyCurrentState is set to MOVETOWARDSCRYSTAL when timer reaches 0
     // The switch-case statement is repeatedly called to change enemyCurrentState to any of the states within the EnemyState enum it is set to
     private void Update()   {
+        // Debug.Log(enemyCurrentState);
         if (isAvoidTimerActive)
         {
             currentAvoidTimer -= Time.deltaTime;
-            if (currentAvoidTimer <= 0)
+            if (currentAvoidTimer <= 0 && !isCrystalDeath)
             {
                 enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
                 isAvoidTimerActive = false;
@@ -98,11 +101,12 @@ public class EnemyAI : Movement {
         
         if (isPlayerAggroActive) {
             currentAggroTimer -= Time.deltaTime;
-            if (currentAggroTimer <= 0) {
+            if (currentAggroTimer <= 0 && !isCrystalDeath) {
                 isPlayerAggroActive = false;
                 enemyCurrentState = EnemyState.MOVETOWARDSCRYSTAL;
             }
         }
+
         switch (enemyCurrentState)  {
             case EnemyState.MOVETOWARDSCRYSTAL:
                 SetInitialTarget();
@@ -145,6 +149,16 @@ public class EnemyAI : Movement {
     }
     public void TargetPlayer() {
         currentAggroTimer = playerAggroTime;
+        enemyCurrentState = EnemyState.MOVETOWARDSPLAYER;
+    }
+
+    public void ListenCrystalDeath(Crystal curr)
+    {
+        curr.OnCrystalDie.AddListener(setCrystalDeath);
+    }
+
+    public void setCrystalDeath(){
+        isCrystalDeath = true;
         enemyCurrentState = EnemyState.MOVETOWARDSPLAYER;
     }
 
