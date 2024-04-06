@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
     private bool isPlayerShooting = true;
+  
 
     private void Awake()
     {
@@ -65,6 +66,7 @@ public class Projectile : MonoBehaviour
     // Sets the direction in which the projectile should move.
     public void SetMoveDirection(Vector2 movDir, bool isPlayerShooting)
     {
+      
         this.isPlayerShooting = isPlayerShooting;
         moveDirection = movDir;
     }
@@ -72,6 +74,8 @@ public class Projectile : MonoBehaviour
     // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only).
     private void OnTriggerEnter2D(Collider2D collider)
     {
+      
+
         // Check if the projectile has collided with an enemy
         if (collider.gameObject.CompareTag(ENEMY_TAG))
         {
@@ -136,7 +140,7 @@ public class Projectile : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-
+  
     public int GetProjectileDamage() {
         return damage;
     }

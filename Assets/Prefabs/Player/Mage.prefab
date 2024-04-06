@@ -4870,6 +4870,7 @@ GameObject:
   - component: {fileID: 5220982741878226084}
   - component: {fileID: 3038308969333731784}
   - component: {fileID: -9207976898994121474}
+  - component: {fileID: 1529904000462694585}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -5238,6 +5239,14 @@ MonoBehaviour:
   StopDrowning:
     m_PersistentCalls:
       m_Calls: []
+--- !u!81 &1529904000462694585
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5697,7 +5706,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 124456
+  m_InstanceId: 55168
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
