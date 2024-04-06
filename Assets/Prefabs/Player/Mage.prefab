@@ -5533,7 +5533,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
+  projectilePrefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
 --- !u!114 &3258390402626218228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5706,7 +5706,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 79158
+  m_InstanceId: 47476
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
