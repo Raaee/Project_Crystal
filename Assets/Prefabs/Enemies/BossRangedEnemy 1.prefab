@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeDuration: 0.15
-  shakeMagnitude: 0.4
+  shakeMagnitude: 0.5
   hp: {fileID: 8506391581786044554}
 --- !u!114 &5621713984815951882
 MonoBehaviour:
@@ -538,7 +538,7 @@ MonoBehaviour:
   - {x: 0.80405426, y: -1.2094054, z: 0}
   m_ShapePathHash: -803534617
   m_Mesh: {fileID: 0}
-  m_InstanceId: 103026
+  m_InstanceId: 127154
   m_LocalBounds:
     m_Center: {x: -0.007171631, y: -0.0022640228, z: 0}
     m_Extent: {x: 1.0977707, y: 1.2089868, z: 0}
@@ -695,7 +695,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 971724485026557118, guid: 1955fa9e73f7d4331b500c704e4c769e, type: 3}
+  rangedAbility1Prefab: {fileID: 971724485026557118, guid: 0a30d6c6c104e1040939b2661f8dd2cb, type: 3}
   isPlayerShooting: 0
   enemyFireRate: 0.7
   playerFireRate: 0.1
