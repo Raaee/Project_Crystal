@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: maxValuePercent
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: minValuePercent

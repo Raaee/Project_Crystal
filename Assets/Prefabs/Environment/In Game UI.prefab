@@ -449,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: 468}
+  m_AnchoredPosition: {x: 11, y: 468}
   m_SizeDelta: {x: 1644.91, y: 53.555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5150607999940185979
@@ -1006,7 +1006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.002502, y: 408}
+  m_AnchoredPosition: {x: 10.997537, y: 400}
   m_SizeDelta: {x: 1644.9, y: 53.559998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768478164692795660
@@ -1268,7 +1268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -639, y: 4}
+  m_AnchoredPosition: {x: -593, y: 6}
   m_SizeDelta: {x: 257.03, y: 54.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7281228486286598225
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waves 1 / 3
+  m_text: "Waves Left \n3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbccffbf55ae38429db556272916476, type: 2}
   m_sharedMaterial: {fileID: -4607980047586035809, guid: 9dbccffbf55ae38429db556272916476, type: 2}
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

@@ -9,9 +9,9 @@ public class PiercingProjectile : MonoBehaviour
    
     [SerializeField] private float projectileSpeed = 1000f; // Speed of the projectile
     [SerializeField] private float maxLifeTime = 2f; // Maximum lifetime of the projectile
-    [SerializeField] public int damage = 10; // Damage dealt by the projectile
     [SerializeField] private int maxPiercingAmount = 4; // Maximum number of enemies the projectile can pierce through
-    private int currentPiercingProjectileDamage;
+    [SerializeField] public int maxDamage = 10; // Damage dealt by the projectile
+    [SerializeField] private int currentDamage;
 
     private int currentPiercingAmount; // Current number of enemies the projectile can still pierce through
 
@@ -31,7 +31,7 @@ public class PiercingProjectile : MonoBehaviour
     private void Start()
     {
         currentPiercingAmount = maxPiercingAmount; // Reset the current piercing amount
-        currentPiercingProjectileDamage = damage; //Set current damge to damage dealt
+        currentDamage = maxDamage; //Set current damge to damage dealt
     }
 
    
@@ -75,7 +75,7 @@ public class PiercingProjectile : MonoBehaviour
                 return; 
             }
           
-            potentialEnemyHealth.RemoveHealth(damage);
+            potentialEnemyHealth.RemoveHealth(currentDamage);
           
             currentPiercingAmount--;
             if (currentPiercingAmount <= 0) { 
@@ -98,24 +98,24 @@ public class PiercingProjectile : MonoBehaviour
         currentPiercingAmount = maxPiercingAmount;
     }
     public int GetProjectileDamage() {
-        return damage;
+        return maxDamage;
     }
     public void SetMaxProjectileDamage(int amt) {
-        damage = amt;
+        maxDamage = amt;
     }
 
     public void NormalProjectileDamage()
     {
-        currentPiercingProjectileDamage = damage;
+        currentDamage = maxDamage;
     }
 
     public void SetPiercingProjectileDamage(int setdamage)
     {
-        currentPiercingProjectileDamage = setdamage;
+        currentDamage = setdamage;
     }
 
-    public int GetPiercingCurrentProjectileDamage()
+    public int GetCurrentPierceDamage()
     {
-        return currentPiercingProjectileDamage;
+        return currentDamage;
     }
 }

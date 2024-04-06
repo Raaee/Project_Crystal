@@ -551,7 +551,7 @@ Transform:
   m_GameObject: {fileID: 6453280248707733763}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.009183453, y: 0.1306555, z: -0.0027633877}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -720,7 +720,7 @@ MonoBehaviour:
   - {x: 0.80792236, y: -1.4052019, z: -0.00000036042184}
   m_ShapePathHash: -1582723859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 124240
+  m_InstanceId: 85602
   m_LocalBounds:
     m_Center: {x: -0.037345886, y: -0.2794497, z: 0}
     m_Extent: {x: 1.4293442, y: 1.1626766, z: 0}
@@ -775,7 +775,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 971724485026557118, guid: e4c4c94f40278664784bba005064fae5, type: 3}
+  projectilePrefab: {fileID: 971724485026557118, guid: e4c4c94f40278664784bba005064fae5, type: 3}
   isPlayerShooting: 0
   enemyFireRate: 0.8
   playerFireRate: 0.1

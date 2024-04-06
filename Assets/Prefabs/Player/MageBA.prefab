@@ -114,7 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
   maxLifeTime: 2
-  damage: 10
+  maxDamage: 10
+  currentDamage: 100
 --- !u!1 &4389119191549526993
 GameObject:
   m_ObjectHideFlags: 0

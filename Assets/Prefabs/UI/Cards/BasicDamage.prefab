@@ -12,18 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicDamage
       objectReference: {fileID: 0}
-    - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
-      propertyPath: maxValuePercent
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
-      propertyPath: minValuePercent
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5275459108849958064, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 199833550, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
     - target: {fileID: 8949029755550068397, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -50,11 +38,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949029755550068397, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8949029755550068397, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8949029755550068397, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: m_LocalPosition.x
