@@ -17,7 +17,8 @@ public class MenuOptions : MonoBehaviour
         characterSelectScreen.SetActive(true);
         menuScreen.SetActive(false);
         Debug.Log("Open Character Select Screen");
-        
+        creditsScreen.SetActive(false);
+        settingsScreen.SetActive(false);
         
     }
 

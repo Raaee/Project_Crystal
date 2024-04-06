@@ -23,12 +23,27 @@ public class CrystalVFX : MonoBehaviour {
     private SpriteRenderer crystSR;
     private SpriteRenderer shadowSR;
 
+    [Header("Bobbing Settings")]
+    [SerializeField] private float bobbingSpeed = 1f; // Speed of the bobbing motion
+    [SerializeField] private float bobbingHeight = 0.2f; // Height of the bobbing motion
+
+    private Vector3 originalPosition;
+
     private void Start() {
         crystSR = crystalVisual.GetComponent<SpriteRenderer>();
         shadowSR = crystalShadowVisual.GetComponent<SpriteRenderer>();
         ActivateCorruptedParticles();
         CorruptSprite();
         DisactivateRadius();
+        originalPosition = transform.position;
+        StartCoroutine(BobbingCoroutine());
+    }
+     private IEnumerator BobbingCoroutine() {
+        while (true) {
+            float newY = originalPosition.y + Mathf.Sin(Time.time * bobbingSpeed) * bobbingHeight;
+            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            yield return null;
+        }
     }
     public void ActivatePurifiedParticles() {
         corruptParticleEffect.SetActive(false);
@@ -55,3 +70,5 @@ public class CrystalVFX : MonoBehaviour {
         crystalRadius.SetActive(false);
     }
 }
+ 
+
