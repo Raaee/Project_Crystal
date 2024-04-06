@@ -98,6 +98,7 @@ public class Spawner : MonoBehaviour
         if (enemyAI != null)
         {
             enemyAI.SetCrystalObject(transform);
+            enemyAI.ListenCrystalDeath(transform.GetComponent<Crystal>());
         }
         return obj.transform;
     }
