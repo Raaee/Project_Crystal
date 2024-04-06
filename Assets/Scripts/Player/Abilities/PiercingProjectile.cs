@@ -63,24 +63,23 @@ public class PiercingProjectile : MonoBehaviour
         moveDirection = movDir; // Set the move direction
     }
 
-    // Method called when the projectile enters a trigger collider
+   
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag(ENEMY_TAG)) // If the collider is an enemy
+        if (collider.gameObject.CompareTag(ENEMY_TAG))
         {
-            // Get the HealthPoints component of the enemy
-            HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
-            if (!potentialEnemyHealth) // If the enemy does not have a HealthPoints component
+           
+            HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<EnemyHealthPoints>();
+            if (!potentialEnemyHealth) 
             {
-                return; // Exit the method
+                return; 
             }
-            // Damage the enemy
+          
             potentialEnemyHealth.RemoveHealth(damage);
-            // Decrease the current piercing amount
+          
             currentPiercingAmount--;
-            if (currentPiercingAmount <= 0) // If the projectile can no longer pierce through enemies
-            {
-                DisableProjectile(); // Disable the projectile
+            if (currentPiercingAmount <= 0) { 
+                DisableProjectile(); 
             }
         }
     }
