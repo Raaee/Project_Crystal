@@ -30,7 +30,7 @@ public class CrystalManager : MonoBehaviour
 
     public void LockInteractions() {
         foreach(Crystal cryst in crystals) {
-            if (cryst == currentCrystal) continue;
+            if (!cryst.enabled || cryst == currentCrystal) continue;
             else {
                 cryst.ChangeInteractionState(false);
             }
