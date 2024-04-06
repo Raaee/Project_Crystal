@@ -30,11 +30,14 @@ public class Crystal : MonoBehaviour {
         hp.OnDead.AddListener(OnCrystalDeath);
     }
     public void OnCrystalComplete() {
+        if(currentState == CrystalState.SHATTERED) return;
         currentState = CrystalState.PURIFIED;
+        UpgradeMenu.instance.gameObject.SetActive(true);
         PurifyInRadius();
         CrystalManager.Instance.UnLockInteractions();
     }
     public void OnCrystalDeath() {
+        if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.SHATTERED;
         CrystalManager.Instance.UnLockInteractions();
         OnCrystalDeathEvent?.Invoke(); 
@@ -43,8 +46,10 @@ public class Crystal : MonoBehaviour {
         // lose a life
     }
     private void OnCrystalEngaing() {
+        if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.ENGAGING;
         CrystalManager.Instance.SetCurrentCrystal(this);
+        CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
     }
     public void PurifyInRadius() {
