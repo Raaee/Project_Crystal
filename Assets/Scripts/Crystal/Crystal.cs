@@ -6,16 +6,14 @@ using UnityEngine.Events;
 
 public class Crystal : MonoBehaviour { 
 
-    [HideInInspector] public UnityEvent OnCrystalDeathEvent;
-
     private Spawner spawner;
     private CrystalVFX crystalVFX;
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
+    [HideInInspector] public UnityEvent OnCrystalDie;
 
     [Header("Debug")]
     [SerializeField] private CrystalState currentState;
-    
 
     public CrystalState CurrentState { get => currentState; set => currentState = value; }
 
@@ -40,7 +38,8 @@ public class Crystal : MonoBehaviour {
         if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.SHATTERED;
         CrystalManager.Instance.UnLockInteractions();
-        OnCrystalDeathEvent?.Invoke(); 
+        spawner.state = Spawner.State.Idle;
+        OnCrystalDie.Invoke();
         // visual using VFX
         // SFX
         // lose a life
