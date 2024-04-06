@@ -6,48 +6,26 @@ using UnityEngine.InputSystem;
 // This class represents the Piercing Shot ability for a player character.
 public class PiercingShotAbility : Ability
 {
-    // Serialized fields for Unity inspector
-    [SerializeField] private GameObject rangedAbility1Prefab;
+    [SerializeField] private GameObject projectilePrefab;
     
-  //  [SerializeField] float delayBetweenPresses = 0.25f;
-
-    // Private fields
     private Actions actions;
     private ObjectPooler projPooler;
 
     void Awake()
     {
-        // Get the Actions component from the parent object
         actions = GetComponentInParent<Actions>();
-
-        // If Actions component is not found, log an error and break
-        if (actions == null)
-        {
-            Debug.LogError("Actions not found");
-            Debug.Break();
-        }
-
-        // Add ShootIfActive method as a listener to OnAbility1 event
         actions.OnAbility1.AddListener(ShootIfActive);
     }
 
-    public override void Start()
-    {
-        projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
-    }
-
-    // Method to spawn a projectile in a given direction
     public void SpawnProjectile(Vector2 moveDirection)
     {
-        // Get a pooled object and set its position and direction
-        GameObject go = projPooler.GetPooledObject();
+        GameObject go = Instantiate(projectilePrefab, transform);
         go.transform.position = this.transform.position;
         PiercingProjectile projectile = go.GetComponent<PiercingProjectile>();
         projectile.SetMoveDirection(moveDirection);
         go.SetActive(true);
     }
 
-    // Method to shoot if the ability is active
     public void ShootIfActive()
     {
         if (isOnCoolDown)
@@ -58,7 +36,6 @@ public class PiercingShotAbility : Ability
             StartCoroutine(UseAbility());
     }
 
-    // Overridden method for ability usage
     public override void AbilityUsage()
     {
         // Calculate the direction from the object to the mouse position and spawn a projectile in that direction
@@ -69,24 +46,24 @@ public class PiercingShotAbility : Ability
     }
 
     public int GetMaxDamage() {
-        return projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().GetProjectileDamage();
+        return projectilePrefab.GetComponent<PiercingProjectile>().GetProjectileDamage();
     }
     public void SetMaxDamage(int amt) {
-        projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
+        projectilePrefab.GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
     }
 
     public void SetPiercingCurrentDamge(int amt)
     {
-        projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().SetPiercingProjectileDamage(amt);
+        projectilePrefab.GetComponent<PiercingProjectile>().SetCurrentPierceDamage(amt);
     }
 
     public int GetPiercingCurrentDamge()
     {
-        return projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().GetCurrentPierceDamage();
+        return projectilePrefab.GetComponent<PiercingProjectile>().GetCurrentPierceDamage();
     }
 
-    public void NormalPiercesDamage()
+    public void NormalPierceDamage()
     {
-        projPooler.GetObjectToPool().GetComponent<PiercingProjectile>().NormalProjectileDamage();
+        projectilePrefab.GetComponent<PiercingProjectile>().NormalProjectileDamage();
     }
 }
