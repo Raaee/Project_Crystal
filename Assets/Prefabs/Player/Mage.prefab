@@ -5158,7 +5158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1206d52936b46c99fbb379d7763d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 9
 --- !u!114 &6698978688436824222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5228,10 +5228,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drowningDamage: 2
-  colliderTile: Water
+  colliderTille: Water
   isDrowning: 0
   timeBetweenDamage: 1
   boxCollider2D: {fileID: 2801556117394603853}
+  OnDrowning:
+    m_PersistentCalls:
+      m_Calls: []
+  StopDrowning:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5691,7 +5697,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1378598
+  m_InstanceId: 124456
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}

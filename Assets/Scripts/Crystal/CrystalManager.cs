@@ -13,7 +13,6 @@ public class CrystalManager : MonoBehaviour
     [HideInInspector] public CrystalHealthPoints hp { get; set; }
     [HideInInspector] public Spawner wave { get; set; }
     [HideInInspector] public UnityEvent OnCrystalActivate;
-    [HideInInspector] public UnityEvent OnCrystalDeactivate;
     
     private void Awake() {
         Init();        
@@ -31,7 +30,7 @@ public class CrystalManager : MonoBehaviour
 
     public void LockInteractions() {
         foreach(Crystal cryst in crystals) {
-            if (cryst == currentCrystal) continue;
+            if (!cryst.enabled || cryst == currentCrystal) continue;
             else {
                 cryst.ChangeInteractionState(false);
             }
@@ -44,7 +43,6 @@ public class CrystalManager : MonoBehaviour
                 cryst.ChangeInteractionState(true);
             }
         }
-        OnCrystalDeactivate.Invoke();
     }
     private void Init() {
         if (Instance) {
