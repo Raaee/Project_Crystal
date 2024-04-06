@@ -56,7 +56,6 @@ public class UIManager : MonoBehaviour  {
         PlayerManager.Instance.hp.OnHealthChange.AddListener(UpdateHealth);
         PlayerManager.Instance.mp.OnManaChange.AddListener(UpdateMana);
         CrystalManager.Instance.OnCrystalActivate.AddListener(ActivateCrystalBars);
-        CrystalManager.Instance.OnCrystalDeactivate.AddListener(DeactivateCrystalBars);
         crystalHPBar.SetActive(false);
         InitUI();
     } 
@@ -100,10 +99,6 @@ public class UIManager : MonoBehaviour  {
         }
         crystalHPBar.SetActive(true);
         changeCrystalUI();
-    }
-    public void DeactivateCrystalBars(){
-        crystalHPBar.SetActive(false);
-        hasListener = false;
     }
     // Update HP Info when enemy hits it
     public void UpdateCrystalHP(){
