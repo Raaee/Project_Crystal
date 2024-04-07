@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 80.9, y: 25.3}
-  m_SizeDelta: {x: 125, y: 12.5}
+  m_AnchoredPosition: {x: 259.55, y: 84.39}
+  m_SizeDelta: {x: 482.62, y: 24.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &989827030556089227
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1590336508, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  m_Sprite: {fileID: -2110765104, guid: e9f85d55c5ced3642af57d024ff82cf7, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -110,8 +110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960.5001, y: 543.60986}
-  m_SizeDelta: {x: 162.5, y: 43.75}
+  m_AnchoredPosition: {x: 959.959, y: 543.46}
+  m_SizeDelta: {x: 519.1154, y: 169.1849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5259013853217855105
 CanvasRenderer:
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1754488709, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  m_Sprite: {fileID: -855818332, guid: e9f85d55c5ced3642af57d024ff82cf7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -250,7 +250,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09462166, y: 0.06544495}
+  m_Offset: {x: 0.7239373, y: 0.010241747}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -261,7 +261,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6819954, y: 2.1150818}
+  m_Size: {x: 3.9563642, y: 6.0676246}
   m_EdgeRadius: 0
 --- !u!114 &7223677986230081562
 MonoBehaviour:
@@ -538,7 +538,7 @@ MonoBehaviour:
   - {x: 0.80405426, y: -1.2094054, z: 0}
   m_ShapePathHash: -803534617
   m_Mesh: {fileID: 0}
-  m_InstanceId: 85394
+  m_InstanceId: 66328
   m_LocalBounds:
     m_Center: {x: -0.007171631, y: -0.0022640228, z: 0}
     m_Extent: {x: 1.0977707, y: 1.2089868, z: 0}
@@ -578,7 +578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.99, y: 0.07}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4658370693168500359
@@ -695,7 +695,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  projectilePrefab: {fileID: 971724485026557118, guid: 0a30d6c6c104e1040939b2661f8dd2cb, type: 3}
+  projectilePrefab: {fileID: 4827135260225847506, guid: a62c54cb2f8ad1348895edf2b2c20eb0, type: 3}
   isPlayerShooting: 0
   enemyFireRate: 0.7
   playerFireRate: 0.1
@@ -727,8 +727,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8605758211167368064}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.38337788, w: 0.92359155}
-  m_LocalPosition: {x: -0.54, y: -0.479, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.26715976, w: 0.9636523}
+  m_LocalPosition: {x: -0.703, y: -0.576, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -770,10 +770,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 209.38776
+  m_PointLightInnerAngle: 202.46
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.3
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 2.4287844
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -809,8 +809,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9047284350083316017}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.639, y: 0.55, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.11405886, w: 0.993474}
+  m_LocalPosition: {x: 0.554, y: 0.445, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 359.99997
   m_PointLightOuterAngle: 359.99997
   m_PointLightInnerRadius: 0.3
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 2.7024372
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
