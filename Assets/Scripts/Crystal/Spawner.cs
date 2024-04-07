@@ -67,6 +67,9 @@ public class Spawner : MonoBehaviour
     private bool started = false;
     [HideInInspector] public UnityEvent OnSpawnerComplete;
     private bool completed = false;
+    [HideInInspector] public UnityEvent OnNextWaveStarted;
+   
+
     /// <summary>
     /// Spawns objects for each wave based on the specified radius, duration, and spawn objects.
     /// </summary>
@@ -136,6 +139,7 @@ public class Spawner : MonoBehaviour
                         var spawn = waves[0].Spawns[0];
                         spawnedObjects.Add(Spawn(spawn));
                         waves[0].Spawns.RemoveAt(0);
+                       
                     }
 
                     // Handle transition to cooldown state if there are no more objects to spawn and all transforms in the spawned list are destroyed
@@ -150,6 +154,7 @@ public class Spawner : MonoBehaviour
                             time = 0;
                             break;
                         }
+                        OnNextWaveStarted?.Invoke();
                         state = State.Cooldown;
                         time = 0;
                         break;

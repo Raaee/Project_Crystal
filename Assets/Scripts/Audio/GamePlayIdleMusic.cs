@@ -14,12 +14,19 @@ public class GamePlayIdleMusic : MonoBehaviour
     [SerializeField][Range(0.01f,2f)] private float fadetime = 0.5f; 
    
      private float defaultStateVolume = 1.0f;
-    private void Start(){
+   
+
+    public void StartIdleMusic()
+    {
         musicSource.volume = 0f;
-      //  musicSource.clip = idleMusicClip;
-      DetermineMusicClip();
-      StartCoroutine(WaitThenPlay());
-        CrystalManager.Instance.OnCrystalActivate.AddListener(FadeDownToVolume);
+        //  musicSource.clip = idleMusicClip;
+        DetermineMusicClip();
+        StartCoroutine(WaitThenPlay());
+    }
+
+    public void StopIdleMusic()
+    {
+        FadeDownToVolume();
     }
     [ProButton]
     private void FadeUpToVolume(){

@@ -13,7 +13,7 @@ public class CrystalManager : MonoBehaviour
     [HideInInspector] public CrystalHealthPoints hp { get; set; }
     [HideInInspector] public Spawner wave { get; set; }
     [HideInInspector] public UnityEvent OnCrystalActivate;
-    
+    [HideInInspector] public UnityEvent OnCrystalDeActivate;
     private void Awake() {
         Init();        
     }
@@ -22,6 +22,10 @@ public class CrystalManager : MonoBehaviour
         currentCrystal = curr;
     }
 
+    public Crystal GetCurrentCrystal()
+    {
+        return currentCrystal;
+    }
     public void SetCrystalComponents(Crystal curr){
         hp = curr.GetComponent<CrystalHealthPoints>();
         wave = curr.GetComponent<Spawner>();
@@ -43,6 +47,8 @@ public class CrystalManager : MonoBehaviour
                 cryst.ChangeInteractionState(true);
             }
         }
+        OnCrystalDeActivate?.Invoke();
+    
     }
     private void Init() {
         if (Instance) {
@@ -50,6 +56,18 @@ public class CrystalManager : MonoBehaviour
         } else {
             Instance = this;
         }
+    }
+
+    public int GetCrystalsSavedAmount()
+    {
+        int i = 0;
+        foreach(Crystal crystalInstance in crystals)
+        {
+            if (crystalInstance.CurrentState == CrystalState.PURIFIED)
+                i++;
+        }
+
+        return i;
     }
 
 }

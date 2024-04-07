@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 // The Projectile class handles the behavior of projectiles in the game.
@@ -19,7 +20,7 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
     private bool isPlayerShooting = true;
-
+    [HideInInspector] public UnityEvent OnProjectileDisabled;
     private void Awake()    {
         rb2D = GetComponent<Rigidbody2D>();
     }
@@ -112,8 +113,10 @@ public class Projectile : MonoBehaviour
 
     private void DisableProjectile()
     {
+        OnProjectileDisabled?.Invoke();
         Destroy(this.gameObject);
     }
+   
   
     public int GetProjectileDamage() {
         return maxDamage;
