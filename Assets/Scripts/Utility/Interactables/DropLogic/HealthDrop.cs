@@ -22,7 +22,7 @@ public class HealthDrop : DropData  {
         {
             potentialHealthPoints.AddHealth(healthAmount);
         }
-        WaitThenDie();
+        WaitToDie(); //waiting a couple seconds then dieing, so the audio can fully play sound
 
     }
 

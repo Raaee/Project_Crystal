@@ -12,19 +12,11 @@ public class BezerkerCubeDrop : DropData
     [HideInInspector] public UnityEvent OnBezerker;
     [HideInInspector] public UnityEvent StopBezerker;
 
-    SpriteRenderer spriteRenderer;
-
-    private void Start()
-    {
-        //bezerkerTag.gameObject.SetActive(true);
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-    }
-
     public override void OnDropInteract()
     {
         OnBezerker.Invoke();
         ApplyBezerkerBuff();
-        spriteRenderer.enabled = false;
+        WaitToDie(berserkerDamageTime + 2f);
     }
 
     private IEnumerator RemoveBerzerker(float duration)
@@ -35,7 +27,6 @@ public class BezerkerCubeDrop : DropData
         BuffManager.instance.ResetBasicAttckDamege();
         BuffManager.instance.ResetPierceDamage();
         StopBezerker.Invoke();
-        this.gameObject.SetActive(false);
     }
 
     public void ApplyBezerkerBuff()

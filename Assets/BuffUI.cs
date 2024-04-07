@@ -4,36 +4,39 @@ using UnityEngine;
 
 public class BuffUI : MonoBehaviour
 {
-    [SerializeField] private GameObject BezerkerIU;
-    [SerializeField] private GameObject DrowingIU;
+    [SerializeField] private GameObject bezerkerUI;
+    [SerializeField] private GameObject drowningUI;
     [SerializeField] private Drowning drowningEffect;
     [SerializeField] private BezerkerCubeDrop bezerkerEffect;
 
     // Start is called before the first frame update
     void Start()
     {
+        BezerkerUINotActive();
+        DrowningUINotActive();
         drowningEffect = PlayerManager.Instance.GetPlayer().GetComponent<Drowning>();
-        drowningEffect.OnDrowning.AddListener(DrowingUIActive);
+        drowningEffect.OnDrowning.AddListener(DrowningUIActive);
         drowningEffect.StopDrowning.AddListener(DrowningUINotActive);
 
-        bezerkerEffect.OnBezerker.AddListener(BezerkerUIActive);
-        bezerkerEffect.StopBezerker.AddListener(BezerkerUINotActive);
+       // bezerkerEffect = PlayerManager.Instance.GetPlayer().GetComponent<BezerkerCubeDrop>();
+       // bezerkerEffect.OnBezerker.AddListener(BezerkerUIActive);
+       // bezerkerEffect.StopBezerker.AddListener(BezerkerUINotActive);
     }
 
     public void BezerkerUIActive() {
-        BezerkerIU.SetActive(true);
+        bezerkerUI.SetActive(true);
     }
 
     public void BezerkerUINotActive() {
-        BezerkerIU.SetActive(false);
+        bezerkerUI.SetActive(false);
     }
 
-    public void DrowingUIActive()
+    public void DrowningUIActive()
     {
-        DrowingIU.SetActive(true);
+        drowningUI.SetActive(true);
     }
 
     public void DrowningUINotActive() {
-        DrowingIU.SetActive(false);
+        drowningUI.SetActive(false);
     }
 }
