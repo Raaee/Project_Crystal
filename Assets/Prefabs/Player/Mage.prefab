@@ -5189,7 +5189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  godMode: 0
+  godMode: 1
   OnDead:
     m_PersistentCalls:
       m_Calls: []
