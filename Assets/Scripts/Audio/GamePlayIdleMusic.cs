@@ -44,7 +44,7 @@ public class GamePlayIdleMusic : MonoBehaviour
         musicSource.clip = idleMusicClipA;
     }
     public IEnumerator WaitThenPlay(){
-        float randomNumber = Random.Range(0.5f,2f);
+        float randomNumber = Random.Range(2f,8f);
         yield return new WaitForSeconds(randomNumber);
         musicSource.Play();
         FadeUpToVolume();

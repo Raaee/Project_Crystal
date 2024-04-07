@@ -11039,7 +11039,7 @@ MonoBehaviour:
   audioSource: {fileID: 2072978400}
   uiAcceptClip: {fileID: 8300000, guid: b6e0d5a9ba6b4fa45b50ad7b723fa9a5, type: 3}
   uiBackClip: {fileID: 8300000, guid: 8b3b46ee7be300e41a3c7d673b138225, type: 3}
-  uiHoverClip: {fileID: 8300000, guid: dc423de99ca198f44aa9527c7f3bec99, type: 3}
+  uiHoverClip: {fileID: 8300000, guid: 31ab2708f37b4e042b47a3f2a7bb7d6b, type: 3}
 --- !u!1 &2084809597
 GameObject:
   m_ObjectHideFlags: 0

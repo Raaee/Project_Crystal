@@ -45,6 +45,7 @@ public class MenuOptions : MonoBehaviour
     {
         menuScreen.SetActive(true);
         characterSelectScreen.SetActive(false);
+        creditsScreen.SetActive(false);
     }
 
     public void QuitGame()
