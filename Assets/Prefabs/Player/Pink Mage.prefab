@@ -4872,7 +4872,7 @@ GameObject:
   - component: {fileID: -9207976898994121474}
   - component: {fileID: 1529904000462694585}
   m_Layer: 0
-  m_Name: Mage
+  m_Name: Pink Mage
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5533,7 +5533,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  projectilePrefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
+  rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
 --- !u!114 &3258390402626218228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5636,12 +5636,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1962731731, guid: 2122c0e2182c9304981bb6b4bb190e13, type: 3}
+  m_Sprite: {fileID: -1443978023, guid: 272eebba944934d439428f0b999dae68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.9375, y: 1.375}
+  m_Size: {x: 0.9375, y: 1.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5657,7 +5657,7 @@ Animator:
   m_GameObject: {fileID: 7360943041567263304}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fb0b71c9ac361564aacbdbd6e04da5d9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 07a7647abefb25243a555ad608856fff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5706,7 +5706,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 77156
+  m_InstanceId: 53196
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -6061,9 +6061,9 @@ AudioSource:
   m_GameObject: {fileID: 8694237826187033515}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2176128710209272675, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
+  OutputAudioMixerGroup: {fileID: 2894101829699811275, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
