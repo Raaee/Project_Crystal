@@ -16,7 +16,6 @@ public class BezerkerCubeDrop : DropData
     }
     public override void OnDropInteract()
     {
-        Debug.Log("Interacted");
         BezerkerBuffActivate.ActivatAbilty();
         WaitToDie(berserkerDamageTime + 2f);
     }
