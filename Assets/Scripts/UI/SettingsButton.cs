@@ -10,10 +10,10 @@ public class SettingsButton : MonoBehaviour
 
     
 
-    public void openTab(GameObject tab)
+    public void openTab()
     {
-       closeAllTabs();
-       tab.SetActive(true);
+
+        musicTab.SetActive(true);
     }
 
 
@@ -21,6 +21,5 @@ public class SettingsButton : MonoBehaviour
     private void closeAllTabs()
     {
         musicTab.SetActive(false);
-        generalTab.SetActive(false);
     }
 }
