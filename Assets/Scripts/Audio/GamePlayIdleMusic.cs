@@ -19,10 +19,18 @@ public class GamePlayIdleMusic : MonoBehaviour
       //  musicSource.clip = idleMusicClip;
       DetermineMusicClip();
       StartCoroutine(WaitThenPlay());
+        CrystalManager.Instance.OnCrystalActivate.AddListener(FadeDownToVolume);
     }
     [ProButton]
     private void FadeUpToVolume(){
         AudioManager.Instance?.FadeAudioToVolume (musicSource, fadetime, defaultStateVolume);
+
+    }
+
+
+    private void FadeDownToVolume()
+    {
+        AudioManager.Instance?.FadeAudioToVolume(musicSource, fadetime, 0.01f);
 
     }
     private void DetermineMusicClip(){

@@ -17,6 +17,8 @@ public class Crystal : MonoBehaviour {
 
     public CrystalState CurrentState { get => currentState; set => currentState = value; }
 
+    public static UnityEvent OnAnyCrystalFinished;
+
     private void Start() {
         spawner = GetComponent<Spawner>();
         crystalVFX = GetComponent<CrystalVFX>();
@@ -33,6 +35,7 @@ public class Crystal : MonoBehaviour {
         UpgradeMenu.instance.gameObject.SetActive(true);
         PurifyInRadius();
         CrystalManager.Instance.UnLockInteractions();
+        OnAnyCrystalFinished?.Invoke();
     }
     public void OnCrystalDeath() {
         if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
@@ -40,6 +43,7 @@ public class Crystal : MonoBehaviour {
         CrystalManager.Instance.UnLockInteractions();
         spawner.state = Spawner.State.Idle;
         OnCrystalDie.Invoke();
+        OnAnyCrystalFinished?.Invoke();
         // visual using VFX
         // SFX
         // lose a life
