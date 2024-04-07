@@ -32,9 +32,10 @@ public class PiercingProjectile : MonoBehaviour
     {
         currentPiercingAmount = maxPiercingAmount; // Reset the current piercing amount
         currentDamage = maxDamage; //Set current damge to damage dealt
+        Debug.Log(currentDamage);
     }
 
-   
+
     private void FixedUpdate()
     {
         MoveProjectile(); // Move the projectile
@@ -74,7 +75,7 @@ public class PiercingProjectile : MonoBehaviour
             {
                 return; 
             }
-          
+            Debug.Log("pierce: " + currentDamage);
             potentialEnemyHealth.RemoveHealth(currentDamage);
           
             currentPiercingAmount--;
@@ -84,11 +85,9 @@ public class PiercingProjectile : MonoBehaviour
         }
     }
 
-    // Method to disable the projectile
-    private void DisableProjectile()
-    {
-        // Disable the game object
-        this.gameObject.SetActive(false);
+    // Disables the projectile.
+    private void DisableProjectile() {
+        Destroy(this.gameObject);
     }
 
     // Method called when the game object is enabled
@@ -102,6 +101,7 @@ public class PiercingProjectile : MonoBehaviour
     }
     public void SetMaxProjectileDamage(int amt) {
         maxDamage = amt;
+        NormalProjectileDamage();
     }
 
     public void NormalProjectileDamage()
@@ -109,7 +109,7 @@ public class PiercingProjectile : MonoBehaviour
         currentDamage = maxDamage;
     }
 
-    public void SetPiercingProjectileDamage(int setdamage)
+    public void SetCurrentPierceDamage(int setdamage)
     {
         currentDamage = setdamage;
     }

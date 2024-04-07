@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 // The Projectile class handles the behavior of projectiles in the game.
@@ -13,19 +14,15 @@ public class Projectile : MonoBehaviour
     private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
     private const String PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const String CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
-    [SerializeField] public int maxDamage = 10; // The damage dealt by the projectile.
-    [SerializeField] private int currentDamage;
+    [SerializeField] public int maxDamage = 10; // The damage normal/max dealt by the projectile.
+    private int currentDamage; // current damage the projectile does
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
     private bool isPlayerShooting = true;
-  
-
-    private void Awake()
-    {
+    [HideInInspector] public UnityEvent OnProjectileDisabled;
+    private void Awake()    {
         rb2D = GetComponent<Rigidbody2D>();
-
-        // Set the initial direction of the projectile to upwards.
     }
     private void Start()
     {
@@ -38,7 +35,7 @@ public class Projectile : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        // If the projectile has existed for longer than its maximum lifetime
+        // If the projectile has existed for longer than its maximum lifetime, disable it
         if (timer >= maxLifeTime)
         {
             DisableProjectile();
@@ -46,7 +43,6 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    // Moves the projectile in its current direction.
     public void MoveProjectile() {
         // Calculate the angle of the projectile's direction in degrees.
         float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
@@ -66,21 +62,17 @@ public class Projectile : MonoBehaviour
     // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only).
     private void OnTriggerEnter2D(Collider2D collider)
     {     
-
-        // Check if the projectile has collided with an enemy
         if (collider.gameObject.CompareTag(ENEMY_TAG))
         {
             if (isPlayerShooting) {
-                // Get the HealthPoints component of the enemy
                 EnemyHealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<EnemyHealthPoints>();
-                // If the enemy does not have a HealthPoints component, exit the function
+
                 if (!potentialEnemyHealth) {
                     return;
                 }
-                Debug.Log("hurting enemy with " + currentDamage + " amt");
-                // Reduce the health of the enemy by the damage of the projectile
+                Debug.Log("BA: " + currentDamage);
                 potentialEnemyHealth.RemoveHealth(currentDamage);
-                Debug.Log("Enemy health is now " + potentialEnemyHealth.GetCurrentHP());
+
                 // Disable the projectile after it has hit an enemy
                 DisableProjectile();
             }
@@ -88,49 +80,43 @@ public class Projectile : MonoBehaviour
         // Check if the projectile has collided with the player
         else if (collider.gameObject.CompareTag(PLAYER_TAG))
         {
-            if (isPlayerShooting)
-            {
+            if (isPlayerShooting) {
                 return;
             }
-            // Get the HealthPoints component of the player
+            
             HealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<HealthPoints>();
-            // If the player does not have a HealthPoints component, exit the function
-            if (!potentialPlayerHealth)
-            {
+
+            if (!potentialPlayerHealth) {
                 return;
             }
-            // Reduce the health of the player by the damage of the projectile
+            
+
             potentialPlayerHealth.RemoveHealth(currentDamage);
-            // Disable the projectile after it has hit the player
             DisableProjectile();
         }
         // Check if the projectile has collided with the crystal
         else if (collider.gameObject.CompareTag(CRYSTAL_TAG))
         {
-            if (isPlayerShooting)
-            {
+            if (isPlayerShooting) {
                 return;
             }
-            // Get the HealthPoints component of the crystal
             HealthPoints potentialCrystalHealth = collider.gameObject.GetComponent<HealthPoints>();
-            // If the crystal does not have a HealthPoints component, exit the function
-            if (!potentialCrystalHealth)
-            {
+
+            if (!potentialCrystalHealth)    {
                 return;
             }
-            // Reduce the health of the crystal by the damage of the projectile
             potentialCrystalHealth.RemoveHealth(currentDamage);
-            // Disable the projectile after it has hit the player
-           // DisableProjectile();
+            
+            //DisableProjectile(); // Uncomment this to not have piercing on crystal.
         }
-        // If the projectile has collided with something other than an enemy or the player, disable the projectile
     }
 
-    // Disables the projectile.
     private void DisableProjectile()
     {
-        this.gameObject.SetActive(false);
+        OnProjectileDisabled?.Invoke();
+        Destroy(this.gameObject);
     }
+   
   
     public int GetProjectileDamage() {
         return maxDamage;
@@ -138,6 +124,7 @@ public class Projectile : MonoBehaviour
 
     public void SetMaxProjectileDamage(int amt) {
         maxDamage = amt;
+        NormalProjectileDamage();
     }
 
     public void NormalProjectileDamage()

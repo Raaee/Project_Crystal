@@ -5533,7 +5533,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
+  projectilePrefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
 --- !u!114 &3258390402626218228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5706,7 +5706,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 79158
+  m_InstanceId: 77156
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -6061,9 +6061,9 @@ AudioSource:
   m_GameObject: {fileID: 8694237826187033515}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2894101829699811275, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
+  OutputAudioMixerGroup: {fileID: -2176128710209272675, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

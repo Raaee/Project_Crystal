@@ -25,7 +25,7 @@ public class MenuOptions : MonoBehaviour
     public void startPlayGame()
     {
         
-        CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI1>().getCurrentCharacterData();
+        CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI>().getCurrentCharacterData();
         ChosenPlayerData.Instance.SetChosenPlayer(chosenPlayer);
         SceneManager.LoadScene(sceneStart);
     }
@@ -45,6 +45,7 @@ public class MenuOptions : MonoBehaviour
     {
         menuScreen.SetActive(true);
         characterSelectScreen.SetActive(false);
+        creditsScreen.SetActive(false);
     }
 
     public void QuitGame()

@@ -113,8 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
-  maxLifeTime: 0.5
-  damage: 100
+  maxLifeTime: 0.75
+  maxDamage: 12
+  OnProjectileDisabled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3599642260992200659
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6089551891187138035}
   - component: {fileID: 8151100724183571723}
+  - component: {fileID: 7092547385091025536}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -243,6 +247,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7092547385091025536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599642260992200659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f25f8cb8c813cc488d0b2000e892302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4389119191549526993
 GameObject:
   m_ObjectHideFlags: 0

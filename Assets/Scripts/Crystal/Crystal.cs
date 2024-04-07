@@ -1,4 +1,5 @@
 using com.cyborgAssets.inspectorButtonPro;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class Crystal : MonoBehaviour {
 
     public CrystalState CurrentState { get => currentState; set => currentState = value; }
 
+    public UnityEvent _OnNextWaveStarted;
+
     private void Start() {
         spawner = GetComponent<Spawner>();
         crystalVFX = GetComponent<CrystalVFX>();
@@ -25,8 +28,15 @@ public class Crystal : MonoBehaviour {
         currentState = CrystalState.IDLE;
         spawner.OnSpawnerStart.AddListener(OnCrystalEngaing);
         spawner.OnSpawnerComplete.AddListener(OnCrystalComplete);
+        spawner.OnNextWaveStarted.AddListener(CrystalOnNextWaveStarted);
         hp.OnDead.AddListener(OnCrystalDeath);
     }
+
+    private void CrystalOnNextWaveStarted()
+    {
+        _OnNextWaveStarted?.Invoke();
+    }
+
     public void OnCrystalComplete() {
         if(currentState == CrystalState.SHATTERED) return;
         currentState = CrystalState.PURIFIED;

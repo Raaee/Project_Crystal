@@ -79,4 +79,8 @@ public class HealthPoints : MonoBehaviour
     public int GetMaxHealth() {
         return maxHP;
     }
+    public void ToggleGooseMode()
+    {
+        godMode = !godMode;
+    }
 }

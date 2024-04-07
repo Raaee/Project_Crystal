@@ -9,8 +9,8 @@ public class BezerkerCubeDrop : DropData
     [SerializeField] public float berserkerDamageTime = 5f;
     [SerializeField] public bool testIsBezerker = false;
 
-    public UnityEvent OnBezerker;
-    public UnityEvent StopBezerker;
+    [HideInInspector] public UnityEvent OnBezerker;
+    [HideInInspector] public UnityEvent StopBezerker;
 
     SpriteRenderer spriteRenderer;
 
@@ -32,8 +32,8 @@ public class BezerkerCubeDrop : DropData
         yield return new WaitForSeconds(duration);
 
         // Revert buff modifiers
-        BuffManager.instance.RemoveBasicAttckDamege();
-        BuffManager.instance.RemovePiercesDamage();
+        BuffManager.instance.ResetBasicAttckDamege();
+        BuffManager.instance.ResetPierceDamage();
         StopBezerker.Invoke();
         this.gameObject.SetActive(false);
     }
