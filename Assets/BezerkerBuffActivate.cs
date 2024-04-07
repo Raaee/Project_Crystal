@@ -8,7 +8,6 @@ public class BezerkerBuffActivate : MonoBehaviour
     [SerializeField] public int berserkerDamageMultplyer = 2;
     [SerializeField] public float berserkerDamageTime = 5f;
     [SerializeField] public bool testIsBezerker = false;
-
     [HideInInspector] public UnityEvent OnBezerker;
     [HideInInspector] public UnityEvent StopBezerker;
 
@@ -16,7 +15,6 @@ public class BezerkerBuffActivate : MonoBehaviour
     {
         OnBezerker.Invoke();
         ApplyBezerkerBuff();
-        //WaitToDie(berserkerDamageTime + 2f);
     }
 
     private IEnumerator RemoveBerzerker(float duration)
