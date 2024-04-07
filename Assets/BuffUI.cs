@@ -7,7 +7,7 @@ public class BuffUI : MonoBehaviour
     [SerializeField] private GameObject bezerkerUI;
     [SerializeField] private GameObject drowningUI;
     [SerializeField] private Drowning drowningEffect;
-    [SerializeField] private BezerkerCubeDrop bezerkerEffect;
+    [SerializeField] private BezerkerBuffActivate bezerkerEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +18,10 @@ public class BuffUI : MonoBehaviour
         drowningEffect.OnDrowning.AddListener(DrowningUIActive);
         drowningEffect.StopDrowning.AddListener(DrowningUINotActive);
 
-       // bezerkerEffect = PlayerManager.Instance.GetPlayer().GetComponent<BezerkerCubeDrop>();
-       // bezerkerEffect.OnBezerker.AddListener(BezerkerUIActive);
-       // bezerkerEffect.StopBezerker.AddListener(BezerkerUINotActive);
+        //bezerkeBezerkerClone = GameObject.FindGameObjectWithTag("BezerkerTag");
+        //bezerkerEffect = bezerkeBezerkerClone.GetComponent<BezerkerCubeDrop>();
+        bezerkerEffect.OnBezerker.AddListener(BezerkerUIActive);
+        bezerkerEffect.StopBezerker.AddListener(BezerkerUINotActive);
     }
 
     public void BezerkerUIActive() {
