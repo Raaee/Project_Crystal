@@ -47,6 +47,12 @@ using com.cyborgAssets.inspectorButtonPro;
       Init();
     }
 
+    private void Start()
+    {
+        CrystalManager.Instance.OnCrystalActivate.AddListener(StartMusicSystem);
+        Crystal.OnAnyCrystalFinished.AddListener(StopMusicSystem);
+    }
+
     private void Init()
     {
       musicSystemIsOn = false;
