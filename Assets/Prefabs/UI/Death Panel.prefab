@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 3599621679781226969}
   - component: {fileID: 1655030309456115556}
   - component: {fileID: 2711958503880905704}
-  - component: {fileID: 3278153992420957356}
+  - component: {fileID: 1062976646444550506}
   m_Layer: 5
   m_Name: Death Panel
   m_TagString: Untagged
@@ -463,19 +463,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc001a9bcf2d74645b08f099b9718a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownDuration: 10
+  countdownDuration: 6
   countdownText: {fileID: 43979776611952088}
---- !u!114 &3278153992420957356
-MonoBehaviour:
+--- !u!225 &1062976646444550506
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8493239117005824124}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c182e8d891944999442f7bc4f767c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeDuration: 1
-  fadeImage: {fileID: 5174347687217282548}
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
