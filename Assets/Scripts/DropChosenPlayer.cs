@@ -24,7 +24,7 @@ public class DropChosenPlayer : MonoBehaviour
         GameObject player = Instantiate(chosenPlayer.characterPrefab, spawnLocation.position, Quaternion.identity);
         PlayerManager.Instance.SetPlayer(player);
         PlayerManager.Instance.SetSpawnPoint(spawnLocation);
-        Debug.Log("spawning player", player);
+     
 
     }
 

@@ -36,12 +36,27 @@ public class UIManager : MonoBehaviour  {
     private float pierceAttackTimer;
     private float pierceAttackCooldown;
 
+    // Var Crystal
+    [Header("Crystal Health")]
+    [SerializeField] private GameObject crystalHPBar;
+    [SerializeField] private Image crystalHPFilling;
+    [SerializeField] private TMP_Text crystalHPText;
+    [SerializeField] private TMP_Text waveText;
+
+    // Misc Var
+    private bool hasListener = false;
+
     void Start()    {
       //  PlayerManager.Instance.teleport.OnAbilityUsage.AddListener(UpdateTeleportUI);
       //  PlayerManager.Instance.rangedBA.OnAbilityUsage.AddListener(UpdateBasicAttackUI);
       //  PlayerManager.Instance.pierceShot.OnAbilityUsage.AddListener(UpdatePierceUI);
+        crystalHPFilling.fillAmount = 0;
+        crystalHPText.text = "0";
+        waveText.text = "No active wave";
         PlayerManager.Instance.hp.OnHealthChange.AddListener(UpdateHealth);
         PlayerManager.Instance.mp.OnManaChange.AddListener(UpdateMana);
+        CrystalManager.Instance.OnCrystalActivate.AddListener(ActivateCrystalBars);
+        crystalHPBar.SetActive(false);
         InitUI();
     } 
     public void InitUI() {
@@ -56,6 +71,7 @@ public class UIManager : MonoBehaviour  {
         UpdateTeleportUI();
         UpdateBasicAttackUI();
         UpdatePierceUI();
+        changeSpawnWave();
     }
     public void UpdateTeleportUI() {
         UpdateAbilityCooldown(PlayerManager.Instance.teleport, teleportCooldown, ref teleportTimer, teleportShadow);
@@ -74,7 +90,32 @@ public class UIManager : MonoBehaviour  {
         manaFilling.fillAmount = (float) PlayerManager.Instance.mp.currentMP / PlayerManager.Instance.mp.maxMP;
         manaText.text = PlayerManager.Instance.mp.currentMP + " / " + PlayerManager.Instance.mp.maxMP;
     }
-
+    // Initial Set For The Crystal Bar
+    public void ActivateCrystalBars(){
+        if (!hasListener)
+        {
+            CrystalManager.Instance.hp.OnHealthChange.AddListener(UpdateCrystalHP);
+            hasListener = true;
+        }
+        crystalHPBar.SetActive(true);
+        changeCrystalUI();
+    }
+    // Update HP Info when enemy hits it
+    public void UpdateCrystalHP(){
+        changeCrystalUI();
+    }
+    // General Method To Change HP for The Crystal
+    public void changeCrystalUI(){
+        crystalHPFilling.fillAmount = (float) CrystalManager.Instance.hp.currentHP / CrystalManager.Instance.hp.maxHP;
+        crystalHPText.text = CrystalManager.Instance.hp.currentHP + " / " + CrystalManager.Instance.hp.maxHP;
+    }
+    // Method To Change Waves Left
+    public void changeSpawnWave(){
+        if (CrystalManager.Instance.wave != null)
+        {
+            waveText.text = "Waves Left: " + CrystalManager.Instance.wave.waves.Count;
+        }
+    }
 
     // Updates Animation For The Abilities Boxes
     private void UpdateAbilityCooldown(Ability ability, float cooldown, ref float timer, Image shadow)  {

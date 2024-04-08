@@ -1,7 +1,9 @@
 using com.cyborgAssets.inspectorButtonPro;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Crystal : MonoBehaviour { 
 
@@ -9,11 +11,14 @@ public class Crystal : MonoBehaviour {
     private CrystalVFX crystalVFX;
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
+    [HideInInspector] public UnityEvent OnCrystalDie;
 
     [Header("Debug")]
     [SerializeField] private CrystalState currentState;
 
     public CrystalState CurrentState { get => currentState; set => currentState = value; }
+
+    public UnityEvent _OnNextWaveStarted;
 
     private void Start() {
         spawner = GetComponent<Spawner>();
@@ -23,23 +28,37 @@ public class Crystal : MonoBehaviour {
         currentState = CrystalState.IDLE;
         spawner.OnSpawnerStart.AddListener(OnCrystalEngaing);
         spawner.OnSpawnerComplete.AddListener(OnCrystalComplete);
+        spawner.OnNextWaveStarted.AddListener(CrystalOnNextWaveStarted);
         hp.OnDead.AddListener(OnCrystalDeath);
     }
+
+    private void CrystalOnNextWaveStarted()
+    {
+        _OnNextWaveStarted?.Invoke();
+    }
+
     public void OnCrystalComplete() {
+        if(currentState == CrystalState.SHATTERED) return;
         currentState = CrystalState.PURIFIED;
+        UpgradeMenu.instance.gameObject.SetActive(true);
         PurifyInRadius();
         CrystalManager.Instance.UnLockInteractions();
     }
     public void OnCrystalDeath() {
+        if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.SHATTERED;
         CrystalManager.Instance.UnLockInteractions();
+        spawner.state = Spawner.State.Idle;
+        OnCrystalDie.Invoke();
         // visual using VFX
         // SFX
         // lose a life
     }
     private void OnCrystalEngaing() {
+        if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.ENGAGING;
         CrystalManager.Instance.SetCurrentCrystal(this);
+        CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
     }
     public void PurifyInRadius() {

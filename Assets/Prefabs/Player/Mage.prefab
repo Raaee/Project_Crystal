@@ -4870,6 +4870,7 @@ GameObject:
   - component: {fileID: 5220982741878226084}
   - component: {fileID: 3038308969333731784}
   - component: {fileID: -9207976898994121474}
+  - component: {fileID: 1529904000462694585}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -5158,7 +5159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1206d52936b46c99fbb379d7763d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 9
 --- !u!114 &6698978688436824222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5188,7 +5189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
-  godMode: 0
+  godMode: 1
   OnDead:
     m_PersistentCalls:
       m_Calls: []
@@ -5228,10 +5229,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drowningDamage: 2
-  colliderTile: Water
+  colliderTille: Water
   isDrowning: 0
   timeBetweenDamage: 1
   boxCollider2D: {fileID: 2801556117394603853}
+  OnDrowning:
+    m_PersistentCalls:
+      m_Calls: []
+  StopDrowning:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!81 &1529904000462694585
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5488,11 +5503,11 @@ MonoBehaviour:
   cooldown: 1
   manaCost: 0
   IsActive: 0
-  userMana: {fileID: 0}
+  userMana: {fileID: 3038308969333731784}
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
+  projectilePrefab: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
   isPlayerShooting: 1
   enemyFireRate: 5
   playerFireRate: 0.5
@@ -5518,7 +5533,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
+  projectilePrefab: {fileID: 4827135260225847506, guid: 5e5a2c1d4410a2842ab80b10e98c9c2a, type: 3}
 --- !u!114 &3258390402626218228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5534,7 +5549,7 @@ MonoBehaviour:
   cooldown: 2
   manaCost: 5
   IsActive: 1
-  userMana: {fileID: 0}
+  userMana: {fileID: 3038308969333731784}
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
@@ -5691,7 +5706,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1378598
+  m_InstanceId: 77156
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -6046,9 +6061,9 @@ AudioSource:
   m_GameObject: {fileID: 8694237826187033515}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2894101829699811275, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
+  OutputAudioMixerGroup: {fileID: -2176128710209272675, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

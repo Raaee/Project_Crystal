@@ -16,6 +16,7 @@ public class AmbienceAudio : MonoBehaviour
         audioSource.clip = ambienceSfxClip;
         audioSource.Play();
         FadeUpToVolume();
+        CrystalManager.Instance.OnCrystalActivate.AddListener(FadeDownToVolume);
     }
     [ProButton]
     private void FadeUpToVolume(){

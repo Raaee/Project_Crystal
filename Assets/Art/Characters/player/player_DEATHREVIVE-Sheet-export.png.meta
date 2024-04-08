@@ -1,0 +1,844 @@
+fileFormatVersion: 2
+guid: 9fd8efaed4419724fbcd71cf3c078057
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 17
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27ba40f7f1e4c3458ad8f547ebd0935
+      internalID: -92044054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 17
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8455e1c1aee049b45801cd0e14501bfa
+      internalID: 831467666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 18
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c46ae0b7159dfe439e487670ec7598c
+      internalID: 107804606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 22
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2809ac3b270434f99a1daa498d1101
+      internalID: -894155313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 21
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10396f46b913a9243bb082b1dfcae9ba
+      internalID: 394433716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 18
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1574df12eb01e6a46a04afd3824a6e10
+      internalID: -1852078395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_6
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 17
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43652ebcd2ff2e44b2108aadd010317
+      internalID: 2057659676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_7
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 17
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41d4eefde9cdae74291357b225ef925b
+      internalID: 1165882386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_8
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 17
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072a121184b73e5489d83119fb436b6f
+      internalID: 768596415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_9
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 18
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa3b6ef3b5e8f949ab940de50c72cd9
+      internalID: -708782397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_10
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 21
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce43bcd6b6afef449baf4673d8b375f6
+      internalID: -611937561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_11
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 22
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108c765b6c07daa44838aa14289b7de0
+      internalID: -660122291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_12
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 18
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1274adde5fa64294a820edacac751cf1
+      internalID: -1524103424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_13
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 17
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7e8f39de74df9438ff438e48e2d82c
+      internalID: -1838465605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_14
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 17
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ec770c6cbd4e043b4ca02a3c51eb86
+      internalID: 1217208321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_15
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 17
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdc7153a813ca34abb672ed3c9a0592
+      internalID: 1522335251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_16
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 65
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb09dc5a4b636034395325a73c82b28c
+      internalID: -1142576917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_17
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 65
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7a72ecc9dfda643a148d5a129e9ffa
+      internalID: 571022552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_18
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 67
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7381db2cb93a22849ab43d0a860dc2d3
+      internalID: -1037148403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_19
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 70
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b619764d36922dd4ba6ec505b6155d9f
+      internalID: 449536160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_20
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 70
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea178d13bfe22d247a7a1a1b67d50832
+      internalID: -1601778208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_21
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 69
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ce803ed7d2a914786a450ff06038be
+      internalID: -822582857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_22
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 66
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d649448b3e947b54bbe7114c449be3fe
+      internalID: 2090480449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_23
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 66
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0581a291a2b56e4db978a08d7b2ea72
+      internalID: -1471184238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_24
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 66
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bc977c87fd476479a27565e6b02cbd
+      internalID: 410684200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_25
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 69
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296943bb48c7d8543841a48cc202706a
+      internalID: 421354557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_26
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 70
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba038261c463044590ca14cca01767a
+      internalID: 501909220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_27
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 70
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f77cee16e8b114fab705dc8d055015
+      internalID: 1634926941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_28
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 67
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86a54e6ea6d0884f806cdf7e691c60b
+      internalID: -1198437767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_29
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 65
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60a81b420e7efd42badcccfa7583ddd
+      internalID: -601443095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_30
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 65
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6891b8459ef93408c204e3825c8a04
+      internalID: -636018582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_DEATHREVIVE-Sheet-export_31
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 65
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5a6cdb7b71c0042b4a65490a34338b
+      internalID: 1226417982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      player_DEATHREVIVE-Sheet-export_0: -92044054
+      player_DEATHREVIVE-Sheet-export_1: 831467666
+      player_DEATHREVIVE-Sheet-export_10: -611937561
+      player_DEATHREVIVE-Sheet-export_11: -660122291
+      player_DEATHREVIVE-Sheet-export_12: -1524103424
+      player_DEATHREVIVE-Sheet-export_13: -1838465605
+      player_DEATHREVIVE-Sheet-export_14: 1217208321
+      player_DEATHREVIVE-Sheet-export_15: 1522335251
+      player_DEATHREVIVE-Sheet-export_16: -1142576917
+      player_DEATHREVIVE-Sheet-export_17: 571022552
+      player_DEATHREVIVE-Sheet-export_18: -1037148403
+      player_DEATHREVIVE-Sheet-export_19: 449536160
+      player_DEATHREVIVE-Sheet-export_2: 107804606
+      player_DEATHREVIVE-Sheet-export_20: -1601778208
+      player_DEATHREVIVE-Sheet-export_21: -822582857
+      player_DEATHREVIVE-Sheet-export_22: 2090480449
+      player_DEATHREVIVE-Sheet-export_23: -1471184238
+      player_DEATHREVIVE-Sheet-export_24: 410684200
+      player_DEATHREVIVE-Sheet-export_25: 421354557
+      player_DEATHREVIVE-Sheet-export_26: 501909220
+      player_DEATHREVIVE-Sheet-export_27: 1634926941
+      player_DEATHREVIVE-Sheet-export_28: -1198437767
+      player_DEATHREVIVE-Sheet-export_29: -601443095
+      player_DEATHREVIVE-Sheet-export_3: -894155313
+      player_DEATHREVIVE-Sheet-export_30: -636018582
+      player_DEATHREVIVE-Sheet-export_31: 1226417982
+      player_DEATHREVIVE-Sheet-export_4: 394433716
+      player_DEATHREVIVE-Sheet-export_5: -1852078395
+      player_DEATHREVIVE-Sheet-export_6: 2057659676
+      player_DEATHREVIVE-Sheet-export_7: 1165882386
+      player_DEATHREVIVE-Sheet-export_8: 768596415
+      player_DEATHREVIVE-Sheet-export_9: -708782397
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

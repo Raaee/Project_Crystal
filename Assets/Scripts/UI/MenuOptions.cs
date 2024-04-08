@@ -17,14 +17,15 @@ public class MenuOptions : MonoBehaviour
         characterSelectScreen.SetActive(true);
         menuScreen.SetActive(false);
         Debug.Log("Open Character Select Screen");
-        
+        creditsScreen.SetActive(false);
+        settingsScreen.SetActive(false);
         
     }
 
     public void startPlayGame()
     {
         
-        CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI1>().getCurrentCharacterData();
+        CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI>().getCurrentCharacterData();
         ChosenPlayerData.Instance.SetChosenPlayer(chosenPlayer);
         SceneManager.LoadScene(sceneStart);
     }
@@ -44,6 +45,7 @@ public class MenuOptions : MonoBehaviour
     {
         menuScreen.SetActive(true);
         characterSelectScreen.SetActive(false);
+        creditsScreen.SetActive(false);
     }
 
     public void QuitGame()

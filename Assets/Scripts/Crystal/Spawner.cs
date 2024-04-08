@@ -67,6 +67,9 @@ public class Spawner : MonoBehaviour
     private bool started = false;
     [HideInInspector] public UnityEvent OnSpawnerComplete;
     private bool completed = false;
+    [HideInInspector] public UnityEvent OnNextWaveStarted;
+   
+
     /// <summary>
     /// Spawns objects for each wave based on the specified radius, duration, and spawn objects.
     /// </summary>
@@ -98,6 +101,7 @@ public class Spawner : MonoBehaviour
         if (enemyAI != null)
         {
             enemyAI.SetCrystalObject(transform);
+            enemyAI.ListenCrystalDeath(transform.GetComponent<Crystal>());
         }
         return obj.transform;
     }
@@ -125,6 +129,7 @@ public class Spawner : MonoBehaviour
                 if (waves.Count == 0)
                 {
                     state = State.Complete;
+                    time = 0;
                     break;
                 }
                 else
@@ -134,6 +139,7 @@ public class Spawner : MonoBehaviour
                         var spawn = waves[0].Spawns[0];
                         spawnedObjects.Add(Spawn(spawn));
                         waves[0].Spawns.RemoveAt(0);
+                       
                     }
 
                     // Handle transition to cooldown state if there are no more objects to spawn and all transforms in the spawned list are destroyed
@@ -145,10 +151,10 @@ public class Spawner : MonoBehaviour
                         if (waves.Count == 0)
                         {
                             state = State.Complete;
-                            UpgradeMenu.instance.gameObject.SetActive(true);
                             time = 0;
                             break;
                         }
+                        OnNextWaveStarted?.Invoke();
                         state = State.Cooldown;
                         time = 0;
                         break;
@@ -156,7 +162,8 @@ public class Spawner : MonoBehaviour
                 }
                 break;
             case State.Cooldown:
-                if (!started) {
+                if (!started)
+                {
                     OnSpawnerStart?.Invoke();
                     started = true;
                 }
@@ -169,7 +176,8 @@ public class Spawner : MonoBehaviour
                 }
                 break;
             case State.Complete:
-                if (!completed) {
+                if (!completed)
+                {
                     OnSpawnerComplete?.Invoke();
                     completed = true;
                 }

@@ -7,11 +7,8 @@ using UnityEngine.InputSystem;
 // This class handles the ranged basic attack for a game character
 public class RangedBasicAttack : Ability 
 {
-
     private Actions actions;
-
-    [SerializeField] private GameObject rangedAbility1Prefab;
-
+    [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private bool isPlayerShooting;
     [SerializeField] private float enemyFireRate = 5.0f;
     [SerializeField] private float playerFireRate = 0.1f;
@@ -30,16 +27,16 @@ public class RangedBasicAttack : Ability
    
         cooldown = playerFireRate;
     }
-    private void Start()
+    public override void Start()
     {
       
-        projPooler = ObjPoolerManager.instance.GetPool(rangedAbility1Prefab);
+       // projPooler = ObjPoolerManager.instance.GetPool(projectilePrefab);
     }
 
     // Method to spawn a projectile
     public void SpawnProjectile(Vector2 moveDirection)  {
         // Get a pooled object
-        GameObject go = projPooler.GetPooledObject();
+        GameObject go = Instantiate(projectilePrefab, transform);
         // Set the position and rotation of the projectile
         go.transform.position = this.transform.position;
         go.transform.rotation = Quaternion.identity;
@@ -96,5 +93,19 @@ public class RangedBasicAttack : Ability
     }
     public void SetMaxDamage(int amt) {
         projPooler.GetObjectToPool().GetComponent<Projectile>().SetMaxProjectileDamage(amt);
+    }
+
+    public void SetCurrentDamge(int amt)
+    {
+        projPooler.GetObjectToPool().GetComponent<Projectile>().SetProjectileDamage(amt);
+    }
+
+    public int GetCurrentDamge()
+    {
+        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetCurrentProjectileDamage();
+    }
+
+    public void NormalDamage() {
+        projPooler.GetObjectToPool().GetComponent<Projectile>().NormalProjectileDamage();
     }
 }

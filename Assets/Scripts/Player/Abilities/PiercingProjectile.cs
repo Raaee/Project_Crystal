@@ -9,8 +9,9 @@ public class PiercingProjectile : MonoBehaviour
    
     [SerializeField] private float projectileSpeed = 1000f; // Speed of the projectile
     [SerializeField] private float maxLifeTime = 2f; // Maximum lifetime of the projectile
-    [SerializeField] public int damage = 10; // Damage dealt by the projectile
     [SerializeField] private int maxPiercingAmount = 4; // Maximum number of enemies the projectile can pierce through
+    [SerializeField] public int maxDamage = 10; // Damage dealt by the projectile
+    [SerializeField] private int currentDamage;
 
     private int currentPiercingAmount; // Current number of enemies the projectile can still pierce through
 
@@ -30,9 +31,11 @@ public class PiercingProjectile : MonoBehaviour
     private void Start()
     {
         currentPiercingAmount = maxPiercingAmount; // Reset the current piercing amount
+        currentDamage = maxDamage; //Set current damge to damage dealt
+        Debug.Log(currentDamage);
     }
 
-   
+
     private void FixedUpdate()
     {
         MoveProjectile(); // Move the projectile
@@ -61,33 +64,30 @@ public class PiercingProjectile : MonoBehaviour
         moveDirection = movDir; // Set the move direction
     }
 
-    // Method called when the projectile enters a trigger collider
+   
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag(ENEMY_TAG)) // If the collider is an enemy
+        if (collider.gameObject.CompareTag(ENEMY_TAG))
         {
-            // Get the HealthPoints component of the enemy
-            HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<HealthPoints>();
-            if (!potentialEnemyHealth) // If the enemy does not have a HealthPoints component
+           
+            HealthPoints potentialEnemyHealth = collider.gameObject.GetComponent<EnemyHealthPoints>();
+            if (!potentialEnemyHealth) 
             {
-                return; // Exit the method
+                return; 
             }
-            // Damage the enemy
-            potentialEnemyHealth.RemoveHealth(damage);
-            // Decrease the current piercing amount
+            Debug.Log("pierce: " + currentDamage);
+            potentialEnemyHealth.RemoveHealth(currentDamage);
+          
             currentPiercingAmount--;
-            if (currentPiercingAmount <= 0) // If the projectile can no longer pierce through enemies
-            {
-                DisableProjectile(); // Disable the projectile
+            if (currentPiercingAmount <= 0) { 
+                DisableProjectile(); 
             }
         }
     }
 
-    // Method to disable the projectile
-    private void DisableProjectile()
-    {
-        // Disable the game object
-        this.gameObject.SetActive(false);
+    // Disables the projectile.
+    private void DisableProjectile() {
+        Destroy(this.gameObject);
     }
 
     // Method called when the game object is enabled
@@ -97,9 +97,25 @@ public class PiercingProjectile : MonoBehaviour
         currentPiercingAmount = maxPiercingAmount;
     }
     public int GetProjectileDamage() {
-        return damage;
+        return maxDamage;
     }
     public void SetMaxProjectileDamage(int amt) {
-        damage = amt;
+        maxDamage = amt;
+        NormalProjectileDamage();
+    }
+
+    public void NormalProjectileDamage()
+    {
+        currentDamage = maxDamage;
+    }
+
+    public void SetCurrentPierceDamage(int setdamage)
+    {
+        currentDamage = setdamage;
+    }
+
+    public int GetCurrentPierceDamage()
+    {
+        return currentDamage;
     }
 }

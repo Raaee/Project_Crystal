@@ -5019,6 +5019,7 @@ GameObject:
   - component: {fileID: 279863175518761902}
   - component: {fileID: 47992779867472359}
   - component: {fileID: 3286475891682527478}
+  - component: {fileID: 209056362924952033}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -5107,7 +5108,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5307,7 +5308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1206d52936b46c99fbb379d7763d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
 --- !u!114 &6698978688436824222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5335,9 +5336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f67c6971fa73f74a833a709cfaf90b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 125
   currentHP: 0
-  godMode: 1
+  godMode: 0
   OnDead:
     m_PersistentCalls:
       m_Calls: []
@@ -5377,10 +5378,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drowningDamage: 2
-  colliderTile: Water
+  colliderTille: Water
   isDrowning: 0
   timeBetweenDamage: 1
   boxCollider2D: {fileID: 2801556117394603853}
+  OnDrowning:
+    m_PersistentCalls:
+      m_Calls: []
+  StopDrowning:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!81 &209056362924952033
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5679,8 +5694,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3460960871319162507}
-  - component: {fileID: 4156343975335828177}
-  - component: {fileID: 3416345396890490197}
   - component: {fileID: 5606925210253363792}
   - component: {fileID: 8156202257822150933}
   - component: {fileID: 4155009513920997700}
@@ -5706,38 +5719,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7238265307839878932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4156343975335828177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7056759831097537879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToPool: 3
-  objectToPool: {fileID: 971724485026557118, guid: 50e9f81328c3753468da15116462022f, type: 3}
-  pooledObjects: []
-  pooledObjParent: {fileID: 0}
---- !u!114 &3416345396890490197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7056759831097537879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a546bcbd8ff6cc438ec2d06d66454e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToPool: 3
-  objectToPool: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
-  pooledObjects: []
-  pooledObjParent: {fileID: 0}
 --- !u!114 &5606925210253363792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,7 +5738,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 971724485026557118, guid: 50e9f81328c3753468da15116462022f, type: 3}
+  projectilePrefab: {fileID: 971724485026557118, guid: 50e9f81328c3753468da15116462022f, type: 3}
   isPlayerShooting: 1
   enemyFireRate: 5
   playerFireRate: 0.5
@@ -5783,7 +5764,7 @@ MonoBehaviour:
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  rangedAbility1Prefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
+  projectilePrefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
 --- !u!114 &4155009513920997700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5820,6 +5801,7 @@ GameObject:
   - component: {fileID: 3521332388731034868}
   - component: {fileID: 736520626546424046}
   - component: {fileID: 4509959041842062938}
+  - component: {fileID: 2829309501251702474}
   m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
@@ -5958,10 +5940,25 @@ MonoBehaviour:
   - {x: 0.31, y: -0.75, z: 0}
   m_ShapePathHash: -1965473841
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1801470
+  m_InstanceId: 69732
   m_LocalBounds:
     m_Center: {x: -0.079375, y: -0.375, z: 0}
     m_Extent: {x: 0.389375, y: 0.375, z: 0}
+--- !u!114 &2829309501251702474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360943041567263304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8c88e23e6ed3a42b669d53c55505a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.15
+  shakeMagnitude: 0.4
+  hp: {fileID: 279863175518761902}
 --- !u!1 &8271713260674164174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6053,7 +6050,7 @@ AudioSource:
   m_GameObject: {fileID: 8593231173576566038}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2894101829699811275, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
+  OutputAudioMixerGroup: {fileID: -2176128710209272675, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
