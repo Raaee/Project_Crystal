@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21621cec62b793545847d4db85a1efdc, type: 3}
+  m_Name: TankGreenSO
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3221412779736232927, guid: 2660a113ad05f88408d1d7e2327ed54e, type: 3}
+  characterName: Warden of Shards
+  characterDescription: A sturdy soldier, loves the glory and the smell of battle.
+    Has a hard hitting attack
+  health: 120
+  mana: 100
+  basicAttackDamage: 10
+  basicAttackCooldown: 0.3
+  pierceAttackDamage: 20
+  pierceAttackCooldown: 2
+  pierceManaCost: 15
+  pierceAmount: 2
+  teleportCooldown: 5
+  teleportManaCost: 5
+  characterSprite: {fileID: -1213899584, guid: 2122c0e2182c9304981bb6b4bb190e13, type: 3}
+  basicAttackIcon: {fileID: 1895692086, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  pierceAttackIcon: {fileID: -685633161, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  characterWalkAnimation: {fileID: 7400000, guid: beb4a34b00df59a42accab7581c7aa34, type: 2}

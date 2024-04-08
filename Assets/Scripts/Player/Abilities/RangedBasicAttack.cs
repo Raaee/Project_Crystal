@@ -16,7 +16,6 @@ public class RangedBasicAttack : Ability
     private float lastPlayerAttackTime = 0f;
     private float lastEnemyAttackTime = 0f;
     private bool isOnCooldown = true; 
-    private ObjectPooler projPooler;
        
     void Awake() { 
         

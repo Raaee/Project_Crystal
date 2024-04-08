@@ -304,7 +304,7 @@ MonoBehaviour:
   maxLifeTime: 2
   maxPiercingAmount: 4
   maxDamage: 12
-  currentDamage: 12
+  currentDamage: 0
 --- !u!1 &5244579004686156743
 GameObject:
   m_ObjectHideFlags: 0

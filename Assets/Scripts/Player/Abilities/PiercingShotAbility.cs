@@ -9,7 +9,6 @@ public class PiercingShotAbility : Ability
     [SerializeField] private GameObject projectilePrefab;
     
     private Actions actions;
-    private ObjectPooler projPooler;
 
     void Awake()
     {

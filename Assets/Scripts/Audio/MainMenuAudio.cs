@@ -18,7 +18,7 @@ public class MainMenuAudio : MonoBehaviour
     
     }
     public void PlayUiHover(){
-     AudioManager.Instance.PlayAudioOneShot(audioSource, uiHoverClip);
+    // AudioManager.Instance.PlayAudioOneShot(audioSource, uiHoverClip);
     
     }
 }
