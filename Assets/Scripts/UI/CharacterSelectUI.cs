@@ -36,6 +36,7 @@ public class CharacterSelectUI : MonoBehaviour
 
     private void setCharacterDisplay(int characterIndex)
     {
+        Debug.Log(characterIndex);
         characterImage.Play(characters[characterIndex].characterWalkAnimation.name);
         bigCharacterImage.sprite = characters[characterIndex].characterSprite;
         characterNameText.text = characters[characterIndex].characterName;
@@ -86,7 +87,7 @@ public class CharacterSelectUI : MonoBehaviour
     
         currentCharacterIndex--;
         if (currentCharacterIndex < 0) {
-            currentCharacterIndex = 1; // Stop at zero
+            currentCharacterIndex = (characters.Count-1); // Stop at zero
         }
         setCharacterDisplay(currentCharacterIndex);
 
