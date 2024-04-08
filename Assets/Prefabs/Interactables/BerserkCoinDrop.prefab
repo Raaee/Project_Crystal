@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3289564606531859991}
   m_Layer: 5
   m_Name: BerserkCoinDrop
-  m_TagString: Untagged
+  m_TagString: BezerkerTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4027766c729161c4f87da15a27c339bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 10
+  dropChance: 15
   interactableType: 2
   outlineMat: {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
   dropInteractSfxClip: {fileID: 0}
@@ -151,15 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff292e90b667431abd0ddbd610f4636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  berserkerDamageMultplyer: 2
-  berserkerDamageTime: 5
-  testIsBezerker: 0
-  OnBezerker:
-    m_PersistentCalls:
-      m_Calls: []
-  StopBezerker:
-    m_PersistentCalls:
-      m_Calls: []
+  berserkerDamageTime: 10
 --- !u!1 &4493850153036587618
 GameObject:
   m_ObjectHideFlags: 0

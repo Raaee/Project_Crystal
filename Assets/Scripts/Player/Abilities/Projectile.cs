@@ -20,7 +20,9 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
     private bool isPlayerShooting = true;
+
     [HideInInspector] public UnityEvent OnProjectileDisabled;
+
     private void Awake()    {
         rb2D = GetComponent<Rigidbody2D>();
     }

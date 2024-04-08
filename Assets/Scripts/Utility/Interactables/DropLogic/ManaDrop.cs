@@ -23,7 +23,7 @@ public class ManaDrop : DropData
         potentialManaPoints.AddMana(manaAmount);
 
         }
-        WaitThenDie(); //waiting a couple seconds then dieing, so the audio can fully play sound
+        WaitToDie(); //waiting a couple seconds then dieing, so the audio can fully play sound
 
     }
 

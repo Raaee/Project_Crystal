@@ -16,7 +16,6 @@ public class RangedBasicAttack : Ability
     private float lastPlayerAttackTime = 0f;
     private float lastEnemyAttackTime = 0f;
     private bool isOnCooldown = true; 
-    private ObjectPooler projPooler;
        
     void Awake() { 
         
@@ -85,27 +84,30 @@ public class RangedBasicAttack : Ability
     public float GetPlayerFireRate() {
         return playerFireRate;
     }
+    public GameObject GetBasicAttackPrefab() {
+        return projectilePrefab;
+    }
     public void SetPlayerFireRate(float rate) {
         playerFireRate = rate;
     }
     public int GetMaxDamage() {
-        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetProjectileDamage();
+        return projectilePrefab.GetComponent<Projectile>().GetProjectileDamage();
     }
     public void SetMaxDamage(int amt) {
-        projPooler.GetObjectToPool().GetComponent<Projectile>().SetMaxProjectileDamage(amt);
+        projectilePrefab.GetComponent<Projectile>().SetMaxProjectileDamage(amt);
     }
 
     public void SetCurrentDamge(int amt)
     {
-        projPooler.GetObjectToPool().GetComponent<Projectile>().SetProjectileDamage(amt);
+        projectilePrefab.GetComponent<Projectile>().SetProjectileDamage(amt);
     }
 
     public int GetCurrentDamge()
     {
-        return projPooler.GetObjectToPool().GetComponent<Projectile>().GetCurrentProjectileDamage();
+        return projectilePrefab.GetComponent<Projectile>().GetCurrentProjectileDamage();
     }
 
     public void NormalDamage() {
-        projPooler.GetObjectToPool().GetComponent<Projectile>().NormalProjectileDamage();
+        projectilePrefab.GetComponent<Projectile>().NormalProjectileDamage();
     }
 }
