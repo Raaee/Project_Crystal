@@ -22,6 +22,7 @@ public class Projectile : MonoBehaviour
     private bool isPlayerShooting = true;
 
     [HideInInspector] public UnityEvent OnProjectileDisabled;
+
     private void Awake()    {
         rb2D = GetComponent<Rigidbody2D>();
     }
