@@ -9,6 +9,7 @@ public class BuffUI : MonoBehaviour
     [SerializeField] private Drowning drowningEffect;
     [SerializeField] private BezerkerBuffActivate bezerkerEffect;
 
+
     // Start is called before the first frame update
     void Start()
     {

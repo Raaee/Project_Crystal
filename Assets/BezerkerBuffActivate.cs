@@ -10,11 +10,18 @@ public class BezerkerBuffActivate : MonoBehaviour
     [SerializeField] public bool testIsBezerker = false;
     [HideInInspector] public UnityEvent OnBezerker;
     [HideInInspector] public UnityEvent StopBezerker;
+    [SerializeField] private AnimationControl animator;
+
+    private void Start()
+    {
+        animator = GetComponent<AnimationControl>();
+    }
 
     public void ActivatAbilty()
     {
         OnBezerker.Invoke();
         ApplyBezerkerBuff();
+        animator.PlayBezerker();
     }
 
     private IEnumerator RemoveBerzerker(float duration)
@@ -31,10 +38,6 @@ public class BezerkerBuffActivate : MonoBehaviour
     {
         BuffManager.instance.MultiplyBasicAttackDamage(berserkerDamageMultplyer);
         BuffManager.instance.MultiplyPierceDamage(berserkerDamageMultplyer);
-
-        Debug.Log("Increasing damage by " + berserkerDamageMultplyer + " for " + berserkerDamageTime + " seconds.");
-
-        //  Debug.Log(StartCoroutine(RemoveBerzerker(berserkerDamageTime)));
         StartCoroutine(RemoveBerzerker(berserkerDamageTime));
     }
 }

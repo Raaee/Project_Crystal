@@ -127,18 +127,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 20
+        y: 18
         width: 76
-        height: 104
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 0, z: 1, w: 2}
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2254852}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -9, y: -51}
-        - {x: -8, y: -40}
-        - {x: 5, y: -40}
-        - {x: 6, y: -51}
+      - - {x: -9, y: -46.5}
+        - {x: -9, y: -38.5}
+        - {x: 5, y: -38.5}
+        - {x: 5, y: -46.5}
       tessellationDetail: 0
       bones: []
       spriteID: c095462cb1eb1fb43803d3edf4e07015
@@ -155,14 +155,14 @@ TextureImporter:
         y: 17
         width: 76
         height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2254852}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
       - - {x: -9, y: -48.5}
-        - {x: -9, y: -40.5}
-        - {x: 5, y: -40.5}
+        - {x: -9, y: -39.5}
+        - {x: 5, y: -39.5}
         - {x: 5, y: -48.5}
       tessellationDetail: 0
       bones: []
@@ -180,14 +180,14 @@ TextureImporter:
         y: 15
         width: 76
         height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2254852}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
       - - {x: -10, y: -48.5}
-        - {x: -10, y: -40.5}
-        - {x: 6, y: -40.5}
+        - {x: -10, y: -39.5}
+        - {x: 6, y: -39.5}
         - {x: 6, y: -48.5}
       tessellationDetail: 0
       bones: []
@@ -205,14 +205,14 @@ TextureImporter:
         y: 14
         width: 76
         height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2254852}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
       - - {x: -10, y: -48.5}
-        - {x: -10, y: -40.5}
-        - {x: 6, y: -40.5}
+        - {x: -10, y: -39.5}
+        - {x: 6, y: -39.5}
         - {x: 6, y: -48.5}
       tessellationDetail: 0
       bones: []
