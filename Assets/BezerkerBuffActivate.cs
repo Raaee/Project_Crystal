@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Events;
 
 public class BezerkerBuffActivate : MonoBehaviour
@@ -10,18 +11,27 @@ public class BezerkerBuffActivate : MonoBehaviour
     [SerializeField] public bool testIsBezerker = false;
     [HideInInspector] public UnityEvent OnBezerker;
     [HideInInspector] public UnityEvent StopBezerker;
-    [SerializeField] private AnimationControl animator;
+
+    [SerializeField] private RuntimeAnimatorController animControllerBasicAttack;
+    [SerializeField] private RuntimeAnimatorController animControllerBasicAttackBerkerz;
+    [SerializeField] private RuntimeAnimatorController animControllerPierceAttack;
+    [SerializeField] private RuntimeAnimatorController animControllerPierceAttackBerzerk;
+
+    private Animator basicAnimatorberzerker;
+    private Animator piercesAnimatorberzerker;
 
     private void Start()
     {
-        animator = GetComponent<AnimationControl>();
+        basicAnimatorberzerker = PlayerManager.Instance.rangedBA.GetBasicAttackPrefab().GetComponentInChildren<Animator>();
+        piercesAnimatorberzerker = PlayerManager.Instance.pierceShot.GetPiercesAttackPrefab().GetComponentInChildren<Animator>();
+        DisactivateBerzerkAnimation();
     }
 
     public void ActivatAbilty()
     {
         OnBezerker.Invoke();
         ApplyBezerkerBuff();
-        //animator.PlayBezerker();
+        ActivateBerzerkAnimation();
     }
 
     private IEnumerator RemoveBerzerker(float duration)
@@ -31,6 +41,7 @@ public class BezerkerBuffActivate : MonoBehaviour
         // Revert buff modifiers
         BuffManager.instance.ResetBasicAttckDamege();
         BuffManager.instance.ResetPierceDamage();
+        DisactivateBerzerkAnimation();
         StopBezerker.Invoke();
     }
 
@@ -39,5 +50,16 @@ public class BezerkerBuffActivate : MonoBehaviour
         BuffManager.instance.MultiplyBasicAttackDamage(berserkerDamageMultplyer);
         BuffManager.instance.MultiplyPierceDamage(berserkerDamageMultplyer);
         StartCoroutine(RemoveBerzerker(berserkerDamageTime));
+    }
+
+    public void ActivateBerzerkAnimation()
+    {
+        basicAnimatorberzerker.runtimeAnimatorController = animControllerBasicAttackBerkerz;
+        piercesAnimatorberzerker.runtimeAnimatorController = animControllerPierceAttackBerzerk;
+    }
+    public void DisactivateBerzerkAnimation()
+    {
+        basicAnimatorberzerker.runtimeAnimatorController = animControllerBasicAttack;
+        piercesAnimatorberzerker.runtimeAnimatorController = animControllerPierceAttack;
     }
 }

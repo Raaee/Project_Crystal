@@ -17,9 +17,4 @@ public class AnimationControl : MonoBehaviour   {
     public void PlayAttack() {
         animator.Play("Attack");
     }
-
-    public void PlayBezerker(){
-        animator.Play("berserkAnimation");
-    }
-
 }

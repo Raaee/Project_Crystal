@@ -85,6 +85,9 @@ public class RangedBasicAttack : Ability
     public float GetPlayerFireRate() {
         return playerFireRate;
     }
+    public GameObject GetBasicAttackPrefab() {
+        return projectilePrefab;
+    }
     public void SetPlayerFireRate(float rate) {
         playerFireRate = rate;
     }

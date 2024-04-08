@@ -52,6 +52,11 @@ public class PiercingShotAbility : Ability
         projectilePrefab.GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
     }
 
+    public GameObject GetPiercesAttackPrefab()
+    {
+        return projectilePrefab;
+    }
+
     public void SetPiercingCurrentDamge(int amt)
     {
         projectilePrefab.GetComponent<PiercingProjectile>().SetCurrentPierceDamage(amt);
