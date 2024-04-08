@@ -1636,7 +1636,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 26}
+  m_AnchoredPosition: {x: 4, y: 20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &366591205
@@ -10547,7 +10547,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1991051902}
         m_TargetAssemblyTypeName: CharacterSelectUI, Assembly-CSharp
-        m_MethodName: decreaseIndex
+        m_MethodName: increaseIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10642,7 +10642,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: 11f76d83cebd4f74cbbdfd7aa4814007, type: 2}
+  - {fileID: 11400000, guid: 548da80def3098142aed11f1446875f1, type: 2}
   - {fileID: 11400000, guid: ab10131a7f29cbb409ad1d29dd4578c4, type: 2}
+  - {fileID: 11400000, guid: abc46e8667063c5458706875103bf35c, type: 2}
   characterImage: {fileID: 366591207}
   bigCharacterImage: {fileID: 1836466273}
   characterNameText: {fileID: 1718789562}

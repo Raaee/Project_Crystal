@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21621cec62b793545847d4db85a1efdc, type: 3}
-  m_Name: MageSO
+  m_Name: MageGreenSO
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3221412779736232927, guid: eda32d374860cd04088a9ba4736e3ae8, type: 3}
   characterName: Prism Weaver
