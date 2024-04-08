@@ -11,7 +11,7 @@ public class Crystal : MonoBehaviour {
     private CrystalVFX crystalVFX;
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
-    [SerializeField] private float percentBlast;
+    [SerializeField] private float percentBlast = 10f;
     [HideInInspector] public UnityEvent OnCrystalDie;
 
     [Header("Debug")]
@@ -75,8 +75,8 @@ public class Crystal : MonoBehaviour {
 
     public void DamageBlast() {
         float percentHP = Mathf.RoundToInt(hp.GetCurrentHP() * percentBlast);
-        //Debug.Log(hp.GetCurrentHP());
-        //Debug.Log(percentHP);
+        Debug.Log(hp.GetCurrentHP());
+        Debug.Log(percentHP);
     }
 
 }

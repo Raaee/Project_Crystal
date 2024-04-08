@@ -14,6 +14,8 @@ public class BezerkerCubeDrop : DropData
         GameObject bezerkeBezerkerClone = GameObject.FindGameObjectWithTag("BezerkerTag");
         BezerkerBuffActivate = bezerkeBezerkerClone.GetComponent<BezerkerBuffActivate>();
     }
+
+    //When the object is interacted will call the the BezerkerBuffActivate
     public override void OnDropInteract()
     {
         BezerkerBuffActivate.ActivatAbilty();
