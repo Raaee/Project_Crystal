@@ -21,7 +21,7 @@ public class BezerkerBuffActivate : MonoBehaviour
     {
         OnBezerker.Invoke();
         ApplyBezerkerBuff();
-        animator.PlayBezerker();
+        //animator.PlayBezerker();
     }
 
     private IEnumerator RemoveBerzerker(float duration)
