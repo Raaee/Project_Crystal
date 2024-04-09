@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21621cec62b793545847d4db85a1efdc, type: 3}
   m_Name: MagePinkSO
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 3221412779736232927, guid: 48ed78da9a8c36a4884b824638e103c3, type: 3}
+  characterPrefab: {fileID: 3221412779736232927, guid: 4dd77f4f1ea53f0439d3bdec5b753776, type: 3}
   characterName: Prism Weaver
   characterDescription: A magical wizard, from the land of Latsyrc. Is very catious
     in its attack and prefers to attack at a distance
