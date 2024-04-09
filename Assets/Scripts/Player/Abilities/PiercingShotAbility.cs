@@ -9,7 +9,6 @@ public class PiercingShotAbility : Ability
     [SerializeField] private GameObject projectilePrefab;
     
     private Actions actions;
-    private ObjectPooler projPooler;
 
     void Awake()
     {
@@ -50,6 +49,11 @@ public class PiercingShotAbility : Ability
     }
     public void SetMaxDamage(int amt) {
         projectilePrefab.GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
+    }
+
+    public GameObject GetPiercesAttackPrefab()
+    {
+        return projectilePrefab;
     }
 
     public void SetPiercingCurrentDamge(int amt)

@@ -10,7 +10,7 @@ public abstract class DropData : MonoBehaviour  {
     private const float DEATH_DELAY = 5f;
     private void Awake()
     {
-        playerGameObject = FindObjectOfType<PlayerMovement>().gameObject;
+        playerGameObject = PlayerManager.Instance.GetPlayer();
     }
 
     public GameObject getPlayerGameObject() 
@@ -22,9 +22,12 @@ public abstract class DropData : MonoBehaviour  {
     this.playerGameObject = newPlayergameObject;
     }
 
-    public void WaitThenDie()
+    public void WaitToDie()
     {
         StartCoroutine(WaitThenDie(DEATH_DELAY));
+    }
+    public void WaitToDie(float deathDelay) {
+        StartCoroutine(WaitThenDie(deathDelay));
     }
     private IEnumerator WaitThenDie(float secondsToWait)
     {

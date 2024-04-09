@@ -17,5 +17,4 @@ public class AnimationControl : MonoBehaviour   {
     public void PlayAttack() {
         animator.Play("Attack");
     }
-    
 }

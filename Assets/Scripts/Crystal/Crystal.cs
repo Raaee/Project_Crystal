@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Crystal : MonoBehaviour { 
+public class Crystal : MonoBehaviour {
 
     private Spawner spawner;
     private CrystalVFX crystalVFX;
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
+    [SerializeField] private float percentBlast = 10f;
     [HideInInspector] public UnityEvent OnCrystalDie;
 
     [Header("Debug")]
@@ -30,6 +31,8 @@ public class Crystal : MonoBehaviour {
         spawner.OnSpawnerComplete.AddListener(OnCrystalComplete);
         spawner.OnNextWaveStarted.AddListener(CrystalOnNextWaveStarted);
         hp.OnDead.AddListener(OnCrystalDeath);
+
+        DamageBlast();
     }
 
     private void CrystalOnNextWaveStarted()
@@ -68,6 +71,12 @@ public class Crystal : MonoBehaviour {
     }
     public void ChangeInteractionState(bool interactable) {
         crystalInteract.Interactable = interactable;
+    }
+
+    public void DamageBlast() {
+        float percentHP = Mathf.RoundToInt(hp.GetCurrentHP() * percentBlast);
+        Debug.Log(hp.GetCurrentHP());
+        Debug.Log(percentHP);
     }
 
 }
