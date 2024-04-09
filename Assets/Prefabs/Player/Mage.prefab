@@ -5262,6 +5262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownDuration: 5
   countdownText: {fileID: 0}
+  deathPanelCanvas: {fileID: 0}
+  respawnText: {fileID: 0}
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5721,7 +5723,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58420
+  m_InstanceId: -4870
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
