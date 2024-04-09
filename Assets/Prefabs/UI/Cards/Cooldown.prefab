@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cooldown
       objectReference: {fileID: 0}
+    - target: {fileID: 5275459108849958064, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -540154753, guid: 1db54f23562746f4aabbd3931c3b8aac, type: 3}
     - target: {fileID: 8949029755550068397, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
