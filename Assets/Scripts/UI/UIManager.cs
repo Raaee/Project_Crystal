@@ -83,8 +83,8 @@ public class UIManager : MonoBehaviour  {
         UpdateAbilityCooldown(PlayerManager.Instance.pierceShot, pierceAttackCooldown, ref pierceAttackTimer, pierceAttackShadow);
     }
     public void UpdateHealth() {
-        hpFilling.fillAmount = (float) PlayerManager.Instance.hp.currentHP / PlayerManager.Instance.hp.maxHP;
-        hpText.text = PlayerManager.Instance.hp.currentHP + " / " + PlayerManager.Instance.hp.maxHP;
+        hpFilling.fillAmount = (float) PlayerManager.Instance.hp.GetCurrentHP() / PlayerManager.Instance.hp.GetMaxHealth();
+        hpText.text = PlayerManager.Instance.hp.GetCurrentHP() + " / " + PlayerManager.Instance.hp.GetMaxHealth();
     }
     public void UpdateMana() {
         manaFilling.fillAmount = (float) PlayerManager.Instance.mp.currentMP / PlayerManager.Instance.mp.maxMP;
@@ -106,8 +106,8 @@ public class UIManager : MonoBehaviour  {
     }
     // General Method To Change HP for The Crystal
     public void changeCrystalUI(){
-        crystalHPFilling.fillAmount = (float) CrystalManager.Instance.hp.currentHP / CrystalManager.Instance.hp.maxHP;
-        crystalHPText.text = CrystalManager.Instance.hp.currentHP + " / " + CrystalManager.Instance.hp.maxHP;
+        crystalHPFilling.fillAmount = (float) CrystalManager.Instance.hp.GetCurrentHP() / CrystalManager.Instance.hp.GetMaxHealth();
+        crystalHPText.text = CrystalManager.Instance.hp.GetCurrentHP() + " / " + CrystalManager.Instance.hp.GetMaxHealth();
     }
     // Method To Change Waves Left
     public void changeSpawnWave(){
