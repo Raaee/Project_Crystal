@@ -10744,14 +10744,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelChanger
       objectReference: {fileID: 0}
-    - target: {fileID: 2761668536873772161, guid: 44d3bcc7042efc14cbe0197762946fa6, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 0f78666c183fbb14e83ea1f3b76ef69c, type: 2}
-    - target: {fileID: 3246156750929850570, guid: 44d3bcc7042efc14cbe0197762946fa6, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8258987288151217725, guid: 44d3bcc7042efc14cbe0197762946fa6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10792,8 +10784,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1668667198701008269, guid: 44d3bcc7042efc14cbe0197762946fa6, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -36,7 +36,7 @@ public class CharacterSelectUI : MonoBehaviour
 
     private void setCharacterDisplay(int characterIndex)
     {
-        Debug.Log(characterIndex);
+       
         characterImage.Play(characters[characterIndex].characterWalkAnimation.name);
         bigCharacterImage.sprite = characters[characterIndex].characterSprite;
         characterNameText.text = characters[characterIndex].characterName;

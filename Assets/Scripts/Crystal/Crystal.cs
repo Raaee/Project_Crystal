@@ -75,8 +75,7 @@ public class Crystal : MonoBehaviour {
 
     public void DamageBlast() {
         float percentHP = Mathf.RoundToInt(hp.GetCurrentHP() * percentBlast);
-        Debug.Log(hp.GetCurrentHP());
-        Debug.Log(percentHP);
+      
     }
 
 }

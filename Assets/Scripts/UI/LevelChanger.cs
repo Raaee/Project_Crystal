@@ -11,10 +11,17 @@ public class LevelChanger : MonoBehaviour
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
+        Debug.Log("doing anim");
     }
 
+
+    public void TestAnimEvent()
+    {
+        Debug.Log("MIDDLE DEBUG EVENBT");
+    }
     public void OnFadeComplete()
     {
+        Debug.Log("going to next level");
         SceneManager.LoadScene(levelToLoad);
     }
 }
