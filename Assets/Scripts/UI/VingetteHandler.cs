@@ -33,11 +33,13 @@ public class VingetteHandler : MonoBehaviour
             if (isInCurrentLowHealth)
             {
                 TransitionToVignette();
+                lowHealthState = true;
             }
             else
             {
                 Debug.Log("Transitioning from vignette in else statement");
                 TransitionFromVignette();
+                lowHealthState = false;
             }
         }
 
