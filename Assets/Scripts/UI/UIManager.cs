@@ -56,6 +56,8 @@ public class UIManager : MonoBehaviour  {
         PlayerManager.Instance.hp.OnHealthChange.AddListener(UpdateHealth);
         PlayerManager.Instance.mp.OnManaChange.AddListener(UpdateMana);
         CrystalManager.Instance.OnCrystalActivate.AddListener(ActivateCrystalBars);
+        CrystalManager.Instance.OnCrystalDeActivate.AddListener(DisactivateCrystalBars);
+
         crystalHPBar.SetActive(false);
         InitUI();
     } 
@@ -92,13 +94,14 @@ public class UIManager : MonoBehaviour  {
     }
     // Initial Set For The Crystal Bar
     public void ActivateCrystalBars(){
-        if (!hasListener)
-        {
-            CrystalManager.Instance.hp.OnHealthChange.AddListener(UpdateCrystalHP);
-            hasListener = true;
-        }
+        
+        CrystalManager.Instance.currentCrystalHP.OnHealthChange.AddListener(UpdateCrystalHP);
+            
         crystalHPBar.SetActive(true);
         changeCrystalUI();
+    }
+    public void DisactivateCrystalBars() {
+        crystalHPBar.SetActive(false);
     }
     // Update HP Info when enemy hits it
     public void UpdateCrystalHP(){
@@ -106,8 +109,8 @@ public class UIManager : MonoBehaviour  {
     }
     // General Method To Change HP for The Crystal
     public void changeCrystalUI(){
-        crystalHPFilling.fillAmount = (float) CrystalManager.Instance.hp.currentHP / CrystalManager.Instance.hp.maxHP;
-        crystalHPText.text = CrystalManager.Instance.hp.currentHP + " / " + CrystalManager.Instance.hp.maxHP;
+        crystalHPFilling.fillAmount = (float) CrystalManager.Instance.currentCrystalHP.currentHP / CrystalManager.Instance.currentCrystalHP.maxHP;
+        crystalHPText.text = CrystalManager.Instance.currentCrystalHP.currentHP + " / " + CrystalManager.Instance.currentCrystalHP.maxHP;
     }
     // Method To Change Waves Left
     public void changeSpawnWave(){

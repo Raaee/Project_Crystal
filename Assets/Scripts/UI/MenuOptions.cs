@@ -16,7 +16,7 @@ public class MenuOptions : MonoBehaviour
             
         characterSelectScreen.SetActive(true);
         menuScreen.SetActive(false);
-        Debug.Log("Open Character Select Screen");
+     
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
         
@@ -27,7 +27,7 @@ public class MenuOptions : MonoBehaviour
         
         CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI>().getCurrentCharacterData();
         ChosenPlayerData.Instance.SetChosenPlayer(chosenPlayer);
-        SceneManager.LoadScene(sceneStart);
+        //SceneManager.LoadScene(sceneStart);
     }
 
     public void OpenCredits()

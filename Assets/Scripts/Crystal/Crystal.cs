@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class Crystal : MonoBehaviour {
 
-    private Spawner spawner;
+    [HideInInspector] public Spawner spawner ;
     private CrystalVFX crystalVFX;
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
@@ -46,6 +46,7 @@ public class Crystal : MonoBehaviour {
         UpgradeMenu.instance.gameObject.SetActive(true);
         PurifyInRadius();
         CrystalManager.Instance.UnLockInteractions();
+        CrystalManager.Instance.CrystalsPurified++;
     }
     public void OnCrystalDeath() {
         if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
@@ -75,10 +76,11 @@ public class Crystal : MonoBehaviour {
 
     public void DamageBlast() {
         float percentHP = Mathf.RoundToInt(hp.GetCurrentHP() * percentBlast);
-        Debug.Log(hp.GetCurrentHP());
-        Debug.Log(percentHP);
+      
     }
-
+    public CrystalHealthPoints GetHP() {
+        return hp;
+    }
 }
 public enum CrystalState {
     IDLE,

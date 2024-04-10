@@ -108,6 +108,7 @@ public class Spawner : MonoBehaviour
 
     public void Start()
     {
+        completed = false;
         GenerateSpawns();
     }
 
