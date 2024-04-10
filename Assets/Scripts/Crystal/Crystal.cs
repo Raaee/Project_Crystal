@@ -77,7 +77,9 @@ public class Crystal : MonoBehaviour {
         float percentHP = Mathf.RoundToInt(hp.GetCurrentHP() * percentBlast);
       
     }
-
+    public CrystalHealthPoints GetHP() {
+        return hp;
+    }
 }
 public enum CrystalState {
     IDLE,

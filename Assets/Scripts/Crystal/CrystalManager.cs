@@ -14,6 +14,7 @@ public class CrystalManager : MonoBehaviour
     [HideInInspector] public Spawner wave { get; set; }
     [HideInInspector] public UnityEvent OnCrystalActivate;
     [HideInInspector] public UnityEvent OnCrystalDeActivate;
+
     private void Awake() {
         Init();        
     }
