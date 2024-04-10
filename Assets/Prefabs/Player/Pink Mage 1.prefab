@@ -4871,8 +4871,9 @@ GameObject:
   - component: {fileID: 3038308969333731784}
   - component: {fileID: -9207976898994121474}
   - component: {fileID: 1529904000462694585}
+  - component: {fileID: 4194171621036563155}
   m_Layer: 0
-  m_Name: Pink Mage
+  m_Name: Pink Mage 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5247,6 +5248,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3221412779736232927}
   m_Enabled: 1
+--- !u!114 &4194171621036563155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221412779736232927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc001a9bcf2d74645b08f099b9718a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownDuration: 5
+  countdownText: {fileID: 0}
+  deathPanelCanvas: {fileID: 0}
+  respawnText: {fileID: 0}
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5633,15 +5650,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1492924567
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1443978023, guid: 272eebba944934d439428f0b999dae68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.9375, y: 1.4375}
+  m_Size: {x: 0.9375, y: 1.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5706,7 +5723,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 44250
+  m_InstanceId: 69480
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -6061,9 +6078,9 @@ AudioSource:
   m_GameObject: {fileID: 8694237826187033515}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2894101829699811275, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
+  OutputAudioMixerGroup: {fileID: -2176128710209272675, guid: e349e21be90e26841a8e7a48f7e5c39f, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
