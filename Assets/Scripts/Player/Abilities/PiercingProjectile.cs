@@ -15,7 +15,7 @@ public class PiercingProjectile : MonoBehaviour
 
     private int currentPiercingAmount; // Current number of enemies the projectile can still pierce through
 
-    private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemy game objects
+    private const string ENEMY_TAG = "Enemy"; // Tag used to identify enemy game objects
 
     private float timer = 0f; // Timer to track the lifetime of the projectile
     private Rigidbody2D rb2D; // Rigidbody component of the projectile
@@ -75,7 +75,6 @@ public class PiercingProjectile : MonoBehaviour
             {
                 return; 
             }
-            Debug.Log("pierce: " + currentDamage);
             potentialEnemyHealth.RemoveHealth(currentDamage);
           
             currentPiercingAmount--;

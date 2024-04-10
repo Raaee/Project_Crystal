@@ -12,6 +12,7 @@ TagManager:
   - Particles
   - BezerkerTag
   - Drowning
+  - BossCrystal
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Death Panel
   - PlayerProjectile
   - particles
   - 
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 176550571
+    locked: 0
+  - name: Death Panel
+    uniqueID: 2802042729
     locked: 0

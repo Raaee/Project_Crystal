@@ -10,7 +10,7 @@ public class HealthPoints : MonoBehaviour
 {
     // Max health is set at 100
     [SerializeField] public int maxHP = 100;
-    [SerializeField] public int currentHP;
+    [field: SerializeField] public int currentHP { get; set; }
     [SerializeField] private bool godMode;
     
     private bool isDead = false;
