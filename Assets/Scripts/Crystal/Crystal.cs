@@ -19,7 +19,7 @@ public class Crystal : MonoBehaviour {
 
     public CrystalState CurrentState { get => currentState; set => currentState = value; }
 
-    public UnityEvent _OnNextWaveStarted;
+    [HideInInspector] public UnityEvent _OnNextWaveStarted;
 
     private void Start() {
         spawner = GetComponent<Spawner>();
@@ -50,13 +50,13 @@ public class Crystal : MonoBehaviour {
     }
     public void OnCrystalDeath() {
         if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
+        Debug.Log("dead");
+        OnCrystalDie.Invoke();
         currentState = CrystalState.SHATTERED;
         CrystalManager.Instance.UnLockInteractions();
         spawner.state = Spawner.State.Idle;
-        OnCrystalDie.Invoke();
-        // visual using VFX
-        // SFX
-        // lose a life
+        crystalVFX.ShatterVisual();
+        // SFX here
     }
     private void OnCrystalEngaing() {
         if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
@@ -80,6 +80,9 @@ public class Crystal : MonoBehaviour {
     }
     public CrystalHealthPoints GetHP() {
         return hp;
+    }
+    public void UpdateOriginalYPos(float yPos) {
+        crystalVFX.UpdateOriginalYPos(yPos);
     }
 }
 public enum CrystalState {

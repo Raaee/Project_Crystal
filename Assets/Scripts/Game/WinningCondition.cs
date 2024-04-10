@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class WinningCondition : MonoBehaviour
 {
+    [SerializeField] private GameObject corruptedGlobalLight;
+    [SerializeField] private GameObject purifiedGlobalLight;
 
     // if all crystals are purified
     private void Start() {
         CrystalManager.Instance.OnAllCrystalsComplete.AddListener(Result);
+        EnableCorruptedLighting();
+        TilePurificationManager.instance.CorruptAllTiles();
     }
 
     [ProButton]
@@ -18,5 +22,16 @@ public class WinningCondition : MonoBehaviour
         // everything purifies
         // add SFX
         Debug.Log("purifiy all");
+        EnablePurifiedLighting();
+        TilePurificationManager.instance.PurifyAllTiles();
+    }
+
+    public void EnableCorruptedLighting() {
+        purifiedGlobalLight.SetActive(false);
+        corruptedGlobalLight.SetActive(true);
+    }
+    public void EnablePurifiedLighting() {
+        corruptedGlobalLight.SetActive(false);
+        purifiedGlobalLight.SetActive(true);
     }
 }

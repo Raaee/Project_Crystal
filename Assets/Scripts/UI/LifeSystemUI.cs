@@ -35,12 +35,15 @@ public class LifeSystemUI : MonoBehaviour
         lifeSystem.CurrentLives--;
         
         if (lifeSystem.CurrentLives <= -1) {
-            lifeSystem.LifeDone();
+           // lifeSystem.LifeDone();
             ShowLifeDonePanel();
         }
     }
     public void ShowLifeDonePanel() {
         // show panel
+        // panel should tell the player their lives are done, text = "You're Done." (show lives done)
+        // 1 button for "restart" (this will call lifeSystem.LifeDone();)
+        // 1 button for "main menu" (this will load main menu scene)
     }
 
 }

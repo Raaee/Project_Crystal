@@ -9,7 +9,7 @@ public class LifeSystem : MonoBehaviour {
     [field: SerializeField] public int MaxLives { get; private set; }
     public int CurrentLives { get; set; }
 
-[HideInInspector] public UnityEvent OnRemoveLife;
+    [HideInInspector] public UnityEvent OnRemoveLife;
 
     private void Start() {
         MaxLives = 3;

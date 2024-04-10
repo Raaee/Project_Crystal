@@ -108,6 +108,7 @@ public class Spawner : MonoBehaviour
 
     public void Start()
     {
+        cooldownLabel.enabled = false;
         completed = false;
         GenerateSpawns();
     }
@@ -169,6 +170,7 @@ public class Spawner : MonoBehaviour
                     started = true;
                 }
                 time += Time.deltaTime;
+                cooldownLabel.enabled = true;
                 cooldownLabel.text = cooldownTime - time > 0 ? Mathf.CeilToInt(cooldownTime - time).ToString("D") : "";
                 if (time >= cooldownTime)
                 {
@@ -181,6 +183,7 @@ public class Spawner : MonoBehaviour
                 {
                     OnSpawnerComplete?.Invoke();
                     completed = true;
+                    cooldownLabel.enabled = false;
                 }
                 break;
         }

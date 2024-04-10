@@ -19,7 +19,6 @@ public class TeleportAudio : MonoBehaviour
        HandlePanAudio(newMovementInput);
 
         teleportAudioSource.PlayOneShot(teleportAudioClips[num]);
-        Debug.Log(newMovementInput);
     }
 
     private void HandlePanAudio(Vector2 newMovementInput)

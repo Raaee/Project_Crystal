@@ -12,6 +12,7 @@ TagManager:
   - Particles
   - BezerkerTag
   - Drowning
+  - BossCrystal
   layers:
   - Default
   - TransparentFX

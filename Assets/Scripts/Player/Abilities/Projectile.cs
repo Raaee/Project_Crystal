@@ -11,9 +11,10 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed = 1000f; // The speed of the projectile.
     [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
-    private const String ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
-    private const String PLAYER_TAG = "Player"; // Tag used to identify the player.
-    private const String CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
+    private const string ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
+    private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
+    private const string CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
+    private const string BOSS_CRYSTAL_TAG = "BossCrystal"; // Tag used to identify the boss crystal.
     [SerializeField] public int maxDamage = 10; // The damage normal/max dealt by the projectile.
     private int currentDamage; // current damage the projectile does
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
@@ -72,7 +73,6 @@ public class Projectile : MonoBehaviour
                 if (!potentialEnemyHealth) {
                     return;
                 }
-                Debug.Log("BA: " + currentDamage);
                 potentialEnemyHealth.RemoveHealth(currentDamage);
 
                 // Disable the projectile after it has hit an enemy
@@ -97,7 +97,7 @@ public class Projectile : MonoBehaviour
             DisableProjectile();
         }
         // Check if the projectile has collided with the crystal
-        else if (collider.gameObject.CompareTag(CRYSTAL_TAG))
+        else if (collider.gameObject.CompareTag(CRYSTAL_TAG) || collider.gameObject.CompareTag(BOSS_CRYSTAL_TAG))
         {
             if (isPlayerShooting) {
                 return;
