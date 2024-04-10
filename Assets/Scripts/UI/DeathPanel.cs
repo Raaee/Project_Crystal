@@ -10,16 +10,16 @@ public class DeathPanelTimer : MonoBehaviour
     private float countdown;
     private bool isCountdownFinished = false;
     private float respawnDelayTime = 1.5f;
-    [SerializeField] private Canvas deathPanelCanvas;
+    [SerializeField] private Canvas panelCanvas;
     [SerializeField] private TextMeshProUGUI respawnText;
     
 
     // Reference to the CanvasGroup for fading
     private CanvasGroup canvasGroup;
 
-    private void Start()
+    void Start()
     {
-        deathPanelCanvas.worldCamera = FindFirstObjectByType<Camera>();
+        panelCanvas.worldCamera = FindFirstObjectByType<Camera>();
         countdown = countdownDuration;
         respawnText.color = Color.red;
         respawnText.text = "You Died...";
@@ -61,42 +61,10 @@ public class DeathPanelTimer : MonoBehaviour
                 // You might want to disable the death panel here too
                 PlayerManager.Instance.Respawn();
                 countdownText.gameObject.SetActive(false);
-                Destroy(deathPanelCanvas.gameObject);
+                Destroy(panelCanvas.gameObject);
             }
         }
     }
 
- /*   IEnumerator FadeOut()
-    {
-        if (canvasGroup != null)
-        {
-            while (canvasGroup.alpha > 0)
-            {
-                canvasGroup.alpha -= Time.deltaTime / 2;
-                yield return null;
-            }
-            canvasGroup.interactable = false;
-        }
-        else
-        {
-            Debug.LogError("CanvasGroup component not found.");
-        }
-    }
 
-    IEnumerator FadeIn()
-    {
-        if (canvasGroup != null)
-        {
-            while (canvasGroup.alpha < 1)
-            {
-                canvasGroup.alpha += Time.deltaTime / 2;
-                yield return null;
-            }
-            canvasGroup.interactable = false;
-        }
-        else
-        {
-            Debug.LogError("CanvasGroup component not found.");
-        }
-    }*/
 }
