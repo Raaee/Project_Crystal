@@ -9,7 +9,7 @@ public class LifeSystemUI : MonoBehaviour
     [SerializeField] private LifeSystem lifeSystem;
     [SerializeField] private Color32 shatterColor;
     public List<Image> livesImages;
-    private int currentLives = 3;
+    [SerializeField] private GameObject lifeDonePanel;
 
     private void Start() {
         lifeSystem.OnRemoveLife.AddListener(UpdateLives);
@@ -18,7 +18,7 @@ public class LifeSystemUI : MonoBehaviour
 
     [ProButton]
     public void ResetLives() {
-        currentLives = lifeSystem.MaxLives - 1;
+        lifeSystem.CurrentLives = lifeSystem.MaxLives - 1;
         foreach (Image life in livesImages) {
             life.color = Color.white;
         }
@@ -28,11 +28,19 @@ public class LifeSystemUI : MonoBehaviour
         RemoveLife(shatterColor);
     }
     public void RemoveLife(Color32 newColor) {
-        if (currentLives < 0)
+        if (lifeSystem.CurrentLives < 0)
             return;
 
-        livesImages[currentLives].color = newColor;
-        currentLives--;
+        livesImages[lifeSystem.CurrentLives].color = newColor;
+        lifeSystem.CurrentLives--;
+        
+        if (lifeSystem.CurrentLives <= -1) {
+            lifeSystem.LifeDone();
+            ShowLifeDonePanel();
+        }
+    }
+    public void ShowLifeDonePanel() {
+        // show panel
     }
 
 }

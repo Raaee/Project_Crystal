@@ -10,12 +10,15 @@ public class CrystalManager : MonoBehaviour
     public static CrystalManager Instance { get; set; }
     public List<Crystal> crystals;
     private Crystal currentCrystal;
-    [HideInInspector] public CrystalHealthPoints hp { get; set; }
+    [HideInInspector] public CrystalHealthPoints currentCrystalHP { get; set; }
     [HideInInspector] public Spawner wave { get; set; }
     [HideInInspector] public UnityEvent OnCrystalActivate;
     [HideInInspector] public UnityEvent OnCrystalDeActivate;
+    [HideInInspector] public UnityEvent OnAllCrystalsComplete;
+    [field: SerializeField] public int CrystalsPurified { get; set; } // this is for winning
 
     private void Awake() {
+        CrystalsPurified = 0;
         Init();        
     }
 
@@ -28,7 +31,7 @@ public class CrystalManager : MonoBehaviour
         return currentCrystal;
     }
     public void SetCrystalComponents(Crystal curr){
-        hp = curr.GetComponent<CrystalHealthPoints>();
+        currentCrystalHP = curr.GetComponent<CrystalHealthPoints>();
         wave = curr.GetComponent<Spawner>();
         OnCrystalActivate.Invoke();
     }
@@ -39,7 +42,7 @@ public class CrystalManager : MonoBehaviour
             else {
                 cryst.ChangeInteractionState(false);
             }
-        }
+        }        
     }
     // as purification numbers increase, purify radius also increases
     public void UnLockInteractions() {
@@ -49,7 +52,10 @@ public class CrystalManager : MonoBehaviour
             }
         }
         OnCrystalDeActivate?.Invoke();
-    
+
+        if (CrystalsPurified == crystals.Count-1) {
+            OnAllCrystalsComplete?.Invoke();
+        }
     }
     private void Init() {
         if (Instance) {

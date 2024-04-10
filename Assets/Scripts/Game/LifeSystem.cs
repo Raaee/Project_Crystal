@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class LifeSystem : MonoBehaviour {
 
     [field: SerializeField] public int MaxLives { get; private set; }
-    [HideInInspector] public UnityEvent OnRemoveLife;
+    public int CurrentLives { get; set; }
+
+[HideInInspector] public UnityEvent OnRemoveLife;
 
     private void Start() {
         MaxLives = 3;
@@ -21,5 +24,8 @@ public class LifeSystem : MonoBehaviour {
 
     public void RemoveLife() {
         OnRemoveLife.Invoke();
+    }
+    public void LifeDone() {
+        SceneManager.LoadScene(1); // instant reload of scene
     }
 }

@@ -47,9 +47,14 @@ public class DevMode
         player.GetComponent<PlayerHealthPoints>().ToggleGooseMode();
         Debug.Log(peteSpittingBars);
     }
-
-  
-
+    [MenuItem("Dev Mode/Purify All Crystals")]
+    public static void PurifyAll() {
+        Debug.Log("Purifying all crystals...");
+        foreach (Crystal crystal in CrystalManager.Instance.crystals) {
+            crystal.spawner.state = Spawner.State.Complete;
+        }
+    }
+    
     [MenuItem("Dev Mode/List All Current Stats")]
     public static void ListAllCurrentStats()
     {

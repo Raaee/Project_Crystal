@@ -250,6 +250,9 @@ MonoBehaviour:
   OnSpawnerComplete:
     m_PersistentCalls:
       m_Calls: []
+  OnNextWaveStarted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1594299274412594500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 5000
-  currentHP: 0
+  <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
     m_PersistentCalls:
@@ -324,10 +327,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34dc8348c87d0c458d936d5e7ea4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  percentBlast: 10
   OnCrystalDie:
     m_PersistentCalls:
       m_Calls: []
   currentState: 0
+  _OnNextWaveStarted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &811520973873613181
 GameObject:
   m_ObjectHideFlags: 0
