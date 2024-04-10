@@ -29,6 +29,7 @@ public class CrystalVFX : MonoBehaviour {
     [SerializeField] private float bobbingHeight = 0.2f; // Height of the bobbing motion
 
     private Vector3 originalPosition;
+    private Crystal crystal;
 
     private void Start() {
         crystSR = crystalVisual.GetComponent<SpriteRenderer>();
@@ -39,6 +40,8 @@ public class CrystalVFX : MonoBehaviour {
         originalPosition = transform.position;
         StartCoroutine(BobbingCoroutine());
         crystSR.color = Color.white;
+        crystal = GetComponent<Crystal>();
+        crystal.OnCrystalDie.AddListener(ShatterVisual);
     }
     private IEnumerator BobbingCoroutine() {
         while (true) {
@@ -75,7 +78,7 @@ public class CrystalVFX : MonoBehaviour {
         crystalRadius.SetActive(false);
     }
     public void ShatterVisual() {
-        Debug.Log("visual");
+        Debug.Log("visual inside shatter");
 
         crystSR.color = shatteredColor;
     }
