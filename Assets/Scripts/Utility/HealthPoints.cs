@@ -25,9 +25,9 @@ public class HealthPoints : MonoBehaviour
 
     // Add a certain amount of health while character's current health is between 0 and max
     public void AddHealth(int healAmount)   {
-        currentHealth += healAmount;
-        if (currentHealth >= maxHP)    {
-            currentHealth = maxHP;
+        currentHP += healAmount;
+        if (currentHP >= maxHP)    {
+            currentHP = maxHP;
         }
         OnHealthChange.Invoke();
     }
@@ -39,11 +39,11 @@ public class HealthPoints : MonoBehaviour
             return;
         }
 
-        currentHealth -= damageAmount;
+        currentHP -= damageAmount;
         
         // Dying is here:
-        if (currentHealth <= 0) {
-            currentHealth = 0;
+        if (currentHP <= 0) {
+            currentHP = 0;
             if (IsDead() == false)
             {
                 isDead = true;
@@ -62,7 +62,7 @@ public class HealthPoints : MonoBehaviour
     public virtual void Die() {} 
     [ProButton]
     public virtual void ResetHealth()   {
-        currentHealth = maxHP;
+        currentHP = maxHP;
         isDead = false;
         OnHealthChange.Invoke();
     }
@@ -70,7 +70,7 @@ public class HealthPoints : MonoBehaviour
     // Method To Get Current HP
     public int GetCurrentHP()
     {
-        return currentHealth;
+        return currentHP;
     }
     public void SetMaxHealth(int amt) {
         maxHP = amt;

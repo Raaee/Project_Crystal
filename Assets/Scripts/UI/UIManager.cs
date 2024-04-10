@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour  {
     [SerializeField] private TMP_Text waveText;
 
     // Misc Var
-    private bool hasListener = false;
+   // private bool hasListener = false;
 
     void Start()    {
       //  PlayerManager.Instance.teleport.OnAbilityUsage.AddListener(UpdateTeleportUI);
