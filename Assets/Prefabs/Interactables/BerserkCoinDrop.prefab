@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff292e90b667431abd0ddbd610f4636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  berserkerDamageTime: 10
+  berserkerDamageTime: 50
 --- !u!1 &4493850153036587618
 GameObject:
   m_ObjectHideFlags: 0

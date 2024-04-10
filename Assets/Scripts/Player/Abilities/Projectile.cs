@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     private const string CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
     private const string BOSS_CRYSTAL_TAG = "BossCrystal"; // Tag used to identify the boss crystal.
     [SerializeField] public int maxDamage = 10; // The damage normal/max dealt by the projectile.
+    [SerializeField] public int intitialDamage = 10;
     private int currentDamage; // current damage the projectile does
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
@@ -25,10 +26,14 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public UnityEvent OnProjectileDisabled;
 
     private void Awake()    {
+        Debug.Log("Awake");
         rb2D = GetComponent<Rigidbody2D>();
     }
     private void Start()
     {
+        Debug.Log("Start");
+        //The Problem is that everytime the projectile is created it set the currentDamage as the maxDamage because Start() is always called when the proj is created
+        //It should only set the current damage to max one time.
         currentDamage = maxDamage;
     }
 
@@ -73,7 +78,8 @@ public class Projectile : MonoBehaviour
                 if (!potentialEnemyHealth) {
                     return;
                 }
-                potentialEnemyHealth.RemoveHealth(currentDamage);
+                Debug.Log("Projectile " + currentDamage);
+                potentialEnemyHealth.RemoveHealth(GetCurrentProjectileDamage());
 
                 // Disable the projectile after it has hit an enemy
                 DisableProjectile();
@@ -93,7 +99,7 @@ public class Projectile : MonoBehaviour
             }
             
 
-            potentialPlayerHealth.RemoveHealth(currentDamage);
+            potentialPlayerHealth.RemoveHealth(GetCurrentProjectileDamage());
             DisableProjectile();
         }
         // Check if the projectile has collided with the crystal
@@ -107,10 +113,14 @@ public class Projectile : MonoBehaviour
             if (!potentialCrystalHealth)    {
                 return;
             }
-            potentialCrystalHealth.RemoveHealth(currentDamage);
+            potentialCrystalHealth.RemoveHealth(GetCurrentProjectileDamage());
             
             //DisableProjectile(); // Uncomment this to not have piercing on crystal.
         }
+    }
+
+    public int GetInitialDamage() {
+        return intitialDamage;
     }
 
     private void DisableProjectile()
@@ -134,13 +144,16 @@ public class Projectile : MonoBehaviour
         currentDamage = maxDamage;
     }
 
-    public void SetProjectileDamage(int setdamage)
+    public void SetCurrentProjectileDamage(int setdamage)
     {
+        Debug.Log("Seting before"+ currentDamage);
         currentDamage = setdamage;
+        Debug.Log("Stinmg after"+currentDamage);
     }
 
     public int GetCurrentProjectileDamage()
     {
+        Debug.Log("GetInitialDamage  " + currentDamage);
         return currentDamage;
     }
 }

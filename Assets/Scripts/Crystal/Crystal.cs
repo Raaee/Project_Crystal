@@ -12,8 +12,8 @@ public class Crystal : MonoBehaviour {
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
     [SerializeField] Crystal currentCrytal;
-    [SerializeField] private float blastPercentage = 0.5f;
-    [SerializeField] private int blastDamage = 100;
+    [SerializeField] private float blastPercentage = 0.75f;
+    [SerializeField] private int blastDamage = 75;
     [HideInInspector] public UnityEvent OnCrystalDie;
 
     [Header("Debug")]
@@ -35,14 +35,8 @@ public class Crystal : MonoBehaviour {
         spawner.OnSpawnerComplete.AddListener(OnCrystalComplete);
         spawner.OnNextWaveStarted.AddListener(CrystalOnNextWaveStarted);
         hp.OnDead.AddListener(OnCrystalDeath);
-
+        hp.OnHurt.AddListener(DamageBlast);
     }
-
-    private void Update()
-    {
-        DamageBlast();
-    }
-
     private void CrystalOnNextWaveStarted()
     {
         _OnNextWaveStarted?.Invoke();
@@ -97,6 +91,11 @@ public class Crystal : MonoBehaviour {
 
             if (currentCrytal.hp.GetCurrentHP() < percentHP)
             {
+                foreach(GameObject enemy in spawner.spawnedGamesObjects)
+                {
+                    Debug.Log("Kil all");
+                    enemy.GetComponent<HealthPoints>().RemoveHealth(blastDamage);
+                }
                 Debug.Log("Blast " + blastDamage + " Damage");
                 //CrystalManager.Instance.spawnedObjects;
             }

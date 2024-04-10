@@ -50,6 +50,9 @@ public class Spawner : MonoBehaviour
     [Tooltip("The list of spawned objects. Used to keep track of the spawned objects for the current wave.")]
     public List<Transform> spawnedObjects;
 
+    [Tooltip("The list of spawned objects. Give the list of the game Obejcts that have spawn.")]
+    public List<GameObject> spawnedGamesObjects;
+
     /// <summary>
     /// The current state of the spawner.
     /// </summary>

@@ -97,10 +97,16 @@ public class BuffManager : MonoBehaviour  {
     }
     //Damage Multiplyer
     public void MultiplyBasicAttackDamage(int damageIncrese) {
+        Debug.Log(basicAttack.GetCurrentDamge());
         basicAttack.SetCurrentDamge(basicAttack.GetCurrentDamge() * damageIncrese);
+        Debug.Log(basicAttack.GetCurrentDamge());
     }
     public void MultiplyPierceDamage(int damageIncrese) {
         piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
+    }
+
+    public void DamageDebug() {
+        Debug.Log("Bezeker Change" + basicAttack.GetCurrentDamge());
     }
 
     public void ResetBasicAttckDamege() {
