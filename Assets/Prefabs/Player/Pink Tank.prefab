@@ -5337,7 +5337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 125
-  currentHP: 0
+  <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
     m_PersistentCalls:
@@ -5788,6 +5788,9 @@ MonoBehaviour:
   OnTeleport:
     m_PersistentCalls:
       m_Calls: []
+  OnTeleportVisual:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7360943041567263304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5800,8 +5803,8 @@ GameObject:
   - component: {fileID: 6262924791448149945}
   - component: {fileID: 3521332388731034868}
   - component: {fileID: 736520626546424046}
+  - component: {fileID: 338411953057359997}
   - component: {fileID: 4509959041842062938}
-  - component: {fileID: 2829309501251702474}
   m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
@@ -5863,8 +5866,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1492924567
-  m_SortingLayer: 2
+  m_SortingLayerID: 176550571
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -781076683, guid: 272eebba944934d439428f0b999dae68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5912,6 +5915,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 6262924791448149945}
   flashColor: {r: 1, g: 0, b: 0, a: 1}
+  shakeDuration: 0.15
+  shakeMagnitude: 0.4
+--- !u!114 &338411953057359997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360943041567263304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51ee2dced7162e4abe51f39e5771bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 6262924791448149945}
+  flashColor: {r: 0, g: 0, b: 1, a: 1}
+  shakeDuration: 0.15
+  shakeMagnitude: 0.4
 --- !u!114 &4509959041842062938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5940,25 +5961,10 @@ MonoBehaviour:
   - {x: 0.31, y: -0.75, z: 0}
   m_ShapePathHash: -1965473841
   m_Mesh: {fileID: 0}
-  m_InstanceId: 36386
+  m_InstanceId: 139414
   m_LocalBounds:
     m_Center: {x: -0.079375, y: -0.375, z: 0}
     m_Extent: {x: 0.389375, y: 0.375, z: 0}
---- !u!114 &2829309501251702474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360943041567263304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8c88e23e6ed3a42b669d53c55505a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeDuration: 0.15
-  shakeMagnitude: 0.4
-  hp: {fileID: 279863175518761902}
 --- !u!1 &8271713260674164174
 GameObject:
   m_ObjectHideFlags: 0

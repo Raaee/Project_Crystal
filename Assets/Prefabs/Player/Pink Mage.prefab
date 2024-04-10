@@ -4873,7 +4873,7 @@ GameObject:
   - component: {fileID: 1529904000462694585}
   - component: {fileID: 4194171621036563155}
   m_Layer: 0
-  m_Name: Pink Mage 1
+  m_Name: Pink Mage
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5189,7 +5189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  currentHP: 0
+  <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
     m_PersistentCalls:
@@ -5574,6 +5574,9 @@ MonoBehaviour:
   OnTeleport:
     m_PersistentCalls:
       m_Calls: []
+  OnTeleportVisual:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7360943041567263304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5588,7 +5591,7 @@ GameObject:
   - component: {fileID: 2472472596460452453}
   - component: {fileID: 8430092951458936386}
   - component: {fileID: 6678135590822245945}
-  - component: {fileID: 8577048506827100115}
+  - component: {fileID: 8477096149110310972}
   m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
@@ -5650,8 +5653,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1492924567
-  m_SortingLayer: 2
+  m_SortingLayerID: 176550571
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -1443978023, guid: 272eebba944934d439428f0b999dae68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5723,7 +5726,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 69480
+  m_InstanceId: 139232
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -5741,7 +5744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 6262924791448149945}
   flashColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &8577048506827100115
+  shakeDuration: 0.15
+  shakeMagnitude: 0.4
+--- !u!114 &8477096149110310972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5750,12 +5755,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7360943041567263304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8c88e23e6ed3a42b669d53c55505a6, type: 3}
+  m_Script: {fileID: 11500000, guid: d51ee2dced7162e4abe51f39e5771bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 6262924791448149945}
+  flashColor: {r: 0, g: 0, b: 1, a: 1}
   shakeDuration: 0.15
   shakeMagnitude: 0.4
-  hp: {fileID: 5220982741878226084}
 --- !u!1 &7671935291099421684
 GameObject:
   m_ObjectHideFlags: 0

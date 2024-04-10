@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageVisuals : MonoBehaviour
+public class TeleportVisual : MonoBehaviour
 {
     [SerializeField] public SpriteRenderer flashMaterial;
-    private HealthPoints healthPoints;
-    [SerializeField] private Color flashColor = Color.red;
+    private TeleportAbility teleportAbility;
+    [SerializeField] private Color flashColor = Color.blue;
 
     [SerializeField] private float shakeDuration = 0.15f;
     [SerializeField] private float shakeMagnitude = 0.4f;
@@ -15,12 +15,12 @@ public class DamageVisuals : MonoBehaviour
     void Start()
     {
         flashMaterial = GetComponent<SpriteRenderer>();
-        healthPoints = GetComponentInParent<HealthPoints>();
-        healthPoints.OnHurt.AddListener(TriggerDamage);
-        healthPoints.OnHurt.AddListener(TriggerScreenShake);
+        teleportAbility = transform.parent.GetComponentInChildren<TeleportAbility>();
+        teleportAbility.OnTeleportVisual.AddListener(TriggerTeleport);
+        teleportAbility.OnTeleportVisual.AddListener(TriggerScreenShake);
     }
 
-    public void TriggerDamage()
+    public void TriggerTeleport()
     {
         StartCoroutine(changecolor());
     }
