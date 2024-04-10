@@ -5188,7 +5188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  currentHP: 0
+  <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
     m_PersistentCalls:
@@ -5572,7 +5572,7 @@ GameObject:
   - component: {fileID: 8430092951458936386}
   - component: {fileID: 6678135590822245945}
   - component: {fileID: 8577048506827100115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5633,9 +5633,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 777463289
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1962731731, guid: 2122c0e2182c9304981bb6b4bb190e13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5706,7 +5706,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 77156
+  m_InstanceId: 52246
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -5929,7 +5929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2913046173458747405}
   - component: {fileID: 6862253042797148006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

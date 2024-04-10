@@ -303,8 +303,8 @@ MonoBehaviour:
   projectileSpeed: 1000
   maxLifeTime: 2
   maxPiercingAmount: 4
-  maxDamage: 12
-  currentDamage: 12
+  maxDamage: 23
+  currentDamage: 23
 --- !u!1 &5244579004686156743
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using com.cyborgAssets.inspectorButtonPro;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,10 +15,13 @@ public class PlayerManager : MonoBehaviour {
     [HideInInspector] public PiercingShotAbility pierceShot { get; set; }
     [HideInInspector] public TeleportAbility teleport { get; set; }
 
+
+    [SerializeField] private GameObject deathPanel;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject reviveParticles;
     [SerializeField] string reviveParticleGOName;
     [SerializeField] private float reviveTime = 1f;
+    private GameObject deathPanelClone;
 
     private InputControls input;
     [HideInInspector] public UnityEvent OnRevive;
@@ -50,6 +54,7 @@ public class PlayerManager : MonoBehaviour {
     public void Death() {
      
         animator.Play(DEATH);
+        deathPanelClone = Instantiate(deathPanel);
         StartCoroutine(WaitBeforeDisable());
         // input.DisableControls();
         // lose a life
@@ -60,7 +65,7 @@ public class PlayerManager : MonoBehaviour {
         player.SetActive(true);
         StartCoroutine(Revive());
         animator.Play(RESPAWN);
-       // input.EnableControls();
+        // input.EnableControls();
         hp.ResetHealth();
         mp.ResetMana();
     }
@@ -94,5 +99,9 @@ public class PlayerManager : MonoBehaviour {
     public GameObject GetPlayer() {
         return player;
     }
-
+    public void DestoryDeathPanel()
+    {
+        
+        Destroy(deathPanelClone);
+    }
 }

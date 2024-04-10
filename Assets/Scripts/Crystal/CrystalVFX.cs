@@ -16,6 +16,7 @@ public class CrystalVFX : MonoBehaviour {
     [Header("Corrupt Visual")]
     [SerializeField] private Sprite corruptedSprite;
     [SerializeField] private Sprite corruptedShadowSprite;
+    [SerializeField] private Color32 shatteredColor;
     
     [Header("Purified Visual")]
     [SerializeField] private Sprite purifiedSprite;
@@ -37,13 +38,17 @@ public class CrystalVFX : MonoBehaviour {
         DisactivateRadius();
         originalPosition = transform.position;
         StartCoroutine(BobbingCoroutine());
+        crystSR.color = Color.white;
     }
-     private IEnumerator BobbingCoroutine() {
+    private IEnumerator BobbingCoroutine() {
         while (true) {
             float newY = originalPosition.y + Mathf.Sin(Time.time * bobbingSpeed) * bobbingHeight;
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
             yield return null;
         }
+    }
+    public void UpdateOriginalYPos(float yPos) {
+        originalPosition.y = yPos;
     }
     public void ActivatePurifiedParticles() {
         corruptParticleEffect.SetActive(false);
@@ -68,6 +73,11 @@ public class CrystalVFX : MonoBehaviour {
     }
     public void DisactivateRadius() {
         crystalRadius.SetActive(false);
+    }
+    public void ShatterVisual() {
+        Debug.Log("visual");
+
+        crystSR.color = shatteredColor;
     }
 }
  

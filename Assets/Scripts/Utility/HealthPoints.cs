@@ -9,8 +9,8 @@ using UnityEngine.Events;
 public class HealthPoints : MonoBehaviour
 {
     // Max health is set at 100
-    [SerializeField] private int maxHP = 100;
-    [SerializeField] private int currentHealth = 0;
+    [SerializeField] public int maxHP = 100;
+    [field: SerializeField] public int currentHP { get; set; }
     [SerializeField] private bool godMode;
     
     private bool isDead = false;
