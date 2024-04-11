@@ -706,7 +706,7 @@ MonoBehaviour:
   - {x: 0.80792236, y: -1.4052019, z: -0.00000036042184}
   m_ShapePathHash: -1582723859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 177192
+  m_InstanceId: 203206
   m_LocalBounds:
     m_Center: {x: -0.037345886, y: -0.2794497, z: 0}
     m_Extent: {x: 1.4293442, y: 1.1626766, z: 0}
@@ -754,8 +754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 10
-  currentDamage: 10
+  maxDamage: 12
+  currentDamage: 12
   maxLifeTime: 2
   cooldown: 0
   manaCost: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
       m_Calls: []
   projectilePrefab: {fileID: 4827135260225847506, guid: 517c03a5880535642b1a23c82c9f7355, type: 3}
   isPlayerShooting: 0
-  enemyFireRate: 0.8
+  enemyFireRate: 1
   playerFireRate: 0.1
   OnAttack:
     m_PersistentCalls:

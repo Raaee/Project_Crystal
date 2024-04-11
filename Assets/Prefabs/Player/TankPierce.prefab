@@ -301,10 +301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
-  maxLifeTime: 2
-  maxPiercingAmount: 3
-  maxDamage: 10
-  currentDamage: 0
 --- !u!1 &5686067060129635964
 GameObject:
   m_ObjectHideFlags: 0

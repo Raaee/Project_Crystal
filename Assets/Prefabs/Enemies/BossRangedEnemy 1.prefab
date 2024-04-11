@@ -524,7 +524,7 @@ MonoBehaviour:
   - {x: 0.80405426, y: -1.2094054, z: 0}
   m_ShapePathHash: -803534617
   m_Mesh: {fileID: 0}
-  m_InstanceId: 177748
+  m_InstanceId: 202362
   m_LocalBounds:
     m_Center: {x: -0.007171631, y: -0.0022640228, z: 0}
     m_Extent: {x: 1.0977707, y: 1.2089868, z: 0}
@@ -686,7 +686,7 @@ MonoBehaviour:
       m_Calls: []
   projectilePrefab: {fileID: 4827135260225847506, guid: a62c54cb2f8ad1348895edf2b2c20eb0, type: 3}
   isPlayerShooting: 0
-  enemyFireRate: 0.7
+  enemyFireRate: 0.8
   playerFireRate: 0.1
   OnAttack:
     m_PersistentCalls:
