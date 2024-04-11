@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour  {
     [SerializeField] private TMP_Text waveText;
 
     // Misc Var
-    private bool hasListener = false;
+   // private bool hasListener = false;
 
     void Start()    {
       //  PlayerManager.Instance.teleport.OnAbilityUsage.AddListener(UpdateTeleportUI);
@@ -85,8 +85,8 @@ public class UIManager : MonoBehaviour  {
         UpdateAbilityCooldown(PlayerManager.Instance.pierceShot, pierceAttackCooldown, ref pierceAttackTimer, pierceAttackShadow);
     }
     public void UpdateHealth() {
-        hpFilling.fillAmount = (float) PlayerManager.Instance.hp.currentHP / PlayerManager.Instance.hp.maxHP;
-        hpText.text = PlayerManager.Instance.hp.currentHP + " / " + PlayerManager.Instance.hp.maxHP;
+        hpFilling.fillAmount = (float) PlayerManager.Instance.hp.GetCurrentHP() / PlayerManager.Instance.hp.GetMaxHealth();
+        hpText.text = PlayerManager.Instance.hp.GetCurrentHP() + " / " + PlayerManager.Instance.hp.GetMaxHealth();
     }
     public void UpdateMana() {
         manaFilling.fillAmount = (float) PlayerManager.Instance.mp.currentMP / PlayerManager.Instance.mp.maxMP;

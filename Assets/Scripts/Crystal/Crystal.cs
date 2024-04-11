@@ -15,6 +15,7 @@ public class Crystal : MonoBehaviour {
     [SerializeField] private float blastPercentage = 0.75f;
     [SerializeField] private int blastDamage = 75;
     [HideInInspector] public UnityEvent OnCrystalDie;
+    [HideInInspector] public UnityEvent OnCrystalInteract;
 
     [Header("Debug")]
     [SerializeField] private CrystalState currentState;
@@ -53,12 +54,13 @@ public class Crystal : MonoBehaviour {
     }
     public void OnCrystalDeath() {
         if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
-        Debug.Log("dead");
+       
         OnCrystalDie.Invoke();
         currentState = CrystalState.SHATTERED;
         CrystalManager.Instance.UnLockInteractions();
         spawner.state = Spawner.State.Idle;
-        crystalVFX.ShatterVisual();
+        Debug.Log("prepare to shatter crystal");
+      
         // SFX here
     }
     private void OnCrystalEngaing()
@@ -68,6 +70,7 @@ public class Crystal : MonoBehaviour {
         CrystalManager.Instance.SetCurrentCrystal(this);
         CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
+        OnCrystalInteract?.Invoke();
     }
     public void PurifyInRadius()
     {
