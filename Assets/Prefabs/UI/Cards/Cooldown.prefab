@@ -17,6 +17,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
+      propertyPath: maxValuePercent
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: charactersToImages.Array.data[0].image
       value: 
       objectReference: {fileID: -540154753, guid: 1db54f23562746f4aabbd3931c3b8aac, type: 3}
