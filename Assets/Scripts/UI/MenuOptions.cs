@@ -10,56 +10,43 @@ public class MenuOptions : MonoBehaviour
     [SerializeField] private GameObject characterSelectScreen;
     [SerializeField] private GameObject creditsScreen;
     public string sceneStart;
-    public void StartGame()
-    {
-        
-            
-        characterSelectScreen.SetActive(true);
-        menuScreen.SetActive(false);
-     
-        creditsScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        
-    }
 
-    public void startPlayGame()
+    void Start()
     {
-        
+        BackToMainMenu();
+    }
+    public void StartGame() {
+        menuScreen.SetActive(false);
+        characterSelectScreen.SetActive(true);
+    }
+    public void Play()
+    {
         CharacterDataSO chosenPlayer = FindObjectOfType<CharacterSelectUI>().getCurrentCharacterData();
         ChosenPlayerData.Instance.SetChosenPlayer(chosenPlayer);
-        //SceneManager.LoadScene(sceneStart);
+        SceneManager.LoadScene(sceneStart);
     }
-
-    public void OpenCredits()
-    {
-        Debug.Log("Open Credits Screen");
-    }
-
     public void OpenSettingsScreen()
     {
         settingsScreen.SetActive(true);
         menuScreen.SetActive(false);
     }
-
-    public void backToMainMenu()
+    public void BackToMainMenu()
     {
         menuScreen.SetActive(true);
         characterSelectScreen.SetActive(false);
         creditsScreen.SetActive(false);
+        settingsScreen.SetActive(false);
     }
-
     public void QuitGame()
     {
+        Application.Quit();
         Debug.Log("Close Game");
     }
-
     public void OpenCreditsScreen()
     {
-        creditsScreen.SetActive(true);
         menuScreen.SetActive(false);
+        creditsScreen.SetActive(true);
     }
-
-
     public void CloseCreditsScreen()
     {
 
