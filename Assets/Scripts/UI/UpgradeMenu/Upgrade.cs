@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class Upgrade : MonoBehaviour
@@ -15,11 +16,20 @@ public class Upgrade : MonoBehaviour
         AbilityCooldownPercent,
     }
 
+    [System.Serializable]
+    public struct CharacterToImage
+    {
+        public CharacterDataSO character;
+        public Sprite image;
+    }
+
     public UpgradeType upgradeType;
     [HideInInspector] public float upgradeValue;
     public int minValuePercent;
     public int maxValuePercent;
     public Image cardBackground;
+    public List<CharacterToImage> charactersToImages;
+    public Image upgradeImage;
     public TMP_Text upgradeDescription;
 
     public void Start()
