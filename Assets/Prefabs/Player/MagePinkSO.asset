@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: MagePinkSO
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3221412779736232927, guid: 4dd77f4f1ea53f0439d3bdec5b753776, type: 3}
-  characterName: Prism Weaver
+  characterName: Aetheria
   characterDescription: A magical wizard, from the land of Latsyrc. Is very catious
     in its attack and prefers to attack at a distance
   health: 70
   mana: 100
   moveSpeed: 7
-  basicAttackDamage: 2
+  basicAttackDamage: 5
   basicAttackCooldown: 0.25
   basicAttackManaCost: 1
-  pierceAttackDamage: 7
+  pierceAttackDamage: 10
   pierceAttackCooldown: 0.5
   pierceManaCost: 5
   pierceAmount: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TankGreenSO
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3221412779736232927, guid: 2660a113ad05f88408d1d7e2327ed54e, type: 3}
-  characterName: Warden of Shards
+  characterName: Prismheart
   characterDescription: A sturdy soldier, loves the glory and the smell of battle.
     Has a hard hitting attack
   health: 130

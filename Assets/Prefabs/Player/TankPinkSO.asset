@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TankPinkSO
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3221412779736232927, guid: 78e6888d82697024d837082f1729259e, type: 3}
-  characterName: Warden of Shards
+  characterName: The Warden of Shards
   characterDescription: A sturdy soldier, loves the glory and the smell of battle.
     Has a hard hitting attack
   health: 110
