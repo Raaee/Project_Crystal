@@ -465,7 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownDuration: 6
   countdownText: {fileID: 43979776611952088}
-  deathPanelCanvas: {fileID: 8385685502526044222}
+  panelCanvas: {fileID: 8385685502526044222}
   respawnText: {fileID: 2168134553926841846}
 --- !u!225 &1062976646444550506
 CanvasGroup:

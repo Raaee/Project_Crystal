@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4642889085200243357}
   - component: {fileID: 7457390064312602670}
   - component: {fileID: 1180252201478376316}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Revive Particle System
   m_TagString: Particles
   m_Icon: {fileID: 0}
@@ -4872,7 +4872,7 @@ GameObject:
   - component: {fileID: -9207976898994121474}
   - component: {fileID: 1529904000462694585}
   - component: {fileID: 4194171621036563155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pink Mage 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5189,7 +5189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  currentHP: 0
+  <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
     m_PersistentCalls:
@@ -5262,7 +5262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownDuration: 5
   countdownText: {fileID: 0}
-  deathPanelCanvas: {fileID: 0}
+  panelCanvas: {fileID: 0}
   respawnText: {fileID: 0}
 --- !u!1 &3243575590588145836
 GameObject:
@@ -5274,7 +5274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3783074155750932481}
   - component: {fileID: 1926940998503950939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Follow Player Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5348,7 +5348,7 @@ GameObject:
   - component: {fileID: 1111643986230979927}
   - component: {fileID: 2867645301715893616}
   - component: {fileID: 8446122612020300220}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5447,7 +5447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6739115161596990593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5483,7 +5483,7 @@ GameObject:
   - component: {fileID: 5606925210253363792}
   - component: {fileID: 8156202257822150933}
   - component: {fileID: 3258390402626218228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5589,7 +5589,7 @@ GameObject:
   - component: {fileID: 8430092951458936386}
   - component: {fileID: 6678135590822245945}
   - component: {fileID: 8577048506827100115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5650,9 +5650,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1492924567
-  m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingLayerID: 777463289
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1443978023, guid: 272eebba944934d439428f0b999dae68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5715,7 +5715,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850a
+  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850af925572e3d518216
   m_ShapePath:
   - {x: -0.46875, y: -0.6875, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -5723,7 +5723,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 69480
+  m_InstanceId: 70732
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -5767,7 +5767,7 @@ GameObject:
   - component: {fileID: 7395863132394693764}
   - component: {fileID: 6204579895570216326}
   - component: {fileID: 5922897507489786400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FootstepAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5914,7 +5914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5799196325404462849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HatLoc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5946,7 +5946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2913046173458747405}
   - component: {fileID: 6862253042797148006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5988,7 +5988,7 @@ MonoBehaviour:
   m_Intensity: 0.9
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850a
+  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850af925572e3d518216
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -6029,7 +6029,7 @@ GameObject:
   - component: {fileID: 7352682686006884281}
   - component: {fileID: 7210974371898118390}
   - component: {fileID: 5224583764699275990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TeleportAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
