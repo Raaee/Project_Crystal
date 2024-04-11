@@ -59,12 +59,18 @@ TagManager:
   - name: UI
     uniqueID: 176550571
     locked: 0
+  - name: trees
+    uniqueID: 3195966319
+    locked: 0
   - name: Death Panel
     uniqueID: 2802042729
     locked: 0
-  - name: Infront of Death Panel
+  - name: DP
     uniqueID: 777463289
     locked: 0
   - name: Life Panel
     uniqueID: 377639229
+    locked: 0
+  - name: Life Panel Particles
+    uniqueID: 4202530277
     locked: 0
