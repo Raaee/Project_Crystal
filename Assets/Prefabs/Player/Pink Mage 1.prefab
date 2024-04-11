@@ -4871,7 +4871,6 @@ GameObject:
   - component: {fileID: 3038308969333731784}
   - component: {fileID: -9207976898994121474}
   - component: {fileID: 1529904000462694585}
-  - component: {fileID: 4194171621036563155}
   m_Layer: 6
   m_Name: Pink Mage 1
   m_TagString: Player
@@ -5248,22 +5247,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3221412779736232927}
   m_Enabled: 1
---- !u!114 &4194171621036563155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3221412779736232927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc001a9bcf2d74645b08f099b9718a9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countdownDuration: 5
-  countdownText: {fileID: 0}
-  panelCanvas: {fileID: 0}
-  respawnText: {fileID: 0}
 --- !u!1 &3243575590588145836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5589,7 +5572,7 @@ GameObject:
   - component: {fileID: 8430092951458936386}
   - component: {fileID: 6678135590822245945}
   - component: {fileID: 8577048506827100115}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5606,7 +5589,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2913046173458747405}
@@ -5629,7 +5612,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e97260a04437fe348a7331c0d235f2dc, type: 2}
@@ -5650,9 +5633,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 777463289
-  m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1443978023, guid: 272eebba944934d439428f0b999dae68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5662,7 +5645,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 1
 --- !u!95 &3521332388731034868
 Animator:
@@ -5723,7 +5706,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 70732
+  m_InstanceId: -984584
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
@@ -5946,7 +5929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2913046173458747405}
   - component: {fileID: 6862253042797148006}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5964,7 +5947,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4753752826396503389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5988,10 +5971,10 @@ MonoBehaviour:
   m_Intensity: 0.9
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850af925572e3d518216
+  m_ApplyToSortingLayers: f1493865ad65a55b00000000abf2850af925572e3d5182166f937ebe69c703a7
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
+  m_LightOrder: 1
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
