@@ -72,8 +72,8 @@ public class BuffManager : MonoBehaviour  {
     }
     // Basic Attack
     public void IncreaseMaxBasicAttackDamage(float percentageIncrease) {
-        int damage = basicAttack.GetMaxDamage();
-        basicAttack.SetMaxDamage(damage + (int)(damage * percentageIncrease));
+        int damage = basicAttack.GetMaxProjectileDamage();
+        basicAttack.SetMaxProjectileDamage(damage + (int)(damage * percentageIncrease));
     }
     // Pierce Shot
     public void IncreaseMaxPierceShotDamage(float percentageIncrease) {
@@ -95,17 +95,24 @@ public class BuffManager : MonoBehaviour  {
         ReduceTeleportCooldown(percentageDecrease);
         ReducePierceShotCooldown(percentageDecrease);
     }
-    //Damage Multiplyer
-    //public void MultiplyBasicAttackDamage(int damageIncrese) {
-    //    basicAttack.SetCurrentDamge(basicAttack.GetCurrentDamge() * damageIncrese);
-    //}
-    //public void MultiplyPierceDamage(int damageIncrese) {
-    //    piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
-    //}
+    public void ReduceAllManaCost(float percentageDecrease) {
+        ReduceBasicAttackManaCost(percentageDecrease);
+        ReduceTeleportManaCost(percentageDecrease);
+        ReducePierceShotManaCost(percentageDecrease);
+    }
+    public void ReduceBasicAttackManaCost(float percentageDecrease) {
+        basicAttack.SetManaCost(Mathf.RoundToInt(basicAttack.GetManaCost() - (basicAttack.GetManaCost() * percentageDecrease)));
+    }
+    public void ReduceTeleportManaCost(float percentageDecrease) {
+        teleportAbility.SetManaCost(Mathf.RoundToInt(teleportAbility.GetManaCost() - (teleportAbility.GetManaCost() * percentageDecrease)));
+    }
+    public void ReducePierceShotManaCost(float percentageDecrease) {
+        piercingShot.SetManaCost(Mathf.RoundToInt(piercingShot.GetManaCost() - (piercingShot.GetManaCost() * percentageDecrease)));
+    }
 
     public void MultiplyBasicAttackDamage(int damageIncrese)
     {
-        basicAttack.SetCurrentDamge(basicAttack.GetMaxDamage() * damageIncrese);
+        basicAttack.SetCurrentProjectileDamage(basicAttack.GetMaxProjectileDamage() * damageIncrese);
     }
     public void MultiplyPierceDamage(int damageIncrese)
     {
@@ -113,7 +120,7 @@ public class BuffManager : MonoBehaviour  {
     }
 
     public void ResetBasicAttckDamege() {
-        basicAttack.NormalDamage();
+        basicAttack.NormalProjectileDamage();
     }
 
     public void ResetPierceDamage() {

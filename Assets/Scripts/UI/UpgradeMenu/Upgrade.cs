@@ -49,7 +49,7 @@ public class Upgrade : MonoBehaviour
             case UpgradeType.PierceDamagePercent:
                 return $"{white}Increase {green}Pierce Attack {white}(Q) Damage by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.MaxManaPercent:
-                return $"{white}Increase Max {green}Mana {white}by {yellow}{(int)(upgradeValue * 100)}%";
+                return $"{white}Increase Max {green}Mana {white}and Decrease {green}Mana Cost {white}by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.MaxHealthPercent:
                 return $"{white}Increase Max {green}Health {white}by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.AbilityCooldownPercent:
@@ -72,6 +72,7 @@ public class Upgrade : MonoBehaviour
             case UpgradeType.MaxManaPercent:
                 BuffManager.instance.IncreaseMaxMana(upgradeValue);
                 BuffManager.instance.AddMana(Mathf.RoundToInt(upgradeValue * 100));
+                BuffManager.instance.ReduceAllManaCost(Mathf.RoundToInt(upgradeValue * 100));
                 break;
             case UpgradeType.MaxHealthPercent:
                 BuffManager.instance.IncreaseMaxHealth(upgradeValue);

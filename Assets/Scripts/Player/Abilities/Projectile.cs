@@ -7,10 +7,12 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 // The Projectile class handles the behavior of projectiles in the game.
-public class Projectile : ProjectileManager
+public class Projectile : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed = 1000f; // The speed of the projectile.
-    [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
+    private float lifeTime = 2f; // The maximum lifetime of the projectile.
+    public int CurrentDamage { get; set; } // current damage the projectile does
+
     private const string ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
     private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const string CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
@@ -19,17 +21,15 @@ public class Projectile : ProjectileManager
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
     private bool isPlayerShooting = true;
-    private ProjectileManager projectileManager;
 
     [HideInInspector] public UnityEvent OnProjectileDisabled;
 
     private void Awake()    {
-        Debug.Log("Awake");
         rb2D = GetComponent<Rigidbody2D>();
     }
     private void Start()
     {
-        projectileManager = GetComponent<ProjectileManager>();
+        //projectileManager = GetComponent<ProjectileManager>();
         //Debug.Log("Start");
         ////The Problem is that everytime the projectile is created it set the currentDamage as the maxDamage because Start() is always called when the proj is created
         ////It should only set the current damage to max one time.
@@ -43,7 +43,7 @@ public class Projectile : ProjectileManager
         timer += Time.deltaTime;
 
         // If the projectile has existed for longer than its maximum lifetime, disable it
-        if (timer >= maxLifeTime)
+        if (timer >= lifeTime)
         {
             DisableProjectile();
             timer = 0;
@@ -77,7 +77,8 @@ public class Projectile : ProjectileManager
                 if (!potentialEnemyHealth) {
                     return;
                 }
-                potentialEnemyHealth.RemoveHealth(GetCurrentDamage());
+                Debug.Log("player: " + CurrentDamage);
+                potentialEnemyHealth.RemoveHealth(CurrentDamage);
 
                 // Disable the projectile after it has hit an enemy
                 DisableProjectile();
@@ -95,9 +96,9 @@ public class Projectile : ProjectileManager
             if (!potentialPlayerHealth) {
                 return;
             }
-            
 
-            potentialPlayerHealth.RemoveHealth(EnemyProjectileDamage);
+            Debug.Log("enemy damage: " + CurrentDamage);
+            potentialPlayerHealth.RemoveHealth(CurrentDamage);
             DisableProjectile();
         }
         // Check if the projectile has collided with the crystal
@@ -111,7 +112,7 @@ public class Projectile : ProjectileManager
             if (!potentialCrystalHealth)    {
                 return;
             }
-            potentialCrystalHealth.RemoveHealth(EnemyProjectileDamage);
+            potentialCrystalHealth.RemoveHealth(CurrentDamage);
             
             //DisableProjectile(); // Uncomment this to not have piercing on crystal.
         }
@@ -122,27 +123,7 @@ public class Projectile : ProjectileManager
         OnProjectileDisabled?.Invoke();
         Destroy(this.gameObject);
     }
-   
-    public int GetProjectileDamage() {
-        return GetDamage();
-    }
-
-    public void SetMaxProjectileDamage(int amt) {
-        SetMaxDamage(amt);
-    }
-
-    public void NormalProjectileDamage()
-    {
-        SetCurrentDamage(GetDamage());
-    }
-
-    public void SetCurrentProjectileDamage(int setdamage)
-    {
-        SetCurrentDamage(setdamage);
-    }
-
-    public int GetCurrentProjectileDamage()
-    {
-        return GetCurrentDamage();
+    public void SetLifeTime(float life) {
+        lifeTime = life;
     }
 }

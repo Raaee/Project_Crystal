@@ -298,8 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1300
-  currentHP: 75
+  maxHP: 700
+  <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
     m_PersistentCalls:
@@ -538,7 +538,7 @@ MonoBehaviour:
   - {x: 0.80405426, y: -1.2094054, z: 0}
   m_ShapePathHash: -803534617
   m_Mesh: {fileID: 0}
-  m_InstanceId: -17224
+  m_InstanceId: 101206
   m_LocalBounds:
     m_Center: {x: -0.007171631, y: -0.0022640228, z: 0}
     m_Extent: {x: 1.0977707, y: 1.2089868, z: 0}
@@ -699,6 +699,8 @@ MonoBehaviour:
   isPlayerShooting: 0
   enemyFireRate: 0.7
   playerFireRate: 0.1
+  maxDamage: 14
+  currentDamage: 10
   OnAttack:
     m_PersistentCalls:
       m_Calls: []

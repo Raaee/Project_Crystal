@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intitialDamage: 50
   maxDamage: 50
-  currentDamage: 100
+  currentDamage: 50
   EnemyProjectileDamage: 5
   projectileSpeed: 1000
   maxLifeTime: 2

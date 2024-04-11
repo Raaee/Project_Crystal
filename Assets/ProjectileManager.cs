@@ -7,7 +7,7 @@ public class ProjectileManager : MonoBehaviour
     [SerializeField] private int intitialDamage = 10;
     [SerializeField] private int maxDamage = 10; // The damage normal/max dealt by the projectile
     [SerializeField] private int currentDamage = 10; // current damage the projectile does
-    [SerializeField] public int EnemyProjectileDamage = 10;
+    //[SerializeField] public int EnemyProjectileDamage = 10;
 
     private void Start()
     {
