@@ -13,6 +13,7 @@ public class Crystal : MonoBehaviour {
     private CrystalInteract crystalInteract;
     [SerializeField] private float percentBlast = 10f;
     [HideInInspector] public UnityEvent OnCrystalDie;
+    [HideInInspector] public UnityEvent OnCrystalInteract;
 
     [Header("Debug")]
     [SerializeField] private CrystalState currentState;
@@ -64,6 +65,7 @@ public class Crystal : MonoBehaviour {
         CrystalManager.Instance.SetCurrentCrystal(this);
         CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
+        OnCrystalInteract?.Invoke();
     }
     public void PurifyInRadius() {
         TilePurificationManager.instance?.PurifyInRadius(this.gameObject.transform, (int)(spawner.radius * 1.25));
