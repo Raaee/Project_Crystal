@@ -123,8 +123,6 @@ public class Projectile : ProjectileManager
         Destroy(this.gameObject);
     }
    
-
-
     public int GetProjectileDamage() {
         return GetDamage();
     }
