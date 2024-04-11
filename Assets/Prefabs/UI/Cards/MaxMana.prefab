@@ -24,6 +24,22 @@ PrefabInstance:
       propertyPath: minValuePercent
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
+      propertyPath: charactersToImages.Array.data[0].image
+      value: 
+      objectReference: {fileID: -1142493099, guid: 1db54f23562746f4aabbd3931c3b8aac, type: 3}
+    - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
+      propertyPath: charactersToImages.Array.data[1].image
+      value: 
+      objectReference: {fileID: -1142493099, guid: 1db54f23562746f4aabbd3931c3b8aac, type: 3}
+    - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
+      propertyPath: charactersToImages.Array.data[2].image
+      value: 
+      objectReference: {fileID: -1142493099, guid: 1db54f23562746f4aabbd3931c3b8aac, type: 3}
+    - target: {fileID: 3267102628951165454, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
+      propertyPath: charactersToImages.Array.data[3].image
+      value: 
+      objectReference: {fileID: -1142493099, guid: 1db54f23562746f4aabbd3931c3b8aac, type: 3}
     - target: {fileID: 5275459108849958064, guid: d749e8b440ef6bd43b0bc0b519fe0198, type: 3}
       propertyPath: m_Sprite
       value: 
