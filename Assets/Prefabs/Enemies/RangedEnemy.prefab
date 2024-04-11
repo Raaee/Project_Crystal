@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692843802480e44069e929517a59c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 100
   <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
@@ -518,7 +518,6 @@ GameObject:
   - component: {fileID: 1883295130148061768}
   - component: {fileID: 3033950607122504338}
   - component: {fileID: 8510151263338052472}
-  - component: {fileID: 4172118449185975783}
   - component: {fileID: 5621713984815951882}
   m_Layer: 0
   m_Name: Enemy Visual
@@ -659,21 +658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 1306762602531067334}
   flashColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &4172118449185975783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6453280248707733763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8c88e23e6ed3a42b669d53c55505a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   shakeDuration: 0.15
   shakeMagnitude: 0.4
-  hp: {fileID: 8506391581786044554}
 --- !u!114 &5621713984815951882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +693,7 @@ MonoBehaviour:
   - {x: 0.80405426, y: -1.2094054, z: 0}
   m_ShapePathHash: -803534617
   m_Mesh: {fileID: 0}
-  m_InstanceId: 101512
+  m_InstanceId: 138640
   m_LocalBounds:
     m_Center: {x: -0.007171631, y: -0.0022640228, z: 0}
     m_Extent: {x: 1.0977707, y: 1.2089868, z: 0}
@@ -868,8 +854,6 @@ MonoBehaviour:
   isPlayerShooting: 0
   enemyFireRate: 0.7
   playerFireRate: 0.1
-  maxDamage: 4
-  currentDamage: 10
   OnAttack:
     m_PersistentCalls:
       m_Calls: []

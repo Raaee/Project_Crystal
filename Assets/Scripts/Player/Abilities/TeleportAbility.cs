@@ -16,6 +16,7 @@ public class TeleportAbility : Ability
     // The current movement input of the player.
     private Vector2 movementInput;
     [HideInInspector] public UnityEvent<Vector2> OnTeleport;
+    [HideInInspector] public UnityEvent OnTeleportVisual;
 
     
     public override void Start()
@@ -54,5 +55,6 @@ public class TeleportAbility : Ability
         // Move the player's position by the movement input multiplied by the teleport distance.
         playerMovement.gameObject.transform.position += (Vector3)movementInput * teleportDistance;
         OnTeleport?.Invoke(movementInput);
+        OnTeleportVisual.Invoke();
     }
 }
