@@ -139,12 +139,12 @@ TextureImporter:
       name: cursors_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 38
-        width: 7
-        height: 10
+        x: 13
+        y: 37
+        width: 9
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: cursors_1
       rect:
         serializedVersion: 2
-        x: 30
-        y: 38
-        width: 7
-        height: 10
+        x: 29
+        y: 37
+        width: 9
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: cursors_2
       rect:
         serializedVersion: 2
-        x: 46
-        y: 38
-        width: 7
-        height: 10
+        x: 45
+        y: 37
+        width: 9
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: cursorsCLICK_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 11
-        width: 6
-        height: 10
+        x: 14
+        y: 10
+        width: 8
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: cursorsCLICK_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 30
         y: 11
-        width: 6
-        height: 10
+        width: 8
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: cursorsCLICK_2
       rect:
         serializedVersion: 2
-        x: 47
-        y: 11
-        width: 6
-        height: 10
+        x: 46
+        y: 10
+        width: 8
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

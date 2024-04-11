@@ -14,7 +14,7 @@ public class PlayerHealthPoints : HealthPoints
     [ProButton]
     public override void Die()
     {       
-        OnHealthChange.Invoke();
+        OnHealthChange?.Invoke();
         OnDead?.Invoke();
     }
     public override void ResetHealth() 

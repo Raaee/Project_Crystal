@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.09803922, g: 0.07058824, b: 0.14901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownDuration: 6
   countdownText: {fileID: 43979776611952088}
-  deathPanelCanvas: {fileID: 8385685502526044222}
+  panelCanvas: {fileID: 8385685502526044222}
   respawnText: {fileID: 2168134553926841846}
 --- !u!225 &1062976646444550506
 CanvasGroup:

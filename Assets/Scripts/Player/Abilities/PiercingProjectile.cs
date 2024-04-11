@@ -8,10 +8,9 @@ public class PiercingProjectile : MonoBehaviour
 {
    
     [SerializeField] private float projectileSpeed = 1000f; // Speed of the projectile
-    [SerializeField] private float maxLifeTime = 2f; // Maximum lifetime of the projectile
-    [SerializeField] private int maxPiercingAmount = 4; // Maximum number of enemies the projectile can pierce through
-    [SerializeField] public int maxDamage = 10; // Damage dealt by the projectile
-    [SerializeField] private int currentDamage;
+    private float lifeTime = 2f; // Maximum lifetime of the projectile
+    private int maxPiercingAmount = 2; // Maximum number of enemies the projectile can pierce through
+    public int CurrentDamage { get; set; } // current damage the projectile does
 
     private int currentPiercingAmount; // Current number of enemies the projectile can still pierce through
 
@@ -27,20 +26,11 @@ public class PiercingProjectile : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>(); // Get the Rigidbody component
     }
 
-    
-    private void Start()
-    {
-        currentPiercingAmount = maxPiercingAmount; // Reset the current piercing amount
-        currentDamage = maxDamage; //Set current damge to damage dealt
-        Debug.Log(currentDamage);
-    }
-
-
     private void FixedUpdate()
     {
         MoveProjectile(); // Move the projectile
         timer += Time.deltaTime; // Increase the timer
-        if (timer >= maxLifeTime) // If the projectile has exceeded its maximum lifetime
+        if (timer >= lifeTime) // If the projectile has exceeded its maximum lifetime
         {
             DisableProjectile(); // Disable the projectile
             timer = 0; // Reset the timer
@@ -75,7 +65,7 @@ public class PiercingProjectile : MonoBehaviour
             {
                 return; 
             }
-            potentialEnemyHealth.RemoveHealth(currentDamage);
+            potentialEnemyHealth.RemoveHealth(CurrentDamage);
           
             currentPiercingAmount--;
             if (currentPiercingAmount <= 0) { 
@@ -95,26 +85,10 @@ public class PiercingProjectile : MonoBehaviour
         // Reset the current piercing amount
         currentPiercingAmount = maxPiercingAmount;
     }
-    public int GetProjectileDamage() {
-        return maxDamage;
+    public void SetLifeTime(float life) {
+        lifeTime = life;
     }
-    public void SetMaxProjectileDamage(int amt) {
-        maxDamage = amt;
-        NormalProjectileDamage();
-    }
-
-    public void NormalProjectileDamage()
-    {
-        currentDamage = maxDamage;
-    }
-
-    public void SetCurrentPierceDamage(int setdamage)
-    {
-        currentDamage = setdamage;
-    }
-
-    public int GetCurrentPierceDamage()
-    {
-        return currentDamage;
+    public void SetPierceAmount(int amt) {
+        maxPiercingAmount = amt;
     }
 }

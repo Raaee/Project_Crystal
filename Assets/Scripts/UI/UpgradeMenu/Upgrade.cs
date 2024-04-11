@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class Upgrade : MonoBehaviour
@@ -14,12 +16,23 @@ public class Upgrade : MonoBehaviour
         MaxHealthPercent,
         AbilityCooldownPercent,
     }
+    [HideInInspector] public UnityEvent OnCardSelected;
+    [HideInInspector] public UnityEvent OnCardConfirm;
+
+    [System.Serializable]
+    public struct CharacterToImage
+    {
+        public CharacterDataSO character;
+        public Sprite image;
+    }
 
     public UpgradeType upgradeType;
     [HideInInspector] public float upgradeValue;
     public int minValuePercent;
     public int maxValuePercent;
     public Image cardBackground;
+    public List<CharacterToImage> charactersToImages;
+    public Image upgradeImage;
     public TMP_Text upgradeDescription;
 
     public void Start()
@@ -35,6 +48,7 @@ public class Upgrade : MonoBehaviour
         // Set the card background color to the selected color
         cardBackground.color = UpgradeMenu.instance.selectedColor;
         UpgradeMenu.instance.SelectCard(this);
+        OnCardSelected?.Invoke();
     }
 
     public string GetUpgradeDescription()
@@ -49,7 +63,7 @@ public class Upgrade : MonoBehaviour
             case UpgradeType.PierceDamagePercent:
                 return $"{white}Increase {green}Pierce Attack {white}(Q) Damage by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.MaxManaPercent:
-                return $"{white}Increase Max {green}Mana {white}by {yellow}{(int)(upgradeValue * 100)}%";
+                return $"{white}Increase Max {green}Mana {white}and Decrease {green}Mana Cost {white}by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.MaxHealthPercent:
                 return $"{white}Increase Max {green}Health {white}by {yellow}{(int)(upgradeValue * 100)}%";
             case UpgradeType.AbilityCooldownPercent:
@@ -61,6 +75,7 @@ public class Upgrade : MonoBehaviour
 
     public void ApplyUpgrade()
     {
+        OnCardConfirm?.Invoke();
         switch (upgradeType)
         {
             case UpgradeType.BasicDamagePercent:
@@ -72,6 +87,7 @@ public class Upgrade : MonoBehaviour
             case UpgradeType.MaxManaPercent:
                 BuffManager.instance.IncreaseMaxMana(upgradeValue);
                 BuffManager.instance.AddMana(Mathf.RoundToInt(upgradeValue * 100));
+                BuffManager.instance.ReduceAllManaCost(Mathf.RoundToInt(upgradeValue * 100));
                 break;
             case UpgradeType.MaxHealthPercent:
                 BuffManager.instance.IncreaseMaxHealth(upgradeValue);

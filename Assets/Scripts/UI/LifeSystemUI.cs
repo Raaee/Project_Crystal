@@ -9,10 +9,18 @@ public class LifeSystemUI : MonoBehaviour
     [SerializeField] private LifeSystem lifeSystem;
     [SerializeField] private Color32 shatterColor;
     public List<Image> livesImages;
+    
     [SerializeField] private GameObject lifeDonePanel;
 
-    private void Start() {
+    void Awake()
+    {
+        disabledLives();
+    }
+    private void Start()
+    {
+       
         lifeSystem.OnRemoveLife.AddListener(UpdateLives);
+        animateLives();
         ResetLives();
     }
 
@@ -39,11 +47,36 @@ public class LifeSystemUI : MonoBehaviour
             ShowLifeDonePanel();
         }
     }
+
+    private void animateLives()
+    {
+        StartCoroutine(_animateLives());
+
+    }
+
+    private IEnumerator _animateLives()
+    {
+        foreach (Image life in livesImages)
+        {
+            yield return new WaitForSeconds(1f);
+            life.enabled = true;
+        }
+    }
+
+    private void disabledLives()
+    {
+        foreach (Image life in livesImages)
+        {
+            life.enabled = false;
+        }
+    }
     public void ShowLifeDonePanel() {
         // show panel
         // panel should tell the player their lives are done, text = "You're Done." (show lives done)
         // 1 button for "restart" (this will call lifeSystem.LifeDone();)
         // 1 button for "main menu" (this will load main menu scene)
+        PlayerManager.Instance.DestoryDeathPanel();
+        Instantiate(lifeDonePanel);
     }
 
 }

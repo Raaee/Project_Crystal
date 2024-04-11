@@ -5336,7 +5336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f67c6971fa73f74a833a709cfaf90b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 125
+  maxHP: 130
   <currentHP>k__BackingField: 0
   godMode: 0
   OnDead:
@@ -5377,7 +5377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c9f6af5a0f24770a96c03f01257bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drowningDamage: 2
+  drowningDamage: 4
   colliderTille: Water
   isDrowning: 0
   timeBetweenDamage: 1
@@ -5731,8 +5731,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
-  manaCost: 0
+  maxDamage: 12
+  currentDamage: 0
+  maxLifeTime: 0.2
+  cooldown: 0.4
+  manaCost: 3
   IsActive: 0
   userMana: {fileID: 47992779867472359}
   OnAbilityUsage:
@@ -5740,8 +5743,8 @@ MonoBehaviour:
       m_Calls: []
   projectilePrefab: {fileID: 971724485026557118, guid: 50e9f81328c3753468da15116462022f, type: 3}
   isPlayerShooting: 1
-  enemyFireRate: 5
-  playerFireRate: 0.5
+  enemyFireRate: 0
+  playerFireRate: 0.2
   OnAttack:
     m_PersistentCalls:
       m_Calls: []
@@ -5757,14 +5760,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ce4dc2012641549b26ff27e597bb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
-  manaCost: 10
+  maxDamage: 25
+  currentDamage: 0
+  maxLifeTime: 0.3
+  cooldown: 0.7
+  manaCost: 20
   IsActive: 0
   userMana: {fileID: 47992779867472359}
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
   projectilePrefab: {fileID: 4827135260225847506, guid: df85efab53bfd9d489d0c9f6a7ffd68e, type: 3}
+  maxPiercingAmount: 4
 --- !u!114 &4155009513920997700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5777,14 +5784,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88fe5eccee5cfa4aa4ca7af0b34cb30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDamage: 0
+  currentDamage: 0
+  maxLifeTime: 0
   cooldown: 2
-  manaCost: 5
+  manaCost: 12
   IsActive: 0
   userMana: {fileID: 47992779867472359}
   OnAbilityUsage:
     m_PersistentCalls:
       m_Calls: []
-  teleportDistance: 3
+  teleportDistance: 7.5
   OnTeleport:
     m_PersistentCalls:
       m_Calls: []

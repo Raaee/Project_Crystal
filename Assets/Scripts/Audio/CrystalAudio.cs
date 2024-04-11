@@ -11,8 +11,8 @@ public class CrystalAudio : MonoBehaviour
   [SerializeField] private AudioClip startWaveStinger;
 
   private void Start(){
-  //crystal.OnCrystalDeathEvent.AddListener(PlayCrystalDeath);
-
+  crystal.OnCrystalDie.AddListener(PlayCrystalDeath);
+  crystal.OnCrystalInteract.AddListener(PlayStartWaveStinger);
   }
   public void PlayCrystalDeath(){
 
