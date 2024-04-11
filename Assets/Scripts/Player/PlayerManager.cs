@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour {
 
-    private GameObject player;
+    [SerializeField] private GameObject player;
     public static PlayerManager Instance { get; set; }
     [HideInInspector] public PlayerHealthPoints hp { get; set; }
     [HideInInspector] public ManaPoints mp { get; set; }

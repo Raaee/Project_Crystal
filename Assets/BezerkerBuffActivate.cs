@@ -12,19 +12,22 @@ public class BezerkerBuffActivate : MonoBehaviour
     [HideInInspector] public UnityEvent OnBezerker;
     [HideInInspector] public UnityEvent StopBezerker;
 
-    [SerializeField] private RuntimeAnimatorController animControllerBasicAttack;
-    [SerializeField] private RuntimeAnimatorController animControllerBasicAttackBerkerz;
-    [SerializeField] private RuntimeAnimatorController animControllerPierceAttack;
-    [SerializeField] private RuntimeAnimatorController animControllerPierceAttackBerzerk;
+    private RuntimeAnimatorController BA_NormalController;
+    private RuntimeAnimatorController PS_NormalController;
+    [SerializeField] private RuntimeAnimatorController BA_BerserkController;
+    [SerializeField] private RuntimeAnimatorController PS_BerserkController;
 
-    private Animator basicAnimatorberzerker;
-    private Animator piercesAnimatorberzerker;
+    private Animator basicAttackAnimator;
+    private Animator pierceShotAnimator;
 
     //Initialize the basicAnimatorberzerker, piercesAnimatorberzerker for the animation and set all animation to deactivated
     private void Start()
     {
-        basicAnimatorberzerker = PlayerManager.Instance.rangedBA.GetBasicAttackPrefab().GetComponentInChildren<Animator>();
-        piercesAnimatorberzerker = PlayerManager.Instance.pierceShot.GetPiercesAttackPrefab().GetComponentInChildren<Animator>();
+        basicAttackAnimator = PlayerManager.Instance.rangedBA.GetBasicAttackPrefab().GetComponentInChildren<Animator>();
+        pierceShotAnimator = PlayerManager.Instance.pierceShot.GetPiercesAttackPrefab().GetComponentInChildren<Animator>();
+        BA_NormalController = basicAttackAnimator.runtimeAnimatorController;
+        PS_NormalController = pierceShotAnimator.runtimeAnimatorController;
+
         DisActivateBerzerkAnimation();
     }
 
@@ -59,14 +62,14 @@ public class BezerkerBuffActivate : MonoBehaviour
     //Activate the berzeker animations of basic and pierces attacks
     public void ActivateBerzerkAnimation()
     {
-        basicAnimatorberzerker.runtimeAnimatorController = animControllerBasicAttackBerkerz;
-        piercesAnimatorberzerker.runtimeAnimatorController = animControllerPierceAttackBerzerk;
+        basicAttackAnimator.runtimeAnimatorController = BA_BerserkController;
+        pierceShotAnimator.runtimeAnimatorController = PS_BerserkController;
     }
 
     //DisActivate the berzeker animations of basic and pierces attacks
     public void DisActivateBerzerkAnimation()
     {
-        basicAnimatorberzerker.runtimeAnimatorController = animControllerBasicAttack;
-        piercesAnimatorberzerker.runtimeAnimatorController = animControllerPierceAttack;
+        basicAttackAnimator.runtimeAnimatorController = BA_NormalController;
+        pierceShotAnimator.runtimeAnimatorController = PS_NormalController;
     }
 }
