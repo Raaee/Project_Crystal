@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 // The Projectile class handles the behavior of projectiles in the game.
-public class Projectile : MonoBehaviour
+public class Projectile : ProjectileManager
 {
     [SerializeField] private float projectileSpeed = 1000f; // The speed of the projectile.
     [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
@@ -15,13 +15,11 @@ public class Projectile : MonoBehaviour
     private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const string CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
     private const string BOSS_CRYSTAL_TAG = "BossCrystal"; // Tag used to identify the boss crystal.
-    [SerializeField] public int maxDamage = 10; // The damage normal/max dealt by the projectile.
-    [SerializeField] public int intitialDamage = 10;
-    private int currentDamage; // current damage the projectile does
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
     private bool isPlayerShooting = true;
+    private ProjectileManager projectileManager;
 
     [HideInInspector] public UnityEvent OnProjectileDisabled;
 
@@ -31,10 +29,11 @@ public class Projectile : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log("Start");
-        //The Problem is that everytime the projectile is created it set the currentDamage as the maxDamage because Start() is always called when the proj is created
-        //It should only set the current damage to max one time.
-        currentDamage = maxDamage;
+        projectileManager = GetComponent<ProjectileManager>();
+        //Debug.Log("Start");
+        ////The Problem is that everytime the projectile is created it set the currentDamage as the maxDamage because Start() is always called when the proj is created
+        ////It should only set the current damage to max one time.
+        //currentDamage = maxDamage;
     }
 
     private void FixedUpdate()
@@ -78,8 +77,7 @@ public class Projectile : MonoBehaviour
                 if (!potentialEnemyHealth) {
                     return;
                 }
-                Debug.Log("Projectile " + currentDamage);
-                potentialEnemyHealth.RemoveHealth(GetCurrentProjectileDamage());
+                potentialEnemyHealth.RemoveHealth(GetCurrentDamage());
 
                 // Disable the projectile after it has hit an enemy
                 DisableProjectile();
@@ -99,7 +97,7 @@ public class Projectile : MonoBehaviour
             }
             
 
-            potentialPlayerHealth.RemoveHealth(GetCurrentProjectileDamage());
+            potentialPlayerHealth.RemoveHealth(EnemyProjectileDamage);
             DisableProjectile();
         }
         // Check if the projectile has collided with the crystal
@@ -113,14 +111,10 @@ public class Projectile : MonoBehaviour
             if (!potentialCrystalHealth)    {
                 return;
             }
-            potentialCrystalHealth.RemoveHealth(GetCurrentProjectileDamage());
+            potentialCrystalHealth.RemoveHealth(EnemyProjectileDamage);
             
             //DisableProjectile(); // Uncomment this to not have piercing on crystal.
         }
-    }
-
-    public int GetInitialDamage() {
-        return intitialDamage;
     }
 
     private void DisableProjectile()
@@ -129,31 +123,28 @@ public class Projectile : MonoBehaviour
         Destroy(this.gameObject);
     }
    
-  
+
+
     public int GetProjectileDamage() {
-        return maxDamage;
+        return GetDamage();
     }
 
     public void SetMaxProjectileDamage(int amt) {
-        maxDamage = amt;
-        NormalProjectileDamage();
+        SetMaxDamage(amt);
     }
 
     public void NormalProjectileDamage()
     {
-        currentDamage = maxDamage;
+        SetCurrentDamage(GetDamage());
     }
 
     public void SetCurrentProjectileDamage(int setdamage)
     {
-        Debug.Log("Seting before"+ currentDamage);
-        currentDamage = setdamage;
-        Debug.Log("Stinmg after"+currentDamage);
+        SetCurrentDamage(setdamage);
     }
 
     public int GetCurrentProjectileDamage()
     {
-        Debug.Log("GetInitialDamage  " + currentDamage);
-        return currentDamage;
+        return GetCurrentDamage();
     }
 }

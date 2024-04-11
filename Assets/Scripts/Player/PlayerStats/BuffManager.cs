@@ -96,17 +96,20 @@ public class BuffManager : MonoBehaviour  {
         ReducePierceShotCooldown(percentageDecrease);
     }
     //Damage Multiplyer
-    public void MultiplyBasicAttackDamage(int damageIncrese) {
-        Debug.Log(basicAttack.GetCurrentDamge());
-        basicAttack.SetCurrentDamge(basicAttack.GetCurrentDamge() * damageIncrese);
-        Debug.Log(basicAttack.GetCurrentDamge());
-    }
-    public void MultiplyPierceDamage(int damageIncrese) {
-        piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
-    }
+    //public void MultiplyBasicAttackDamage(int damageIncrese) {
+    //    basicAttack.SetCurrentDamge(basicAttack.GetCurrentDamge() * damageIncrese);
+    //}
+    //public void MultiplyPierceDamage(int damageIncrese) {
+    //    piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
+    //}
 
-    public void DamageDebug() {
-        Debug.Log("Bezeker Change" + basicAttack.GetCurrentDamge());
+    public void MultiplyBasicAttackDamage(int damageIncrese)
+    {
+        basicAttack.SetCurrentDamge(basicAttack.GetMaxDamage() * damageIncrese);
+    }
+    public void MultiplyPierceDamage(int damageIncrese)
+    {
+        piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
     }
 
     public void ResetBasicAttckDamege() {

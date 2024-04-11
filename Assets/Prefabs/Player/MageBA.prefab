@@ -112,10 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9185c03ade39de94abb009a537d39f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intitialDamage: 50
+  maxDamage: 50
+  currentDamage: 50
+  EnemyProjectileDamage: 5
   projectileSpeed: 1000
   maxLifeTime: 2
-  maxDamage: 50
-  intitialDamage: 50
   OnProjectileDisabled:
     m_PersistentCalls:
       m_Calls: []

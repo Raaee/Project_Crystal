@@ -51,9 +51,7 @@ public class BezerkerBuffActivate : MonoBehaviour
     //ApplyBezerkerBuff will give the dammage multiplyer for the abilities and start the buff timer
     public void ApplyBezerkerBuff()
     {
-        BuffManager.instance.DamageDebug();
         BuffManager.instance.MultiplyBasicAttackDamage(berserkerDamageMultplyer);
-        BuffManager.instance.DamageDebug();
         BuffManager.instance.MultiplyPierceDamage(berserkerDamageMultplyer);
         StartCoroutine(RemoveBerzerker(berserkerDamageTime));
     }

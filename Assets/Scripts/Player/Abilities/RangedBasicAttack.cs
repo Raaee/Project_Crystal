@@ -28,8 +28,8 @@ public class RangedBasicAttack : Ability
     }
     public override void Start()
     {
-        Projectile proj = projectilePrefab.GetComponent<Projectile>();
-        proj.SetMaxProjectileDamage(proj.GetInitialDamage());
+        //Projectile proj = projectilePrefab.GetComponent<Projectile>();
+        //proj.SetMaxProjectileDamage(proj.GetInitialDamage());
        // projPooler = ObjPoolerManager.instance.GetPool(projectilePrefab);
     }
 
@@ -97,6 +97,17 @@ public class RangedBasicAttack : Ability
     public void SetMaxDamage(int amt) {
         projectilePrefab.GetComponent<Projectile>().SetMaxProjectileDamage(amt);
     }
+
+    //public int GetInitialDamage()
+    //{
+    //    return projectilePrefab.GetComponent<Projectile>().GetInitialDamage();
+    //}
+
+    //public void SetInitialDamage(int amt)
+    //{
+    //    projectilePrefab.GetComponent<Projectile>().SetInit(amt);
+    //}
+
 
     public void SetCurrentDamge(int amt)
     {
