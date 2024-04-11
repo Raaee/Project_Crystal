@@ -5262,7 +5262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownDuration: 5
   countdownText: {fileID: 0}
-  deathPanelCanvas: {fileID: 0}
+  panelCanvas: {fileID: 0}
   respawnText: {fileID: 0}
 --- !u!1 &3243575590588145836
 GameObject:
@@ -5517,7 +5517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9b249be76e9a3419e3c8e3beac5c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 2
+  maxDamage: 5
   currentDamage: 0
   maxLifeTime: 0.8
   cooldown: 0.25
@@ -5530,7 +5530,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 971724485026557118, guid: d75cae107acbe9646b945831a7ad03e8, type: 3}
   isPlayerShooting: 1
   enemyFireRate: 0
-  playerFireRate: 0.8
+  playerFireRate: 0.25
   OnAttack:
     m_PersistentCalls:
       m_Calls: []
@@ -5546,7 +5546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ce4dc2012641549b26ff27e597bb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 7
+  maxDamage: 10
   currentDamage: 0
   maxLifeTime: 0.7
   cooldown: 0.5
@@ -5736,7 +5736,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 139232
+  m_InstanceId: 161304
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
