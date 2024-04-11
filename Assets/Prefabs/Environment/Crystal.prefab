@@ -242,6 +242,7 @@ MonoBehaviour:
       position: {x: -5.8967395, y: 15.944543}
       timeDelay: 0.4
   spawnedObjects: []
+  spawnedGamesObjects: []
   state: 2
   time: 0
   OnSpawnerStart:
@@ -331,8 +332,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  percentBlast: 10
+  currentCrytal: {fileID: 0}
+  blastPercentage: 0.75
+  blastDamage: 75
   OnCrystalDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrystalInteract:
     m_PersistentCalls:
       m_Calls: []
   currentState: 0
@@ -706,6 +712,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 6012569834952070308}
   flashColor: {r: 1, g: 0, b: 0, a: 1}
+  shakeDuration: 0.15
+  shakeMagnitude: 0.2
 --- !u!1 &2703126645572691021
 GameObject:
   m_ObjectHideFlags: 0

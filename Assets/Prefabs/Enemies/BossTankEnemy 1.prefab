@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71e02149104c434298ce85b77c8c3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
-  maxSpeed: 8
+  baseSpeed: 4
+  maxSpeed: 4
   curSpeed: 0
   currentMovementState: 0
   player: {fileID: 0}
@@ -706,7 +706,7 @@ MonoBehaviour:
   - {x: 0.80792236, y: -1.4052019, z: -0.00000036042184}
   m_ShapePathHash: -1582723859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 161890
+  m_InstanceId: 177192
   m_LocalBounds:
     m_Center: {x: -0.037345886, y: -0.2794497, z: 0}
     m_Extent: {x: 1.4293442, y: 1.1626766, z: 0}

@@ -46,30 +46,18 @@ public class BuffManager : MonoBehaviour  {
     public void AddHealth(int amt) {
         playerHealth.AddHealth(amt);
     }
-    public void RemoveHealth(int amt) {
-        playerHealth.RemoveHealth(amt);
-    }
     public void IncreaseMaxHealth(float percentageIncrease) {
         int maxHP = playerHealth.GetMaxHealth();
         playerHealth.SetMaxHealth(maxHP + (int)(maxHP * percentageIncrease));
-    }
-    public int GetCurrentHealth() {
-        return playerHealth.GetCurrentHP();
     }
     // Mana
     public void AddMana(int amt) {
         playerMana.AddMana(amt);
     }
-    public void RemoveMana(int amt) {
-        playerMana.RemoveMana(amt);
-    }
     public void IncreaseMaxMana(float percentageIncrease) {
-        int maxMP = playerMana.GetMaxMana();
-        playerMana.SetMaxMana(maxMP + (int)(maxMP * percentageIncrease));
+        float maxMP = playerMana.GetMaxMana();
+        playerMana.SetMaxMana(maxMP + (maxMP * percentageIncrease));
     }    
-    public int GetCurrentMana() {
-        return playerMana.GetCurrentMP();
-    }
     // Basic Attack
     public void IncreaseMaxBasicAttackDamage(float percentageIncrease) {
         int damage = basicAttack.GetMaxProjectileDamage();
@@ -101,13 +89,13 @@ public class BuffManager : MonoBehaviour  {
         ReducePierceShotManaCost(percentageDecrease);
     }
     public void ReduceBasicAttackManaCost(float percentageDecrease) {
-        basicAttack.SetManaCost(Mathf.RoundToInt(basicAttack.GetManaCost() - (basicAttack.GetManaCost() * percentageDecrease)));
+        basicAttack.SetManaCost(basicAttack.GetManaCost() - (basicAttack.GetManaCost() * percentageDecrease));
     }
     public void ReduceTeleportManaCost(float percentageDecrease) {
-        teleportAbility.SetManaCost(Mathf.RoundToInt(teleportAbility.GetManaCost() - (teleportAbility.GetManaCost() * percentageDecrease)));
+        teleportAbility.SetManaCost(teleportAbility.GetManaCost() - (teleportAbility.GetManaCost() * percentageDecrease));
     }
     public void ReducePierceShotManaCost(float percentageDecrease) {
-        piercingShot.SetManaCost(Mathf.RoundToInt(piercingShot.GetManaCost() - (piercingShot.GetManaCost() * percentageDecrease)));
+        piercingShot.SetManaCost(piercingShot.GetManaCost() - (piercingShot.GetManaCost() * percentageDecrease));
     }
 
     public void MultiplyBasicAttackDamage(int damageIncrese)

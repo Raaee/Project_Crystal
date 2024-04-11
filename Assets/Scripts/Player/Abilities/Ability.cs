@@ -13,7 +13,7 @@ public abstract class Ability : MonoBehaviour
     // Cooldown time for the ability
     [SerializeField] public float cooldown;
     // Mana cost of the ability
-    [SerializeField] protected int manaCost;
+    [SerializeField] protected float manaCost;
     // Flag to check if the ability is active
     [SerializeField] protected bool IsActive;
     // Reference to the player's mana points
@@ -52,9 +52,14 @@ public abstract class Ability : MonoBehaviour
     public abstract void AbilityUsage();
 
     // Method to get the current mana points of the player
-    public int GetCurrentMana() => userMana.GetCurrentMP();
-    public void SetManaCost(int cost) => manaCost = cost;
-    public int GetManaCost() => manaCost;
+    public float GetCurrentMana() => userMana.GetCurrentMP();
+    public void SetManaCost(float cost) {
+        manaCost = cost;
+        if (manaCost < 0.1f) {
+            manaCost = 0.1f;
+        }
+    }
+    public float GetManaCost() => manaCost;
     // Method to get cooldownTime
     public float GetCooldownTime() 
     {

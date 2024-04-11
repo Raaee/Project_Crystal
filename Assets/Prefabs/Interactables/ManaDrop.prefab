@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb78e149fae00439495d86a4dc2edae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaAmount: 17
+  manaAmount: 30
 --- !u!82 &-4672447542604537031
 AudioSource:
   m_ObjectHideFlags: 0

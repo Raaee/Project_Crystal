@@ -87,7 +87,7 @@ public class Upgrade : MonoBehaviour
             case UpgradeType.MaxManaPercent:
                 BuffManager.instance.IncreaseMaxMana(upgradeValue);
                 BuffManager.instance.AddMana(Mathf.RoundToInt(upgradeValue * 100));
-                BuffManager.instance.ReduceAllManaCost(Mathf.RoundToInt(upgradeValue * 100));
+                BuffManager.instance.ReduceAllManaCost(upgradeValue);
                 break;
             case UpgradeType.MaxHealthPercent:
                 BuffManager.instance.IncreaseMaxHealth(upgradeValue);

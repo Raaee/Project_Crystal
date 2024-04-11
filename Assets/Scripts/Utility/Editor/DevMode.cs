@@ -63,6 +63,14 @@ public class DevMode
             crystal.spawner.state = Spawner.State.Complete;
         }
     }
+    [MenuItem("Dev Mode/ONLY Purify Boss Crystal")]
+    public static void PurifyBoss() {
+        Debug.Log("Purifying the boss!!!!~~~~~~ ******");
+        foreach (Crystal crystal in CrystalManager.Instance.crystals) {
+            if (crystal.gameObject.CompareTag("BossCrystal"))
+                crystal.spawner.state = Spawner.State.Complete;
+        }
+    }
 
     [MenuItem("Dev Mode/List All Current Stats")]
     public static void ListAllCurrentStats()

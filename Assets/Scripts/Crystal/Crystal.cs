@@ -67,6 +67,7 @@ public class Crystal : MonoBehaviour {
     {
         if (currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.ENGAGING;
+        hp.SetCurrentHP(hp.GetMaxHealth());
         CrystalManager.Instance.SetCurrentCrystal(this);
         CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
