@@ -51,12 +51,13 @@ public class Crystal : MonoBehaviour {
     }
     public void OnCrystalDeath() {
         if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
-        Debug.Log("dead");
+       
         OnCrystalDie.Invoke();
         currentState = CrystalState.SHATTERED;
         CrystalManager.Instance.UnLockInteractions();
         spawner.state = Spawner.State.Idle;
-        crystalVFX.ShatterVisual();
+        Debug.Log("prepare to shatter crystal");
+      
         // SFX here
     }
     private void OnCrystalEngaing() {

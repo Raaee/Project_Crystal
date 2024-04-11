@@ -25,6 +25,7 @@ public class UpgradeMenu : MonoBehaviour
     public Transform cardParent;
     public Button confirmButton;
     public List<GameObject> possibleCards;
+    public DropChosenPlayer dropChosenPlayer;
 
     public Color selectedColor = Color.green;
     public Color defaultColor = Color.white;
@@ -73,8 +74,18 @@ public class UpgradeMenu : MonoBehaviour
         List<GameObject> shuffledCards = possibleCards.GetRandomElements(amount, false);
         for (int i = 0; i < amount; i++)
         {
+            // Find the current character SO from dropChosenPlayer
+            CharacterDataSO currentCharacter = dropChosenPlayer.chosenPlayer;
+            // if null, just return and do nothing
+            if (currentCharacter == null)
+            {
+                return;
+            }
+            // Find the image in the list of charactersToImages
+            Sprite currentCharacterImage = shuffledCards[i].GetComponent<Upgrade>().charactersToImages.Find(x => x.character == currentCharacter).image;
+
             GameObject card = Instantiate(shuffledCards[i], cardParent);
-            card.GetComponent<Upgrade>().Start();
+            card.GetComponent<Upgrade>().upgradeImage.sprite = currentCharacterImage;
         }
 
     }

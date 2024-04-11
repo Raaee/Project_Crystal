@@ -65,6 +65,16 @@ MonoBehaviour:
   minValuePercent: 5
   maxValuePercent: 20
   cardBackground: {fileID: 1424411361764118853}
+  charactersToImages:
+  - character: {fileID: 11400000, guid: 11f76d83cebd4f74cbbdfd7aa4814007, type: 2}
+    image: {fileID: 199833550, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  - character: {fileID: 11400000, guid: 548da80def3098142aed11f1446875f1, type: 2}
+    image: {fileID: 199833550, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  - character: {fileID: 11400000, guid: ab10131a7f29cbb409ad1d29dd4578c4, type: 2}
+    image: {fileID: 1895692086, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  - character: {fileID: 11400000, guid: abc46e8667063c5458706875103bf35c, type: 2}
+    image: {fileID: 1895692086, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
+  upgradeImage: {fileID: 5275459108849958064}
   upgradeDescription: {fileID: 6030716381891749254}
 --- !u!222 &1976522109261346160
 CanvasRenderer:
