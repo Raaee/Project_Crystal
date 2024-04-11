@@ -47,7 +47,7 @@ public class EnemyAnimation : MonoBehaviour
 
     public void UpdateEnemyHealth() {
         hpBarCanvas.enabled = true;
-        hpEnemyFilling.fillAmount = (float) hp.currentHP / hp.maxHP;
+        hpEnemyFilling.fillAmount = (float) hp.GetCurrentHP() / hp.GetMaxHealth();
        
 
     }

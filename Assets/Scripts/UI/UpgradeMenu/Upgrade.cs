@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
@@ -15,6 +16,8 @@ public class Upgrade : MonoBehaviour
         MaxHealthPercent,
         AbilityCooldownPercent,
     }
+    [HideInInspector] public UnityEvent OnCardSelected;
+    [HideInInspector] public UnityEvent OnCardConfirm;
 
     [System.Serializable]
     public struct CharacterToImage
@@ -45,6 +48,7 @@ public class Upgrade : MonoBehaviour
         // Set the card background color to the selected color
         cardBackground.color = UpgradeMenu.instance.selectedColor;
         UpgradeMenu.instance.SelectCard(this);
+        OnCardSelected?.Invoke();
     }
 
     public string GetUpgradeDescription()
@@ -71,6 +75,7 @@ public class Upgrade : MonoBehaviour
 
     public void ApplyUpgrade()
     {
+        OnCardConfirm?.Invoke();
         switch (upgradeType)
         {
             case UpgradeType.BasicDamagePercent:

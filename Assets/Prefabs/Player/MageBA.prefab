@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
   maxLifeTime: 2
-  maxDamage: 58
+  maxDamage: 65
   OnProjectileDisabled:
     m_PersistentCalls:
       m_Calls: []
