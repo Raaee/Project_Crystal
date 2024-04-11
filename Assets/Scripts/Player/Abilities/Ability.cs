@@ -7,6 +7,9 @@ using UnityEngine.Events;
 // This is an abstract class for player abilities
 public abstract class Ability : MonoBehaviour
 {
+    [SerializeField] protected int maxDamage = 10; // The damage normal/max dealt by the projectile
+    [SerializeField] protected int currentDamage = 10; // current damage the projectile does
+    [SerializeField] protected float maxLifeTime = 2f; // Maximum lifetime of the projectile
     // Cooldown time for the ability
     [SerializeField] public float cooldown;
     // Mana cost of the ability
@@ -50,7 +53,8 @@ public abstract class Ability : MonoBehaviour
 
     // Method to get the current mana points of the player
     public int GetCurrentMana() => userMana.GetCurrentMP();
-
+    public void SetManaCost(int cost) => manaCost = cost;
+    public int GetManaCost() => manaCost;
     // Method to get cooldownTime
     public float GetCooldownTime() 
     {

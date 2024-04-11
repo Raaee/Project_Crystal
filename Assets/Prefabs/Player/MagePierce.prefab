@@ -177,7 +177,7 @@ Animator:
   m_GameObject: {fileID: 4676247206138227113}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 17cb0e6d76a9e4c4a90ee1fc8c8db076, type: 2}
+  m_Controller: {fileID: 9100000, guid: 292b36786c62e4ab19b1dc8f5a91e85a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   maxLifeTime: 2
   maxPiercingAmount: 4
   maxDamage: 23
-  currentDamage: 23
+  currentDamage: 92
 --- !u!1 &5244579004686156743
 GameObject:
   m_ObjectHideFlags: 0

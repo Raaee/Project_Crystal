@@ -7,13 +7,16 @@ using UnityEngine.InputSystem;
 public class PiercingShotAbility : Ability
 {
     [SerializeField] private GameObject projectilePrefab;
-    
+    [SerializeField] private int maxPiercingAmount = 1;
     private Actions actions;
 
     void Awake()
     {
         actions = GetComponentInParent<Actions>();
         actions.OnAbility1.AddListener(ShootIfActive);
+    }
+    public override void Start() {
+        NormalPierceDamage();
     }
 
     public void SpawnProjectile(Vector2 moveDirection)
@@ -22,7 +25,9 @@ public class PiercingShotAbility : Ability
         go.transform.position = this.transform.position;
         PiercingProjectile projectile = go.GetComponent<PiercingProjectile>();
         projectile.SetMoveDirection(moveDirection);
-        go.SetActive(true);
+        projectile.CurrentDamage = currentDamage;
+        projectile.SetLifeTime(maxLifeTime);
+        projectile.SetPierceAmount(maxPiercingAmount);
     }
 
     public void ShootIfActive()
@@ -45,10 +50,10 @@ public class PiercingShotAbility : Ability
     }
 
     public int GetMaxDamage() {
-        return projectilePrefab.GetComponent<PiercingProjectile>().GetProjectileDamage();
+        return maxDamage;
     }
     public void SetMaxDamage(int amt) {
-        projectilePrefab.GetComponent<PiercingProjectile>().SetMaxProjectileDamage(amt);
+        maxDamage = amt;
     }
 
     public GameObject GetPiercesAttackPrefab()
@@ -58,16 +63,16 @@ public class PiercingShotAbility : Ability
 
     public void SetPiercingCurrentDamge(int amt)
     {
-        projectilePrefab.GetComponent<PiercingProjectile>().SetCurrentPierceDamage(amt);
+        currentDamage = amt;
     }
 
     public int GetPiercingCurrentDamge()
     {
-        return projectilePrefab.GetComponent<PiercingProjectile>().GetCurrentPierceDamage();
+        return currentDamage;
     }
 
     public void NormalPierceDamage()
     {
-        projectilePrefab.GetComponent<PiercingProjectile>().NormalProjectileDamage();
+        currentDamage = maxDamage;
     }
 }

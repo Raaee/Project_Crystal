@@ -12,6 +12,7 @@ public class CrystalManager : MonoBehaviour
     private Crystal currentCrystal;
     [HideInInspector] public CrystalHealthPoints currentCrystalHP { get; set; }
     [HideInInspector] public Spawner wave { get; set; }
+    [HideInInspector] public Spawner spawnObjects { get; set; }
     [HideInInspector] public UnityEvent OnCrystalActivate;
     [HideInInspector] public UnityEvent OnCrystalDeActivate;
     [HideInInspector] public UnityEvent OnAllCrystalsComplete;
