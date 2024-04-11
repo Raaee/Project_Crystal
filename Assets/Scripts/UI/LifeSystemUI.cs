@@ -9,10 +9,18 @@ public class LifeSystemUI : MonoBehaviour
     [SerializeField] private LifeSystem lifeSystem;
     [SerializeField] private Color32 shatterColor;
     public List<Image> livesImages;
+    
     [SerializeField] private GameObject lifeDonePanel;
 
-    private void Start() {
+    void Awake()
+    {
+        disabledLives();
+    }
+    private void Start()
+    {
+       
         lifeSystem.OnRemoveLife.AddListener(UpdateLives);
+        animateLives();
         ResetLives();
     }
 
@@ -37,6 +45,29 @@ public class LifeSystemUI : MonoBehaviour
         if (lifeSystem.CurrentLives <= -1) {
            // lifeSystem.LifeDone();
             ShowLifeDonePanel();
+        }
+    }
+
+    private void animateLives()
+    {
+        StartCoroutine(_animateLives());
+
+    }
+
+    private IEnumerator _animateLives()
+    {
+        foreach (Image life in livesImages)
+        {
+            yield return new WaitForSeconds(1f);
+            life.enabled = true;
+        }
+    }
+
+    private void disabledLives()
+    {
+        foreach (Image life in livesImages)
+        {
+            life.enabled = false;
         }
     }
     public void ShowLifeDonePanel() {
