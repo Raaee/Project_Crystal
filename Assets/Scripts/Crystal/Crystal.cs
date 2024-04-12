@@ -48,7 +48,11 @@ public class Crystal : MonoBehaviour {
     {
         if (currentState == CrystalState.SHATTERED) return;
         currentState = CrystalState.PURIFIED;
-        UpgradeMenu.instance.gameObject.SetActive(true);
+        if (!UpgradeMenu.instance) {
+            Debug.LogWarning("UPGRADE MENU IS INACTIVE");
+        } else {
+            UpgradeMenu.instance.gameObject.SetActive(true);
+        }
         PurifyInRadius();
         CrystalManager.Instance.UnLockInteractions();
         CrystalManager.Instance.CrystalsPurified++;

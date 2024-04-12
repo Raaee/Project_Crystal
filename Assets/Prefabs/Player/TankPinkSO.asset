@@ -28,7 +28,7 @@ MonoBehaviour:
   pierceAmount: 2
   teleportDistance: 4
   teleportCooldown: 1
-  teleportManaCost: 4
+  teleportManaCost: 3.5
   characterSprite: {fileID: -781076683, guid: 272eebba944934d439428f0b999dae68, type: 3}
   basicAttackIcon: {fileID: 1895692086, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
   pierceAttackIcon: {fileID: -685633161, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}

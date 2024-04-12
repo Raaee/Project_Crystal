@@ -29,7 +29,7 @@ public class CharacterDataSO : ScriptableObject
     [Header("Teleport")]
     public float teleportDistance;
     public float teleportCooldown;
-    public int teleportManaCost;
+    public float teleportManaCost;
 
     [Header("Sprites")]
     public Sprite characterSprite;

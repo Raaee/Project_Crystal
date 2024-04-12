@@ -10,7 +10,7 @@ public class VingetteHandler : MonoBehaviour
     private const float LOW_HEALTH_TRESHOLD = 0.2f;
     private const float TRANSITION_TIME = 0.5f;
     private const float vignetteMaxAmount = 2f;
-    private const float vignetteTarget = 1.75f;
+    private const float vignetteTarget = 1.5f;
     private const float vignetteEndTarget = 0f;
 
     private Q_Vignette_Single vignette;

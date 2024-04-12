@@ -5522,7 +5522,7 @@ MonoBehaviour:
   currentDamage: 0
   maxLifeTime: 0.8
   cooldown: 0.25
-  manaCost: 1
+  manaCost: 3
   IsActive: 0
   userMana: {fileID: 3038308969333731784}
   OnAbilityUsage:
@@ -5551,7 +5551,7 @@ MonoBehaviour:
   currentDamage: 0
   maxLifeTime: 0.7
   cooldown: 0.5
-  manaCost: 5
+  manaCost: 10
   IsActive: 1
   userMana: {fileID: 3038308969333731784}
   OnAbilityUsage:
@@ -5574,8 +5574,8 @@ MonoBehaviour:
   maxDamage: 0
   currentDamage: 0
   maxLifeTime: 0
-  cooldown: 1.5
-  manaCost: 6
+  cooldown: 2
+  manaCost: 4.5
   IsActive: 1
   userMana: {fileID: 3038308969333731784}
   OnAbilityUsage:
@@ -5737,7 +5737,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 153174
+  m_InstanceId: 224576
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}

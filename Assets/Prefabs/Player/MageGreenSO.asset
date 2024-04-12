@@ -22,13 +22,13 @@ MonoBehaviour:
   basicAttackDamage: 9
   basicAttackCooldown: 0.6
   basicAttackManaCost: 1
-  pierceAttackDamage: 20
+  pierceAttackDamage: 16
   pierceAttackCooldown: 1.6
   pierceManaCost: 15
   pierceAmount: 3
   teleportDistance: 6
   teleportCooldown: 2
-  teleportManaCost: 10
+  teleportManaCost: 6.5
   characterSprite: {fileID: 1962731731, guid: 2122c0e2182c9304981bb6b4bb190e13, type: 3}
   basicAttackIcon: {fileID: 199833550, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
   pierceAttackIcon: {fileID: -1030281633, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
