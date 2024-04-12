@@ -93,8 +93,10 @@ public class Crystal : MonoBehaviour {
 
             if (currentCrytal.hp.GetCurrentHP() < percentHP)
             {
-                foreach(GameObject enemy in spawner.spawnedGamesObjects)
+                Debug.Log(spawner.spawnedGamesObjects);
+                foreach (GameObject enemy in spawner.spawnedGamesObjects)
                 {
+                    Debug.Log(spawner.spawnedGamesObjects);
                     Debug.Log(enemy);
                     enemy.GetComponent<HealthPoints>().RemoveHealth(blastDamage);
                     Debug.Log("Damage Enemy: " + enemy);
