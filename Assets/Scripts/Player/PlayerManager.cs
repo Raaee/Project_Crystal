@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Progress;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -50,12 +51,16 @@ public class PlayerManager : MonoBehaviour {
         rangedBA = player.GetComponentInChildren<RangedBasicAttack>();
         pierceShot = player.GetComponentInChildren<PiercingShotAbility>();
         teleport = player.GetComponentInChildren<TeleportAbility>();
+        renderer = player.GetComponent<Renderer>();
         reviveParticles = player.transform.Find(reviveParticleGOName).gameObject; // Dont worry about it.
     }
     public void Death()
     {
         animator.Play(DEATH);
         deathPanelClone = Instantiate(deathPanel);
+        playerCloneDeath = Instantiate(player);
+        renderer.sortingLayerID = SortingLayer.NameToID("DP");
+        animator.Play(DEATH);
         StartCoroutine(WaitBeforeDisable());
         // input.DisableControls();
         // lose a life

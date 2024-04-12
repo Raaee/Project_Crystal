@@ -11,10 +11,15 @@ public class LifePanel : MonoBehaviour
     [SerializeField] private Canvas panelCanvas;
     [SerializeField] private Color lifeColor;
     public List<Image> livesImages;
+    public Image corruptedCrystalImage;
     protected CanvasGroup canvasGroup;
+    private const float targetAlpha = 0.1411765f;
 
 
-
+    void Awake()
+    {
+        DisableCrystalImage();
+    }
     void Start()
     {
         panelCanvas.worldCamera = FindFirstObjectByType<Camera>();
@@ -23,6 +28,11 @@ public class LifePanel : MonoBehaviour
         disableLives();
         // Get the CanvasGroup component from the DeathPanel
         canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void DisableCrystalImage()
+    {
+        corruptedCrystalImage.color = new Color(0, 0, 0, 0);
     }
 
     public IEnumerator _SceneSwitchDelay(float delayTime)
@@ -53,9 +63,23 @@ public class LifePanel : MonoBehaviour
         foreach (Image life in livesImages)
         {
             
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
             life.enabled = false;
         }
+
+        StartCoroutine(FadeIn());
+
+    }
+
+    private IEnumerator FadeIn()
+    {
+        for (float T = 0.0f; T <= 1.5f; T += Time.deltaTime)
+        {
+
+            corruptedCrystalImage.color = new Color(0.4235294f, 0.2627451f, 0.4588236f, Mathf.Lerp(0,targetAlpha,T/ 1f));
+            yield return null;
+        }
+        corruptedCrystalImage.alphaHitTestMinimumThreshold = targetAlpha;
     }
 
 
