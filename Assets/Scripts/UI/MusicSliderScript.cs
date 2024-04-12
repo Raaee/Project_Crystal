@@ -13,7 +13,7 @@ public class MusicSliderScript : MonoBehaviour
   {
     if (sliderValueText && slider)
     {
-        sliderValueText.text = slider.value.ToString("0") + "%";
+        sliderValueText.text = (slider.value * 100).ToString("0") + "%";
     } 
     else 
     {

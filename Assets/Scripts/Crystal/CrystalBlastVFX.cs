@@ -10,10 +10,15 @@ public class CrystalBlastVFX : MonoBehaviour
     private float maxDonutRadius = 0.35f;
     private bool blastActive = false;
 
+    [Header("Crystal Blast Audio")]
+    private AudioSource audioSource;
+    [SerializeField] AudioClip crystalBlastClip;
+
     private void Start() {
         DisactivateVFX();
         var shape = blastVFX.shape;
         shape.donutRadius = maxDonutRadius;
+        audioSource = GetComponent<AudioSource>();
     }
     [ProButton]
     public void ActivateVFX() {
@@ -21,6 +26,7 @@ public class CrystalBlastVFX : MonoBehaviour
         ResetVFX();
         blastVFX.transform.parent.gameObject.SetActive(true);
         StartCoroutine(BlastIncrease());
+        audioSource.PlayOneShot(crystalBlastClip);
     }
     public void DisactivateVFX() {
         blastVFX.transform.parent.gameObject.SetActive(false);
