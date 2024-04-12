@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Events;
 
 public class CrystalManager : MonoBehaviour
@@ -19,6 +21,7 @@ public class CrystalManager : MonoBehaviour
     [field: SerializeField] public int CrystalsPurified { get; set; } // this is for winning
 
     [SerializeField] private Transform bossCrystalLoc;
+    [field: SerializeField] public TextMeshProUGUI BossIndicatorText { get; set; }
     private Crystal bossCrystal;
     private const string BOSS_CRYSTAL_TAG = "BossCrystal"; // Tag used to identify the boss crystal.
 
@@ -28,6 +31,7 @@ public class CrystalManager : MonoBehaviour
     }
     private void Start() {
         bossCrystal = FindBossCrystal();
+        BossIndicatorText.enabled = false;
     }
     public void SetCurrentCrystal(Crystal curr) {
         currentCrystal = curr;
@@ -63,6 +67,7 @@ public class CrystalManager : MonoBehaviour
             Debug.Log("BEGIN THE FINAL TEST");
             bossCrystal.UpdateOriginalYPos(bossCrystalLoc.position.y);
             bossCrystal.gameObject.transform.position = bossCrystalLoc.position;
+            BossIndicatorText.enabled = true;
         }
         if (bossCrystal.CurrentState == CrystalState.PURIFIED) {
             OnAllCrystalsComplete?.Invoke();
@@ -95,6 +100,9 @@ public class CrystalManager : MonoBehaviour
         }
         Debug.Log("Missing Boss Crystal", gameObject);
         return null;
+    }
+    public Crystal GetBossCrystal() {
+        return bossCrystal;
     }
 
 }

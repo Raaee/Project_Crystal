@@ -72,6 +72,9 @@ public class Crystal : MonoBehaviour {
     private void OnCrystalEngaing()
     {
         if (currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
+        if (this == CrystalManager.Instance.GetBossCrystal()) {
+            CrystalManager.Instance.BossIndicatorText.enabled = false;
+        }
         currentState = CrystalState.ENGAGING;
         hp.SetCurrentHP(hp.GetMaxHealth());
         crystalVFX.ActivateRadius();

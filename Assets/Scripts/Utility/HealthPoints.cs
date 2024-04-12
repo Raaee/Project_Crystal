@@ -14,6 +14,7 @@ public class HealthPoints : MonoBehaviour
     [SerializeField] private bool godMode;
     
     private bool isDead = false;
+    private int previousDamage;
     [HideInInspector] public UnityEvent OnDead;
     [HideInInspector] public UnityEvent OnHurt;
     [HideInInspector] public UnityEvent OnHealthChange;
@@ -40,6 +41,7 @@ public class HealthPoints : MonoBehaviour
         }
 
         currentHP -= damageAmount;
+        previousDamage = damageAmount;
         
         // Dying is here:
         if (currentHP <= 0) {
@@ -85,5 +87,8 @@ public class HealthPoints : MonoBehaviour
     }
     public void SetCurrentHP(int hp) {
         currentHP = hp;
+    }
+    public int GetPreviousDamage() {
+        return previousDamage;
     }
 }

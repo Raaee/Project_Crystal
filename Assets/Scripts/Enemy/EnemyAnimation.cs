@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 /// <summary>
 /// Script for handling the enemy visuals
 /// </summary>
@@ -12,6 +13,7 @@ public class EnemyAnimation : MonoBehaviour
     [SerializeField] private Canvas hpBarCanvas;
     [SerializeField] private Image hpEnemyFilling;
     [SerializeField] private HealthPoints hp;
+    [SerializeField] private TextMeshProUGUI damageNumText;
     private AnimationControl animControl;
 
   
@@ -23,6 +25,7 @@ public class EnemyAnimation : MonoBehaviour
     {
         enemyAI = GetComponentInParent<EnemyAI>();
         hpBarCanvas.enabled = false;
+        damageNumText.enabled = false;
         hp.OnHurt.AddListener(UpdateEnemyHealth);
         rangedBA = this.transform.parent.GetComponentInChildren<RangedBasicAttack>();
         animControl = GetComponent<AnimationControl>();
@@ -48,7 +51,8 @@ public class EnemyAnimation : MonoBehaviour
     public void UpdateEnemyHealth() {
         hpBarCanvas.enabled = true;
         hpEnemyFilling.fillAmount = (float) hp.GetCurrentHP() / hp.GetMaxHealth();
-       
+        damageNumText.enabled = true;
+        damageNumText.text = "" + hp.GetPreviousDamage();
 
     }
 
