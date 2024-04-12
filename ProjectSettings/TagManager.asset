@@ -62,7 +62,7 @@ TagManager:
   - name: Death Panel
     uniqueID: 2802042729
     locked: 0
-  - name: Infront of Death Panel
+  - name: DP
     uniqueID: 777463289
     locked: 0
   - name: Life Panel

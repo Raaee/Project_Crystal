@@ -23,8 +23,7 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] string reviveParticleGOName;
     [SerializeField] private float reviveTime = 1f;
     private GameObject deathPanelClone;
-    private GameObject playerCloneDeath;
-    private Renderer renderer;
+    
 
     private InputControls input;
     [HideInInspector] public UnityEvent OnRevive;
@@ -57,6 +56,7 @@ public class PlayerManager : MonoBehaviour {
     }
     public void Death()
     {
+        animator.Play(DEATH);
         deathPanelClone = Instantiate(deathPanel);
         playerCloneDeath = Instantiate(player);
         renderer.sortingLayerID = SortingLayer.NameToID("DP");
