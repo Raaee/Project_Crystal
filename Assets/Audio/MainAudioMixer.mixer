@@ -28,6 +28,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-7147247626030377454
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Crystal Blast
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b8e2556b22cc9e5499d3b93e8831a035
+  m_Children: []
+  m_Volume: 651ba338e36b77e489ad1cc15c92ab37
+  m_Pitch: 5ca1d753791f6df4cab05e1d6d2e39ad
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 1040667870385810382}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-7032467652606101915
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -350,6 +369,7 @@ AudioMixerController:
     - 9b6bda40e107c9245b8789eae44a3756
     - e54d49719c19044faab75f4965b71f0c
     - bdec364dffbea0a4d87bd3cdc5976cab
+    - b8e2556b22cc9e5499d3b93e8831a035
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -403,18 +423,20 @@ AudioMixerSnapshotController:
     06dffd81343bb1e42b81c4b7b8cc776d: -6.133707
     74cce9d2c0cdcf548b47fc3da8ec86b5: -11.400904
     38d739948b349454ea1ffd1411ccaef6: -1119
-    99ca203598e12b44785d6a70c18a75f7: -0.27209902
+    99ca203598e12b44785d6a70c18a75f7: -4.560346
     b4aabfa65551c55428fc62c1c76bad4c: -2.5738313
     cef0a4d798d824034ba532c39ec10a91: -10.345207
+    651ba338e36b77e489ad1cc15c92ab37: -16.035946
     a0be5af8d0e154e4c90d7ec815194ea1: 6.0865803
     ad2d6309d09232c4bbc1883237b63c67: -19.928473
-    30ebee29c5376fb40bf3139f74711307: -6.133707
+    30ebee29c5376fb40bf3139f74711307: -6.1337094
     da87e2b96e7eb464382426e35c368b68: -11.944503
     58ab38d994c9b0542978dee3e7012196: 0.503
     5b460dfa9053946b4ba6292e47979c9e: -8.362404
     b330fa2c83736034c8cbe5e0862e090b: 22000
     2d6c146ed7976734db4bb333822f59e3: -1603
     d08d76de25b872b4eb08bf57fd0d8c1c: -6.133707
+    b235344f9a4be10438481b0e44b63df1: -2.018035
   m_TransitionOverrides: {}
 --- !u!244 &276922914599643927
 AudioMixerEffectController:
@@ -452,6 +474,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &1040667870385810382
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 6cae7e77129fdf7408e8b58852569640
+  m_EffectName: Attenuation
+  m_MixLevel: 773691fcde66444498d8eabe0ab5bdff
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &1524490687908653536
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -494,7 +530,8 @@ AudioMixerGroupController:
   m_Name: Crystal
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: e3113aae403044f968e31e198c9015d3
-  m_Children: []
+  m_Children:
+  - {fileID: -7147247626030377454}
   m_Volume: c1ecf4fc479a14248ac9175f508814c8
   m_Pitch: a683d9be43c624c4ca3eeb9765bdb32c
   m_Send: 00000000000000000000000000000000
