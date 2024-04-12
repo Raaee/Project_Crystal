@@ -12,6 +12,9 @@ public class DeathPanelTimer : MonoBehaviour
     private float respawnDelayTime = 1.5f;
     [SerializeField] private Canvas panelCanvas;
     [SerializeField] private TextMeshProUGUI respawnText;
+    [SerializeField] private Animator playerAnimator;
+    private RuntimeAnimatorController playerAnimatorController;
+    
     
 
     // Reference to the CanvasGroup for fading
@@ -24,6 +27,9 @@ public class DeathPanelTimer : MonoBehaviour
         respawnText.color = Color.red;
         respawnText.text = "You Died...";
         countdownText.gameObject.SetActive(false);
+        playerAnimatorController = PlayerManager.Instance.GetPlayer().GetComponentInChildren<Animator>().runtimeAnimatorController;
+        playerAnimator.runtimeAnimatorController = playerAnimatorController;
+        
         StartCoroutine(DelayRespawn());
 
         // Get the CanvasGroup component from the DeathPanel
@@ -32,7 +38,7 @@ public class DeathPanelTimer : MonoBehaviour
 
     public IEnumerator DelayRespawn()
     {
-        
+        playerAnimator.Play("Death");
         yield return new WaitForSeconds(respawnDelayTime);
         respawnText.color = Color.white;
         respawnText.text = "Respawn in";
@@ -62,6 +68,7 @@ public class DeathPanelTimer : MonoBehaviour
                 PlayerManager.Instance.Respawn();
                 countdownText.gameObject.SetActive(false);
                 Destroy(panelCanvas.gameObject);
+                
             }
         }
     }
