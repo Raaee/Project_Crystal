@@ -10,13 +10,13 @@ using UnityEngine.InputSystem;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed = 1000f; // The speed of the projectile.
-    [SerializeField] private float maxLifeTime = 2f; // The maximum lifetime of the projectile.
+    private float lifeTime = 2f; // The maximum lifetime of the projectile.
+    public int CurrentDamage { get; set; } // current damage the projectile does
+
     private const string ENEMY_TAG = "Enemy"; // Tag used to identify enemies.
     private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const string CRYSTAL_TAG = "Crystal"; // Tag used to identify the crystal.
     private const string BOSS_CRYSTAL_TAG = "BossCrystal"; // Tag used to identify the boss crystal.
-    [SerializeField] public int maxDamage = 10; // The damage normal/max dealt by the projectile.
-    private int currentDamage; // current damage the projectile does
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
     private Vector2 moveDirection; // The direction in which the projectile is moving.
@@ -29,7 +29,11 @@ public class Projectile : MonoBehaviour
     }
     private void Start()
     {
-        currentDamage = maxDamage;
+        //projectileManager = GetComponent<ProjectileManager>();
+        //Debug.Log("Start");
+        ////The Problem is that everytime the projectile is created it set the currentDamage as the maxDamage because Start() is always called when the proj is created
+        ////It should only set the current damage to max one time.
+        //currentDamage = maxDamage;
     }
 
     private void FixedUpdate()
@@ -39,7 +43,7 @@ public class Projectile : MonoBehaviour
         timer += Time.deltaTime;
 
         // If the projectile has existed for longer than its maximum lifetime, disable it
-        if (timer >= maxLifeTime)
+        if (timer >= lifeTime)
         {
             DisableProjectile();
             timer = 0;
@@ -73,7 +77,8 @@ public class Projectile : MonoBehaviour
                 if (!potentialEnemyHealth) {
                     return;
                 }
-                potentialEnemyHealth.RemoveHealth(currentDamage);
+                Debug.Log("player: " + CurrentDamage);
+                potentialEnemyHealth.RemoveHealth(CurrentDamage);
 
                 // Disable the projectile after it has hit an enemy
                 DisableProjectile();
@@ -91,9 +96,9 @@ public class Projectile : MonoBehaviour
             if (!potentialPlayerHealth) {
                 return;
             }
-            
 
-            potentialPlayerHealth.RemoveHealth(currentDamage);
+            Debug.Log("enemy damage: " + CurrentDamage);
+            potentialPlayerHealth.RemoveHealth(CurrentDamage);
             DisableProjectile();
         }
         // Check if the projectile has collided with the crystal
@@ -107,7 +112,7 @@ public class Projectile : MonoBehaviour
             if (!potentialCrystalHealth)    {
                 return;
             }
-            potentialCrystalHealth.RemoveHealth(currentDamage);
+            potentialCrystalHealth.RemoveHealth(CurrentDamage);
             
             //DisableProjectile(); // Uncomment this to not have piercing on crystal.
         }
@@ -118,29 +123,7 @@ public class Projectile : MonoBehaviour
         OnProjectileDisabled?.Invoke();
         Destroy(this.gameObject);
     }
-   
-  
-    public int GetProjectileDamage() {
-        return maxDamage;
-    }
-
-    public void SetMaxProjectileDamage(int amt) {
-        maxDamage = amt;
-        NormalProjectileDamage();
-    }
-
-    public void NormalProjectileDamage()
-    {
-        currentDamage = maxDamage;
-    }
-
-    public void SetProjectileDamage(int setdamage)
-    {
-        currentDamage = setdamage;
-    }
-
-    public int GetCurrentProjectileDamage()
-    {
-        return currentDamage;
+    public void SetLifeTime(float life) {
+        lifeTime = life;
     }
 }

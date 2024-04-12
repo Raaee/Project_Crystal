@@ -12,6 +12,7 @@ public class RangedBasicAttack : Ability
     [SerializeField] private bool isPlayerShooting;
     [SerializeField] private float enemyFireRate = 5.0f;
     [SerializeField] private float playerFireRate = 0.1f;
+
     [HideInInspector] public UnityEvent OnAttack;
     private float lastPlayerAttackTime = 0f;
     private float lastEnemyAttackTime = 0f;
@@ -21,15 +22,14 @@ public class RangedBasicAttack : Ability
         
         actions = GetComponentInParent<Actions>();
         // Add listener for basic attack event when basic attack button is pressed
-        actions?.OnBasicAttack.AddListener(AbilityUsage);
+        actions?.OnBasicAttack.AddListener(ShootIfActive);
       
    
         cooldown = playerFireRate;
     }
     public override void Start()
     {
-      
-       // projPooler = ObjPoolerManager.instance.GetPool(projectilePrefab);
+        NormalProjectileDamage();
     }
 
     // Method to spawn a projectile
@@ -42,10 +42,19 @@ public class RangedBasicAttack : Ability
         // Get the Projectile component and set its move direction
         Projectile projectile = go.GetComponent<Projectile>();
         projectile.SetMoveDirection(moveDirection, isPlayerShooting);
+        projectile.CurrentDamage = currentDamage;
+        projectile.SetLifeTime(maxLifeTime);
         // Activate the projectile
         go.SetActive(true);
     }
+    public void ShootIfActive() {
+        if (isOnCoolDown)
+            return;
 
+        // If the current mana is greater than or equal to the mana cost, use the ability
+        if (GetCurrentMana() >= manaCost)
+            AbilityUsage();
+    }
     // Method to start the attack
     public override void AbilityUsage() {
 
@@ -59,7 +68,7 @@ public class RangedBasicAttack : Ability
         Vector2 direction = (mousePosition - objectPosition).normalized;
         // Spawn the projectile
         SpawnProjectile(direction);
-
+        UseManaPoints();
         lastPlayerAttackTime = Time.time;
         isOnCooldown = false; // Set canPlayerShoot to false
         StartCoroutine(ResetPlayerShoot()); // Start the coroutine to reset canPlayerShoot
@@ -90,24 +99,26 @@ public class RangedBasicAttack : Ability
     public void SetPlayerFireRate(float rate) {
         playerFireRate = rate;
     }
-    public int GetMaxDamage() {
-        return projectilePrefab.GetComponent<Projectile>().GetProjectileDamage();
-    }
-    public void SetMaxDamage(int amt) {
-        projectilePrefab.GetComponent<Projectile>().SetMaxProjectileDamage(amt);
-    }
-
-    public void SetCurrentDamge(int amt)
-    {
-        projectilePrefab.GetComponent<Projectile>().SetProjectileDamage(amt);
+    
+    
+    // Getters / Setters
+    public int GetMaxProjectileDamage() {
+        return maxDamage;
     }
 
-    public int GetCurrentDamge()
-    {
-        return projectilePrefab.GetComponent<Projectile>().GetCurrentProjectileDamage();
+    public void SetMaxProjectileDamage(int amt) {
+        maxDamage = amt;
     }
 
-    public void NormalDamage() {
-        projectilePrefab.GetComponent<Projectile>().NormalProjectileDamage();
+    public void NormalProjectileDamage() {
+        currentDamage = maxDamage;
+    }
+
+    public void SetCurrentProjectileDamage(int setdamage) {
+        currentDamage = setdamage;
+    }
+
+    public int GetCurrentProjectileDamage() {
+        return currentDamage;
     }
 }

@@ -49,10 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9185c03ade39de94abb009a537d39f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intitialDamage: 4
+  maxDamage: 0
+  currentDamage: 0
   projectileSpeed: 750
   maxLifeTime: 1.5
-  maxDamage: 10
-  currentDamage: 0
+  OnProjectileDisabled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &5150111593692239222
 Rigidbody2D:
   serializedVersion: 4

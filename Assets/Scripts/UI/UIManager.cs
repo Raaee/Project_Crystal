@@ -89,8 +89,8 @@ public class UIManager : MonoBehaviour  {
         hpText.text = PlayerManager.Instance.hp.GetCurrentHP() + " / " + PlayerManager.Instance.hp.GetMaxHealth();
     }
     public void UpdateMana() {
-        manaFilling.fillAmount = (float) PlayerManager.Instance.mp.currentMP / PlayerManager.Instance.mp.maxMP;
-        manaText.text = PlayerManager.Instance.mp.currentMP + " / " + PlayerManager.Instance.mp.maxMP;
+        manaFilling.fillAmount = PlayerManager.Instance.mp.currentMP / PlayerManager.Instance.mp.maxMP;
+        manaText.text = (int) PlayerManager.Instance.mp.currentMP + " / " + (int) PlayerManager.Instance.mp.maxMP;
     }
     // Initial Set For The Crystal Bar
     public void ActivateCrystalBars(){

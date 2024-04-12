@@ -83,4 +83,7 @@ public class HealthPoints : MonoBehaviour
     {
         godMode = !godMode;
     }
+    public void SetCurrentHP(int hp) {
+        currentHP = hp;
+    }
 }

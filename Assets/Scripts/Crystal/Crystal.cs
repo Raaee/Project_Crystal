@@ -11,7 +11,9 @@ public class Crystal : MonoBehaviour {
     private CrystalVFX crystalVFX;
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
-    [SerializeField] private float percentBlast = 10f;
+    [SerializeField] Crystal currentCrytal;
+    [SerializeField] private float blastPercentage = 0.75f;
+    [SerializeField] private int blastDamage = 75;
     [HideInInspector] public UnityEvent OnCrystalDie;
     [HideInInspector] public UnityEvent OnCrystalInteract;
 
@@ -22,27 +24,28 @@ public class Crystal : MonoBehaviour {
 
     [HideInInspector] public UnityEvent _OnNextWaveStarted;
 
-    private void Start() {
+    private void Start()
+    {
         spawner = GetComponent<Spawner>();
         crystalVFX = GetComponent<CrystalVFX>();
         hp = GetComponent<CrystalHealthPoints>();
         crystalInteract = GetComponent<CrystalInteract>();
         currentState = CrystalState.IDLE;
+        
         spawner.OnSpawnerStart.AddListener(OnCrystalEngaing);
         spawner.OnSpawnerComplete.AddListener(OnCrystalComplete);
         spawner.OnNextWaveStarted.AddListener(CrystalOnNextWaveStarted);
         hp.OnDead.AddListener(OnCrystalDeath);
-
-        DamageBlast();
+        hp.OnHurt.AddListener(DamageBlast);
     }
-
     private void CrystalOnNextWaveStarted()
     {
         _OnNextWaveStarted?.Invoke();
     }
 
-    public void OnCrystalComplete() {
-        if(currentState == CrystalState.SHATTERED) return;
+    public void OnCrystalComplete()
+    {
+        if (currentState == CrystalState.SHATTERED) return;
         currentState = CrystalState.PURIFIED;
         UpgradeMenu.instance.gameObject.SetActive(true);
         PurifyInRadius();
@@ -54,32 +57,56 @@ public class Crystal : MonoBehaviour {
        
         OnCrystalDie.Invoke();
         currentState = CrystalState.SHATTERED;
+        crystalVFX.DisactivateRadius();
         CrystalManager.Instance.UnLockInteractions();
         spawner.state = Spawner.State.Idle;
         Debug.Log("prepare to shatter crystal");
       
         // SFX here
     }
-    private void OnCrystalEngaing() {
-        if(currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
+    private void OnCrystalEngaing()
+    {
+        if (currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.ENGAGING;
+        hp.SetCurrentHP(hp.GetMaxHealth());
+        crystalVFX.ActivateRadius();
         CrystalManager.Instance.SetCurrentCrystal(this);
         CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
         OnCrystalInteract?.Invoke();
     }
-    public void PurifyInRadius() {
+    public void PurifyInRadius()
+    {
         TilePurificationManager.instance?.PurifyInRadius(this.gameObject.transform, (int)(spawner.radius * 1.25));
         crystalVFX.ActivatePurifiedParticles();
         crystalVFX.PurifySprite();
+        crystalVFX.DisactivateRadius();
     }
-    public void ChangeInteractionState(bool interactable) {
+    public void ChangeInteractionState(bool interactable)
+    {
         crystalInteract.Interactable = interactable;
     }
 
-    public void DamageBlast() {
-        float percentHP = Mathf.RoundToInt(hp.GetCurrentHP() * percentBlast);
-      
+    public void DamageBlast()
+    {
+        if (currentState == CrystalState.ENGAGING) {
+            CrystalManager.Instance.SetCurrentCrystal(this);
+            currentCrytal = CrystalManager.Instance.GetCurrentCrystal();
+            float percentHP = (currentCrytal.hp.GetMaxHealth() * blastPercentage);
+            //Debug.Log(currentCrytal.hp.GetMaxHealth());
+            //Debug.Log(percentHP);
+
+            if (currentCrytal.hp.GetCurrentHP() < percentHP)
+            {
+                foreach(GameObject enemy in spawner.spawnedGamesObjects)
+                {
+                    Debug.Log("Kil all");
+                    enemy.GetComponent<HealthPoints>().RemoveHealth(blastDamage);
+                }
+                Debug.Log("Blast " + blastDamage + " Damage");
+                //CrystalManager.Instance.spawnedObjects;
+            }
+        }
     }
     public CrystalHealthPoints GetHP() {
         return hp;

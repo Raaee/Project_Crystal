@@ -13,10 +13,12 @@ public class CharacterDataSO : ScriptableObject
     [Header("Stats")]
     public int health;
     public int mana;
+    public int moveSpeed;
 
     [Header("Basic Attack")]
     public int basicAttackDamage;
     public float basicAttackCooldown;
+    public int basicAttackManaCost;
 
     [Header("Pierce Attack")]
     public int pierceAttackDamage;
@@ -25,6 +27,7 @@ public class CharacterDataSO : ScriptableObject
     public int pierceAmount;
 
     [Header("Teleport")]
+    public float teleportDistance;
     public float teleportCooldown;
     public int teleportManaCost;
 

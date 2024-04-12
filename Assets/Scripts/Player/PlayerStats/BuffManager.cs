@@ -46,34 +46,22 @@ public class BuffManager : MonoBehaviour  {
     public void AddHealth(int amt) {
         playerHealth.AddHealth(amt);
     }
-    public void RemoveHealth(int amt) {
-        playerHealth.RemoveHealth(amt);
-    }
     public void IncreaseMaxHealth(float percentageIncrease) {
         int maxHP = playerHealth.GetMaxHealth();
         playerHealth.SetMaxHealth(maxHP + (int)(maxHP * percentageIncrease));
-    }
-    public int GetCurrentHealth() {
-        return playerHealth.GetCurrentHP();
     }
     // Mana
     public void AddMana(int amt) {
         playerMana.AddMana(amt);
     }
-    public void RemoveMana(int amt) {
-        playerMana.RemoveMana(amt);
-    }
     public void IncreaseMaxMana(float percentageIncrease) {
-        int maxMP = playerMana.GetMaxMana();
-        playerMana.SetMaxMana(maxMP + (int)(maxMP * percentageIncrease));
+        float maxMP = playerMana.GetMaxMana();
+        playerMana.SetMaxMana(maxMP + (maxMP * percentageIncrease));
     }    
-    public int GetCurrentMana() {
-        return playerMana.GetCurrentMP();
-    }
     // Basic Attack
     public void IncreaseMaxBasicAttackDamage(float percentageIncrease) {
-        int damage = basicAttack.GetMaxDamage();
-        basicAttack.SetMaxDamage(damage + (int)(damage * percentageIncrease));
+        int damage = basicAttack.GetMaxProjectileDamage();
+        basicAttack.SetMaxProjectileDamage(damage + (int)(damage * percentageIncrease));
     }
     // Pierce Shot
     public void IncreaseMaxPierceShotDamage(float percentageIncrease) {
@@ -95,16 +83,32 @@ public class BuffManager : MonoBehaviour  {
         ReduceTeleportCooldown(percentageDecrease);
         ReducePierceShotCooldown(percentageDecrease);
     }
-    //Damage Multiplyer
-    public void MultiplyBasicAttackDamage(int damageIncrese) {
-        basicAttack.SetCurrentDamge(basicAttack.GetCurrentDamge() * damageIncrese);
+    public void ReduceAllManaCost(float percentageDecrease) {
+        ReduceBasicAttackManaCost(percentageDecrease);
+        ReduceTeleportManaCost(percentageDecrease);
+        ReducePierceShotManaCost(percentageDecrease);
     }
-    public void MultiplyPierceDamage(int damageIncrese) {
+    public void ReduceBasicAttackManaCost(float percentageDecrease) {
+        basicAttack.SetManaCost(basicAttack.GetManaCost() - (basicAttack.GetManaCost() * percentageDecrease));
+    }
+    public void ReduceTeleportManaCost(float percentageDecrease) {
+        teleportAbility.SetManaCost(teleportAbility.GetManaCost() - (teleportAbility.GetManaCost() * percentageDecrease));
+    }
+    public void ReducePierceShotManaCost(float percentageDecrease) {
+        piercingShot.SetManaCost(piercingShot.GetManaCost() - (piercingShot.GetManaCost() * percentageDecrease));
+    }
+
+    public void MultiplyBasicAttackDamage(int damageIncrese)
+    {
+        basicAttack.SetCurrentProjectileDamage(basicAttack.GetMaxProjectileDamage() * damageIncrese);
+    }
+    public void MultiplyPierceDamage(int damageIncrese)
+    {
         piercingShot.SetPiercingCurrentDamge(piercingShot.GetPiercingCurrentDamge() * damageIncrese);
     }
 
     public void ResetBasicAttckDamege() {
-        basicAttack.NormalDamage();
+        basicAttack.NormalProjectileDamage();
     }
 
     public void ResetPierceDamage() {

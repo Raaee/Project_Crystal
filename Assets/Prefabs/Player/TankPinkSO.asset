@@ -13,19 +13,22 @@ MonoBehaviour:
   m_Name: TankPinkSO
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3221412779736232927, guid: 78e6888d82697024d837082f1729259e, type: 3}
-  characterName: Warden of Shards
+  characterName: The Warden of Shards
   characterDescription: A sturdy soldier, loves the glory and the smell of battle.
     Has a hard hitting attack
-  health: 120
+  health: 110
   mana: 100
-  basicAttackDamage: 10
-  basicAttackCooldown: 0.3
-  pierceAttackDamage: 20
+  moveSpeed: 8
+  basicAttackDamage: 7
+  basicAttackCooldown: 0.8
+  basicAttackManaCost: 1
+  pierceAttackDamage: 15
   pierceAttackCooldown: 2
-  pierceManaCost: 15
+  pierceManaCost: 10
   pierceAmount: 2
-  teleportCooldown: 5
-  teleportManaCost: 5
+  teleportDistance: 4
+  teleportCooldown: 1
+  teleportManaCost: 4
   characterSprite: {fileID: -781076683, guid: 272eebba944934d439428f0b999dae68, type: 3}
   basicAttackIcon: {fileID: 1895692086, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}
   pierceAttackIcon: {fileID: -685633161, guid: 930dc839b6d9fd84fb835099e6196391, type: 3}

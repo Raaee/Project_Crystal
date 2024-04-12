@@ -326,6 +326,7 @@ MonoBehaviour:
   - {fileID: 653828775268203507, guid: a5e01e15bacdafe43871280526f067a9, type: 3}
   - {fileID: 653828775268203507, guid: 75598af09003d4f4f9ddeb8c9876e92b, type: 3}
   - {fileID: 653828775268203507, guid: 870370ce0436cfc458a6d673bdfbea46, type: 3}
+  dropChosenPlayer: {fileID: 0}
   selectedColor: {r: 0.112573855, g: 0.3660378, b: 0.27498978, a: 1}
   defaultColor: {r: 0.21509439, g: 0.21509439, b: 0.21509439, a: 1}
 --- !u!1 &3544870340288363472
@@ -587,7 +588,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 176550571
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1434491796083635192
 MonoBehaviour:

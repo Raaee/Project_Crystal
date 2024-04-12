@@ -113,8 +113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 1000
-  maxLifeTime: 0.75
-  maxDamage: 12
   OnProjectileDisabled:
     m_PersistentCalls:
       m_Calls: []
@@ -307,7 +305,7 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.7971698, g: 1, b: 0.9938531, a: 1}
+  m_Color: {r: 1, g: 0.9603723, b: 0.79607844, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -351,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7939068054865114778}
   - component: {fileID: 4168140419249555342}
-  - component: {fileID: 2348918187810188298}
+  - component: {fileID: 8715089417108385526}
   m_Layer: 0
   m_Name: Basic Attack Visual
   m_TagString: Untagged
@@ -426,7 +424,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2348918187810188298
+--- !u!95 &8715089417108385526
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -436,7 +434,7 @@ Animator:
   m_GameObject: {fileID: 5569191837240969959}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 503aae351337d88479a4cda3a33b4baf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4191582d9ae226c4eb1c257d28e4710c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

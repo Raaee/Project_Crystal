@@ -7,8 +7,8 @@ using UnityEngine.Events;
 public class ManaPoints : MonoBehaviour
 {
     // Max mana is set at 50
-    [SerializeField] public int maxMP = 100;
-    [SerializeField] public int currentMP;
+    [SerializeField] public float maxMP = 100;
+    [SerializeField] public float currentMP;
     [HideInInspector] public UnityEvent OnManaChange;
 
     // Character starts with maximum mana value
@@ -28,12 +28,12 @@ public class ManaPoints : MonoBehaviour
     }
 
     // Remove a certain amount of mana while character's current mana is above 0
-    public void RemoveMana(int loseAmount)
+    public void RemoveMana(float loseAmount)
     {
         currentMP -= loseAmount;
-        if(currentMP <= 0)
+        if(currentMP <= 0.1f)
         {
-            currentMP = 0;
+            currentMP = 0.1f;
             
         }
         OnManaChange.Invoke();
@@ -43,14 +43,14 @@ public class ManaPoints : MonoBehaviour
         OnManaChange.Invoke();
     }
 
-    public int GetCurrentMP()
+    public float GetCurrentMP()
     {
         return currentMP;
     }
-    public int GetMaxMana() {
+    public float GetMaxMana() {
         return maxMP;
     }
-    public void SetMaxMana(int amt) {
+    public void SetMaxMana(float amt) {
         maxMP = amt;
         OnManaChange.Invoke();
     }
