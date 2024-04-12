@@ -1201,7 +1201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1503801223893135273, guid: 286479db5de8a914fbe7800bd8fa920b, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1503801223893135273, guid: 286479db5de8a914fbe7800bd8fa920b, type: 3}
       propertyPath: m_SortingLayerID
@@ -1427,7 +1427,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: FairyGlow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1778286711277748339, guid: 286479db5de8a914fbe7800bd8fa920b, type: 3}
+    - {fileID: 4174602228781232389, guid: 286479db5de8a914fbe7800bd8fa920b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
