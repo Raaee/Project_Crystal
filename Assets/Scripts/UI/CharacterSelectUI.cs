@@ -23,6 +23,7 @@ public class CharacterSelectUI : MonoBehaviour
     [SerializeField] private Image basicAttackIcon;
     [SerializeField] private TextMeshProUGUI basicAttackDamage;
     [SerializeField] private TextMeshProUGUI basicAttackCooldown;
+    [SerializeField] private TextMeshProUGUI basicAttackManaCost;
 
     [Header("Pierce Attack")]
     [SerializeField] private Image pierceAttackIcon;
@@ -50,6 +51,7 @@ public class CharacterSelectUI : MonoBehaviour
 
         basicAttackDamage.text =  "Damage: " + characters[characterIndex].basicAttackDamage;
         basicAttackCooldown.text = "Cooldown: " + characters[characterIndex].basicAttackCooldown;
+        basicAttackManaCost.text = "Mana Cost: " + characters[characterIndex].basicAttackManaCost;
 
         pierceAttackDamage.text = "Damage: " + characters[characterIndex].pierceAttackDamage;
         pierceAttackCooldown.text = "Cooldown: " + characters[characterIndex].pierceAttackCooldown;
