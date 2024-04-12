@@ -5301,7 +5301,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 7238265307839878932}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 65
     OrthographicSize: 8.091955
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -5719,7 +5719,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 201596
+  m_InstanceId: 234262
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
