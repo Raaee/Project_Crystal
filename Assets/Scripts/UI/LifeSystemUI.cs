@@ -14,7 +14,7 @@ public class LifeSystemUI : MonoBehaviour
 
     void Awake()
     {
-        disabledLives();
+        DisabledLives();
     }
     private void Start()
     {
@@ -63,7 +63,7 @@ public class LifeSystemUI : MonoBehaviour
         }
     }
 
-    private void disabledLives()
+    private void DisabledLives()
     {
         foreach (Image life in livesImages)
         {
