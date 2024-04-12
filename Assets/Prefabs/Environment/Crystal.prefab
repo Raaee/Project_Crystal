@@ -333,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   currentCrytal: {fileID: 0}
-  blastPercentage: 0.75
+  blastPercentage: 0.9
   blastDamage: 75
   OnCrystalDie:
     m_PersistentCalls:

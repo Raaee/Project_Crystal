@@ -96,9 +96,10 @@ public class Crystal : MonoBehaviour {
                 foreach(GameObject enemy in spawner.spawnedGamesObjects)
                 {
                     Debug.Log(enemy);
-                    Debug.Log("Kil all");
                     enemy.GetComponent<HealthPoints>().RemoveHealth(blastDamage);
+                    Debug.Log("Damage Enemy: " + enemy);
                 }
+                Debug.Log("Blast");
             }
         }
     }
