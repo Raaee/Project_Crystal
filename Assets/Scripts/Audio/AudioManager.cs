@@ -21,16 +21,18 @@ public class AudioManager : MonoBehaviour
     } 
     activeSource.volume = targetVolume;
    }
-   public void FadeAudioToVolume (AudioSource activeSource, float transitionTime, float targetVolume){
+   public void FadeAudioToVolume (AudioSource activeSource, float transitionTime, float targetVolume)
+    {
     StartCoroutine(FadeAudio(activeSource,transitionTime,targetVolume));
     
    }
-
+   
     public void PlayAudioOneShot(AudioSource source, AudioClip clip)
     {
+        source.volume = 1.0f;
         source.PlayOneShot(clip);
     }
-     public void PlayAudioOneShot(AudioSource source, AudioClip clip, bool isRandomVol)
+    public void PlayAudioOneShot(AudioSource source, AudioClip clip, bool isRandomVol)
     {
         if (isRandomVol == true)
         {

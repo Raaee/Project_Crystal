@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class UpgradeMenu : MonoBehaviour
 {
     // Singleton pattern
     public static UpgradeMenu instance;
-
+    public UnityEvent OnApplyUpgrade;
     private void Awake()
     {
         if (instance == null)
@@ -92,7 +93,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void ApplyUpgrade()
     {
-
+        OnApplyUpgrade?.Invoke();
         selectedUpgrade.ApplyUpgrade();
         // Disable the confirm button after applying the upgrade
         confirmButton.interactable = false;
