@@ -11,7 +11,8 @@ public class Crystal : MonoBehaviour {
     private CrystalVFX crystalVFX;
     private CrystalHealthPoints hp;
     private CrystalInteract crystalInteract;
-    [SerializeField] Crystal currentCrytal;
+    [SerializeField] private Crystal currentCrytal;
+    [SerializeField] private int amountOfBlasts = 1;
     [SerializeField] private float blastPercentage = 0.75f;
     [SerializeField] private int blastDamage = 75;
     [HideInInspector] public UnityEvent OnCrystalDie;
@@ -36,7 +37,7 @@ public class Crystal : MonoBehaviour {
         spawner.OnSpawnerComplete.AddListener(OnCrystalComplete);
         spawner.OnNextWaveStarted.AddListener(CrystalOnNextWaveStarted);
         hp.OnDead.AddListener(OnCrystalDeath);
-        hp.OnHurt.AddListener(DamageBlast);
+        hp.OnHurt.AddListener(CrystalBlast);
     }
     private void CrystalOnNextWaveStarted()
     {
@@ -87,27 +88,27 @@ public class Crystal : MonoBehaviour {
         crystalInteract.Interactable = interactable;
     }
 
-    public void DamageBlast()
+    public void CrystalBlast()
     {
         if (currentState == CrystalState.ENGAGING) {
             CrystalManager.Instance.SetCurrentCrystal(this);
             currentCrytal = CrystalManager.Instance.GetCurrentCrystal();
-            float percentHP = (currentCrytal.hp.GetMaxHealth() * blastPercentage);
-            //Debug.Log(currentCrytal.hp.GetMaxHealth());
-            //Debug.Log(percentHP);
 
-            if (currentCrytal.hp.GetCurrentHP() < percentHP)
-            {
-                foreach(GameObject enemy in spawner.spawnedGamesObjects)
-                {
-                    Debug.Log("Kil all");
-                    enemy.GetComponent<HealthPoints>().RemoveHealth(blastDamage);
+            if (amountOfBlasts > 0) {
+                float percentHP = (currentCrytal.hp.GetMaxHealth() * blastPercentage);
+                
+                if (currentCrytal.hp.GetCurrentHP() <= percentHP) {
+                    currentCrytal.gameObject.GetComponent<CrystalBlastVFX>().ActivateVFX();
+                    var enemies = GameObject.FindObjectsOfType<EnemyHealthPoints>();
+                    foreach (EnemyHealthPoints enemyHealth in enemies) {
+                        enemyHealth.RemoveHealth(blastDamage);
+                    }
+                    amountOfBlasts--;
                 }
-                Debug.Log("Blast " + blastDamage + " Damage");
-                //CrystalManager.Instance.spawnedObjects;
             }
         }
     }
+
     public CrystalHealthPoints GetHP() {
         return hp;
     }
