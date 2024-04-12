@@ -10,8 +10,8 @@ public class UpgradeCardAudio : MonoBehaviour
    [SerializeField] private AudioClip selectCardSound;
 
    public void Start(){
-    upgradeCard.OnCardConfirm.AddListener(PlayCardConfirmSound);
-    upgradeCard.OnCardSelected.AddListener(PlaySelectSound);
+    upgradeCard.OnCardSelected.AddListener(PlayCardConfirmSound);
+    UpgradeMenu.instance.OnApplyUpgrade.AddListener(PlayCardConfirmSound);
    }
 
    public void PlayCardConfirmSound(){

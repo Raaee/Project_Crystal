@@ -79,8 +79,26 @@ public class CrystalVFX : MonoBehaviour {
     }
     public void ShatterVisual() {
         Debug.Log("visual inside shatter");
+        Color startCol = crystSR.color;
+        //crystSR.color = shatteredColor;
+        StartCoroutine(LerpSpriteColor(1.25f, startCol, shatteredColor));
+    }
 
-        crystSR.color = shatteredColor;
+    IEnumerator LerpSpriteColor(float lerpDuration, Color startColor, Color endColor)
+    {
+        float elapsedTime = 0.0f;
+
+        while (elapsedTime < lerpDuration)
+        {
+            float lerpValue = elapsedTime / lerpDuration;
+            crystSR.color = Color.Lerp(startColor, endColor, lerpValue);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Optional: Set the final color after the lerp completes
+        crystSR.color = endColor;
     }
 }
  

@@ -242,7 +242,6 @@ MonoBehaviour:
       position: {x: -5.8967395, y: 15.944543}
       timeDelay: 0.4
   spawnedObjects: []
-  spawnedGamesObjects: []
   state: 2
   time: 0
   OnSpawnerStart:
@@ -314,7 +313,7 @@ MonoBehaviour:
   corruptedShadowSprite: {fileID: -735974454, guid: bb1b616e0066fe94090830f9ae79696b, type: 3}
   shatteredColor:
     serializedVersion: 2
-    rgba: 4294928766
+    rgba: 3719909470
   purifiedSprite: {fileID: 243064538, guid: 709222a7450fc324cb7e91c02aeec9cd, type: 3}
   purifiedShadowSprite: {fileID: -42816084, guid: bb1b616e0066fe94090830f9ae79696b, type: 3}
   bobbingSpeed: 1
@@ -333,8 +332,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   currentCrytal: {fileID: 0}
-  blastPercentage: 0.75
-  blastDamage: 75
+  amountOfBlasts: 2
+  blastPercentage: 0.25
+  blastDamage: 25
   OnCrystalDie:
     m_PersistentCalls:
       m_Calls: []
