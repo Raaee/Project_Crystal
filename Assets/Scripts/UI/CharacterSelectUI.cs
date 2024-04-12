@@ -13,7 +13,7 @@ public class CharacterSelectUI : MonoBehaviour
     [SerializeField] private Animator characterImage;
     [SerializeField] private Image bigCharacterImage;
     [SerializeField] private TextMeshProUGUI characterNameText;
-    [SerializeField] private TextMeshProUGUI descriptionText;
+    [SerializeField] private TextMeshProUGUI difficultyText;
 
     [Header("Stats")]
     [SerializeField] private TextMeshProUGUI healthText;
@@ -36,11 +36,11 @@ public class CharacterSelectUI : MonoBehaviour
 
     private void setCharacterDisplay(int characterIndex)
     {
-       
+       // Character
         characterImage.Play(characters[characterIndex].characterWalkAnimation.name);
         bigCharacterImage.sprite = characters[characterIndex].characterSprite;
         characterNameText.text = characters[characterIndex].characterName;
-        descriptionText.text = characters[characterIndex].characterDescription;
+        difficultyText.text = "Difficulty: " + characters[characterIndex].difficulty;
         basicAttackIcon.sprite = characters[characterIndex].basicAttackIcon;
         pierceAttackIcon.sprite = characters[characterIndex].pierceAttackIcon;
 

@@ -16,6 +16,7 @@ MonoBehaviour:
   characterName: Prism Weaver
   characterDescription: A magical wizard, from the land of Latsyrc. Is very catious
     in its attack and prefers to attack at a distance
+  difficulty: Mid
   health: 90
   mana: 100
   moveSpeed: 9

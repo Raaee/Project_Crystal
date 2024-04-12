@@ -9,6 +9,7 @@ public class CharacterDataSO : ScriptableObject
     public GameObject characterPrefab;
     public string characterName;
     public string characterDescription;
+    public string difficulty;
     
     [Header("Stats")]
     public int health;

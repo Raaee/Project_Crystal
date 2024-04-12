@@ -16,6 +16,7 @@ MonoBehaviour:
   characterName: The Warden of Shards
   characterDescription: A sturdy soldier, loves the glory and the smell of battle.
     Has a hard hitting attack
+  difficulty: Mid-High
   health: 110
   mana: 100
   moveSpeed: 8

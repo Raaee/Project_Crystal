@@ -2128,12 +2128,12 @@ GameObject:
   - component: {fileID: 455614446}
   - component: {fileID: 455614445}
   m_Layer: 5
-  m_Name: Description Text
+  m_Name: Difficulty Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &455614445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2154,11 +2154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Description of character
-
-    goes here
-
-'
+  m_text: 'Difficulty: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbccffbf55ae38429db556272916476, type: 2}
   m_sharedMaterial: {fileID: -4607980047586035809, guid: 9dbccffbf55ae38429db556272916476, type: 2}
@@ -2185,8 +2181,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2201,7 +2197,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -2251,7 +2247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -19}
+  m_AnchoredPosition: {x: -19, y: 86}
   m_SizeDelta: {x: 600.623, y: 266.257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &482075056
@@ -2842,7 +2838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30.000021, y: -68}
+  m_AnchoredPosition: {x: -30.000021, y: -112}
   m_SizeDelta: {x: 277.05, y: 247.651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580385051
@@ -3669,7 +3665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: 67.00001}
+  m_AnchoredPosition: {x: -30, y: 23.000004}
   m_SizeDelta: {x: 277.05, y: 247.651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745316862
@@ -8516,7 +8512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: 226}
+  m_AnchoredPosition: {x: -12, y: 235}
   m_SizeDelta: {x: 657.595, y: 133.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718789562
@@ -9676,7 +9672,7 @@ MonoBehaviour:
   characterImage: {fileID: 366591207}
   bigCharacterImage: {fileID: 1836466273}
   characterNameText: {fileID: 1718789562}
-  descriptionText: {fileID: 455614445}
+  difficultyText: {fileID: 455614445}
   healthText: {fileID: 1378853940}
   manaText: {fileID: 482075058}
   basicAttackIcon: {fileID: 498124665}
