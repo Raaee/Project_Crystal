@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour {
 
-    private GameObject player;
+    [SerializeField] private GameObject player;
     public static PlayerManager Instance { get; set; }
     [HideInInspector] public PlayerHealthPoints hp { get; set; }
     [HideInInspector] public ManaPoints mp { get; set; }
@@ -15,15 +15,13 @@ public class PlayerManager : MonoBehaviour {
     [HideInInspector] public PiercingShotAbility pierceShot { get; set; }
     [HideInInspector] public TeleportAbility teleport { get; set; }
 
-
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject reviveParticles;
     [SerializeField] string reviveParticleGOName;
     [SerializeField] private float reviveTime = 1f;
     private GameObject deathPanelClone;
-
-    private InputControls input;
+    
     [HideInInspector] public UnityEvent OnRevive;
 
     // Animation
@@ -42,7 +40,6 @@ public class PlayerManager : MonoBehaviour {
         Respawn();
     }
     public void Components() {
-        input = player.GetComponent<InputControls>();
         hp = player.GetComponent<PlayerHealthPoints>();
         mp = player.GetComponent<ManaPoints>();
         animator = player.GetComponentInChildren<Animator>();
@@ -51,13 +48,11 @@ public class PlayerManager : MonoBehaviour {
         teleport = player.GetComponentInChildren<TeleportAbility>();
         reviveParticles = player.transform.Find(reviveParticleGOName).gameObject; // Dont worry about it.
     }
-    public void Death() {
-     
+    public void Death()
+    {
         animator.Play(DEATH);
         deathPanelClone = Instantiate(deathPanel);
         StartCoroutine(WaitBeforeDisable());
-        // input.DisableControls();
-        // lose a life
     }
     [ProButton]
     public void Respawn() {
@@ -65,7 +60,6 @@ public class PlayerManager : MonoBehaviour {
         player.SetActive(true);
         StartCoroutine(Revive());
         animator.Play(RESPAWN);
-        // input.EnableControls();
         hp.ResetHealth();
         mp.ResetMana();
     }

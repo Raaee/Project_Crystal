@@ -57,6 +57,7 @@ public class Crystal : MonoBehaviour {
        
         OnCrystalDie.Invoke();
         currentState = CrystalState.SHATTERED;
+        crystalVFX.DisactivateRadius();
         CrystalManager.Instance.UnLockInteractions();
         spawner.state = Spawner.State.Idle;
         Debug.Log("prepare to shatter crystal");
@@ -68,6 +69,7 @@ public class Crystal : MonoBehaviour {
         if (currentState == CrystalState.SHATTERED || currentState == CrystalState.PURIFIED) return;
         currentState = CrystalState.ENGAGING;
         hp.SetCurrentHP(hp.GetMaxHealth());
+        crystalVFX.ActivateRadius();
         CrystalManager.Instance.SetCurrentCrystal(this);
         CrystalManager.Instance.SetCrystalComponents(this);
         CrystalManager.Instance.LockInteractions();
@@ -78,6 +80,7 @@ public class Crystal : MonoBehaviour {
         TilePurificationManager.instance?.PurifyInRadius(this.gameObject.transform, (int)(spawner.radius * 1.25));
         crystalVFX.ActivatePurifiedParticles();
         crystalVFX.PurifySprite();
+        crystalVFX.DisactivateRadius();
     }
     public void ChangeInteractionState(bool interactable)
     {
