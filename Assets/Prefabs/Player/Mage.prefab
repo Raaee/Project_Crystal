@@ -5529,7 +5529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ce4dc2012641549b26ff27e597bb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 20
+  maxDamage: 16
   currentDamage: 0
   maxLifeTime: 0.5
   cooldown: 1.6
@@ -5557,7 +5557,7 @@ MonoBehaviour:
   currentDamage: 0
   maxLifeTime: 0
   cooldown: 2
-  manaCost: 10
+  manaCost: 6.5
   IsActive: 1
   userMana: {fileID: 3038308969333731784}
   OnAbilityUsage:
@@ -5719,7 +5719,7 @@ MonoBehaviour:
   - {x: 0.46875, y: -0.6875, z: 0}
   m_ShapePathHash: -40504043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 174594
+  m_InstanceId: 201596
   m_LocalBounds:
     m_Center: {x: 0, y: -0.34375, z: 0}
     m_Extent: {x: 0.46875, y: 0.34375, z: 0}
