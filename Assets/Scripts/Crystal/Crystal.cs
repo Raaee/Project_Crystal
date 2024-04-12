@@ -90,21 +90,19 @@ public class Crystal : MonoBehaviour {
             CrystalManager.Instance.SetCurrentCrystal(this);
             currentCrytal = CrystalManager.Instance.GetCurrentCrystal();
             float percentHP = (currentCrytal.hp.GetMaxHealth() * blastPercentage);
-            //Debug.Log(currentCrytal.hp.GetMaxHealth());
-            //Debug.Log(percentHP);
 
             if (currentCrytal.hp.GetCurrentHP() < percentHP)
             {
                 foreach(GameObject enemy in spawner.spawnedGamesObjects)
                 {
+                    Debug.Log(enemy);
                     Debug.Log("Kil all");
                     enemy.GetComponent<HealthPoints>().RemoveHealth(blastDamage);
                 }
-                Debug.Log("Blast " + blastDamage + " Damage");
-                //CrystalManager.Instance.spawnedObjects;
             }
         }
     }
+
     public CrystalHealthPoints GetHP() {
         return hp;
     }
