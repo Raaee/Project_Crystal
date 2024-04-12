@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] string reviveParticleGOName;
     [SerializeField] private float reviveTime = 1f;
     private GameObject deathPanelClone;
+    
 
     private InputControls input;
     [HideInInspector] public UnityEvent OnRevive;
@@ -51,8 +52,8 @@ public class PlayerManager : MonoBehaviour {
         teleport = player.GetComponentInChildren<TeleportAbility>();
         reviveParticles = player.transform.Find(reviveParticleGOName).gameObject; // Dont worry about it.
     }
-    public void Death() {
-     
+    public void Death()
+    {
         animator.Play(DEATH);
         deathPanelClone = Instantiate(deathPanel);
         StartCoroutine(WaitBeforeDisable());
