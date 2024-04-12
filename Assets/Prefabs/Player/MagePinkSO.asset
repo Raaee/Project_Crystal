@@ -22,7 +22,7 @@ MonoBehaviour:
   moveSpeed: 7
   basicAttackDamage: 5
   basicAttackCooldown: 0.25
-  basicAttackManaCost: 3
+  basicAttackManaCost: 2
   pierceAttackDamage: 10
   pierceAttackCooldown: 0.5
   pierceManaCost: 10
