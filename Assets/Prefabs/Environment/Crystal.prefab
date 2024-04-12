@@ -314,7 +314,7 @@ MonoBehaviour:
   corruptedShadowSprite: {fileID: -735974454, guid: bb1b616e0066fe94090830f9ae79696b, type: 3}
   shatteredColor:
     serializedVersion: 2
-    rgba: 3711898650
+    rgba: 3719909470
   purifiedSprite: {fileID: 243064538, guid: 709222a7450fc324cb7e91c02aeec9cd, type: 3}
   purifiedShadowSprite: {fileID: -42816084, guid: bb1b616e0066fe94090830f9ae79696b, type: 3}
   bobbingSpeed: 1
