@@ -50,9 +50,6 @@ public class Spawner : MonoBehaviour
     [Tooltip("The list of spawned objects. Used to keep track of the spawned objects for the current wave.")]
     public List<Transform> spawnedObjects;
 
-    [Tooltip("The list of spawned objects. Give the list of the game Obejcts that have spawn.")]
-    public List<GameObject> spawnedGamesObjects;
-
     /// <summary>
     /// The current state of the spawner.
     /// </summary>
@@ -143,8 +140,7 @@ public class Spawner : MonoBehaviour
                     {
                         var spawn = waves[0].Spawns[0];
                         spawnedObjects.Add(Spawn(spawn));
-                        waves[0].Spawns.RemoveAt(0);
-                       
+                        waves[0].Spawns.RemoveAt(0);                       
                     }
 
                     // Handle transition to cooldown state if there are no more objects to spawn and all transforms in the spawned list are destroyed

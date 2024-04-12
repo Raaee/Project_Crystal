@@ -77,7 +77,6 @@ public class Projectile : MonoBehaviour
                 if (!potentialEnemyHealth) {
                     return;
                 }
-                Debug.Log("player: " + CurrentDamage);
                 potentialEnemyHealth.RemoveHealth(CurrentDamage);
 
                 // Disable the projectile after it has hit an enemy
@@ -97,7 +96,6 @@ public class Projectile : MonoBehaviour
                 return;
             }
 
-            Debug.Log("enemy damage: " + CurrentDamage);
             potentialPlayerHealth.RemoveHealth(CurrentDamage);
             DisableProjectile();
         }
