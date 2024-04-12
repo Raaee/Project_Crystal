@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEditor.Progress;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -16,7 +15,6 @@ public class PlayerManager : MonoBehaviour {
     [HideInInspector] public PiercingShotAbility pierceShot { get; set; }
     [HideInInspector] public TeleportAbility teleport { get; set; }
 
-
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject reviveParticles;
@@ -24,8 +22,6 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] private float reviveTime = 1f;
     private GameObject deathPanelClone;
     
-
-    private InputControls input;
     [HideInInspector] public UnityEvent OnRevive;
 
     // Animation
@@ -44,26 +40,19 @@ public class PlayerManager : MonoBehaviour {
         Respawn();
     }
     public void Components() {
-        input = player.GetComponent<InputControls>();
         hp = player.GetComponent<PlayerHealthPoints>();
         mp = player.GetComponent<ManaPoints>();
         animator = player.GetComponentInChildren<Animator>();
         rangedBA = player.GetComponentInChildren<RangedBasicAttack>();
         pierceShot = player.GetComponentInChildren<PiercingShotAbility>();
         teleport = player.GetComponentInChildren<TeleportAbility>();
-        renderer = player.GetComponent<Renderer>();
         reviveParticles = player.transform.Find(reviveParticleGOName).gameObject; // Dont worry about it.
     }
     public void Death()
     {
         animator.Play(DEATH);
         deathPanelClone = Instantiate(deathPanel);
-        playerCloneDeath = Instantiate(player);
-        renderer.sortingLayerID = SortingLayer.NameToID("DP");
-        animator.Play(DEATH);
         StartCoroutine(WaitBeforeDisable());
-        // input.DisableControls();
-        // lose a life
     }
     [ProButton]
     public void Respawn() {
@@ -71,7 +60,6 @@ public class PlayerManager : MonoBehaviour {
         player.SetActive(true);
         StartCoroutine(Revive());
         animator.Play(RESPAWN);
-        // input.EnableControls();
         hp.ResetHealth();
         mp.ResetMana();
     }
