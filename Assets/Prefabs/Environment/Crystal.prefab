@@ -242,7 +242,6 @@ MonoBehaviour:
       position: {x: -5.8967395, y: 15.944543}
       timeDelay: 0.4
   spawnedObjects: []
-  spawnedGamesObjects: []
   state: 2
   time: 0
   OnSpawnerStart:
@@ -333,8 +332,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   currentCrytal: {fileID: 0}
-  blastPercentage: 0.9
-  blastDamage: 75
+  amountOfBlasts: 2
+  blastPercentage: 0.25
+  blastDamage: 25
   OnCrystalDie:
     m_PersistentCalls:
       m_Calls: []
